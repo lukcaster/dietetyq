@@ -1,0 +1,15 @@
+# Blueprint Rendera: New → Blueprint → wskaż to repo, a Render sam założy serwis.
+# Aplikacja nie ma bazy ani sekretów — dane leżą w data/*.json i są czytane z dysku przy starcie.
+services:
+  - type: web
+    name: dietetyq
+    runtime: node
+    plan: free
+    # npm ci instaluje też devDependencies (TypeScript jest potrzebny do buildu).
+    buildCommand: npm ci && npm run build
+    # `next start` sam czyta zmienną PORT, którą ustawia Render.
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "24"

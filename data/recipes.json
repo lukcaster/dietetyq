@@ -1,0 +1,1246 @@
+[
+  {
+    "id": "owsianka-owocowo-orzechowa",
+    "nazwa": "Owsianka z owocami i masłem orzechowym",
+    "slot": ["sniadanie"],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Zagotuj mleko, wsyp płatki owsiane i gotuj na małym ogniu, aż zmiękną (5-7 min).",
+      "Przełóż do miski, dodaj owoc, wiórki kokosowe, masło orzechowe i miód."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "platki-owsiane", "ilosc": 50, "jednostka": "g", "kategoria": "platki-owsiane", "domyslnaSkladnikId": "platki-owsiane" },
+      { "nazwaGrupy": "mleko", "ilosc": 200, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" },
+      { "skladnikId": "wiorki-kokosowe", "ilosc": 10, "jednostka": "g" },
+      { "skladnikId": "maslo-orzechowe", "ilosc": 15, "jednostka": "g" },
+      { "skladnikId": "miod", "ilosc": 10, "jednostka": "g" },
+      { "nazwaGrupy": "owoc", "ilosc": 50, "jednostka": "g", "kategoria": "owoc-jagodowy", "domyslnaSkladnikId": "borowki" }
+    ]
+  },
+  {
+    "id": "nocne-chia-z-owocami",
+    "nazwa": "Nocne chia z owocami",
+    "slot": ["sniadanie"],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "czasOczekiwania": "noc",
+    "instrukcje": [
+      "Rozgnieć owoc widelcem na dnie słoika/miski.",
+      "Dodaj siemię chia, mleko i jogurt, dokładnie wymieszaj.",
+      "Odstaw przykryte w lodówce na noc (min. 6-8h).",
+      "Zjedz na śniadanie, ewentualnie wymieszaj ponownie przed jedzeniem."
+    ],
+    "skladniki": [
+      { "skladnikId": "siemie-chia", "ilosc": 30, "jednostka": "g" },
+      { "nazwaGrupy": "jogurt", "ilosc": 100, "jednostka": "g", "kategoria": "jogurt", "domyslnaSkladnikId": "jogurt-naturalny" },
+      { "nazwaGrupy": "mleko", "ilosc": 100, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" },
+      { "nazwaGrupy": "owoc", "ilosc": 80, "jednostka": "g", "kategoria": "owoc-jagodowy", "domyslnaSkladnikId": "truskawki" }
+    ]
+  },
+  {
+    "id": "pierogi-fit-szpinak-feta",
+    "nazwa": "Pierogi fit z farszem szpinakowo-fetowym",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Cebulę podsmaż na oleju do zeszklenia, dodaj szpinak (jeśli mrożony — odciśnięty z wody) i podsmażaj 3-4 min.",
+      "Zdejmij z ognia, wymieszaj z pokruszoną fetą, dopraw do smaku.",
+      "Rozwałkuj ciasto, wykrawaj krążki, na środek nakładaj farsz, składaj i dokładnie zlepiaj brzegi.",
+      "Wrzucaj pierogi na osolony, wrzący wywar/wodę, gotuj ok. 3-4 min po wypłynięciu."
+    ],
+    "skladniki": [
+      { "komponentId": "ciasto-pierogowe-pelnoziarniste", "ilosc": 500, "jednostka": "g" },
+      { "skladnikId": "szpinak", "ilosc": 200, "jednostka": "g" },
+      { "skladnikId": "feta", "ilosc": 150, "jednostka": "g" },
+      { "skladnikId": "cebula", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 5, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "pierogi-fit-indyk",
+    "nazwa": "Pierogi fit z farszem z indyka",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Cebulę podsmaż na oleju do zeszklenia, dodaj indyka mielonego i smaż ok. 8-10 min, aż się ścięknie. Dopraw, przestudź.",
+      "Rozwałkuj ciasto, wykrawaj krążki, na środek nakładaj farsz, składaj i dokładnie zlepiaj brzegi.",
+      "Wrzucaj pierogi na osolony, wrzący wywar/wodę, gotuj ok. 3-4 min po wypłynięciu."
+    ],
+    "skladniki": [
+      { "komponentId": "ciasto-pierogowe-pelnoziarniste", "ilosc": 500, "jednostka": "g" },
+      { "skladnikId": "indyk-mielony", "ilosc": 300, "jednostka": "g" },
+      { "skladnikId": "cebula", "ilosc": 80, "jednostka": "g" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 10, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "pierogi-fit-truskawkowe",
+    "nazwa": "Pierogi fit z truskawkami",
+    "slot": ["obiad", "kolacja", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Truskawki umyj, osusz, większe przekrój na kawałki.",
+      "Rozwałkuj ciasto, wykrawaj krążki, na środek nakładaj 1-2 kawałki truskawki, składaj i dokładnie zlepiaj brzegi.",
+      "Wrzucaj pierogi na wrzącą wodę, gotuj ok. 3-4 min po wypłynięciu.",
+      "Podawaj polane miodem."
+    ],
+    "skladniki": [
+      { "komponentId": "ciasto-pierogowe-pelnoziarniste", "ilosc": 500, "jednostka": "g" },
+      { "skladnikId": "truskawki", "ilosc": 250, "jednostka": "g" },
+      { "skladnikId": "miod", "ilosc": 20, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "fit-sernik-baskijski",
+    "nazwa": "Fit sernik baskijski",
+    "slot": ["podwieczorek", "kolacja"],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "3h",
+    "instrukcje": [
+      "Twaróg zmiksuj blenderem na gładki, jednolity krem ze skyrem.",
+      "Dodawaj jajka jedno po drugim, miksując, następnie erytrytol i mąkę — miksuj do połączenia (nie za długo).",
+      "Przełóż do formy (ok. 18-20cm) wyłożonej papierem do pieczenia wystającym ponad krawędzie.",
+      "Piecz w 220-230°C (góra-dół) przez 35-40 min, aż wierch będzie ciemnobrązowy, a środek wciąż lekko galaretowaty.",
+      "Wystudź w temperaturze pokojowej, potem schłodź w lodówce min. 3h przed podaniem."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "baza-bialkowa", "ilosc": 500, "jednostka": "g", "kategoria": "baza-bialkowa-kremowa", "domyslnaSkladnikId": "twarog-polnotlusty" },
+      { "skladnikId": "skyr-naturalny", "ilosc": 200, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 4, "jednostka": "szt" },
+      { "skladnikId": "erytrytol", "ilosc": 80, "jednostka": "g" },
+      { "skladnikId": "maka-pszenna", "ilosc": 20, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "fit-ciasto-owsiane-czekoladowe",
+    "nazwa": "Fit owsiane ciasto czekoladowe na twarogu",
+    "slot": ["podwieczorek", "kolacja"],
+    "charakter": "slodkie",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Płatki owsiane zmiksuj na mąkę owsianą.",
+      "Banana rozgnieć widelcem, zmiksuj z twarogiem i jajkami na gładką masę.",
+      "Dodaj mąkę owsianą, kakao i erytrytol, wymieszaj do połączenia.",
+      "Przełóż do formy (ok. 20x20cm), piecz w 180°C ok. 30-35 min, do suchego patyczka.",
+      "Wystudź przed pokrojeniem."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "platki-owsiane", "ilosc": 150, "jednostka": "g", "kategoria": "platki-owsiane", "domyslnaSkladnikId": "platki-owsiane" },
+      { "nazwaGrupy": "baza-bialkowa", "ilosc": 250, "jednostka": "g", "kategoria": "baza-bialkowa-kremowa", "domyslnaSkladnikId": "twarog-polnotlusty" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "banan", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "kakao", "ilosc": 30, "jednostka": "g" },
+      { "skladnikId": "erytrytol", "ilosc": 40, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "fit-keksowka-skyrowa-cytrynowa",
+    "nazwa": "Fit keksówka skyrowo-cytrynowa na płatkach owsianych",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Płatki owsiane zmiksuj na mąkę owsianą.",
+      "Skyr wymieszaj z jajkami, erytrytolem oraz sokiem i skórką z cytryny.",
+      "Dodaj mąkę owsianą, wymieszaj do połączenia.",
+      "Przełóż do keksówki, piecz w 175°C ok. 35-40 min, do suchego patyczka.",
+      "Wystudź przed pokrojeniem."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "platki-owsiane", "ilosc": 150, "jednostka": "g", "kategoria": "platki-owsiane", "domyslnaSkladnikId": "platki-owsiane" },
+      { "nazwaGrupy": "baza-bialkowa", "ilosc": 300, "jednostka": "g", "kategoria": "baza-bialkowa-kremowa", "domyslnaSkladnikId": "skyr-naturalny" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "erytrytol", "ilosc": 60, "jednostka": "g" },
+      { "skladnikId": "cytryna", "ilosc": 60, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "kotlety-mielone-pieczone-owsiane",
+    "nazwa": "Kotlety mielone pieczone z płatkami owsianymi",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "wymaganeDodatki": ["dodatek-skrobiowy", "surowka"],
+    "instrukcje": [
+      "Płatki owsiane namocz na kilka minut w niewielkiej ilości wody lub mleka (zamiast namoczonej bułki).",
+      "Cebulę drobno posiekaj lub zetrzyj.",
+      "Wymieszaj mięso mielone z namoczonymi płatkami, cebulą i jajkiem, dopraw solą i pieprzem.",
+      "Uformuj kotlety i układaj na blasze wyłożonej papierem do pieczenia.",
+      "Piecz w 200°C ok. 20-25 min, do ugotowania w środku."
+    ],
+    "skladniki": [
+      { "skladnikId": "mieso-mielone-wolowe", "ilosc": 500, "jednostka": "g" },
+      { "nazwaGrupy": "platki-owsiane", "ilosc": 40, "jednostka": "g", "kategoria": "platki-owsiane", "domyslnaSkladnikId": "platki-owsiane" },
+      { "skladnikId": "cebula", "ilosc": 100, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 1, "jednostka": "szt" }
+    ]
+  },
+  {
+    "id": "nuggetsy-kurczak-pieczone",
+    "nazwa": "Nuggetsy z kurczaka pieczone w panierce owsianej",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "wymaganeDodatki": ["dodatek-skrobiowy", "surowka"],
+    "instrukcje": [
+      "Pierś z kurczaka pokrój w kawałki wielkości nuggetsa.",
+      "Płatki owsiane zmiksuj na grubszą panierkę.",
+      "Rozbełtaj jajko w misce.",
+      "Kawałki kurczaka maczaj w jajku, następnie obtaczaj w panierce owsianej.",
+      "Układaj na blasze wyłożonej papierem, piecz w 200°C ok. 18-20 min, obracając w połowie."
+    ],
+    "skladniki": [
+      { "skladnikId": "kurczak-piers", "ilosc": 500, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 1, "jednostka": "szt" },
+      { "nazwaGrupy": "platki-owsiane", "ilosc": 60, "jednostka": "g", "kategoria": "platki-owsiane", "domyslnaSkladnikId": "platki-owsiane" }
+    ]
+  },
+  {
+    "id": "tortilla-pizza",
+    "nazwa": "Tortilla pizza z salami i serem",
+    "slot": ["sniadanie", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Na rozgrzaną patelnię (bez oleju) ułóż plastry salami, smaż chwilę, aż zaczną skwarczeć.",
+      "Posyp żółtym serem, przykryj tortillą i dociśnij.",
+      "Po 1-2 min, gdy ser zaczyna się roztapiać, zgrabnie odwróć całość (tortilla na dół, spód z salami i serem na górę).",
+      "Smaż jeszcze chwilę, aż całość się zwiąże, a ser dobrze się roztopi.",
+      "Polej sosem i złóż na pół przed podaniem."
+    ],
+    "skladniki": [
+      { "skladnikId": "tortilla-pszenna", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "salami", "ilosc": 60, "jednostka": "g" },
+      { "skladnikId": "ser-zolty", "ilosc": 80, "jednostka": "g" },
+      { "nazwaGrupy": "sos", "ilosc": 20, "jednostka": "g", "kategoria": "sos-tortilla", "domyslnaSkladnikId": "sos-pomidorowy" }
+    ]
+  },
+  {
+    "id": "dodatek-ryz-bialy",
+    "nazwa": "Ryż biały",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "dodatek-skrobiowy",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": ["Ugotuj ryż w osolonej wodzie ok. 12-15 min, aż będzie miękki. Odcedź."],
+    "skladniki": [{ "skladnikId": "ryz-bialy-surowy", "ilosc": 80, "jednostka": "g" }]
+  },
+  {
+    "id": "dodatek-ziemniaki-gotowane",
+    "nazwa": "Ziemniaki gotowane",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "dodatek-skrobiowy",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": ["Ziemniaki obierz, pokrój, ugotuj w osolonej wodzie ok. 20-25 min, aż będą miękkie."],
+    "skladniki": [{ "skladnikId": "ziemniaki", "ilosc": 200, "jednostka": "g" }]
+  },
+  {
+    "id": "dodatek-kasza-gryczana",
+    "nazwa": "Kasza gryczana",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "dodatek-skrobiowy",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": ["Ugotuj kaszę zgodnie z instrukcją na opakowaniu (ok. 12-15 min)."],
+    "skladniki": [{ "skladnikId": "kasza-gryczana-surowa", "ilosc": 70, "jednostka": "g" }]
+  },
+  {
+    "id": "dodatek-frytki-pieczone",
+    "nazwa": "Pieczone frytki z ziemniaków",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "dodatek-skrobiowy",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki pokrój w słupki, wymieszaj z olejem i przyprawami.",
+      "Piecz w 200°C ok. 25-30 min, obracając w połowie, aż będą złociste."
+    ],
+    "skladniki": [
+      { "skladnikId": "ziemniaki", "ilosc": 220, "jednostka": "g" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 10, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "dodatek-mizeria",
+    "nazwa": "Mizeria",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "surowka",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Ogórek zetrzyj na tarce, odciśnij nadmiar soku.",
+      "Wymieszaj z jogurtem, dopraw solą, pieprzem i koperkiem."
+    ],
+    "skladniki": [
+      { "skladnikId": "ogorek", "ilosc": 150, "jednostka": "g" },
+      { "nazwaGrupy": "jogurt", "ilosc": 50, "jednostka": "g", "kategoria": "jogurt", "domyslnaSkladnikId": "jogurt-naturalny" }
+    ]
+  },
+  {
+    "id": "dodatek-surowka-z-kapusty",
+    "nazwa": "Surówka z kapusty",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "surowka",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": ["Kapustę i cebulę poszatkuj, wymieszaj z olejem, dopraw solą, pieprzem i odrobiną octu."],
+    "skladniki": [
+      { "skladnikId": "kapusta", "ilosc": 150, "jednostka": "g" },
+      { "skladnikId": "cebula", "ilosc": 30, "jednostka": "g" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 5, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "dodatek-salatka-pomidor-ogorek",
+    "nazwa": "Sałatka pomidorowo-ogórkowa",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "surowka",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": ["Pomidora i ogórka pokrój w kostkę, skrop oliwą, dopraw solą i pieprzem."],
+    "skladniki": [
+      { "skladnikId": "pomidor", "ilosc": 100, "jednostka": "g" },
+      { "skladnikId": "ogorek", "ilosc": 100, "jednostka": "g" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 5, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "dodatek-ogorek-po-koreansku",
+    "nazwa": "Pikantna sałatka z ogórka po koreańsku",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "surowka",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Ogórek pokrój w cienkie plasterki, czerwoną cebulę w cienkie piórka, czosnek przeciśnij przez praskę.",
+      "Na dno słoika lub pojemnika z pokrywką wlej gochujang, gochugaru, sos sojowy, ocet ryżowy, czosnek, syrop i olej sezamowy.",
+      "Dołóż ogórek i cebulę, posyp sezamem, zakręć i energicznie potrząśnij, aż dressing oblepi warzywa.",
+      "Jedz od razu albo trzymaj w lodówce do 2-3 dni — ogórek zostaje chrupiący, a sałatka z czasem nabiera smaku."
+    ],
+    "skladniki": [
+      { "skladnikId": "ogorek", "ilosc": 150, "jednostka": "g" },
+      { "skladnikId": "cebula", "ilosc": 20, "jednostka": "g" },
+      { "skladnikId": "gochujang", "ilosc": 10, "jednostka": "g" },
+      { "skladnikId": "gochugaru", "ilosc": 2, "jednostka": "g" },
+      { "skladnikId": "sos-sojowy", "ilosc": 10, "jednostka": "ml" },
+      { "skladnikId": "ocet-ryzowy", "ilosc": 10, "jednostka": "ml" },
+      { "skladnikId": "czosnek", "ilosc": 3, "jednostka": "g" },
+      { "nazwaGrupy": "syrop", "ilosc": 5, "jednostka": "g", "kategoria": "syrop", "domyslnaSkladnikId": "syrop-agawy" },
+      { "skladnikId": "olej-sezamowy", "ilosc": 4, "jednostka": "g" },
+      { "skladnikId": "sezam", "ilosc": 3, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "dodatek-pieczywo",
+    "nazwa": "Pieczywo (kromki chleba)",
+    "slot": ["sniadanie"],
+    "charakter": "wytrawne",
+    "kategoriaDania": "dodatek-skrobiowy",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": ["Pokrój chleb na kromki."],
+    "skladniki": [{ "skladnikId": "chleb-pszenny", "ilosc": 60, "jednostka": "g" }]
+  },
+  {
+    "id": "placuszki-jogurtowe",
+    "nazwa": "Placuszki jogurtowe",
+    "slot": ["sniadanie"],
+    "charakter": "slodkie",
+    "porcje": 3,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Skyr wymieszaj z jajkami na gładką masę.",
+      "Dodaj mąkę, wymieszaj do połączenia (bez grudek).",
+      "Smaż małe placuszki na rozgrzanej oliwie, na małym ogniu, ok. 2-3 min z każdej strony."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "baza-jogurtowa", "ilosc": 400, "jednostka": "g", "kategoria": "jogurt-smakowy", "domyslnaSkladnikId": "skyr-smakowy" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "maka-pszenna", "ilosc": 130, "jednostka": "g" },
+      { "skladnikId": "oliwa-z-oliwek", "ilosc": 10, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "fit-pampuchy-pieczone",
+    "nazwa": "Fit pampuchy pieczone z nadzieniem owocowym",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "45min",
+    "instrukcje": [
+      "Drożdże rozpuść w lekko podgrzanym mleku z odrobiną erytrytolu, odstaw na 10 min do napienienia.",
+      "Wymieszaj mąkę, odżywkę białkową, jajko i zaczyn drożdżowy na gładkie ciasto.",
+      "Przykryj i odstaw w ciepłe miejsce na ok. 45 min do wyrośnięcia.",
+      "Uformuj kulki, na środek każdej nałóż rozgniecione owoce wymieszane z miodem, zlep dokładnie.",
+      "Układaj na blasze posmarowanej oliwą, piecz w 190°C ok. 18-20 min do złocistego koloru."
+    ],
+    "skladniki": [
+      { "skladnikId": "maka-pszenna", "ilosc": 250, "jednostka": "g" },
+      { "nazwaGrupy": "mleko", "ilosc": 150, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" },
+      { "skladnikId": "jajko", "ilosc": 1, "jednostka": "szt" },
+      { "nazwaGrupy": "odzywka", "ilosc": 30, "jednostka": "g", "kategoria": "odzywka-bialkowa", "domyslnaSkladnikId": "odzywka-bialkowa-whey" },
+      { "skladnikId": "erytrytol", "ilosc": 20, "jednostka": "g" },
+      { "skladnikId": "drozdze-piekarskie", "ilosc": 7, "jednostka": "g" },
+      { "skladnikId": "oliwa-z-oliwek", "ilosc": 10, "jednostka": "g" },
+      { "nazwaGrupy": "owoc", "ilosc": 100, "jednostka": "g", "kategoria": "owoc-jagodowy", "domyslnaSkladnikId": "truskawki" },
+      { "skladnikId": "miod", "ilosc": 15, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "tortilla-szynka-ser-warzywa",
+    "nazwa": "Tortilla z szynką, serem i warzywami (grillowana)",
+    "slot": ["sniadanie", "obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Na tortilli rozłóż szynkę, ser i warzywa, złóż na pół lub zwiń w rulon.",
+      "Grilluj na suchej patelni z obu stron, aż się podpiecze i ser zacznie topić."
+    ],
+    "skladniki": [
+      { "skladnikId": "tortilla-pszenna", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "szynka", "ilosc": 60, "jednostka": "g" },
+      { "skladnikId": "ser-zolty", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "pomidor", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "ogorek", "ilosc": 50, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "tortilla-z-jajkiem-na-patelni",
+    "nazwa": "Tortilla z jajkiem na patelni",
+    "slot": ["sniadanie"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Roztrzep jajka, wylej na rozgrzaną patelnię jak placek.",
+      "Gdy jajko zacznie się ścinać, przyłóż na wierch tortillę i dociśnij.",
+      "Po chwili zgrabnie odwróć całość (tortilla na dół, jajko na wierchu).",
+      "Posyp serem i szynką, poczekaj aż spód się podpiecze a ser zacznie topić.",
+      "Zdejmij z patelni i złóż na pół."
+    ],
+    "skladniki": [
+      { "skladnikId": "tortilla-pszenna", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "ser-zolty", "ilosc": 40, "jednostka": "g" },
+      { "skladnikId": "szynka", "ilosc": 40, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "tortilla-kurczak-rukola",
+    "nazwa": "Tortilla z kurczakiem i rukolą",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Ugotuj lub usmaż pierś z kurczaka, pokrój w plastry lub kawałki.",
+      "Wymieszaj keczup z majonezem na sos.",
+      "Na tortilli układaj rukolę, kurczaka i pomidora, polej sosem, zwiń w rulon."
+    ],
+    "skladniki": [
+      { "skladnikId": "tortilla-pszenna", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "kurczak-piers", "ilosc": 120, "jednostka": "g" },
+      { "skladnikId": "rukola", "ilosc": 20, "jednostka": "g" },
+      { "skladnikId": "pomidor", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "keczup", "ilosc": 15, "jednostka": "g" },
+      { "skladnikId": "majonez", "ilosc": 15, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "tortilla-mielone-mcwrap-styl",
+    "nazwa": "Tortilla z mięsem mielonym w stylu mcwrapa",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Rozgrzej patelnię. Mięsem mielonym wylep płasko jedną stronę tortilli (jak ciastem).",
+      "Połóż tortillę na patelni stroną z mięsem do dołu, smaż ok. 4-5 min, aż mięso się usmaży.",
+      "Odwróć na chwilę, żeby druga strona tortilli się podpiekła.",
+      "Zdejmij z patelni, na stronę z mięsem dodaj kapustę kiszoną, pomidora i sos (wymieszany majonez, keczup i musztarda).",
+      "Zwiń w rulon."
+    ],
+    "skladniki": [
+      { "skladnikId": "tortilla-pszenna", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "mieso-mielone-wolowe", "ilosc": 150, "jednostka": "g" },
+      { "skladnikId": "kapusta-kiszona", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "pomidor", "ilosc": 40, "jednostka": "g" },
+      { "skladnikId": "majonez", "ilosc": 15, "jednostka": "g" },
+      { "skladnikId": "keczup", "ilosc": 10, "jednostka": "g" },
+      { "skladnikId": "musztarda", "ilosc": 5, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "szakszuka-chorizo",
+    "nazwa": "Szakszuka na chorizo",
+    "slot": ["sniadanie"],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "wymaganeDodatki": ["dodatek-skrobiowy"],
+    "instrukcje": [
+      "Chorizo i cebulę podsmaż na oleju, dodaj paprykę, smaż 3-4 min.",
+      "Dodaj przecier pomidorowy, gotuj na małym ogniu 5-7 min.",
+      "Zrób wgłębienia w sosie, wbij jajka, przykryj i gotuj na małym ogniu 6-8 min, aż białka się zetną a żółtka będą lekko płynne.",
+      "Podawaj z pieczywem."
+    ],
+    "skladniki": [
+      { "skladnikId": "chorizo", "ilosc": 80, "jednostka": "g" },
+      { "skladnikId": "cebula", "ilosc": 60, "jednostka": "g" },
+      { "skladnikId": "papryka", "ilosc": 100, "jednostka": "g" },
+      { "skladnikId": "sos-pomidorowy", "ilosc": 200, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 3, "jednostka": "szt" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 5, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "jajecznica-na-boczku",
+    "nazwa": "Jajecznica na boczku",
+    "slot": ["sniadanie"],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "<15",
+    "wymaganeDodatki": ["dodatek-skrobiowy"],
+    "instrukcje": [
+      "Boczek pokrój w kostkę lub plastry, podsmaż na suchej patelni do wytopienia tłuszczu i przyrumienienia.",
+      "Roztrzep jajka, wlej na patelnię, mieszaj na małym ogniu do ścięcia.",
+      "Dopraw solą i pieprzem, podawaj z pieczywem."
+    ],
+    "skladniki": [
+      { "skladnikId": "boczek", "ilosc": 60, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 4, "jednostka": "szt" }
+    ]
+  },
+  {
+    "id": "grzanki-mozzarella",
+    "nazwa": "Grzanki z mozzarellą",
+    "slot": ["sniadanie", "podwieczorek", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Na kromkach chleba rozłóż plastry mozzarelli.",
+      "Podgrzewaj na patelni na małym ogniu pod przykryciem do roztopienia się sera (ok. 2-3 min), albo w mikrofalówce 30-60 sek.",
+      "Podawaj z plastrami pomidora i sałatą."
+    ],
+    "skladniki": [
+      { "skladnikId": "chleb-pszenny", "ilosc": 80, "jednostka": "g" },
+      { "skladnikId": "mozzarella", "ilosc": 80, "jednostka": "g" },
+      { "skladnikId": "pomidor", "ilosc": 60, "jednostka": "g" },
+      { "skladnikId": "salata", "ilosc": 20, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "mini-pizza-z-serka-wiejskiego",
+    "nazwa": "Mini pizza z serka wiejskiego",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Serek wiejski zmiksuj blenderem z jajkami i mąką na gładką masę.",
+      "Rozsmaruj na blasze wyłożonej papierem w kilka owalnych placków (mini pizz).",
+      "Piecz w 220°C ok. 10 min, aż masa się zetnie.",
+      "Posmaruj sosem pomidorowym, posyp serem i szynką, piecz kolejne 5-8 min, aż ser się roztopi."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "baza-bialkowa", "ilosc": 250, "jednostka": "g", "kategoria": "baza-bialkowa-kremowa", "domyslnaSkladnikId": "serek-wiejski" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "maka-pszenna", "ilosc": 30, "jednostka": "g" },
+      { "skladnikId": "sos-pomidorowy", "ilosc": 30, "jednostka": "g" },
+      { "skladnikId": "ser-zolty", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "szynka", "ilosc": 40, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "buleczki-z-serka-wiejskiego",
+    "nazwa": "Buleczki z serka wiejskiego z szynką i serem",
+    "slot": ["sniadanie", "obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Serek wiejski wymieszaj z jajkami i mąką na jednolite, zwarte ciasto.",
+      "Dodaj starty ser żółty i szynkę pokrojoną w kostkę, wymieszaj.",
+      "Uformuj kulki/buleczki, układaj na blasze wyłożonej papierem.",
+      "Piecz w 190-200°C ok. 25 min, do zezłocenia."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "baza-bialkowa", "ilosc": 250, "jednostka": "g", "kategoria": "baza-bialkowa-kremowa", "domyslnaSkladnikId": "serek-wiejski" },
+      { "skladnikId": "maka-pszenna", "ilosc": 150, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "ser-zolty", "ilosc": 80, "jednostka": "g" },
+      { "skladnikId": "szynka", "ilosc": 80, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "kotlet-drobiowy-owsiany-pieczony",
+    "nazwa": "Kotlet drobiowy w panierce owsianej (piekarnik/airfryer)",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "wymaganeDodatki": ["dodatek-skrobiowy", "surowka"],
+    "instrukcje": [
+      "Pierś z kurczaka rozbij na płaskie kotlety, dopraw solą i pieprzem.",
+      "Płatki owsiane zmiksuj na grubszą panierkę.",
+      "Kotlety maczaj w roztrzepanym jajku, obtaczaj w panierce owsianej.",
+      "Piecz w piekarniku w 200°C ok. 20-25 min (obracając w połowie) albo w airfryerze w 180°C ok. 15-18 min, do zezłocenia."
+    ],
+    "skladniki": [
+      { "skladnikId": "kurczak-piers", "ilosc": 500, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 1, "jednostka": "szt" },
+      { "nazwaGrupy": "platki-owsiane", "ilosc": 60, "jednostka": "g", "kategoria": "platki-owsiane", "domyslnaSkladnikId": "platki-owsiane" }
+    ]
+  },
+  {
+    "id": "pulpeciki-w-sosie-pomidorowym",
+    "nazwa": "Pulpeciki w sosie pomidorowym",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "wymaganeDodatki": ["dodatek-skrobiowy", "surowka"],
+    "instrukcje": [
+      "Mięso wymieszaj z drobno posiekaną cebulą i jajkiem, dopraw solą i pieprzem.",
+      "Uformuj małe kulki (pulpeciki).",
+      "Podsmaż na oleju ze wszystkich stron do zrumienienia, ok. 3-4 min.",
+      "Zalej sosem pomidorowym, przykryj i dusz na małym ogniu ok. 15-20 min."
+    ],
+    "skladniki": [
+      { "skladnikId": "mieso-mielone-wolowe", "ilosc": 500, "jednostka": "g" },
+      { "skladnikId": "cebula", "ilosc": 50, "jednostka": "g" },
+      { "skladnikId": "jajko", "ilosc": 1, "jednostka": "szt" },
+      { "skladnikId": "sos-pomidorowy", "ilosc": 300, "jednostka": "g" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 10, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "nalesniki-czekolada-daktylowa",
+    "nazwa": "Naleśniki z pastą czekoladowo-daktylową",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Wymieszaj mleko z jajkami, dodaj mąkę i wymieszaj do gładkości bez grudek.",
+      "Smaż tonkie naleśniki na rozgrzanej oliwie, ok. 1-2 min z każdej strony.",
+      "Daktyle, kakao i mleko zblenduj na gładką pastę. Uwaga: tak mała ilość składników może się słabo blendować w zwykłym blenderze — lepiej użyć małego rozdrabniacza albo zrobić od razu większą porcję na zapas.",
+      "Naleśniki przekładaj pastą czekoladowo-daktylową i zwijaj."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "mleko", "ilosc": 300, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" },
+      { "nazwaGrupy": "maka", "ilosc": 150, "jednostka": "g", "kategoria": "maka", "domyslnaSkladnikId": "maka-pszenna" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "oliwa-z-oliwek", "ilosc": 10, "jednostka": "g" },
+      { "skladnikId": "daktyle", "ilosc": 100, "jednostka": "g" },
+      { "skladnikId": "kakao", "ilosc": 10, "jednostka": "g" },
+      { "nazwaGrupy": "mleko-do-pasty", "ilosc": 20, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" }
+    ]
+  },
+  {
+    "id": "nalesniki-twarog-skyr",
+    "nazwa": "Naleśniki z twarogiem i skyrem smakowym",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Wymieszaj mleko z jajkami, dodaj mąkę i wymieszaj do gładkości bez grudek.",
+      "Smaż tonkie naleśniki na rozgrzanej oliwie, ok. 1-2 min z każdej strony.",
+      "Twaróg wymieszaj ze skyrem smakowym na gładką masę.",
+      "Naleśniki przekładaj nadzieniem i zwijaj."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "mleko", "ilosc": 300, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" },
+      { "nazwaGrupy": "maka", "ilosc": 150, "jednostka": "g", "kategoria": "maka", "domyslnaSkladnikId": "maka-pszenna" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "oliwa-z-oliwek", "ilosc": 10, "jednostka": "g" },
+      { "nazwaGrupy": "baza-bialkowa", "ilosc": 150, "jednostka": "g", "kategoria": "baza-bialkowa-kremowa", "domyslnaSkladnikId": "twarog-polnotlusty" },
+      { "nazwaGrupy": "baza-jogurtowa", "ilosc": 80, "jednostka": "g", "kategoria": "jogurt-smakowy", "domyslnaSkladnikId": "skyr-smakowy" }
+    ]
+  },
+  {
+    "id": "nalesniki-proteinowe-dzem",
+    "nazwa": "Naleśniki proteinowe z dżemem",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Wymieszaj mleko z jajkami, dodaj mąkę i odżywkę białkową, wymieszaj do gładkości (ciasto będzie nieco gęstsze niż klasyczne — ewentualnie dolej odrobinę mleka).",
+      "Smaż tonkie naleśniki na rozgrzanej oliwie, ok. 1-2 min z każdej strony.",
+      "Naleśniki przekładaj dżemem i zwijaj.",
+      "Użyto ciasta proteinowego specjalnie, żeby zbalansować niskobiałkowy dżem."
+    ],
+    "skladniki": [
+      { "nazwaGrupy": "mleko", "ilosc": 250, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-owsiane" },
+      { "nazwaGrupy": "maka", "ilosc": 100, "jednostka": "g", "kategoria": "maka", "domyslnaSkladnikId": "maka-pszenna" },
+      { "nazwaGrupy": "odzywka", "ilosc": 40, "jednostka": "g", "kategoria": "odzywka-bialkowa", "domyslnaSkladnikId": "odzywka-bialkowa-whey" },
+      { "skladnikId": "jajko", "ilosc": 2, "jednostka": "szt" },
+      { "skladnikId": "oliwa-z-oliwek", "ilosc": 10, "jednostka": "g" },
+      { "skladnikId": "dzem-owocowy", "ilosc": 80, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "nalesniki-wysokobialkowe",
+    "nazwa": "Naleśniki wysokobiałkowe",
+    "slot": ["sniadanie", "drugie-sniadanie", "podwieczorek", "kolacja"],
+    "charakter": "slodkie",
+    "porcje": 3,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Rozbij jajka do miski, dodaj szczyptę soli i roztrzep widelcem albo mikserem.",
+      "Wlej mleko i wymieszaj.",
+      "Dosypuj mąkę stopniowo, cały czas mieszając, aż ciasto będzie gładkie i bez grudek.",
+      "Sprawdź konsystencję — ciasto ma spływać z chochli wstążką. Zbyt wodniste: dosyp mąki po łyżce. Zbyt gęste: dolej mleka po łyżce. To jedyny moment, który trzeba ocenić okiem.",
+      "Odstaw na 10-15 minut, żeby mąka napęczniała — naleśniki będą się mniej rwać.",
+      "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą oleju, po 1-2 minuty z każdej strony."
+    ],
+    "skladniki": [
+      { "skladnikId": "jajko", "ilosc": 6, "jednostka": "szt" },
+      { "nazwaGrupy": "mleko", "ilosc": 500, "jednostka": "ml", "kategoria": "mleko", "domyslnaSkladnikId": "mleko-krowie" },
+      { "nazwaGrupy": "maka", "ilosc": 130, "jednostka": "g", "kategoria": "maka", "domyslnaSkladnikId": "maka-pszenna" },
+      { "skladnikId": "olej-rzepakowy", "ilosc": 10, "jednostka": "g" }
+    ]
+  },
+  {
+    "id": "kurczak-warzywa-skrobia",
+    "nazwa": "Grillowana pierś z kurczaka z warzywami i ryżem",
+    "slot": ["obiad","kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Pierś rozbij lekko tłuczkiem albo przetnij wzdłuż na dwa cieńsze płaty — usmaży się równo i nie wyschnie.",
+      "Dopraw solą i pieprzem, obsmaż na patelni grillowej (albo zwykłej) po 4-5 minut z każdej strony, aż w środku nie będzie różowa.",
+      "W tym samym czasie ugotuj ryż według opisu na opakowaniu.",
+      "Warzywa pokrój i podsmaż na tej samej patelni po zdjęciu mięsa — złapią smak z dna.",
+      "Mięso odstaw na 3-4 minuty przed pokrojeniem, żeby soki się rozeszły."
+    ],
+    "skladniki": [
+      {"skladnikId":"kurczak-piers","ilosc":180,"jednostka":"g"},
+      {"nazwaGrupy":"skrobia","ilosc":70,"jednostka":"g","kategoria":"skrobia-obiadowa","domyslnaSkladnikId":"ryz-bialy-surowy"},
+      {"nazwaGrupy":"warzywo","ilosc":150,"jednostka":"g","kategoria":"warzywo-cieple","domyslnaSkladnikId":"papryka"},
+      {"skladnikId":"olej-rzepakowy","ilosc":10,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "omlet-slodki",
+    "nazwa": "Omlet na słodko z owocami",
+    "slot": ["sniadanie","drugie-sniadanie","podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Oddziel białka od żółtek. Białka ubij na sztywną pianę — to od nich omlet jest puszysty, więc nie skracaj tego kroku.",
+      "Żółtka rozmieszaj z mąką, cukrem i odrobiną mleka na gładką masę. Najlepsza jest mąka migdałowa, ale każda się nada.",
+      "Delikatnie połącz masę z żółtek z pianą — mieszaj szpatułką od dołu do góry, żeby nie zbić piany.",
+      "Wylej na patelnię z odrobiną tłuszczu i smaż na MAŁYM ogniu pod przykryciem, aż się zetnie (kilka minut). Duży ogień przypali spód, zanim środek będzie gotowy.",
+      "Złóż na pół, podawaj ze świeżymi owocami i jogurtem naturalnym."
+    ],
+    "skladniki": [
+      {"skladnikId":"jajko","ilosc":3,"jednostka":"szt"},
+      {"nazwaGrupy":"maka","ilosc":15,"jednostka":"g","kategoria":"maka","domyslnaSkladnikId":"maka-migdalowa"},
+      {"nazwaGrupy":"slodzik","ilosc":10,"jednostka":"g","kategoria":"slodzik-sypki","domyslnaSkladnikId":"cukier"},
+      {"nazwaGrupy":"mleko","ilosc":20,"jednostka":"ml","kategoria":"mleko","domyslnaSkladnikId":"mleko-krowie"},
+      {"skladnikId":"olej-rzepakowy","ilosc":5,"jednostka":"g"},
+      {"nazwaGrupy":"owoc","ilosc":100,"jednostka":"g","kategoria":"owoc-jagodowy","domyslnaSkladnikId":"truskawki"},
+      {"skladnikId":"jogurt-naturalny","ilosc":100,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "omlet-slony",
+    "nazwa": "Omlet na słono z serem",
+    "slot": ["sniadanie","drugie-sniadanie","kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Oddziel białka od żółtek. Białka ubij na sztywną pianę.",
+      "Żółtka rozmieszaj z mąką i odrobiną mleka, dopraw solą i pieprzem. Bez cukru — to wersja wytrawna.",
+      "Delikatnie połącz masę z żółtek z pianą, mieszając od dołu do góry.",
+      "Smaż na małym ogniu pod przykryciem, aż spód się zetnie.",
+      "Obróć omlet i dopiero teraz połóż na wierzchu plasterki sera — rozpuści się od ciepła, zanim omlet dojdzie.",
+      "Złóż na pół i zsuń na talerz."
+    ],
+    "skladniki": [
+      {"skladnikId":"jajko","ilosc":3,"jednostka":"szt"},
+      {"nazwaGrupy":"maka","ilosc":15,"jednostka":"g","kategoria":"maka","domyslnaSkladnikId":"maka-pszenna"},
+      {"nazwaGrupy":"mleko","ilosc":20,"jednostka":"ml","kategoria":"mleko","domyslnaSkladnikId":"mleko-krowie"},
+      {"skladnikId":"olej-rzepakowy","ilosc":5,"jednostka":"g"},
+      {"skladnikId":"ser-zolty","ilosc":40,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "udon-gochujang",
+    "nazwa": "Udon z wieprzowiną gochujang i sosem orzechowo-miso",
+    "slot": ["obiad","kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Podsmaż mieloną wieprzowinę na suchej, dobrze rozgrzanej patelni, rozbijając ją łopatką, aż się zarumieni.",
+      "W misce wymieszaj gochujang, sos sojowy, ocet ryżowy, syrop z agawy i starty czosnek. Wlej do mięsa i smaż jeszcze 2-3 minuty, aż sos zgęstnieje i oblepi mięso.",
+      "Jajka ugotuj na miękko (ok. 6-7 minut od zagotowania), przelej zimną wodą i obierz.",
+      "Ugotuj makaron udon według opisu na opakowaniu. NIE wylewaj wody z gotowania.",
+      "W dużej misce wymieszaj masło orzechowe, miso, sos sojowy, sriracha, ocet ryżowy i syrop klonowy. Rozprowadź wodą z gotowania makaronu, dolewając po łyżce, aż sos będzie gładki i lejący.",
+      "Wrzuć odcedzony makaron do sosu i wymieszaj. Nałóż mięso, połówki jajek i posiekaną dymkę."
+    ],
+    "skladniki": [
+      {"skladnikId":"mieso-mielone-wieprzowe","ilosc":360,"jednostka":"g"},
+      {"skladnikId":"gochujang","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"sos-sojowy","ilosc":35,"jednostka":"ml"},
+      {"skladnikId":"ocet-ryzowy","ilosc":10,"jednostka":"ml"},
+      {"nazwaGrupy":"syrop","ilosc":8,"jednostka":"g","kategoria":"syrop","domyslnaSkladnikId":"syrop-agawy"},
+      {"skladnikId":"czosnek","ilosc":10,"jednostka":"g"},
+      {"skladnikId":"makaron-udon","ilosc":400,"jednostka":"g"},
+      {"skladnikId":"maslo-orzechowe","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"pasta-miso","ilosc":25,"jednostka":"g"},
+      {"skladnikId":"sriracha","ilosc":10,"jednostka":"ml"},
+      {"skladnikId":"jajko","ilosc":2,"jednostka":"szt"},
+      {"skladnikId":"cebula-dymka","ilosc":20,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "salatka-big-mac",
+    "nazwa": "Sałatka big-mac z pieczonymi ziemniakami",
+    "slot": ["obiad","kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki pokrój w ćwiartki i ugotuj, ale NIE do końca — mają być jeszcze twardawe w środku.",
+      "Odcedź, osusz, wrzuć na blachę z odrobiną oleju i piecz 10 minut w 220°C, aż się zarumienią. Podgotowanie przed pieczeniem daje chrupiącą skórkę i miękki środek.",
+      "Z mielonej wołowiny uformuj płaski kotlet, smaż na mocno rozgrzanej patelni po 2-3 minuty z każdej strony.",
+      "Po obróceniu połóż na kotlecie plasterek sera — rozpuści się od ciepła mięsa.",
+      "Sos: wymieszaj jogurt naturalny, musztardę, keczup i drobno posiekany ogórek kiszony.",
+      "Na talerz połóż sałatę i cebulę, na to pokrojony kotlet z serem i ziemniaki, całość polej sosem."
+    ],
+    "skladniki": [
+      {"skladnikId":"mieso-mielone-wolowe","ilosc":150,"jednostka":"g"},
+      {"skladnikId":"ziemniaki","ilosc":250,"jednostka":"g"},
+      {"skladnikId":"ser-zolty","ilosc":25,"jednostka":"g"},
+      {"skladnikId":"salata","ilosc":60,"jednostka":"g"},
+      {"skladnikId":"cebula","ilosc":20,"jednostka":"g"},
+      {"skladnikId":"ogorek-kiszony","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"jogurt-naturalny","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"musztarda","ilosc":8,"jednostka":"g"},
+      {"skladnikId":"keczup","ilosc":12,"jednostka":"g"},
+      {"skladnikId":"olej-rzepakowy","ilosc":8,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "placek-bananowo-kakaowy-z-patelni",
+    "nazwa": "Placek bananowo-kakaowy z patelni",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Banany rozgnieć widelcem na gładko w misce — im dojrzalsze, tym słodszy wyjdzie placek.",
+      "Dodaj jajka, kakao, miód i większość masła orzechowego (łyżkę zostaw na wierzch). Wymieszaj na jednolitą masę.",
+      "Wsyp mąkę i wymieszaj. Ciasto ma być gęste, ledwo lejące się z łyżki — banany różnią się wielkością, więc zacznij od mniejszej ilości mąki i dosyp łyżkę, jeśli masa jest zbyt rzadka.",
+      "Rozgrzej olej na patelni, wylej ciasto i rozprowadź równo. Przykryj pokrywką i smaż na BARDZO małym ogniu ok. 30 min — placek ma się ściąć od góry, nie przypalić od spodu. Pokrywka jest tu kluczowa: to ona piecze wierzch parą.",
+      "Gdy wierzch przestanie być mokry, ponakłuwaj placek widelcem i polej mlekiem, żeby nasiąkł i nie wyszedł suchy.",
+      "Na wierzch połam czekoladę i rozsmaruj odłożone masło orzechowe. Przykryj jeszcze na 2-3 min, aż czekolada się rozpuści. Podawaj ciepłe, prosto z patelni."
+    ],
+    "skladniki": [
+      {"skladnikId":"banan","ilosc":2,"jednostka":"szt"},
+      {"skladnikId":"jajko","ilosc":4,"jednostka":"szt"},
+      {"nazwaGrupy":"maka","ilosc":60,"jednostka":"g","kategoria":"maka","domyslnaSkladnikId":"maka-pszenna"},
+      {"skladnikId":"maslo-orzechowe","ilosc":65,"jednostka":"g"},
+      {"skladnikId":"kakao","ilosc":20,"jednostka":"g"},
+      {"nazwaGrupy":"slodzik","ilosc":30,"jednostka":"g","kategoria":"syrop","domyslnaSkladnikId":"miod"},
+      {"skladnikId":"olej-rzepakowy","ilosc":10,"jednostka":"g"},
+      {"nazwaGrupy":"mleko","ilosc":100,"jednostka":"ml","kategoria":"mleko","domyslnaSkladnikId":"mleko-owsiane"},
+      {"skladnikId":"czekolada-gorzka","ilosc":40,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "kurczak-w-sosie-serkowym-z-makaronem",
+    "nazwa": "Kurczak w sosie serkowym z makaronem",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Zagotuj bulion w garnku — z rosołu albo z kostki rozpuszczonej w wodzie.",
+      "Włóż całą pierś do wrzącego bulionu, zmniejsz ogień i gotuj pod przykryciem ok. 30 min, aż w środku nie będzie różowa. Nie gotuj na pełnym ogniu — pierś zrobi się sucha i włóknista.",
+      "Wyjmij mięso, potnij w kostkę albo poszarp widelcem na strzępy i wrzuć z powrotem do garnka.",
+      "Dodaj całe opakowanie serka i mieszaj, aż się rozpuści, a sos zgęstnieje. Dopraw wedle uznania — sól, pieprz, czosnek, papryka słodka, zioła prowansalskie.",
+      "W tym czasie ugotuj makaron al dente według opakowania, odcedź i wrzuć do sosu. Wymieszaj i podawaj od razu."
+    ],
+    "skladniki": [
+      {"skladnikId":"bulion-drobiowy","ilosc":800,"jednostka":"ml"},
+      {"skladnikId":"kurczak-piers","ilosc":300,"jednostka":"g"},
+      {"skladnikId":"serek-kanapkowy","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"makaron-pszenny","ilosc":150,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "sernik-waniliowy-proteinowy",
+    "nazwa": "Sernik waniliowy bez spodu",
+    "slot": ["drugie-sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "4h",
+    "instrukcje": [
+      "Wszystkie składniki wrzuć do miski albo blendera i zmiksuj KRÓTKO, na niskich obrotach — tylko do połączenia. Napowietrzona masa pęka w piekarniku, to najczęstszy błąd przy tym serniku.",
+      "Laskę wanilii przekrój wzdłuż, wyskrob ziarenka i dodaj do masy razem z pastą waniliową.",
+      "Przelej masę do formy 24 cm wyłożonej papierem do pieczenia.",
+      "Piecz 60 min w 160°C (góra-dół). Nie otwieraj piekarnika w trakcie i nie podnoś temperatury — 160°C to bezpieczny zakres, wyżej sernik pęka.",
+      "Nie przepiekaj: środek ma zostać lekko sprężysty, nie suchy.",
+      "Studź stopniowo. Pierwsze 15 min zostaw w wyłączonym piekarniku, potem uchyl drzwiczki i dopiero wtedy wystudź do końca.",
+      "Po całkowitym ostygnięciu wstaw do lodówki na minimum 4 godziny — dopiero wtedy się kroi.",
+      "Jeśli mimo wszystko pękł: na gorąco wygładź wierzch tyłem gorącej łyżki, albo po ostudzeniu zaszpachluj cienką warstwą skyru z odrobiną żelatyny, polej czekoladą lub lukrem, przykryj owocami. Smak zostaje ten sam."
+    ],
+    "skladniki": [
+      {"skladnikId":"skyr-waniliowy","ilosc":750,"jednostka":"g"},
+      {"nazwaGrupy":"baza-bialkowa","ilosc":250,"jednostka":"g","kategoria":"baza-bialkowa-kremowa","domyslnaSkladnikId":"ricotta"},
+      {"skladnikId":"jogurt-grecki","ilosc":100,"jednostka":"g"},
+      {"skladnikId":"jajko","ilosc":3,"jednostka":"szt"},
+      {"skladnikId":"zoltko-jaja","ilosc":1,"jednostka":"szt"},
+      {"skladnikId":"pasta-waniliowa","ilosc":25,"jednostka":"g"},
+      {"skladnikId":"budyn-waniliowy","ilosc":35,"jednostka":"g"},
+      {"nazwaGrupy":"maka","ilosc":50,"jednostka":"g","kategoria":"maka","domyslnaSkladnikId":"maka-migdalowa"},
+      {"skladnikId":"erytrytol","ilosc":100,"jednostka":"g"},
+      {"skladnikId":"proszek-do-pieczenia","ilosc":3,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "sernik-marakuja-na-zimno",
+    "nazwa": "Sernik z marakui na zimno",
+    "slot": ["drugie-sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "<15",
+    "czasOczekiwania": "6h",
+    "instrukcje": [
+      "Żelatynę rozpuść w wodzie o temperaturze ok. 55°C albo zgodnie z instrukcją na opakowaniu. Odstaw, żeby lekko przestygła — ale nie pozwól jej zastygnąć.",
+      "Twaróg, skyr, pulpę z marakui i słodzik zblenduj. Im krócej, tym lepiej — chodzi o to, żeby nie napowietrzyć masy.",
+      "Wlej rozpuszczoną żelatynę cienkim strumieniem, cały czas mieszając, żeby nie ścięła się w nitki.",
+      "Masę przelej do formy 26 cm — silikonowej natłuszczonej albo wyłożonej papierem do pieczenia.",
+      "Wstaw do lodówki na minimum 6 godzin. Nic się nie piecze.",
+      "Zamiast erytrytolu można dać cukier trzcinowy — wyjdzie lepiej w smaku, ale doliczy ok. 390 kcal do całości, czyli ok. 48 kcal na porcję."
+    ],
+    "skladniki": [
+      {"skladnikId":"pulpa-marakui","ilosc":550,"jednostka":"g"},
+      {"nazwaGrupy":"baza-bialkowa","ilosc":600,"jednostka":"g","kategoria":"baza-bialkowa-kremowa","domyslnaSkladnikId":"twarog-chudy"},
+      {"skladnikId":"skyr-naturalny","ilosc":600,"jednostka":"g"},
+      {"skladnikId":"zelatyna","ilosc":25,"jednostka":"g"},
+      {"skladnikId":"woda","ilosc":175,"jednostka":"ml"},
+      {"nazwaGrupy":"slodzik","ilosc":100,"jednostka":"g","kategoria":"slodzik-sypki","domyslnaSkladnikId":"erytrytol"}
+    ]
+  },
+  {
+    "id": "placuszki-bananowo-kakaowe-z-cukinia",
+    "nazwa": "Placuszki bananowo-kakaowe z cukinią",
+    "slot": ["sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Cukinię pokrój w kawałki — nie trzeba jej obierać ani odciskać, i tak wszystko idzie do blendera.",
+      "Banany, jajka, mąkę, mleko, cukinię i kakao zblenduj na gęstą, jednolitą masę. Jeśli wyjdzie za gęsta, podlej odrobiną mleka.",
+      "Smaż na rozgrzanym oleju po 2-3 min z każdej strony, na średnim ogniu. Masa jest gęsta, więc na dużym ogniu placuszki przypalą się z wierzchu, a w środku zostaną surowe.",
+      "Cukinii nie czuć — daje wilgotność, a kakao zabiera jej kolor i smak."
+    ],
+    "skladniki": [
+      {"skladnikId":"banan","ilosc":2,"jednostka":"szt"},
+      {"skladnikId":"jajko","ilosc":4,"jednostka":"szt"},
+      {"nazwaGrupy":"maka","ilosc":130,"jednostka":"g","kategoria":"maka","domyslnaSkladnikId":"maka-pszenna"},
+      {"nazwaGrupy":"mleko","ilosc":250,"jednostka":"ml","kategoria":"mleko","domyslnaSkladnikId":"mleko-krowie"},
+      {"skladnikId":"cukinia","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"kakao","ilosc":45,"jednostka":"g"},
+      {"skladnikId":"olej-rzepakowy","ilosc":15,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "tteokbokki-z-mielonym-gochujang",
+    "nazwa": "Tteokbokki z mielonym w gochujang",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Jajka ugotuj na twardo i — jeśli chcesz — zamarynuj (sos sojowy z wodą, kilka godzin). Zwykłe ugotowane też są OK.",
+      "Cebulę pokrój w kostkę, czosnek w plastry, marchew w słupki.",
+      "Podsmaż cebulę na oliwie przez kilka minut, aż się zeszkli.",
+      "Dodaj mięso i smaż do zarumienienia. Wsyp paprykę słodką, sól, pieprz, płatki chili, dodaj czosnek, połowę miodu i połowę pasty gochujang — smaż jeszcze 2-3 minuty.",
+      "W garnku podgotuj bulion. Dodaj marchew, przepłukane kluski ryżowe i resztę składników na sos: miód, sos sojowy, gochujang i masło orzechowe.",
+      "Gotuj pod przykryciem do miękkości klusek. Skrobię rozprowadź w odrobinie zimnej wody i wlej do sosu, żeby zgęstniał.",
+      "Przełóż do misek, na wierzch daj mięso, jajko i posiekany szczypiorek. Dosyp płatków chili do smaku."
+    ],
+    "skladniki": [
+      {"nazwaGrupy":"bulion","ilosc":900,"jednostka":"ml","kategoria":"bulion","domyslnaSkladnikId":"bulion-warzywny"},
+      {"skladnikId":"kluski-ryzowe-tteok","ilosc":600,"jednostka":"g"},
+      {"skladnikId":"mieso-mielone-z-szynki","ilosc":500,"jednostka":"g"},
+      {"skladnikId":"marchew","ilosc":3,"jednostka":"szt"},
+      {"skladnikId":"cebula","ilosc":100,"jednostka":"g"},
+      {"skladnikId":"gochujang","ilosc":60,"jednostka":"g"},
+      {"skladnikId":"miod","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"sos-sojowy","ilosc":30,"jednostka":"ml"},
+      {"skladnikId":"maslo-orzechowe","ilosc":30,"jednostka":"g"},
+      {"skladnikId":"skrobia-ziemniaczana","ilosc":10,"jednostka":"g"},
+      {"skladnikId":"oliwa-z-oliwek","ilosc":10,"jednostka":"g"},
+      {"skladnikId":"papryka-slodka-mielona","ilosc":8,"jednostka":"g"},
+      {"skladnikId":"czosnek","ilosc":9,"jednostka":"g"},
+      {"skladnikId":"jajko","ilosc":4,"jednostka":"szt"},
+      {"skladnikId":"szczypiorek","ilosc":30,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "sernik-jablkowo-cynamonowy",
+    "nazwa": "Sernik jabłkowo-cynamonowy",
+    "slot": ["drugie-sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "4h",
+    "instrukcje": [
+      "Jabłka pokrój w kostkę i podsmaż na patelni z łyżką cynamonu i łyżeczką kardamonu, aż zmiękną.",
+      "Do podsmażonych jabłek dodaj sok z cytryny i skrobię ziemniaczaną, wymieszaj i zdejmij z ognia — skrobia zwiąże sok, żeby nie rozmoczył masy.",
+      "Resztę składników (twaróg, jogurt grecki, serek wiejski, skyr, jajka, erytrytol, budyń, pastę waniliową, skórkę z cytryny, pozostały cynamon) zblenduj krótko, tylko do połączenia.",
+      "Do formy 26 cm wyłożonej papierem przelej najpierw masę serową, a na wierzch rozłóż jabłka.",
+      "Piecz 60 min w 160°C (góra-dół).",
+      "Studź stopniowo w uchylonym piekarniku, potem wstaw do lodówki na minimum 4 godziny."
+    ],
+    "skladniki": [
+      {"nazwaGrupy":"baza-bialkowa","ilosc":600,"jednostka":"g","kategoria":"baza-bialkowa-kremowa","domyslnaSkladnikId":"twarog-polnotlusty"},
+      {"skladnikId":"skyr-naturalny","ilosc":500,"jednostka":"g"},
+      {"skladnikId":"serek-wiejski","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"jogurt-grecki","ilosc":100,"jednostka":"g"},
+      {"skladnikId":"jajko","ilosc":4,"jednostka":"szt"},
+      {"skladnikId":"jablko","ilosc":500,"jednostka":"g"},
+      {"nazwaGrupy":"slodzik","ilosc":100,"jednostka":"g","kategoria":"slodzik-sypki","domyslnaSkladnikId":"erytrytol"},
+      {"skladnikId":"budyn-waniliowy","ilosc":35,"jednostka":"g"},
+      {"skladnikId":"skrobia-ziemniaczana","ilosc":30,"jednostka":"g"},
+      {"skladnikId":"cynamon","ilosc":24,"jednostka":"g"},
+      {"skladnikId":"kardamon","ilosc":8,"jednostka":"g"},
+      {"skladnikId":"pasta-waniliowa","ilosc":13,"jednostka":"g"},
+      {"skladnikId":"cytryna","ilosc":40,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "ciasto-proteinowe-kasza-manna-borowki",
+    "nazwa": "Ciasto proteinowe z kaszy manny z borówkami",
+    "slot": ["drugie-sniadanie", "podwieczorek"],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Wszystko oprócz borówek zblenduj na gładką masę — jajka, skyr, pudding proteinowy, kaszę mannę, odżywkę i proszek do pieczenia.",
+      "Odstaw masę na kilka minut, żeby kasza manna napęczniała. Bez tego ciasto wychodzi ziarniste.",
+      "Przelej do formy wyłożonej papierem, a borówki rozłóż dopiero na wierzchu — wrzucone do blendera zafarbowałyby całość.",
+      "Piecz 30 min w 170°C (góra-dół).",
+      "Wystudź przed krojeniem. Na ciepło ciasto jest jeszcze kruche i się rozpada."
+    ],
+    "skladniki": [
+      {"skladnikId":"pudding-proteinowy","ilosc":400,"jednostka":"g"},
+      {"skladnikId":"skyr-naturalny","ilosc":350,"jednostka":"g"},
+      {"skladnikId":"kasza-manna","ilosc":120,"jednostka":"g"},
+      {"nazwaGrupy":"odzywka","ilosc":90,"jednostka":"g","kategoria":"odzywka-bialkowa","domyslnaSkladnikId":"odzywka-bialkowa-whey"},
+      {"skladnikId":"jajko","ilosc":2,"jednostka":"szt"},
+      {"nazwaGrupy":"owoc","ilosc":150,"jednostka":"g","kategoria":"owoc-jagodowy","domyslnaSkladnikId":"borowki"},
+      {"skladnikId":"proszek-do-pieczenia","ilosc":8,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "pizza-buleczki-z-serka-wiejskiego",
+    "nazwa": "Pizza-bułeczki z serka wiejskiego",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Serek wiejski odcedź z płynu i zblenduj z jajkiem na gładko.",
+      "Dodaj mąkę, proszek do pieczenia, oregano i czosnek granulowany, 25 g startej mozzarelli oraz pokrojoną szynkę. Wymieszaj na zwarte ciasto.",
+      "Uformuj bułeczki i ułóż je na blasze wyłożonej papierem.",
+      "Każdą polej sosem do pizzy i posyp resztą mozzarelli (50 g). Jeśli masz ochotę, dołóż pepperoni albo inne dodatki.",
+      "Piecz 30 min w 200°C."
+    ],
+    "skladniki": [
+      {"skladnikId":"serek-wiejski","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"jajko","ilosc":1,"jednostka":"szt"},
+      {"skladnikId":"maka-pszenna","ilosc":75,"jednostka":"g"},
+      {"skladnikId":"mozzarella","ilosc":75,"jednostka":"g"},
+      {"skladnikId":"szynka","ilosc":80,"jednostka":"g"},
+      {"skladnikId":"sos-pomidorowy","ilosc":60,"jednostka":"g"},
+      {"skladnikId":"oregano","ilosc":1,"jednostka":"g"},
+      {"skladnikId":"czosnek-granulowany","ilosc":2,"jednostka":"g"},
+      {"skladnikId":"proszek-do-pieczenia","ilosc":2,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "warzywa-z-serem-smazeniowym",
+    "nazwa": "Mrożone warzywa z serem smażeniowym",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Wysyp całą paczkę mrożonych warzyw na rozgrzaną patelnię i smaż, aż będą prawie gotowe. Nie przykrywaj — mają odparować, a nie się ugotować.",
+      "Ser pokrój w kostkę i wrzuć na patelnię. Smaż chwilę, aż zmięknie i oblepi warzywa.",
+      "Dopraw do smaku. Ser jest słony sam z siebie, więc sól dodawaj dopiero na końcu i ostrożnie.",
+      "Jeśli patelnia nie jest nieprzywierająca, dolej odrobinę oleju na start — ser sam puści tłuszcz dopiero pod koniec."
+    ],
+    "skladniki": [
+      {"skladnikId":"warzywa-mrozone","ilosc":450,"jednostka":"g"},
+      {"skladnikId":"ser-smazeniowy","ilosc":200,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "curry-z-czerwonej-soczewicy",
+    "nazwa": "Curry z czerwonej soczewicy z ryżem",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "BAZA SMAKOWA: rozgrzej oliwę w dużym garnku. Wrzuć posiekaną cebulę i smaż 3 minuty.",
+      "Dodaj starty czosnek i imbir, płatki chili, curry, kmin, kolendrę i kurkumę. Smaż jeszcze minutę. Jeśli garnek się przypala, chlusnij dwiema łyżkami wody — przyprawy mają się rozgrzać w tłuszczu, nie przypalić.",
+      "SOCZEWICA: wlej bulion, pomidory z puszki i mleko kokosowe, wsyp przepłukaną soczewicę. Dopraw solą i świeżo mielonym pieprzem.",
+      "Zagotuj, potem zmniejsz ogień i gotuj na wolnym ogniu ok. 20 minut, aż soczewica będzie miękka. Mieszaj co jakiś czas, bo soczewica lubi osiadać na dnie.",
+      "Na koniec wmieszaj garam masalę. Jeśli wolisz rzadsze curry, dolej bulionu do uzyskanej konsystencji.",
+      "Ugotuj ryż basmati według opisu na opakowaniu.",
+      "PODANIE: curry na ryżu, do tego sok z cytryny, świeża kolendra albo natka pietruszki i kleks jogurtu greckiego (roślinny też zadziała)."
+    ],
+    "skladniki": [
+      {"skladnikId":"soczewica-czerwona","ilosc":220,"jednostka":"g"},
+      {"nazwaGrupy":"skrobia","ilosc":400,"jednostka":"g","kategoria":"skrobia-obiadowa","domyslnaSkladnikId":"ryz-bialy-surowy"},
+      {"skladnikId":"mleko-kokosowe-z-puszki","ilosc":400,"jednostka":"g"},
+      {"skladnikId":"pomidory-krojone","ilosc":400,"jednostka":"g"},
+      {"nazwaGrupy":"bulion","ilosc":500,"jednostka":"g","kategoria":"bulion","domyslnaSkladnikId":"bulion-warzywny"},
+      {"skladnikId":"cebula","ilosc":110,"jednostka":"g"},
+      {"skladnikId":"oliwa-z-oliwek","ilosc":20,"jednostka":"g"},
+      {"skladnikId":"jogurt-grecki","ilosc":60,"jednostka":"g"},
+      {"skladnikId":"cytryna","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"imbir","ilosc":10,"jednostka":"g"},
+      {"skladnikId":"czosnek","ilosc":6,"jednostka":"g"},
+      {"skladnikId":"curry-w-proszku","ilosc":5,"jednostka":"g"},
+      {"skladnikId":"kolendra-mielona","ilosc":4,"jednostka":"g"},
+      {"skladnikId":"kurkuma","ilosc":3,"jednostka":"g"},
+      {"skladnikId":"kmin-rzymski","ilosc":2,"jednostka":"g"},
+      {"skladnikId":"garam-masala","ilosc":2,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "ramen-serowy-z-wolowina",
+    "nazwa": "Ramen serowy z wołowiną i boczkiem",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "BULION: na maśle usmaż posiekaną cebulę, czosnek i wołowinę. Pod koniec wlej część sosu sojowego.",
+      "W tym samym garnku usmaż boczek na chrupko i wyjmij go — zostanie do posypania na koniec.",
+      "Przestudzony tłuszcz z garnka połącz z wodą i kostką rosołową. Gotuj 15 minut i zblenduj na kremowo.",
+      "SEROWE TARE: w rondelku rozpuść masło ze śmietanką, serkiem topionym i startym ementalerem. Dodaj miso i resztę sosu sojowego, mieszaj do gładkości.",
+      "DODATKI: jajka gotuj 6,5 minuty, zahartuj w zimnej wodzie i obierz — żółtko ma zostać płynne. Opcjonalnie zapanieruj je i usmaż na złoto.",
+      "Poszatkuj sałatę lodową, pokrój czerwoną cebulę w piórka, posiekaj szczypiorek.",
+      "SKŁADANIE: do miski przełóż serowe tare, wlej gorący bulion i wymieszaj. Dodaj ugotowany makaron, sałatę, chrupiący boczek, wołowinę, jajko, cebulę, szczypiorek i żurawinę. Na koniec opcjonalnie olej chili."
+    ],
+    "skladniki": [
+      {"skladnikId":"mieso-mielone-wolowe","ilosc":300,"jednostka":"g"},
+      {"skladnikId":"boczek","ilosc":100,"jednostka":"g"},
+      {"skladnikId":"makaron-ramen","ilosc":320,"jednostka":"g"},
+      {"skladnikId":"maslo","ilosc":100,"jednostka":"g"},
+      {"nazwaGrupy":"bulion","ilosc":1000,"jednostka":"ml","kategoria":"bulion","domyslnaSkladnikId":"bulion-drobiowy"},
+      {"skladnikId":"serek-topiony","ilosc":160,"jednostka":"g"},
+      {"nazwaGrupy":"ser","ilosc":160,"jednostka":"g","kategoria":"ser-zolty-twardy","domyslnaSkladnikId":"ementaler"},
+      {"skladnikId":"smietanka-30","ilosc":160,"jednostka":"ml"},
+      {"skladnikId":"pasta-miso","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"sos-sojowy","ilosc":100,"jednostka":"ml"},
+      {"skladnikId":"jajko","ilosc":4,"jednostka":"szt"},
+      {"skladnikId":"cebula","ilosc":330,"jednostka":"g"},
+      {"skladnikId":"czosnek","ilosc":12,"jednostka":"g"},
+      {"skladnikId":"salata","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"szczypiorek","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"zurawina-suszona","ilosc":40,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "patelnia-yolo-mielone-pieczarki-ziemniaki",
+    "nazwa": "Patelnia yolo: mielone z pieczarkami i ziemniakami w passacie",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Cebulę posiekaj, pieczarki pokrój w plasterki. Podsmażaj razem na oleju, aż pieczarki odparują wodę i ładnie się przyrumienią (ok. 8-10 min).",
+      "Dorzuć mięso mielone (wołowe, wieprzowe albo drobiowe — jakie masz), rozbij łopatką na drobno i smaż, aż straci surowy kolor i się podsmaży.",
+      "Wrzuć ugotowane ziemniaki pokrojone w kostkę i chwilę podsmaż razem z resztą.",
+      "Zalej passatą, dopraw solą, pieprzem i czym lubisz (słodka papryka, czosnek, oregano). Poczekaj, aż sos się zagotuje i lekko zgęstnieje — gotowe."
+    ],
+    "skladniki": [
+      {"skladnikId":"cebula","ilosc":100,"jednostka":"g"},
+      {"skladnikId":"pieczarki","ilosc":200,"jednostka":"g"},
+      {"nazwaGrupy":"mieso-mielone","ilosc":400,"jednostka":"g","kategoria":"mieso-mielone","domyslnaSkladnikId":"mieso-mielone-wolowe"},
+      {"skladnikId":"ziemniaki","ilosc":300,"jednostka":"g"},
+      {"skladnikId":"sos-pomidorowy","ilosc":350,"jednostka":"g"},
+      {"skladnikId":"olej-rzepakowy","ilosc":10,"jednostka":"g"}
+    ]
+  },
+  {
+    "id": "turecka-kanapka-kotlety-z-soczewicy",
+    "nazwa": "Turecka kanapka z chrupiącymi kotletami z soczewicy i sosem jogurtowym",
+    "slot": ["obiad", "kolacja"],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "KOTLETY: soczewicę opłucz i wrzuć do garnka z obranym ziemniakiem, połową cebuli i marchewkami. Zalej wodą, posól i gotuj do miękkości (ok. 20-25 min), potem dokładnie odcedź.",
+      "Ugotowane składniki rozgnieć tłuczkiem na gładką masę. Dodaj bułkę tartą, posiekaną natkę (zostaw garść do podania), słodką paprykę i kumin, dopraw solą i pieprzem. Jeśli masa za bardzo się klei, dosyp bułki tartej.",
+      "Uformuj ok. 12 płaskich kotletów i smaż na oleju z obu stron na złoto i chrupko (ok. 3-4 min na stronę).",
+      "SOS: jogurt wymieszaj ze startym, odciśniętym ogórkiem i przeciśniętym czosnkiem, dopraw solą.",
+      "DODATKI: drugą połowę cebuli pokrój w cienkie piórka i wymieszaj z resztą natki (jeśli masz, posyp sumakiem). Pomidory pokrój w plastry.",
+      "SKŁADANIE: pitę lekko podgrzej, posmaruj sosem, włóż 2 kotlety, pomidory i cebulę z natką. Opcjonalnie dorzuć ogórki kiszone i grillowaną zieloną paprykę.",
+      "Meal prep: kotlety trzymaj w lodówce do 4 dni, a sos i warzywa osobno — kanapkę składaj tuż przed jedzeniem, żeby pita nie rozmiękła."
+    ],
+    "skladniki": [
+      {"nazwaGrupy":"soczewica","ilosc":400,"jednostka":"g","kategoria":"soczewica","domyslnaSkladnikId":"soczewica-zielona"},
+      {"skladnikId":"ziemniaki","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"cebula","ilosc":200,"jednostka":"g"},
+      {"skladnikId":"marchew","ilosc":2,"jednostka":"szt"},
+      {"skladnikId":"bulka-tarta","ilosc":110,"jednostka":"g"},
+      {"skladnikId":"natka-pietruszki","ilosc":40,"jednostka":"g"},
+      {"skladnikId":"papryka-slodka-mielona","ilosc":5,"jednostka":"g"},
+      {"skladnikId":"kmin-rzymski","ilosc":2,"jednostka":"g"},
+      {"skladnikId":"olej-rzepakowy","ilosc":30,"jednostka":"g"},
+      {"skladnikId":"pita","ilosc":6,"jednostka":"szt"},
+      {"skladnikId":"pomidor","ilosc":300,"jednostka":"g"},
+      {"nazwaGrupy":"jogurt","ilosc":300,"jednostka":"g","kategoria":"jogurt","domyslnaSkladnikId":"jogurt-grecki"},
+      {"skladnikId":"ogorek","ilosc":120,"jednostka":"g"},
+      {"skladnikId":"czosnek","ilosc":6,"jednostka":"g"}
+    ]
+  }
+]

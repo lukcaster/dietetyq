@@ -1,0 +1,444 @@
+[
+  {
+    "id": "kanapka",
+    "nazwa": "Kanapki",
+    "sloty": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "podwieczorek",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "pieczywo",
+        "role": [
+          "pieczywo"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "coś na wierzch",
+        "role": [
+          "wedlina",
+          "ser",
+          "jajko",
+          "baza-kremowa"
+        ],
+        "wymagane": true,
+        "ile": 2
+      },
+      {
+        "etykieta": "warzywo",
+        "role": [
+          "warzywo"
+        ],
+        "wymagane": false,
+        "ile": 2
+      },
+      {
+        "etykieta": "sos",
+        "role": [
+          "sos"
+        ],
+        "wymagane": false
+      }
+    ]
+  },
+  {
+    "id": "owsianka",
+    "nazwa": "Owsianka",
+    "sloty": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "podwieczorek",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "płatki",
+        "role": [
+          "platki"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "na czym",
+        "role": [
+          "mleko",
+          "jogurt"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "białko",
+        "role": [
+          "baza-kremowa",
+          "odzywka",
+          "jogurt"
+        ],
+        "wymagane": false
+      },
+      {
+        "etykieta": "owoc",
+        "role": [
+          "owoc"
+        ],
+        "wymagane": false,
+        "ile": 2
+      },
+      {
+        "etykieta": "dodatek",
+        "role": [
+          "dodatek-slodki",
+          "posypka"
+        ],
+        "wymagane": false,
+        "ile": 2
+      }
+    ]
+  },
+  {
+    "id": "miska-bialkowa",
+    "nazwa": "Miska białkowa na słodko",
+    "sloty": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "podwieczorek",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "baza",
+        "role": [
+          "baza-kremowa",
+          "jogurt"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "owoc",
+        "role": [
+          "owoc"
+        ],
+        "wymagane": true,
+        "ile": 2
+      },
+      {
+        "etykieta": "dodatek",
+        "role": [
+          "dodatek-slodki",
+          "posypka",
+          "platki"
+        ],
+        "wymagane": false,
+        "ile": 2
+      }
+    ]
+  },
+  {
+    "id": "jajka-na-cieplo",
+    "nazwa": "Jajecznica / omlet",
+    "sloty": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "jajka",
+        "role": [
+          "jajko"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "tłuszcz",
+        "role": [
+          "tluszcz"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "wsad",
+        "role": [
+          "wedlina",
+          "ser",
+          "warzywo"
+        ],
+        "wymagane": false,
+        "ile": 3
+      },
+      {
+        "etykieta": "pieczywo",
+        "role": [
+          "pieczywo"
+        ],
+        "wymagane": false
+      }
+    ]
+  },
+  {
+    "id": "danie-na-cieplo",
+    "nazwa": "Danie na ciepło",
+    "sloty": [
+      "obiad",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "białko",
+        "role": [
+          "mieso",
+          "jajko",
+          "ser"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "skrobia",
+        "role": [
+          "kasza-ryz",
+          "ziemniaki"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "warzywo",
+        "role": [
+          "warzywo"
+        ],
+        "wymagane": false,
+        "ile": 3
+      },
+      {
+        "etykieta": "tłuszcz",
+        "role": [
+          "tluszcz"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "sos",
+        "role": [
+          "sos"
+        ],
+        "wymagane": false
+      }
+    ]
+  },
+  {
+    "id": "wrap",
+    "nazwa": "Tortilla / wrap",
+    "sloty": [
+      "drugie-sniadanie",
+      "obiad",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "tortilla",
+        "role": [
+          "tortilla"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "białko",
+        "role": [
+          "mieso",
+          "wedlina",
+          "ser",
+          "jajko"
+        ],
+        "wymagane": true,
+        "ile": 2
+      },
+      {
+        "etykieta": "warzywo",
+        "role": [
+          "warzywo"
+        ],
+        "wymagane": false,
+        "ile": 3
+      },
+      {
+        "etykieta": "sos",
+        "role": [
+          "sos"
+        ],
+        "wymagane": false
+      }
+    ]
+  },
+  {
+    "id": "salatka",
+    "nazwa": "Sałatka",
+    "sloty": [
+      "drugie-sniadanie",
+      "obiad",
+      "podwieczorek",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "warzywa",
+        "role": [
+          "warzywo"
+        ],
+        "wymagane": true,
+        "ile": 3
+      },
+      {
+        "etykieta": "białko",
+        "role": [
+          "mieso",
+          "ser",
+          "jajko",
+          "wedlina"
+        ],
+        "wymagane": true,
+        "ile": 2
+      },
+      {
+        "etykieta": "tłuszcz",
+        "role": [
+          "tluszcz"
+        ],
+        "wymagane": false
+      },
+      {
+        "etykieta": "pieczywo",
+        "role": [
+          "pieczywo"
+        ],
+        "wymagane": false
+      }
+    ]
+  },
+  {
+    "id": "kasza-na-mleku",
+    "nazwa": "Ryż / kasza na mleku",
+    "sloty": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "kasza lub ryż",
+        "role": [
+          "kasza-ryz"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "na czym",
+        "role": [
+          "mleko",
+          "jogurt"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "owoc",
+        "role": [
+          "owoc"
+        ],
+        "wymagane": false,
+        "ile": 2
+      },
+      {
+        "etykieta": "dodatek",
+        "role": [
+          "dodatek-slodki",
+          "posypka"
+        ],
+        "wymagane": false,
+        "ile": 2
+      }
+    ]
+  },
+  {
+    "id": "koktajl",
+    "nazwa": "Koktajl",
+    "sloty": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "baza",
+        "role": [
+          "mleko",
+          "jogurt"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "białko",
+        "role": [
+          "odzywka",
+          "baza-kremowa"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "owoc",
+        "role": [
+          "owoc"
+        ],
+        "wymagane": true,
+        "ile": 2
+      },
+      {
+        "etykieta": "dodatek",
+        "role": [
+          "dodatek-slodki",
+          "posypka",
+          "platki"
+        ],
+        "wymagane": false,
+        "ile": 2
+      }
+    ]
+  },
+  {
+    "id": "mieso-z-warzywami",
+    "nazwa": "Mięso z warzywami",
+    "sloty": [
+      "obiad",
+      "kolacja"
+    ],
+    "gniazda": [
+      {
+        "etykieta": "mięso",
+        "role": [
+          "mieso",
+          "wedlina"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "warzywa",
+        "role": [
+          "warzywo"
+        ],
+        "wymagane": true,
+        "ile": 3
+      },
+      {
+        "etykieta": "tłuszcz",
+        "role": [
+          "tluszcz"
+        ],
+        "wymagane": true
+      },
+      {
+        "etykieta": "sos",
+        "role": [
+          "sos"
+        ],
+        "wymagane": false
+      }
+    ]
+  }
+]
