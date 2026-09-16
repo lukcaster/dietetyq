@@ -269,6 +269,17 @@ Zapas z pola `dostepneIlosc` jest twardym limitem na cały dzień — dzielimy g
 
 Produkty z Open Food Facts nie mają roli kulinarnej (nikt nie otagował 4800 pozycji), więc nie mogą wypełnić gniazda. Nie wyrzucamy ich jednak z koszyka — user dodał je świadomie — tylko dokładamy jako uzupełnienie do posiłków, mówiąc wprost, że akurat tego nie potrafimy ocenić.
 
+### Skąd biorą się przepisy w bazie
+Baza jest **kuratorowana ręcznie** — nie ma w niej importu z internetu i nie ma być. Część pozycji powstała z planów dietetycznych, które user kupił dla siebie, i przy ich przenoszeniu obowiązuje zasada, którą warto znać przy kolejnych takich importach:
+
+> **Bierzemy dane, nie cudze teksty.** Lista składników z gramaturą to w praktyce fakt i nikt jej nie chroni. Opis przygotowania to już czyjś tekst — a aplikacja stoi publicznie pod otwartym linkiem. Dlatego **instrukcje piszemy sami**, własnymi słowami, w stylu reszty bazy (3-5 kroków, tryb rozkazujący), a nazwy dań upraszczamy.
+
+Reguły techniczne takiego importu:
+- **Przyprawy i drobiazgi nie wchodzą do składników** (sól, pieprz, zioła, ocet, sok z cytryny, woda) — zostają w treści instrukcji, tak jak w całej bazie. Inaczej tryb „z lodówki" wymagałby mielonej papryki w koszyku i przepis nigdy by się nie łapał.
+- **Mapowanie nazw na składniki bazy jest ręczne.** Dopasowanie automatyczne (po podobieństwie słów) dawało „Łosoś świeży → imbir" i „Śliwki suszone → oregano", więc zostało wyrzucone.
+- **Kontrola makro:** dla każdego przepisu liczymy makro z naszej bazy i porównujemy z wartościami podanymi w źródle. Przy imporcie 150 przepisów 138 mieściło się w 15% (mediana 4%); pozycje z rozjazdem powyżej 20% **odpadły**, bo taki rozjazd zwykle znaczy, że parser zgubił składnik.
+- Przepisy z markowymi półproduktami („Pinsa", gotowe ciasto na gofry, konkretna granola) odpadają — baza opisuje jedzenie, nie asortyment sklepu.
+
 ### „Dokup i zrobisz" (`lib/engine/propozycje-dokupienia.ts`)
 Plan dnia bierze tylko przepisy wykonalne w 100% — ale ktoś, kto ma jajka i mleko, a nie ma mąki, jest o jedną rzecz od naleśników. Dlatego odpowiedź `/api/z-lodowki` ma pole `propozycje`: dla każdego przepisu głównego pasującego do wybranych slotów liczymy, co user **ma**, a czego **brakuje** (grupy wyboru spełnia dowolny składnik z kategorii, komponenty rozbijamy na surowce, powtórzony składnik liczy się raz).
 

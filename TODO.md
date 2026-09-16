@@ -1,5 +1,17 @@
 # TODO — do zrobienia w następnej sesji
 
+## 17. Import przepisów z planów PDF — ZROBIONE, co dalej
+Z 7 PDF-ów (plany dietetyczne kupione przez usera) wyciągnięte zostały przepisy: `pdftotext -layout` + parser kolumn, ręczne mapowanie nazw składników, własne instrukcje. Baza urosła z **56 do 199 przepisów** i z 134 do **217 składników**. Zasady importu w SPEC („Skąd biorą się przepisy w bazie").
+
+Liczby z przebiegu: 175 nagłówków w PDF-ach → 167 sparsowanych → 150 po mapowaniu składników → **143 w bazie** (7 odpadło na kontroli makro, 17 wcześniej na markowych półproduktach typu „Pinsa" czy granola konkretnej firmy).
+
+Co dalej:
+- **83 nowe składniki nie mają `mikroNa100g`** i wypadają z bilansu mikroskładników (sprawdzarka to zgłasza). Mapowania USDA są już dopisane w `scripts/import-mikro.mjs`, więc wystarczy puścić `npm run import-mikro --zapisz` z darmowym kluczem USDA.
+- **Makro nowych składników jest z tabel, nie z etykiet.** Zwłaszcza pozycje przetworzone (hummus, sos barbecue, pieczywo chrupkie) potrafią się różnić między producentami.
+- **Przekąski typu „jabłko + orzechy" pokrywają się w 70-75%** (sprawdzarka je pokazuje). To świadome: różnią się rodzajem orzechów. Gdyby przeszkadzały, najprościej zwinąć je do jednego przepisu z grupą wyboru.
+- **Siódmy PDF (dieta hiszpańska) ma inny układ i nie został zaimportowany** — parser nie znalazł w nim ani jednego nagłówka posiłku.
+- Część przepisów jest na 1 porcję ~800 kcal (plany były liczone na 2900 kcal dziennie). Silnik i tak je przeskalowuje, ale przy niskim celu kalorycznym wychodzą z tego małe porcje.
+
 ## 16. Domykanie białka zwykłym jedzeniem — ZROBIONE, co dalej
 Zgłoszenie i zarazem **zasada produktowa**: „nie chcę, żeby to było »jedz białko, syp odżywkę, bo nie będziesz fit«. W tej apce chodzi o to, żeby zdrowiej jeść, a nie trzymać makro jak strongwoman". Zamiast tego: jak w jakimś dniu brakuje białka, niech silnik dorzuci plaster szynki do śniadania albo trochę więcej mięsa do obiadu.
 
