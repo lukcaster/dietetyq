@@ -1,5 +1,21 @@
 # TODO — do zrobienia w następnej sesji
 
+## 16. Domykanie białka zwykłym jedzeniem — ZROBIONE, co dalej
+Zgłoszenie i zarazem **zasada produktowa**: „nie chcę, żeby to było »jedz białko, syp odżywkę, bo nie będziesz fit«. W tej apce chodzi o to, żeby zdrowiej jeść, a nie trzymać makro jak strongwoman". Zamiast tego: jak w jakimś dniu brakuje białka, niech silnik dorzuci plaster szynki do śniadania albo trochę więcej mięsa do obiadu.
+
+Zrobione (mechanika w SPEC, sekcja „Domykanie dnia"):
+- `lib/engine/domykanie.ts` — po złożeniu dnia, gdy brakuje >15 g białka, silnik dokłada do posiłków zwykłe jedzenie (szynka, ser, jajko, twaróg, skyr, serek wiejski, +50 g piersi do obiadu z kurczakiem). Maks. 3 dosypki dziennie, sufit +5% kcal, losowanie zamiast „zawsze najbardziej białkowa opcja".
+- **Odżywki białkowe wypadły z automatu** — gotowiec sięgnie po whey tylko wtedy, gdy user sam ją zaznaczy jako lubianą. W przepisach zostają (fit pampuchy, naleśniki proteinowe to świadome przepisy z bazy).
+- Ton UI na widoku planu: „to są widełki, nie normy do wyrobienia".
+
+Zmierzone: dni z 93-120 g białka wychodzą po domknięciu na 100-160 g przy celu 165.
+
+Co dalej:
+- **Przy braku zapasu kalorii dzień zostaje nisko** (widziany przypadek: 100 g przy celu 165, bo kcal już były wyczerpane). Sensowniejsze niż dokładanie byłoby wtedy **zamienienie** czegoś — np. jogurt naturalny zamiast słodkiego — ale to wymaga mechanizmu podmiany składnika, nie dokładania.
+- **Lista kandydatów jest ręczna i mięsno-nabiałowa.** Dla kogoś bez laktozy zostaje głównie szynka i jajko. Warto dorzucić strączki, rybę i coś roślinnego (tofu, hummus).
+- **Dosypka nie trafia do instrukcji przygotowania** — „jajko na twardo" pojawia się jako dopisek, ale przepis o nim nie wie.
+- Nie ma domykania w trybie „z lodówki" — tam dokładanie musiałoby pytać, czy user w ogóle to ma.
+
 ## 15. Powtarzalny plan tygodniowy + „gotowce" — ZROBIONE, co dalej
 Zgłoszenie: „plan na tydzień, a codziennie mam te same przepisy". Zmierzone: przy **wybranym charakterze posiłku** pula potrafi zejść do jednego przepisu (wytrawne drugie śniadanie = 1 przepis w bazie) i user dostaje go 7 razy. Bez charakteru było 7/7 unikalnych już wcześniej — więc winny był filtr, nie losowanie.
 
@@ -11,7 +27,7 @@ Trzy zmiany (mechanika w SPEC):
 Zmierzone po zmianie: 7/7 unikalnych w każdym slocie, kcal dnia w granicach 2% od celu.
 
 Co dalej boli:
-- **Białko dalej skacze** (117-184 g przy celu 165) i gotowce to pogłębiają — porcja jogurtu z owocami po prostu nie ma z czego dobić białka. To jest TODO 7 widziane z drugiej strony; docelowo cel makro powinien być liczony na dzień, a nie sztywno dzielony wagami slotów.
+- ~~**Białko dalej skacze**~~ — częściowo załatwione domykaniem dnia, patrz punkt 16.
 - **Przy podwójnej restrykcji (bez laktozy i glutenu) drugie śniadanie schodzi do 3/7 unikalnych.** Szablony się kończą i zaczynają wracać z podobnym składem.
 - **`SZANSA_NA_GOTOWIEC` jest wpisana z głowy** (0,6 / 0,5 / 0,25 / 0,2 / 0) — nikt tego nie kalibrował, a to steruje charakterem całego planu. Naturalne rozwinięcie: pytanie w formularzu „ile chcesz gotować".
 - **Gotowiec nie ma czasu przygotowania ani charakteru** (słodkie/wytrawne), więc nie da się go filtrować tak jak przepisu.

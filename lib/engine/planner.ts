@@ -1,4 +1,5 @@
 import { getIngredientById, getRecipes } from "./data";
+import { domknijBialko, makroDosypek, type Dosypka } from "./domykanie";
 import { zlozGotowiec } from "./gotowce";
 import { zbudujListeZakupow, type PozycjaListyZakupow, type SkladnikBazowyWPlanie } from "./lista-zakupow";
 import {
@@ -177,6 +178,12 @@ export interface PosilekWPlanie {
    * „nic nie gotujesz, składasz". UI oznacza go osobnym znacznikiem.
    */
   gotowiec?: boolean;
+  /**
+   * Zwykłe jedzenie dołożone do posiłku, żeby domknąć białko dnia („plaster szynki").
+   * Wliczone już w `makro` i w `skladnikiBazowe`, ale trzymane osobno, żeby UI mogło
+   * powiedzieć wprost, co jest z przepisu, a co dołożone — patrz domykanie.ts.
+   */
+  dosypki?: Dosypka[];
 }
 
 export interface DzienWPlanie {
@@ -446,6 +453,36 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
         makro: makroFinalne,
         dodatki: dodatki.length > 0 ? dodatki : undefined,
       });
+    }
+
+    /**
+     * Domknięcie dnia: jeśli po złożeniu wszystkich posiłków brakuje sporo białka, dokładamy
+     * do nich zwykłe jedzenie (plaster szynki, jajko, trochę więcej mięsa do obiadu). Robimy
+     * to PO doborze dań, a nie przez dobór — patrz domykanie.ts: apka ma pomagać jeść zdrowiej,
+     * a nie dobierać każdy posiłek pod tabelkę makro.
+     */
+    const makroPrzedDomknieciem = posilki.reduce((suma, p) => dodajMakro(suma, p.makro), pustaMakro());
+    const { dosypki } = domknijBialko(
+      posilki.map((p) => ({
+        slot: p.slot,
+        charakter: p.charakter,
+        skladnikiId: p.skladnikiBazowe.map((s) => s.skladnikId),
+        makro: p.makro,
+      })),
+      makroPrzedDomknieciem,
+      makroDzienne,
+      filtr
+    );
+
+    for (const [indeks, dolozone] of dosypki) {
+      const posilek = posilki[indeks];
+      posilek.dosypki = dolozone;
+      posilek.makro = dodajMakro(posilek.makro, makroDosypek(dolozone));
+      // Do listy zakupów i bilansu mikro dosypka musi wejść jak każdy inny składnik.
+      posilek.skladnikiBazowe = [
+        ...posilek.skladnikiBazowe,
+        ...dolozone.map((d) => ({ skladnikId: d.skladnikId, nazwa: d.nazwa, ilosc: d.ilosc, jednostka: d.jednostka })),
+      ];
     }
 
     const makroDnia = posilki.reduce((suma, p) => dodajMakro(suma, p.makro), pustaMakro());

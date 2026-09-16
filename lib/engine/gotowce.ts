@@ -252,6 +252,10 @@ export function zlozGotowiec(zapytanie: ZapytanieOGotowiec): Gotowiec | null {
     (s) =>
       s.rolaKulinarna !== undefined &&
       !ROLE_POMIJANE.has(s.rolaKulinarna) &&
+      // Odżywka białkowa wchodzi tylko wtedy, gdy user sam ją zaznaczył jako lubianą.
+      // Inaczej silnik „domykał" białko sypnięciem whey do koktajlu — a ta apka ma pomagać
+      // jeść zdrowiej, nie robić z każdego posiłku suplementacji.
+      (s.rolaKulinarna !== "odzywka" || lubiane.has(s.id)) &&
       !skladnikOdrzucony(s, zapytanie.filtr)
   );
 

@@ -656,9 +656,16 @@ export default function Home() {
         {krok === 5 && plan && !kreatorDla && (
           <>
             <h2>Twój plan na tydzień</h2>
+            <p className="podtytul" style={{ marginBottom: 8 }}>
+              Orientacyjnie: {Math.round(plan.kcalDzienne)} kcal/dzień · B:{" "}
+              {Math.round(plan.makroDzienne.bialko)}g · T: {Math.round(plan.makroDzienne.tluszcz)}g · W:{" "}
+              {Math.round(plan.makroDzienne.wegle)}g
+            </p>
+            {/* Ton jest tu celowy: makro ma być wskazówką, a nie oceną dnia. */}
             <p className="podtytul">
-              Cel: {Math.round(plan.kcalDzienne)} kcal/dzień · B: {Math.round(plan.makroDzienne.bialko)}g · T:{" "}
-              {Math.round(plan.makroDzienne.tluszcz)}g · W: {Math.round(plan.makroDzienne.wegle)}g
+              To są widełki, nie normy do wyrobienia. Dzień, w którym białko wyjdzie trochę niżej, jest
+              w porządku — gdy brakuje go naprawdę sporo, silnik dokłada do posiłku zwykłe jedzenie
+              (plaster szynki, jajko, trochę więcej mięsa), a nie odżywkę.
             </p>
 
             {plan.ostrzezenia?.map((tekst, i) => (
@@ -684,6 +691,11 @@ export default function Home() {
                       {Math.round(posilek.makro.tluszcz)}g · W: {Math.round(posilek.makro.wegle)}g
                     </div>
                     {posilek.uwaga && <span className="uwaga">⚠ {posilek.uwaga}</span>}
+                    {posilek.dosypki?.map((d, j) => (
+                      <div key={j} className="dosypka">
+                        ➕ Do tego: <strong>{d.opis}</strong>
+                      </div>
+                    ))}
                     <div className="posilek-akcje">
                       <button
                         className="btn-maly"
@@ -734,6 +746,14 @@ export default function Home() {
                         {Math.round(posilek.makro.tluszcz)}g · W: {Math.round(posilek.makro.wegle)}g
                       </div>
                       {posilek.uwaga && <span className="uwaga">⚠ {posilek.uwaga}</span>}
+
+                      {/* Dosypka jest dołożona przez silnik, a nie częścią przepisu — mówimy o tym
+                          wprost, zamiast po cichu doklejać ją do listy składników. */}
+                      {posilek.dosypki?.map((d, j) => (
+                        <div key={j} className="dosypka">
+                          ➕ Do tego: <strong>{d.opis}</strong> — dorzucone, żeby domknąć białko dnia
+                        </div>
+                      ))}
 
                       <p className="podtytul" style={{ marginTop: 10, marginBottom: 4 }}>
                         Składniki:

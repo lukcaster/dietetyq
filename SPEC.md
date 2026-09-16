@@ -187,6 +187,22 @@ Powtórki pilnowane są **w skali całego tygodnia i wszystkich slotów naraz** 
 
 Zmierzone po zmianie (2200 kcal, 5 posiłków, bez restrykcji): **7/7 unikalnych dań w każdym slocie**, 8-15 gotowców na 35 posiłków tygodnia, kcal dnia w granicach 2 % od celu. Przy podwójnej restrykcji (bez laktozy i glutenu) żaden slot nie zostaje pusty.
 
+### Domykanie dnia (`lib/engine/domykanie.ts`)
+Apka ma pomagać **jeść zdrowiej**, a nie pilnować makro jak przed zawodami. To jest decyzja produktowa, nie techniczna, i wyznacza granicę: kalorie traktujemy poważnie, makro jest widełkami, a dzień z białkiem na 90 % normy nie jest problemem do zgłaszania.
+
+Gdy jednak białka brakuje **naprawdę sporo** (ponad 15 g poniżej celu dnia), silnik nie przelicza planu od nowa — dokłada do gotowych posiłków **zwykłe jedzenie**: plaster szynki, plaster sera, jajko na twardo, łyżkę twarogu, kubek skyru, opakowanie serka wiejskiego albo 50 g piersi więcej do obiadu, w którym kurczak już jest. To pole `dosypki[]` przy posiłku; UI pokazuje je osobno („➕ Do tego: …"), bo to nie jest część przepisu.
+
+Zasady, które trzymają to w ryzach:
+- **Nigdy odżywka białkowa.** Lista kandydatów jest krótka i ręczna, bez suplementów — tak samo gotowce sięgają po odżywkę tylko wtedy, gdy user sam ją zaznaczył jako lubianą. „Sypnij whey" jest skuteczne i jest dokładnie tym, czego ta apka nie robi.
+- **Najwyżej 3 dosypki na dzień, po jednej na posiłek** i każdy składnik najwyżej raz dziennie.
+- **Sufit kalorii:** domykanie nie może wypchnąć dnia ponad 105 % celu kcal. Gdy zapasu nie ma, dzień zostaje z niższym białkiem — i tak ma być.
+- **Porcje są kuchenne, nie solverowe:** „2 plastry szynki (50 g)", a nie „47 g".
+- **Losujemy** spośród dosypek dających przynajmniej 60 % białka najlepszej opcji. Bez tego zawsze wygrywał skyr (najlepszy stosunek białka do kalorii) i user dostawał go przy każdym posiłku przez tydzień — czyli znów „apka każe mi jeść białko".
+- **Nic nie odejmujemy**, gdy białka jest za dużo.
+- Dosypki wchodzą do `skladnikiBazowe`, więc liczą się do listy zakupów i do bilansu mikro.
+
+Zmierzone (2200 kcal, 5 posiłków, cel białka 165 g): dni schodzące do 93-120 g białka wychodzą po domknięciu na 100-160 g, kalorie w granicach 105 % celu. Część dni zostaje poniżej celu, bo zabrakło zapasu kalorii — świadomie.
+
 ## Tryb „z lodówki" (`lib/engine/z-lodowki.ts`)
 Proces odwrócony względem planera. Planer idzie *cel → przepisy → składniki*; tutaj user podaje cel makro **i koszyk tego, co ma** (albo na co ma ochotę), a silnik odpowiada, co i ile zjeść w którym slocie. Zakres to **jeden dzień** — lodówka nie starcza na tydzień, a rozmnażanie koszyka na 7 dni dawałoby siedem identycznych dni.
 

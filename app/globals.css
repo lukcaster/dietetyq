@@ -740,6 +740,16 @@ body {
   border-color: var(--neon-cyan);
 }
 
+.dosypka {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--neon-green);
+  background: rgba(77, 255, 176, 0.08);
+  border: 1px solid rgba(77, 255, 176, 0.25);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
 /* --- „dokup i zrobisz" (tryb z lodówki) --- */
 
 .propozycja,
