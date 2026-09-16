@@ -66,6 +66,20 @@ export interface Ingredient {
    * ze szpinakiem: gniazdo tłuszczu było opcjonalne i nie miało czym się wypełnić.
    */
   zawszeWDomu?: boolean;
+  /**
+   * Surowe tego się nie je: mięso, boczek, pieczarki, kasze i makarony, ziemniaki, halloumi.
+   * Szablony „na zimno" (kanapka, sałatka, koktajl) takich składników nie biorą — bez tego
+   * silnik składał kanapkę z surowym boczkiem i surowymi pieczarkami.
+   *
+   * To NIE jest to samo co brak `rolaKulinarna` (mąka, drożdże — półprodukty, które nie
+   * tworzą posiłku same z siebie). Tu chodzi o pełnoprawny składnik, tylko wymagający patelni.
+   */
+  wymagaGotowania?: boolean;
+  /**
+   * Odwrotność `wymagaGotowania`: sałata, rukola, ogórek, kiszonki. Formalnie to warzywa i pasują
+   * do gniazda „warzywo", ale duszona sałata w daniu na ciepło to pomyłka, nie przepis.
+   */
+  tylkoNaZimno?: boolean;
 }
 
 /** Jedno gniazdo w szablonie dania — "coś na wierzch kanapki", "skrobia do dania na ciepło". */
@@ -89,6 +103,14 @@ export interface SzablonDania {
   nazwa: string;
   sloty: string[];
   gniazda: GniazdoSzablonu[];
+  /**
+   * Ogólny opis przygotowania — szablon nie jest przepisem, więc instrukcja mówi „co z tym
+   * zrobić", a nie podaje gramatur i czasów co do minuty. Bez tego posiłek z szablonu trafiał
+   * do usera jako sama lista składników.
+   */
+  instrukcje: string[];
+  /** Danie składane bez gotowania — nie wchodzą do niego składniki z `wymagaGotowania`. */
+  naZimno?: boolean;
 }
 
 export interface SkladnikProsty {

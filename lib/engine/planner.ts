@@ -1,4 +1,5 @@
 import { getIngredientById, getRecipes } from "./data";
+import { zlozGotowiec } from "./gotowce";
 import { zbudujListeZakupow, type PozycjaListyZakupow, type SkladnikBazowyWPlanie } from "./lista-zakupow";
 import {
   dodajMakro,
@@ -77,6 +78,25 @@ const WAGA_DODATKU: Record<"dodatek-skrobiowy" | "surowka", number> = {
   surowka: 0.13,
 };
 
+/**
+ * Jak często dany slot dostaje „gotowca" (posiłek złożony z szablonu, bez przepisu — kanapka,
+ * miska białkowa, koktajl) zamiast przepisu z bazy.
+ *
+ * Rozkład nie jest równy, bo i posiłki nie są równe: na drugie śniadanie i podwieczorek normalny
+ * człowiek robi kanapkę albo sięga po jogurt z owocami, a nie piecze keksówkę. Obiad zostaje
+ * w całości przy przepisach — to jedyny posiłek, przy którym gotowanie jest oczekiwane.
+ *
+ * Drugi powód jest techniczny: pula przepisów na lekkie sloty jest najmniejsza w bazie
+ * (7 na drugie śniadanie), więc to tam plan powtarzał się najbardziej.
+ */
+const SZANSA_NA_GOTOWIEC: Record<string, number> = {
+  sniadanie: 0.25,
+  "drugie-sniadanie": 0.6,
+  obiad: 0,
+  podwieczorek: 0.5,
+  kolacja: 0.2,
+};
+
 const INDEKS_AKTYWNOSCI_POZA_PRACA: Record<AktywnoscPozaPraca, number> = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6 };
 
 /**
@@ -152,6 +172,11 @@ export interface PosilekWPlanie {
   dodatki?: DodatekWPlanie[];
   /** Posiłek złożony ręcznie w kreatorze, a nie dobrany z bazy przepisów. */
   wlasny?: boolean;
+  /**
+   * Posiłek złożony z szablonu (kanapka, miska białkowa, koktajl) zamiast z przepisu —
+   * „nic nie gotujesz, składasz". UI oznacza go osobnym znacznikiem.
+   */
+  gotowiec?: boolean;
 }
 
 export interface DzienWPlanie {
@@ -195,8 +220,19 @@ function wybierzKandydata(
   kandydaci: Recipe[],
   uzyteWTygodniu: Set<string>,
   uzyteWDniu: Set<string>,
-  ocen: (r: Recipe) => number
+  ocen: (r: Recipe) => number,
+  /**
+   * Wszystko, co padło w tym tygodniu w JAKIMKOLWIEK slocie. Bez tego licznik był per slot
+   * i to samo danie potrafiło wyjść w poniedziałek na obiad, we wtorek na kolację i w czwartek
+   * znowu na obiad — formalnie „bez powtórki", a dla usera ten sam kurczak trzeci raz.
+   */
+  uzyteGdziekolwiek?: Set<string>
 ): Recipe {
+  if (uzyteGdziekolwiek) {
+    const zupelnieNowe = kandydaci.filter((r) => !uzyteGdziekolwiek.has(r.id) && !uzyteWDniu.has(r.id));
+    if (zupelnieNowe.length > 0) return losujNajlepszy(zupelnieNowe, ocen);
+  }
+
   const niePowtorzoneDzisiajIWTygodniu = kandydaci.filter((r) => !uzyteWTygodniu.has(r.id) && !uzyteWDniu.has(r.id));
   if (niePowtorzoneDzisiajIWTygodniu.length > 0) return losujNajlepszy(niePowtorzoneDzisiajIWTygodniu, ocen);
 
@@ -288,6 +324,10 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
   const uzyteNaSlot = new Map<string, Set<string>>();
   for (const slot of req.sloty) uzyteNaSlot.set(slot, new Set());
 
+  /** Dania (przepisy) i szablony użyte w tym tygodniu gdziekolwiek — do pilnowania powtórek. */
+  const uzyteWTygodniuGdziekolwiek = new Set<string>();
+  const uzyteSzablony = new Set<string>();
+
   const uzyteNaKategorieDodatku = new Map<KategoriaDania, Set<string>>([
     ["dodatek-skrobiowy", new Set()],
     ["surowka", new Set()],
@@ -307,15 +347,53 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
         return rozwiazPrzepis(r, filtr) !== null;
       });
 
-      if (kandydaci.length === 0) {
-        slotyBezKandydatow.add(slot);
-        continue;
+      /**
+       * Gotowiec wchodzi w dwóch sytuacjach: z losowania (patrz SZANSA_NA_GOTOWIEC) albo
+       * awaryjnie, gdy na ten slot nie ma ani jednego wykonalnego przepisu — wtedy zamiast
+       * zostawić usera bez posiłku, składamy mu kanapkę z tego, co wolno mu jeść.
+       *
+       * Charakteru posiłku (słodkie/wytrawne) tu nie pilnujemy: szablon nie ma tego pola,
+       * a wymuszanie go przez składniki to dokładnie ta heurystyka „per składnik", którą
+       * tryb z lodówki już raz wyrzucił (patrz SPEC).
+       */
+      const losowanyGotowiec = !preferowanyCharakter && Math.random() < (SZANSA_NA_GOTOWIEC[slot] ?? 0);
+      if (losowanyGotowiec || kandydaci.length === 0) {
+        const gotowiec = zlozGotowiec({
+          slot,
+          cel: targetSloty[slot],
+          filtr,
+          wyklucz: new Set([...uzyteSzablony, ...uzyteWDniu]),
+          lubianeSkladniki: req.lubianeSkladniki,
+        });
+
+        if (gotowiec) {
+          uzyteSzablony.add(gotowiec.szablonId);
+          uzyteWDniu.add(gotowiec.szablonId);
+          const skladniki: SkladnikWPlanie[] = gotowiec.skladniki.map((s) => ({ ...s }));
+          posilki.push({
+            slot,
+            recipeId: `szablon:${gotowiec.szablonId}`,
+            nazwa: gotowiec.nazwa,
+            skladniki,
+            skladnikiBazowe: skladniki.map((s) => ({ ...s })),
+            instrukcje: gotowiec.instrukcje,
+            makro: gotowiec.makro,
+            gotowiec: true,
+          });
+          continue;
+        }
+
+        if (kandydaci.length === 0) {
+          slotyBezKandydatow.add(slot);
+          continue;
+        }
       }
 
       const uzyte = uzyteNaSlot.get(slot)!;
-      const przepis = wybierzKandydata(kandydaci, uzyte, uzyteWDniu, ocen);
+      const przepis = wybierzKandydata(kandydaci, uzyte, uzyteWDniu, ocen, uzyteWTygodniuGdziekolwiek);
       uzyte.add(przepis.id);
       uzyteWDniu.add(przepis.id);
+      uzyteWTygodniuGdziekolwiek.add(przepis.id);
 
       const targetKcalSlotu = targetSloty[slot].kcal;
       const wymaganeDodatki = przepis.wymaganeDodatki ?? [];

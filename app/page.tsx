@@ -6,7 +6,6 @@ import KoszykLodowki from "./KoszykLodowki";
 import KreatorPosilku from "./KreatorPosilku";
 import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
-import type { Charakter } from "@/lib/engine/types";
 
 const KCAL_PRESETY = [1800, 2000, 2200, 2500, 3000];
 
@@ -98,25 +97,41 @@ function danePelne(d: DaneFormularz): d is DaneKompletne {
   );
 }
 
-const SLOTY_OPCJE = [
-  { id: "sniadanie", label: "Śniadanie", emoji: "🌅" },
-  { id: "obiad", label: "Obiad", emoji: "🍽️" },
-  { id: "podwieczorek", label: "Podwieczorek", emoji: "🍓" },
-  { id: "kolacja", label: "Kolacja", emoji: "🌙" },
-];
+/**
+ * Rozkład dnia zależy wyłącznie od LICZBY posiłków — user nie składa go sobie sam.
+ *
+ * Wcześniej można było wyklikać dowolny zestaw slotów i charakter każdego z nich („drugie
+ * śniadanie wytrawne"), i to był główny powód, dla którego plan tygodniowy się powtarzał:
+ * przy wytrawnym drugim śniadaniu w bazie jest dokładnie jeden pasujący przepis, więc
+ * wypadał siedem razy. Trzy sensowne układy dnia dają lepsze plany niż pełna swoboda.
+ */
+const UKLADY_DNIA = [
+  { liczba: 3, sloty: ["sniadanie", "obiad", "kolacja"], opis: "śniadanie, obiad, kolacja" },
+  {
+    liczba: 4,
+    sloty: ["sniadanie", "drugie-sniadanie", "obiad", "kolacja"],
+    opis: "+ drugie śniadanie",
+  },
+  {
+    liczba: 5,
+    sloty: ["sniadanie", "drugie-sniadanie", "obiad", "podwieczorek", "kolacja"],
+    opis: "+ przekąska przed kolacją",
+  },
+] as const;
+
+const NAZWY_SLOTOW: Record<string, string> = {
+  sniadanie: "🌅 Śniadanie",
+  "drugie-sniadanie": "🥪 II śniadanie",
+  obiad: "🍽️ Obiad",
+  podwieczorek: "🍓 Podwieczorek",
+  kolacja: "🌙 Kolacja",
+};
 
 const RESTRYKCJE_OPCJE = [
   { id: "laktoza", label: "Laktoza", emoji: "🥛" },
   { id: "gluten", label: "Gluten", emoji: "🌾" },
   { id: "orzechy", label: "Orzechy", emoji: "🥜" },
   { id: "jajka", label: "Jajka", emoji: "🥚" },
-];
-
-/** `null` = bez znaczenia — wtedy nie wysyłamy slotu w charakterPerSlot i silnik bierze wszystko. */
-const CHARAKTER_OPCJE: { id: Charakter | null; label: string }[] = [
-  { id: null, label: "Bez znaczenia" },
-  { id: "slodkie", label: "🍯 Słodkie" },
-  { id: "wytrawne", label: "🧂 Wytrawne" },
 ];
 
 /** Trzystanowy przełącznik chipsa: neutralnie → lubię → nie lubię → neutralnie. */
@@ -183,8 +198,8 @@ export default function Home() {
   const [kcal, setKcal] = useState<number | "">("");
   const [dane, setDane] = useState<DaneFormularz>(PUSTE_DANE);
   const [makro, setMakro] = useState<RozkladMakro>(MAKRO_DOMYSLNE);
-  const [sloty, setSloty] = useState<string[]>([]);
-  const [charakterPerSlot, setCharakterPerSlot] = useState<Record<string, Charakter>>({});
+  const [liczbaPosilkow, setLiczbaPosilkow] = useState<3 | 4 | 5>(3);
+  const sloty = UKLADY_DNIA.find((u) => u.liczba === liczbaPosilkow)!.sloty as unknown as string[];
   const [restrykcje, setRestrykcje] = useState<string[]>([]);
   const [preferencje, setPreferencje] = useState<Record<string, Preferencja>>({});
   const [grupySkladnikow, setGrupySkladnikow] = useState<GrupaSkladnikow[]>([]);
@@ -211,19 +226,6 @@ export default function Home() {
   const sumaMakro = makro.bialko + makro.tluszcz + makro.wegle;
   // W trybie "wylicz dla mnie" kcal zna dopiero silnik, więc gramy pokazujemy tylko przy kcal wpisanych wprost.
   const kcalDoPodgladu = trybKcal === "wprost" && typeof kcal === "number" ? kcal : 0;
-
-  function przelaczSlot(id: string) {
-    const zaznaczony = sloty.includes(id);
-    setSloty(zaznaczony ? sloty.filter((s) => s !== id) : [...sloty, id]);
-    // Odznaczony slot nie może zostawić po sobie preferencji charakteru w stanie.
-    if (zaznaczony) setCharakterPerSlot(({ [id]: _usuniety, ...reszta }) => reszta);
-  }
-
-  function ustawCharakter(slot: string, charakter: Charakter | null) {
-    setCharakterPerSlot(({ [slot]: _poprzedni, ...reszta }) =>
-      charakter ? { ...reszta, [slot]: charakter } : reszta
-    );
-  }
 
   function przelaczRestrykcje(id: string) {
     setRestrykcje((aktualne) => (aktualne.includes(id) ? aktualne.filter((s) => s !== id) : [...aktualne, id]));
@@ -257,7 +259,6 @@ export default function Home() {
       const wspolne = {
         makro,
         sloty,
-        charakterPerSlot,
         restrykcje,
         lubianeSkladniki: lubiane,
         nielubianeSkladniki: nielubiane,
@@ -512,56 +513,37 @@ export default function Home() {
 
         {tryb && krok === 2 && (
           <>
-            <h2>Które posiłki jesz w ciągu dnia?</h2>
+            <h2>Ile posiłków dziennie jesz?</h2>
+            <p className="podtytul" style={{ marginBottom: 16 }}>
+              Rozkład dnia dobieramy sami — dzięki temu każdy posiłek dostaje sensowny udział
+              kalorii, a plan ma z czego losować dania.
+            </p>
             <div className="siatka-wyboru">
-              {SLOTY_OPCJE.map((opcja) => (
+              {UKLADY_DNIA.map((uklad) => (
                 <button
-                  key={opcja.id}
-                  className={`kafelek ${sloty.includes(opcja.id) ? "wybrany" : ""}`}
-                  onClick={() => przelaczSlot(opcja.id)}
+                  key={uklad.liczba}
+                  className={`kafelek ${liczbaPosilkow === uklad.liczba ? "wybrany" : ""}`}
+                  onClick={() => setLiczbaPosilkow(uklad.liczba)}
                 >
-                  <span className="emoji">{opcja.emoji}</span>
-                  {opcja.label}
+                  <span className="emoji">{uklad.liczba}</span>
+                  {uklad.opis}
                 </button>
               ))}
             </div>
 
-            {/* Charakter steruje doborem przepisów — w trybie "z lodówki" nie ma czego sterować. */}
-            {tryb === "przepisy" && sloty.length > 0 && (
-              <>
-                <h2 style={{ marginTop: 32 }}>Co lubisz na te posiłki?</h2>
-                <p className="podtytul" style={{ marginBottom: 12 }}>
-                  Np. śniadanie zawsze na słodko, a kolacja wytrawna. „Bez znaczenia" zostawia pełną pulę przepisów.
-                </p>
-                {/* Kolejność wg SLOTY_OPCJE, a nie wg kolejności klikania — inaczej wiersze skakałyby. */}
-                {SLOTY_OPCJE.filter((o) => sloty.includes(o.id)).map((opcja) => (
-                  <div key={opcja.id} className="charakter-wiersz">
-                    <span className="charakter-nazwa">
-                      {opcja.emoji} {opcja.label}
-                    </span>
-                    <div className="charakter-opcje">
-                      {CHARAKTER_OPCJE.map((wybor) => (
-                        <button
-                          key={wybor.label}
-                          className={`preset-btn ${
-                            (charakterPerSlot[opcja.id] ?? null) === wybor.id ? "wybrany" : ""
-                          }`}
-                          onClick={() => ustawCharakter(opcja.id, wybor.id)}
-                        >
-                          {wybor.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </>
-            )}
+            <div className="pref-chipsy" style={{ marginTop: 16 }}>
+              {sloty.map((slot) => (
+                <span key={slot} className="pref-chip lubie">
+                  {NAZWY_SLOTOW[slot] ?? slot}
+                </span>
+              ))}
+            </div>
 
             <div className="przyciski-nawigacji">
               <button className="btn btn-wstecz" onClick={() => setKrok(1)}>
                 Wstecz
               </button>
-              <button className="btn btn-dalej" disabled={sloty.length === 0} onClick={() => setKrok(3)}>
+              <button className="btn btn-dalej" onClick={() => setKrok(3)}>
                 Dalej
               </button>
             </div>
@@ -744,6 +726,8 @@ export default function Home() {
                     <div key={i} className="posilek">
                       <div className="posilek-nazwa">
                         {posilek.nazwa} <span className="podtytul">({posilek.slot})</span>
+                        {/* Gotowiec to posiłek składany, nie gotowany — warto to widzieć od razu. */}
+                        {posilek.gotowiec && <span className="znacznik znacznik-baza">bez gotowania</span>}
                       </div>
                       <div className="posilek-makro">
                         {Math.round(posilek.makro.kcal)} kcal · B: {Math.round(posilek.makro.bialko)}g · T:{" "}

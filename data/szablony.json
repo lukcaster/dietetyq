@@ -42,7 +42,13 @@
         ],
         "wymagane": false
       }
-    ]
+    ],
+    "instrukcje": [
+      "Jeśli w zestawie jest jajko, ugotuj je wcześniej na twardo (ok. 8 min).",
+      "Pieczywo pokrój i ewentualnie podpiecz.",
+      "Rozłóż na nim wierzch, dodaj warzywa i sos. Dopraw solą i pieprzem."
+    ],
+    "naZimno": true
   },
   {
     "id": "owsianka",
@@ -95,7 +101,12 @@
         "wymagane": false,
         "ile": 2
       }
-    ]
+    ],
+    "instrukcje": [
+      "Płatki zalej mlekiem lub jogurtem — na zimno (odstaw na noc) albo gotuj 5-7 min na małym ogniu.",
+      "Przełóż do miski, dodaj owoce i dodatki."
+    ],
+    "naZimno": true
   },
   {
     "id": "miska-bialkowa",
@@ -133,7 +144,12 @@
         "wymagane": false,
         "ile": 2
       }
-    ]
+    ],
+    "instrukcje": [
+      "Bazę przełóż do miski.",
+      "Dodaj owoce i dodatki, wymieszaj albo ułóż warstwami."
+    ],
+    "naZimno": true
   },
   {
     "id": "jajka-na-cieplo",
@@ -175,6 +191,11 @@
         ],
         "wymagane": false
       }
+    ],
+    "instrukcje": [
+      "Rozgrzej tłuszcz na patelni.",
+      "Wsad podsmaż chwilę, wbij jajka i smaż mieszając (jajecznica) albo pod przykryciem (omlet).",
+      "Dopraw solą i pieprzem, podaj z pieczywem."
     ]
   },
   {
@@ -198,7 +219,9 @@
         "etykieta": "skrobia",
         "role": [
           "kasza-ryz",
-          "ziemniaki"
+          "ziemniaki",
+          "makaron",
+          "straczne"
         ],
         "wymagane": true
       },
@@ -224,6 +247,11 @@
         ],
         "wymagane": false
       }
+    ],
+    "instrukcje": [
+      "Skrobię ugotuj wg opisu na opakowaniu.",
+      "Białko podsmaż na tłuszczu, dodaj warzywa i duś do miękkości.",
+      "Połącz ze skrobią, dopraw i polej sosem."
     ]
   },
   {
@@ -268,7 +296,14 @@
         ],
         "wymagane": false
       }
-    ]
+    ],
+    "instrukcje": [
+      "Jeśli w zestawie jest jajko, ugotuj je wcześniej na twardo albo usmaż.",
+      "Tortillę podgrzej na suchej patelni.",
+      "Posmaruj sosem, ułóż białko i warzywa, zawiń.",
+      "Opcjonalnie zgrilluj zawiniętego wrapa po 2 min z każdej strony."
+    ],
+    "naZimno": true
   },
   {
     "id": "salatka",
@@ -313,7 +348,14 @@
         ],
         "wymagane": false
       }
-    ]
+    ],
+    "instrukcje": [
+      "Jeśli w zestawie jest jajko, ugotuj je wcześniej na twardo (ok. 8 min).",
+      "Warzywa umyj i pokrój, przełóż do miski.",
+      "Dodaj białko, polej tłuszczem, dopraw solą i pieprzem.",
+      "Podaj z pieczywem albo grzankami."
+    ],
+    "naZimno": true
   },
   {
     "id": "kasza-na-mleku",
@@ -355,6 +397,10 @@
         "wymagane": false,
         "ile": 2
       }
+    ],
+    "instrukcje": [
+      "Kaszę lub ryż ugotuj w mleku na małym ogniu, mieszając, aż zmięknie.",
+      "Przełóż do miski, dodaj owoce i dodatki."
     ]
   },
   {
@@ -399,7 +445,12 @@
         "wymagane": false,
         "ile": 2
       }
-    ]
+    ],
+    "instrukcje": [
+      "Wszystko wrzuć do blendera.",
+      "Zmiksuj do gładkości; jeśli jest za gęsty, dolej wody lub mleka."
+    ],
+    "naZimno": true
   },
   {
     "id": "mieso-z-warzywami",
@@ -439,6 +490,11 @@
         ],
         "wymagane": false
       }
+    ],
+    "instrukcje": [
+      "Mięso pokrój i podsmaż na tłuszczu.",
+      "Dodaj warzywa i duś do miękkości.",
+      "Dopraw, w razie potrzeby dolej sosu."
     ]
   }
 ]

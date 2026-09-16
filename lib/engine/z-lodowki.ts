@@ -2,6 +2,7 @@ import { getComponentById, getIngredients, getRecipes, getSzablony } from "./dat
 import { makroNaJednostke, type JednostkaKreatora } from "./kreator";
 import type { SkladnikBazowyWPlanie } from "./lista-zakupow";
 import { dodajMakro, makroSkladnikaProstego, masaWGramach, pustaMakro, skalujMakro } from "./macro";
+import { granicePozycji, naJednostke, MIN_SENSOWNA_PORCJA_G } from "./porcje";
 import {
   obliczKcalDzienne,
   obliczMakroDzienne,
@@ -102,41 +103,6 @@ const PROG_OSTRZEZENIA_PROCENT = 20;
  */
 const PROG_OSTRZEZENIA_PRZEPISU = 40;
 
-const KROK_JEDNOSTKI: Record<JednostkaKoszyka, number> = { g: 5, szt: 1 };
-
-/**
- * Ile najwyżej danego składnika w JEDNYM posiłku, gdy user nie podał własnego zapasu (w gramach).
- * Bez tego solver dobija kcal czym popadnie i wychodzi 400 g ogórka albo 90 g oliwy —
- * matematycznie poprawne, kulinarnie bez sensu.
- */
-const SUFIT_ROLI: Record<string, number> = {
-  pieczywo: 150,
-  wedlina: 100,
-  mieso: 250,
-  jajko: 250,
-  ser: 60,
-  "baza-kremowa": 300,
-  jogurt: 400,
-  mleko: 400,
-  platki: 120,
-  "kasza-ryz": 120,
-  ziemniaki: 400,
-  warzywo: 200,
-  owoc: 250,
-  "dodatek-slodki": 40,
-  posypka: 30,
-  tluszcz: 25,
-  sos: 50,
-  odzywka: 60,
-};
-
-/** Produkty z OFF i składniki bez roli kulinarnej — nie wiemy, czym są, więc ostrożnie. */
-const SUFIT_DOMYSLNY = 200;
-const SUFIT_SZTUK = 6;
-
-/** Poniżej tylu gramów pozycja jest okruchem, nie składnikiem — wypada z posiłku. */
-const MIN_SENSOWNA_PORCJA_G = 15;
-
 /**
  * Wagi wyboru szablonu. Rozjazd od celu (dzielony przez 2) jest głównym kryterium, ale te dwie
  * przeciwwagi są tu z konkretnego powodu: bez nich silnik dawał jajecznicę na śniadanie
@@ -175,15 +141,6 @@ function losujSposrodNajlepszych<T>(ocenione: { wybor: T; ocena: number }[]): T 
 const BONUS_ZA_PRZEPIS = 12;
 
 /**
- * Sufity wyżej są podane dla "przeciętnego" posiłku ~600 kcal i skalują się z celem slotu:
- * 250 g mięsa jest sensowne na obiad 600 kcal, ale na obiad 1200 kcal to już za mało.
- * Mnożnik jest przycięty, żeby przy skrajnych celach nie wyszło 900 g piersi ani 40 g ryżu.
- */
-const KCAL_REFERENCYJNE_POSILKU = 600;
-const MIN_MNOZNIK_SUFITU = 0.6;
-const MAKS_MNOZNIK_SUFITU = 2;
-
-/**
  * Gramatura, którą da się odmierzyć w kuchni. "19,3 g mąki" jest formalnie dokładniejsze,
  * ale nikt tego nie odważy — a przy przepisie skalowanym w całości ta dokładność i tak jest
  * pozorna. Im większa ilość, tym grubszy krok.
@@ -205,55 +162,6 @@ function zaokraglijWDol(ilosc: number, jednostka: string): number {
   if (ilosc < 10) return Math.max(0, Math.floor(ilosc));
   const krok = ilosc < 100 ? 5 : 10;
   return Math.floor(ilosc / krok) * krok;
-}
-
-function mnoznikSufitu(celSlotu: Makro): number {
-  const surowy = celSlotu.kcal / KCAL_REFERENCYJNE_POSILKU;
-  return Math.min(MAKS_MNOZNIK_SUFITU, Math.max(MIN_MNOZNIK_SUFITU, surowy));
-}
-
-/**
- * Granice jednej pozycji dla solvera — wspólne dla planowania dnia i dla ręcznego przeliczania,
- * żeby po zmianie gramatury przez usera obowiązywały dokładnie te same sufity kulinarne.
- */
-function granicePozycji(opcje: {
-  rola?: string;
-  jednostka: JednostkaKoszyka;
-  celSlotu: Makro;
-  /** Limit wynikający z zadeklarowanego zapasu, już podzielony między posiłki. */
-  limitZZapasu?: number;
-  /** Składnik z wymaganego gniazda szablonu — ma zagwarantowaną minimalną porcję. */
-  wRdzeniu: boolean;
-  /** `maksPorcja` składnika, przeliczona na jednostkę koszyka. Nadpisuje sufit roli. */
-  sufitSkladnika?: number;
-  /** `porcjaTypowa` składnika, przeliczona na jednostkę koszyka. */
-  porcjaTypowa?: number;
-}): { min: number; max: number; krok: number; start: number; preferowana?: number } {
-  const { rola, jednostka, celSlotu, limitZZapasu, wRdzeniu, sufitSkladnika, porcjaTypowa } = opcje;
-  const zRoli = jednostka === "szt" ? SUFIT_SZTUK : (rola !== undefined ? SUFIT_ROLI[rola] : undefined) ?? SUFIT_DOMYSLNY;
-  // Sufit roli skaluje się z wielkością posiłku (250 g mięsa na obiad 600 kcal, więcej na 1200),
-  // ale sufit składnika NIE: jest ustawiony tam, gdzie rola kłamie, a 60 g cebuli to 60 g cebuli
-  // niezależnie od tego, jak duży jest obiad.
-  const bazowySufit = sufitSkladnika ?? zRoli * mnoznikSufitu(celSlotu);
-  const surowySufit = Math.min(limitZZapasu ?? Infinity, bazowySufit);
-
-  // Sufit musi być wielokrotnością kroku, inaczej solver opiera się o limit i zwraca
-  // "458,33 g mleka" — nikt tego nie odmierzy.
-  const krok = KROK_JEDNOSTKI[jednostka];
-  // Podłoga "przynajmniej jeden krok" jest po to, żeby pozycja bez zadeklarowanego zapasu
-  // nie dostała sufitu 0. Gdy zapas JEST podany, tej podłogi być nie może: przy jednym jajku
-  // dzielonym na dwa posiłki podnosiła 0,5 szt do 1 szt w każdym i wychodziły dwa jajka z jednego.
-  const podloga = limitZZapasu !== undefined ? 0 : krok;
-  const max = Math.max(podloga, Math.floor(surowySufit / krok) * krok);
-  // Składnik z wymaganego gniazda musi wystąpić w sensownej ilości — inaczej wychodzi
-  // "owsianka" złożona z samego jogurtu, bo płatki zeszły do 5 g.
-  const min = wRdzeniu ? Math.min(max, jednostka === "szt" ? 1 : MIN_SENSOWNA_PORCJA_G) : 0;
-
-  // Porcja typowa jest dla solvera tylko wskazówką, ale musi mieścić się w granicach —
-  // inaczej ciągnęłaby poza to, co user w ogóle ma w lodówce.
-  const preferowana = porcjaTypowa !== undefined ? Math.min(max, Math.max(min, porcjaTypowa)) : undefined;
-
-  return { min, max, krok, start: preferowana ?? Math.min(jednostka === "szt" ? 1 : 100, max), preferowana };
 }
 
 const NAZWY_CELOW: Record<keyof Makro, string> = {
@@ -306,17 +214,6 @@ function nazwaWyswietlana(pozycja: PozycjaSpizarni): string {
  */
 function mapaSkladnikow(): Map<string, Ingredient> {
   return new Map(getIngredients().map((skladnik) => [skladnik.id, skladnik]));
-}
-
-/** Przelicza gramy z bazy na jednostkę, w której user trzyma tę pozycję w koszyku. */
-function naJednostkeKoszyka(
-  gramy: number | undefined,
-  jednostka: JednostkaKoszyka,
-  masaSztuki?: number
-): number | undefined {
-  if (gramy === undefined) return undefined;
-  if (jednostka !== "szt") return gramy;
-  return masaSztuki ? gramy / masaSztuki : undefined;
 }
 
 interface DopasowanySzablon {
@@ -532,8 +429,8 @@ export function rozpiszZLodowki(zapytanie: ZapytanieZLodowki): DzienZLodowki {
         celSlotu,
         limitZZapasu,
         wRdzeniu: rdzen.has(i),
-        sufitSkladnika: naJednostkeKoszyka(maksPorcja, wejscie.jednostka, zeSpizarni.masaSztuki),
-        porcjaTypowa: naJednostkeKoszyka(porcjaTypowa, wejscie.jednostka, zeSpizarni.masaSztuki),
+        sufitSkladnika: naJednostke(maksPorcja, wejscie.jednostka, zeSpizarni.masaSztuki),
+        porcjaTypowa: naJednostke(porcjaTypowa, wejscie.jednostka, zeSpizarni.masaSztuki),
       });
 
       return {
@@ -1006,8 +903,8 @@ export function przeliczPosilek(pozycje: PozycjaDoKorekty[], cel: Makro): WynikK
         // Pozycje nieprzypięte dostają minimum sensownej porcji, żeby po korekcie jednej gramatury
         // reszta składników nie schodziła do zera i danie nie znikało userowi z listy.
         wRdzeniu: !pozycja.stala,
-        sufitSkladnika: naJednostkeKoszyka(maksPorcja, pozycja.jednostka, zeSpizarni.masaSztuki),
-        porcjaTypowa: naJednostkeKoszyka(porcjaTypowa, pozycja.jednostka, zeSpizarni.masaSztuki),
+        sufitSkladnika: naJednostke(maksPorcja, pozycja.jednostka, zeSpizarni.masaSztuki),
+        porcjaTypowa: naJednostke(porcjaTypowa, pozycja.jednostka, zeSpizarni.masaSztuki),
       });
       return {
         id: pozycja.id,

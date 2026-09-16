@@ -48,12 +48,20 @@ To jest procent **kalorii**, nie gramów: `gramy = kcal * procent / 100 / kcalNa
 
 > Uwaga projektowa: kcal i % makro muszą być rozdzielone w UI od razu jako dwa niezależne pola, nawet jeśli na starcie tylko kcal jest wymagane — żeby nie trzeba było przebudowywać formularza później.
 
-### Krok 2: posiłki
-- User wybiera konkretne sloty posiłków z listy (multi-select), np.: śniadanie, II śniadanie, obiad, podwieczorek, kolacja.
-- Backend dzieli dzienny target kcal/makro między wybrane sloty (proporcje do ustalenia przy implementacji silnika — np. śniadanie/kolacja mniejsze, obiad największy).
+### Krok 2: ile posiłków dziennie
+User podaje **jedną liczbę: 3, 4 albo 5**, a układ dnia jest sztywny:
 
-### Krok 2b: charakter posiłku (na tym samym ekranie co sloty)
-Dla każdego zaznaczonego slotu user wybiera `charakter`: **słodkie / wytrawne / bez znaczenia** (domyślnie bez znaczenia) — np. śniadania zawsze na słodko, kolacje wytrawne. Trafia do silnika jako `charakterPerSlot`; brak wpisu = pełna pula przepisów dla tego slotu.
+| liczba | sloty |
+|--------|-------|
+| 3 | śniadanie, obiad, kolacja |
+| 4 | + drugie śniadanie |
+| 5 | + podwieczorek (przekąska przed kolacją) |
+
+Backend dzieli dzienny target kcal/makro między te sloty wagami z `WAGI_SLOTOW` (obiad 0,3; śniadanie i kolacja po 0,25; lekkie sloty po 0,1).
+
+> **Dlaczego nie multi-select i nie charakter per slot.** Wcześniej user zaznaczał dowolny zestaw slotów i do każdego wybierał charakter (słodkie / wytrawne / bez znaczenia, pole `charakterPerSlot`). To był **główny powód powtarzalności planu tygodniowego**: charakter zawężał pulę przepisów na slot, a przy „wytrawnym drugim śniadaniu" w bazie jest dokładnie jeden taki przepis — więc wypadał siedem dni z rzędu. Zmierzone przed zmianą: 1 unikalne danie na 7 dni w tym slocie przy 7/7 w pozostałych.
+>
+> Pole `charakterPerSlot` **zostaje w API** (silnik dalej je obsługuje, a filtruje po nim też `/api/recipes`), ale UI go nie wysyła. Gdyby wracało, musi wracać razem z mechanizmem pilnującym, że pula nie schodzi do jednego przepisu.
 
 ### Krok 3: restrykcje
 - Checkboxy z najczęstszymi: laktoza, gluten, orzechy, jajka, ryby/owoce morza, mięso (wege), soja.
@@ -162,6 +170,22 @@ Id ze spiżarni niesie źródło: składnik bazowy ma zwykłe id (`kurczak-piers
 5. Zwróć plan: 7 dni × wybrane sloty, z finalnym makro/kcal per posiłek i per dzień.
 
 **Wybór spośród kandydatów jest losowy, nie „pierwszy z brzegu".** `wybierzKandydata` zawęża pulę (nieużyte w tygodniu → nieużyte dzisiaj → wszystko), ocenia ją liczbą lubianych składników i **losuje spośród najlepiej ocenionych**. Losowanie jest tu wymogiem, nie ozdobnikiem: przy deterministycznym „weź pierwszy" plan zawsze składał się z pierwszych N przepisów w kolejności zapisu w `recipes.json`, a dalsza część bazy nie wypadała nigdy (mierzone: 7 unikalnych dań na tydzień przy 35 przepisach w bazie; po zmianie 16–19).
+
+### „Gotowce" w planie tygodniowym (`lib/engine/gotowce.ts`)
+Nie każdy posiłek musi być gotowany. Na drugie śniadanie normalny człowiek robi kanapkę albo sięga po jogurt z owocami, a nie piecze keksówkę — a baza przepisów jest najuboższa właśnie w lekkich slotach (7 przepisów na drugie śniadanie kontra 29 na kolację).
+
+Dlatego część posiłków planu powstaje **z szablonów** (`data/szablony.json`) i zwykłych składników z bazy, bez przepisu: kanapka, miska białkowa, koktajl, sałatka. To ten sam mechanizm, co fallback w trybie „z lodówki", tylko bez ograniczenia koszykiem — więc pula lekkich posiłków jest praktycznie nieskończona, zamiast równać się liczbie przepisów w JSON-ie.
+
+- **Ile ich jest:** losowo, wg `SZANSA_NA_GOTOWIEC` — drugie śniadanie 0,6; podwieczorek 0,5; śniadanie 0,25; kolacja 0,2; **obiad 0** (jedyny posiłek, przy którym gotowanie jest oczekiwane). Gotowiec wchodzi też awaryjnie, gdy na slot nie ma ani jednego wykonalnego przepisu — lepszy skład z tego, co wolno userowi jeść, niż pusty slot.
+- **Na zimno kontra na ciepło.** Składnik ma flagę `wymagaGotowania` (surowe mięso, boczek, pieczarki, kasze, makarony, ziemniaki, halloumi) albo `tylkoNaZimno` (sałata, rukola, ogórek, kiszonki), a szablon flagę `naZimno`. Bez tego wychodziły kanapki z surowym boczkiem i pieczarkami oraz duszona sałata w daniu na ciepło.
+- **Role kulinarne są rozdrobnione:** `makaron` i `straczne` to osobne role od `kasza-ryz`, bo do ryżu na mleku pasuje kasza manna, a nie soczewica.
+- **Minimalna porcja wsadu** z gniazda wymaganego to połowa `porcjaTypowa` tego składnika, nie sam próg okrucha — inaczej wychodził „wrap: 15 g chorizo, 15 g boczku", czyli pusta tortilla.
+- **Wybór najlepszego z ośmiu.** Składamy kilka propozycji (losowe szablony i składniki) i bierzemy tę najbliższą celu makro. Pierwsza udana była loterią i dni z gotowcami schodziły do 100 g białka przy celu 165.
+- Nazwa jest telegraficzna — „Kanapki: szynka, ser żółty, pomidor" — bo nazwy składników w bazie są w mianowniku, a „kanapki z szynką i serem" wymagałoby odmiany przez przypadki. Tłuszcz, sos i pieczywo do nazwy nie wchodzą.
+
+Powtórki pilnowane są **w skali całego tygodnia i wszystkich slotów naraz** (`uzyteWTygodniuGdziekolwiek`, `uzyteSzablony`). Wcześniej licznik był per slot, więc ten sam kurczak mógł wyjść w poniedziałek na obiad, we wtorek na kolację i w czwartek znowu na obiad — formalnie bez powtórki, dla usera trzeci raz to samo.
+
+Zmierzone po zmianie (2200 kcal, 5 posiłków, bez restrykcji): **7/7 unikalnych dań w każdym slocie**, 8-15 gotowców na 35 posiłków tygodnia, kcal dnia w granicach 2 % od celu. Przy podwójnej restrykcji (bez laktozy i glutenu) żaden slot nie zostaje pusty.
 
 ## Tryb „z lodówki" (`lib/engine/z-lodowki.ts`)
 Proces odwrócony względem planera. Planer idzie *cel → przepisy → składniki*; tutaj user podaje cel makro **i koszyk tego, co ma** (albo na co ma ochotę), a silnik odpowiada, co i ile zjeść w którym slocie. Zakres to **jeden dzień** — lodówka nie starcza na tydzień, a rozmnażanie koszyka na 7 dni dawałoby siedem identycznych dni.

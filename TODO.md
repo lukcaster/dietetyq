@@ -1,5 +1,22 @@
 # TODO — do zrobienia w następnej sesji
 
+## 15. Powtarzalny plan tygodniowy + „gotowce" — ZROBIONE, co dalej
+Zgłoszenie: „plan na tydzień, a codziennie mam te same przepisy". Zmierzone: przy **wybranym charakterze posiłku** pula potrafi zejść do jednego przepisu (wytrawne drugie śniadanie = 1 przepis w bazie) i user dostaje go 7 razy. Bez charakteru było 7/7 unikalnych już wcześniej — więc winny był filtr, nie losowanie.
+
+Trzy zmiany (mechanika w SPEC):
+1. **Krok 2 to teraz jedna liczba 3-5** zamiast multi-select slotów i charakteru per slot. Układ dnia jest sztywny. `charakterPerSlot` zostało w API, ale UI go nie wysyła.
+2. **Powtórki liczone w skali tygodnia i wszystkich slotów**, nie per slot.
+3. **Gotowce** (`lib/engine/gotowce.ts`) — lekkie posiłki składane z szablonów i składników bazowych, bez przepisu. Doszły flagi `wymagaGotowania` / `tylkoNaZimno` / `naZimno`, instrukcje dla wszystkich 10 szablonów (przydają się też w trybie z lodówki, gdzie szablony były bez opisu) i rozdzielenie ról `makaron` / `straczne` od `kasza-ryz`.
+
+Zmierzone po zmianie: 7/7 unikalnych w każdym slocie, kcal dnia w granicach 2% od celu.
+
+Co dalej boli:
+- **Białko dalej skacze** (117-184 g przy celu 165) i gotowce to pogłębiają — porcja jogurtu z owocami po prostu nie ma z czego dobić białka. To jest TODO 7 widziane z drugiej strony; docelowo cel makro powinien być liczony na dzień, a nie sztywno dzielony wagami slotów.
+- **Przy podwójnej restrykcji (bez laktozy i glutenu) drugie śniadanie schodzi do 3/7 unikalnych.** Szablony się kończą i zaczynają wracać z podobnym składem.
+- **`SZANSA_NA_GOTOWIEC` jest wpisana z głowy** (0,6 / 0,5 / 0,25 / 0,2 / 0) — nikt tego nie kalibrował, a to steruje charakterem całego planu. Naturalne rozwinięcie: pytanie w formularzu „ile chcesz gotować".
+- **Gotowiec nie ma czasu przygotowania ani charakteru** (słodkie/wytrawne), więc nie da się go filtrować tak jak przepisu.
+- **Lista zakupów przy gotowcach robi się długa i drobna** — 15 g sezamu, 20 g keczupu. Do rozważenia zaokrąglanie do opakowań.
+
 ## 1. ~~Przyciski na ostatnim widoku poza scrollowanym kontenerem~~ ✅ zrobione (naprawione drugi raz — pierwsza próba nie działała)
 Pasek `.przyciski-nawigacji` miał `position: fixed` już wcześniej, ale **to nie działało na długich widokach** i dlatego problem wracał.
 
