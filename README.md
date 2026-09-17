@@ -22,11 +22,13 @@ Każdy push na `main` robi nowy deploy. Darmowy serwis usypia się po ~15 min be
 
 ### Utrzymywanie serwisu przy życiu (keep-alive)
 
-[`.github/workflows/keep-alive.yml`](.github/workflows/keep-alive.yml) pinguje `/api/health` co 10 minut. Żeby zadziałał, ustaw adres aplikacji w **Settings → Secrets and variables → Actions → Variables** jako `APP_URL` (np. `https://dietetyq.onrender.com`, bez ukośnika na końcu).
+Darmowa instancja usypia po ~15 min bez ruchu, więc aplikacja **pinguje samą siebie**: [`instrumentation.ts`](instrumentation.ts) co 10 minut strzela do `/api/health`. Zmienną `RENDER_EXTERNAL_URL` wstrzykuje sam Render — lokalnie jej nie ma, więc na Twojej maszynie nic nie pinguje. W logach Rendera zobaczysz `[KeepAlive] aktywny → ...` przy starcie i `[KeepAlive] ping OK (200)` co dziesięć minut.
 
-Zanim to włączysz, warto wiedzieć:
+[`.github/workflows/keep-alive.yml`](.github/workflows/keep-alive.yml) został w roli **awaryjnej**: budzi instancję, która już zasnęła (śpiący proces nie wykona własnego `setInterval`).
 
-- **W prywatnym repo to nie zmieści się w darmowym limicie.** GitHub liczy każdy start joba jako minimum minutę, czyli ~4300 minut miesięcznie przy darmowych 2000. W publicznym repo Actions są darmowe bez limitu. W prywatnym repo lepiej zamiast tego użyć zewnętrznego pingera ([cron-job.org](https://cron-job.org), [UptimeRobot](https://uptimerobot.com)) — wtedy workflow można usunąć.
+Czego nauczyło nas pierwsze podejście:
+
+- **GitHub Actions nie nadaje się na keep-alive co 10 minut.** Przy cronie ustawionym na `*/10` zmierzone odstępy między uruchomieniami wyniosły **140, 167, 179 i 308 minut** — GitHub dławi częste harmonogramy i pomija uruchomienia. Dlatego główny ping siedzi w aplikacji, a workflow chodzi rzadko i tylko jako ratunek.
 - **Ciągłe budzenie zjada darmowe godziny instancji.** Render daje 750 h/miesiąc na konto, a serwis działający non stop bierze ~720. Na tę jedną aplikację wystarczy, na drugą darmową już nie.
-- **Harmonogram GitHuba bywa spóźniony** o kilkanaście minut, więc pojedyncze uśnięcie i tak się zdarzy.
 - GitHub wyłącza zaplanowane workflow w repo bez aktywności przez 60 dni.
+- `KEEPALIVE_MS` skraca interwał — wyłącznie po to, żeby dało się sprawdzić działanie bez czekania 10 minut.

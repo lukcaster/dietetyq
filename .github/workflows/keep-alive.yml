@@ -1,29 +1,28 @@
 name: keep-alive
 
-# Darmowy serwis na Renderze usypia po ~15 min bez ruchu, więc pingujemy go co 10 min.
-# Uwaga: harmonogram GitHuba jest "best effort" — pod obciążeniem potrafi się spóźnić
-# kilkanaście minut, więc pojedyncze uśnięcie i tak się zdarzy. To nie jest błąd.
+# UWAGA: to NIE jest główny keep-alive. Głównym jest ping z wnętrza aplikacji
+# (instrumentation.ts), bo harmonogram GitHuba jest mocno niedokładny — przy cronie "*/10"
+# zmierzone odstępy między uruchomieniami wynosiły 140-308 minut.
+#
+# Ten workflow ma jedno zadanie, którego tamten mechanizm wykonać nie może: OBUDZIĆ instancję,
+# która już zasnęła (śpiący proces nie wykona własnego setInterval). Do tego wystarczy,
+# że zadziała raz na jakiś czas, więc nieregularność harmonogramu nie przeszkadza.
 on:
   schedule:
-    - cron: "*/10 * * * *"
-  # Do ręcznego sprawdzenia, czy adres jest ustawiony poprawnie.
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      # Adres siedzi w zmiennej repozytorium APP_URL (Settings → Secrets and variables →
-      # Actions → Variables), żeby nie było go na sztywno w kodzie.
       - name: Ping /api/health
         env:
-          APP_URL: ${{ vars.APP_URL }}
+          # Adres można nadpisać zmienną repozytorium (Settings → Secrets and variables →
+          # Actions → Variables), ale domyślny i tak jest publiczny, więc nic nie wymaga ustawiania.
+          APP_URL: ${{ vars.APP_URL || 'https://dietetyq.onrender.com' }}
         run: |
-          if [ -z "$APP_URL" ]; then
-            echo "Brak zmiennej APP_URL — ustaw ją w Settings → Secrets and variables → Actions → Variables."
-            exit 1
-          fi
           # --max-time z zapasem: zimny start darmowej instancji potrafi trwać ~50 s.
           kod=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 90 --retry 2 --retry-delay 20 "$APP_URL/api/health")
-          echo "HTTP $kod"
+          echo "HTTP $kod z $APP_URL/api/health"
           [ "$kod" = "200" ]
