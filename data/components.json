@@ -5,8 +5,16 @@
     "iloscWynikowa": 500,
     "jednostkaWynikowa": "g",
     "skladniki": [
-      { "skladnikId": "maka-pszenna-pelnoziarnista", "ilosc": 300, "jednostka": "g" },
-      { "skladnikId": "jajko", "ilosc": 1, "jednostka": "szt" }
+      {
+        "skladnikId": "maka-pszenna-pelnoziarnista",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      }
     ],
     "instrukcje": [
       "Mąkę wymieszaj z jajkiem, dodawaj letnią wodę (ok. 120-150ml) aż uzyskasz gładkie, elastyczne ciasto.",
@@ -19,12 +27,83 @@
     "iloscWynikowa": 500,
     "jednostkaWynikowa": "g",
     "skladniki": [
-      { "skladnikId": "maka-pszenna", "ilosc": 260, "jednostka": "g" },
-      { "skladnikId": "jogurt-naturalny", "ilosc": 240, "jednostka": "g" }
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 260,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 240,
+        "jednostka": "g"
+      }
     ],
     "instrukcje": [
       "Wymieszaj mąkę z jogurtem i szczyptą soli, aż połączą się w jednolitą kulę ciasta (bez jajka, bez wody).",
       "Przykryj i odstaw na 30 min."
+    ]
+  },
+  {
+    "id": "ciasto-pierogowe-twarogowe",
+    "nazwa": "Ciasto pierogowe twarogowe",
+    "iloscWynikowa": 500,
+    "jednostkaWynikowa": "g",
+    "skladniki": [
+      {
+        "skladnikId": "maka-pszenna-pelnoziarnista",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "twarog-chudy",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      }
+    ],
+    "instrukcje": [
+      "Twaróg zmiel albo rozgnieć widelcem na gładko — grudki zrobią dziury w cieście przy wałkowaniu.",
+      "Wymieszaj z jajkiem i szczyptą soli, dosypuj mąkę i zagniataj. Ciasto ma być miękkie i lekko klejące; dosyp mąki tylko tyle, żeby dało się je wyrabiać.",
+      "Owiń folią i odstaw na 30 minut — po odpoczynku przestaje się kleić.",
+      "Wałkuj na dobrze podsypanym blacie, cieniej niż zwykłe ciasto. Gotuj 2-3 minuty od wypłynięcia; jest delikatniejsze, więc nie wrzucaj zbyt wielu pierogów naraz."
+    ]
+  },
+  {
+    "id": "ciasto-pierogowe-z-mlekiem-w-proszku",
+    "nazwa": "Ciasto pierogowe z mlekiem w proszku",
+    "iloscWynikowa": 500,
+    "jednostkaWynikowa": "g",
+    "skladniki": [
+      {
+        "skladnikId": "maka-pszenna-pelnoziarnista",
+        "ilosc": 280,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-w-proszku",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 130,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mąkę wymieszaj na sucho z mlekiem w proszku i szczyptą soli.",
+      "Dodaj jajko i letnią wodę, zagniataj kilka minut na gładkie, elastyczne ciasto.",
+      "Przykryj i odstaw na 30 minut.",
+      "Wałkuj i lep jak zwykłe pierogi — to ciasto zachowuje się tak samo, tylko jest bardziej miękkie po ugotowaniu."
     ]
   }
 ]

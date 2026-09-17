@@ -1,5 +1,17 @@
 # TODO — do zrobienia w następnej sesji
 
+## 18. Ciasto pierogowe z większą ilością białka — ZROBIONE
+Zgłoszenie wyszło z nieporozumienia („nie dam dzieciom odżywki białkowej w cieście na pierogi") — ciasto pierogowe **nigdy nie miało odżywki**, jest z mąki i jajka. Odżywka siedzi w `fit-pampuchy-pieczone`, `nalesniki-proteinowe-dzem`, `ciasto-proteinowe-kasza-manna-borowki` i trzech pozycjach z importu. Sam pomysł „więcej białka bez proszku" był jednak dobry.
+
+Doszły dwa komponenty i jeden składnik (`mleko-w-proszku`, odtłuszczone):
+- **`ciasto-pierogowe-twarogowe`** (mąka pełnoziarnista 250 g + twaróg chudy 200 g + jajko): **79 g białka na 500 g ciasta** zamiast 46 g, przy praktycznie tych samych kaloriach. Na nie przestawione zostały wszystkie trzy `pierogi-fit-*` — porcja zyskuje ~8 g białka kosztem 7 kcal.
+- **`ciasto-pierogowe-z-mlekiem-w-proszku`** (mąka 280 g + 40 g mleka w proszku + jajko + woda): 57,6 g białka, ale zachowuje się przy wałkowaniu dokładnie jak zwykłe ciasto — wariant dla kogoś, kto nie chce zmieniać techniki.
+
+Co dalej:
+- **Ciasto twarogowe nie było testowane w kuchni**, tylko policzone. Jest bardziej miękkie i wymaga podsypywania mąką — jeśli w praktyce okaże się zbyt delikatne przy gotowaniu, trzeba będzie zejść z twarogu do ~150 g.
+- Stare `ciasto-pierogowe-pelnoziarniste` zostaje w bazie, ale **nie jest już przez nic używane**.
+- Warto tą samą drogą pójść przy pampuchach i naleśnikach proteinowych, żeby odżywka nie była jedynym sposobem na białko w cieście.
+
 ## 17. Import przepisów z planów PDF — ZROBIONE, co dalej
 Z 7 PDF-ów (plany dietetyczne kupione przez usera) wyciągnięte zostały przepisy: `pdftotext -layout` + parser kolumn, ręczne mapowanie nazw składników, własne instrukcje. Baza urosła z **56 do 199 przepisów** i z 134 do **217 składników**. Zasady importu w SPEC („Skąd biorą się przepisy w bazie").
 

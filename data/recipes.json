@@ -114,7 +114,7 @@
     ],
     "skladniki": [
       {
-        "komponentId": "ciasto-pierogowe-pelnoziarniste",
+        "komponentId": "ciasto-pierogowe-twarogowe",
         "ilosc": 500,
         "jednostka": "g"
       },
@@ -157,7 +157,7 @@
     ],
     "skladniki": [
       {
-        "komponentId": "ciasto-pierogowe-pelnoziarniste",
+        "komponentId": "ciasto-pierogowe-twarogowe",
         "ilosc": 500,
         "jednostka": "g"
       },
@@ -197,7 +197,7 @@
     ],
     "skladniki": [
       {
-        "komponentId": "ciasto-pierogowe-pelnoziarniste",
+        "komponentId": "ciasto-pierogowe-twarogowe",
         "ilosc": 500,
         "jednostka": "g"
       },

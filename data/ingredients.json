@@ -4694,5 +4694,21 @@
     "maksPorcja": 50,
     "grupaPreferencji": "Owoce i słodkie",
     "rolaKulinarna": "dodatek-slodki"
+  },
+  {
+    "id": "mleko-w-proszku",
+    "nazwa": "Mleko w proszku odtłuszczone",
+    "makroNa100g": {
+      "kcal": 358,
+      "bialko": 35.1,
+      "tluszcz": 0.7,
+      "wegle": 52.2
+    },
+    "tagiAlergenow": [
+      "laktoza"
+    ],
+    "porcjaTypowa": 20,
+    "maksPorcja": 50,
+    "grupaPreferencji": "Nabiał i jaja"
   }
 ]
