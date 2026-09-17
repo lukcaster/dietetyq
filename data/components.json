@@ -105,5 +105,43 @@
       "Przykryj i odstaw na 30 minut.",
       "Wałkuj i lep jak zwykłe pierogi — to ciasto zachowuje się tak samo, tylko jest bardziej miękkie po ugotowaniu."
     ]
+  },
+  {
+    "id": "ciasto-drozdzowe-z-mlekiem-w-proszku",
+    "nazwa": "Ciasto drożdżowe z mlekiem w proszku",
+    "iloscWynikowa": 775,
+    "jednostkaWynikowa": "g",
+    "skladniki": [
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 360,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "mleko-w-proszku",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "drozdze-piekarskie",
+        "ilosc": 7,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mąkę wymieszaj na sucho z mlekiem w proszku, drożdżami i 7 g soli (łyżeczka).",
+      "Dodaj jajka i letnią wodę, wyrabiaj 8-10 minut, aż ciasto będzie gładkie i elastyczne.",
+      "Przykryj i odstaw do wyrośnięcia na około godzinę, aż podwoi objętość."
+    ]
   }
 ]

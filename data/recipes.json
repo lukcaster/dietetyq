@@ -114,7 +114,7 @@
     ],
     "skladniki": [
       {
-        "komponentId": "ciasto-pierogowe-twarogowe",
+        "komponentId": "ciasto-pierogowe-z-mlekiem-w-proszku",
         "ilosc": 500,
         "jednostka": "g"
       },
@@ -157,7 +157,7 @@
     ],
     "skladniki": [
       {
-        "komponentId": "ciasto-pierogowe-twarogowe",
+        "komponentId": "ciasto-pierogowe-z-mlekiem-w-proszku",
         "ilosc": 500,
         "jednostka": "g"
       },
@@ -197,7 +197,7 @@
     ],
     "skladniki": [
       {
-        "komponentId": "ciasto-pierogowe-twarogowe",
+        "komponentId": "ciasto-pierogowe-z-mlekiem-w-proszku",
         "ilosc": 500,
         "jednostka": "g"
       },
@@ -10125,6 +10125,84 @@
       {
         "skladnikId": "sezam",
         "ilosc": 15,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "dodatek-bulki-domowe",
+    "nazwa": "Domowe bułki na mleku w proszku",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "1h (wyrastanie)",
+    "kategoriaDania": "dodatek-skrobiowy",
+    "instrukcje": [
+      "Wyrośnięte ciasto podziel na 6 części i uformuj bułki.",
+      "Ułóż na blaszce, odstaw jeszcze na 15 minut.",
+      "Piecz w 220°C przez około 15 minut, aż będą złote. Ostudź na kratce, żeby spody nie zawilgły."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-drozdzowe-z-mlekiem-w-proszku",
+        "ilosc": 775,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "pizza-na-miekkim-ciescie-z-mlekiem-w-proszku",
+    "nazwa": "Pizza na cieście z mlekiem w proszku",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "1h (wyrastanie)",
+    "instrukcje": [
+      "Wyrośnięte ciasto rozciągnij na blaszce na placek grubości pół centymetra.",
+      "Posmaruj sosem pomidorowym, dopraw oregano.",
+      "Ułóż szynkę i pieczarki pokrojone w plasterki, na wierzch daj startą mozzarellę.",
+      "Piecz w 250°C (albo najwyższej temperaturze piekarnika) przez 12-15 minut, aż brzegi się zarumienią.",
+      "Na koniec posyp świeżą rukolą."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-drozdzowe-z-mlekiem-w-proszku",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-pomidorowy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 125,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szynka",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pieczarki",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 20,
         "jednostka": "g"
       }
     ]
