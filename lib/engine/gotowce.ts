@@ -32,6 +32,8 @@ export interface Gotowiec {
   skladniki: SkladnikGotowca[];
   makro: Makro;
   instrukcje: string[];
+  /** Czy danie faktycznie nie wymaga gotowania — UI oznacza tym znacznik „bez gotowania". */
+  naZimno: boolean;
   /** Rozjazd od celu slotu w % — planer używa go do wyboru między gotowcem a przepisem. */
   najwiekszeOdchylenie: number;
 }
@@ -122,6 +124,8 @@ function wypelnijGniazda(
   lubiane: Set<string>
 ): WybraneGniazda | null {
   const uzyte = new Set<string>();
+  /** Kategorie zamienników już użyte — inaczej wychodziły „płatki owsiane + płatki owsiane bezglutenowe". */
+  const uzyteKategorie = new Set<string>();
   const skladniki: Ingredient[] = [];
   const rdzen = new Set<string>();
   const baza = new Set<string>();
@@ -129,7 +133,12 @@ function wypelnijGniazda(
   for (let i = 0; i < szablon.gniazda.length; i++) {
     const gniazdo = szablon.gniazda[i];
     const pasujace = dostepne.filter(
-      (s) => s.rolaKulinarna !== undefined && gniazdo.role.includes(s.rolaKulinarna) && !uzyte.has(s.id)
+      (s) =>
+        s.rolaKulinarna !== undefined &&
+        gniazdo.role.includes(s.rolaKulinarna) &&
+        !uzyte.has(s.id) &&
+        !(s.kategoria !== undefined && uzyteKategorie.has(s.kategoria)) &&
+        !gniazdo.wykluczSkladniki?.includes(s.id)
     );
 
     if (pasujace.length === 0) {
@@ -154,6 +163,7 @@ function wypelnijGniazda(
     for (const skladnik of lubianeNajpierw.slice(0, ile)) {
       skladniki.push(skladnik);
       uzyte.add(skladnik.id);
+      if (skladnik.kategoria) uzyteKategorie.add(skladnik.kategoria);
       if (gniazdo.wymagane) rdzen.add(skladnik.id);
       if (i === 0) baza.add(skladnik.id);
     }
@@ -169,13 +179,21 @@ function wypelnijGniazda(
  * w mianowniku, a odmiana przez przypadki wymagałaby słownika fleksyjnego. Lepiej brzmieć
  * telegraficznie niż kaleczyć język.
  */
+/**
+ * Nazwy w bazie mają dopiski w nawiasach („Kasza gryczana (surowa)", „Mięso mielone wołowe
+ * (chude)") — w nazwie dania wyglądają jak błąd, więc je ucinamy.
+ */
+function bezNawiasu(nazwa: string): string {
+  return nazwa.replace(/\s*\([^)]*\)/g, "").trim();
+}
+
 function zbudujNazwe(szablon: SzablonDania, wybrane: WybraneGniazda): string {
   const opisowe = wybrane.skladniki.filter(
     (s) => !wybrane.baza.has(s.id) && !ROLE_POZA_NAZWA.has(s.rolaKulinarna ?? "")
   );
   const doNazwy = (opisowe.length > 0 ? opisowe : wybrane.skladniki).slice(0, 3);
   if (doNazwy.length === 0) return szablon.nazwa;
-  return `${szablon.nazwa}: ${doNazwy.map((s) => s.nazwa.toLowerCase()).join(", ")}`;
+  return `${szablon.nazwa}: ${doNazwy.map((s) => bezNawiasu(s.nazwa).toLowerCase()).join(", ")}`;
 }
 
 function zbudujPozycje(skladniki: Ingredient[], cel: Makro, rdzen: Set<string>): PozycjaDoDobrania[] {
@@ -308,6 +326,7 @@ export function zlozGotowiec(zapytanie: ZapytanieOGotowiec): Gotowiec | null {
         skladniki: wynikowe,
         makro,
         instrukcje: szablon.instrukcje,
+        naZimno: szablon.naZimno === true && !szablon.sprzet?.length,
         najwiekszeOdchylenie: wynik.najwiekszeOdchylenie,
       });
       break; // z jednego szablonu bierzemy jedną propozycję — reszta puli daje różnorodność

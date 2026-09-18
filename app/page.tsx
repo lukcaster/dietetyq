@@ -217,6 +217,9 @@ export default function Home() {
   const sloty = UKLADY_DNIA.find((u) => u.liczba === liczbaPosilkow)!.sloty as unknown as string[];
   const [stylGotowania, setStylGotowania] = useState<"lubie-gotowac" | "normalnie" | "minimum-roboty">("normalnie");
   const [bezSprzetu, setBezSprzetu] = useState<string[]>([]);
+  const [liczbaOsob, setLiczbaOsob] = useState(1);
+  /** Który posiłek jest właśnie wymieniany — żeby zablokować przycisk tylko w tym miejscu. */
+  const [wymieniany, setWymieniany] = useState<string | null>(null);
   const [restrykcje, setRestrykcje] = useState<string[]>([]);
   const [preferencje, setPreferencje] = useState<Record<string, Preferencja>>({});
   const [grupySkladnikow, setGrupySkladnikow] = useState<GrupaSkladnikow[]>([]);
@@ -238,6 +241,52 @@ export default function Home() {
     });
     setPlan({ ...plan, dni, listaZakupow: zbudujListeZakupow(dni) });
     setKreatorDla(null);
+  }
+
+  /**
+   * „Daj mi tu coś innego" — wymienia jeden posiłek, nie ruszając reszty planu.
+   * Wykluczamy to, co user właśnie ma na talerzu, żeby silnik nie zaproponował tego samego.
+   */
+  async function wymienPosilek(indeksDnia: number, indeksPosilku: number) {
+    if (!plan) return;
+    const posilek = plan.dni[indeksDnia].posilki[indeksPosilku];
+    const klucz = `${indeksDnia}:${indeksPosilku}`;
+    setWymieniany(klucz);
+    setBlad(null);
+    try {
+      const odpowiedz = await fetch("/api/plan/wymien", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          kcalDzienne: trybKcal === "wprost" ? kcal : undefined,
+          dane: trybKcal === "wyliczone" && danePelne(dane)
+            ? { ...dane, waga: Number(dane.waga), wzrost: Number(dane.wzrost), wiek: Number(dane.wiek) }
+            : undefined,
+          makro,
+          sloty,
+          slot: posilek.slot,
+          wyklucz: [posilek.recipeId.replace(/^szablon:/, ""), posilek.recipeId],
+          restrykcje,
+          lubianeSkladniki: lubiane,
+          nielubianeSkladniki: nielubiane,
+          bezSprzetu,
+          stylGotowania,
+        }),
+      });
+      const wynik = await odpowiedz.json();
+      if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się wymienić posiłku");
+
+      const dni: DzienWPlanie[] = plan.dni.map((dzien, i) => {
+        if (i !== indeksDnia) return dzien;
+        const posilki = dzien.posilki.map((p, j) => (j === indeksPosilku ? wynik : p));
+        return { ...dzien, posilki, makroDnia: zsumujMakroDnia(posilki) };
+      });
+      setPlan({ ...plan, dni, listaZakupow: zbudujListeZakupow(dni) });
+    } catch (e) {
+      setBlad(e instanceof Error ? e.message : "Nieznany błąd");
+    } finally {
+      setWymieniany(null);
+    }
   }
 
   const sumaMakro = makro.bialko + makro.tluszcz + makro.wegle;
@@ -578,6 +627,23 @@ export default function Home() {
                   ))}
                 </div>
 
+                <h2 style={{ marginTop: 32 }}>Dla ilu osób gotujesz?</h2>
+                <p className="podtytul" style={{ marginBottom: 12 }}>
+                  Kalorie i makro liczymy zawsze na jedną osobę — to mnoży tylko gramatury
+                  w przepisach i listę zakupów.
+                </p>
+                <div className="presety">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <button
+                      key={n}
+                      className={`preset-btn ${liczbaOsob === n ? "wybrany" : ""}`}
+                      onClick={() => setLiczbaOsob(n)}
+                    >
+                      {n === 1 ? "tylko ja" : `${n} osoby`}
+                    </button>
+                  ))}
+                </div>
+
                 <h2 style={{ marginTop: 32 }}>Czego nie masz w kuchni?</h2>
                 <p className="podtytul" style={{ marginBottom: 12 }}>
                   Zaznacz sprzęt, którego nie używasz — dania, które go wymagają, w ogóle nie wejdą do planu.
@@ -762,6 +828,13 @@ export default function Home() {
                     <div className="posilek-akcje">
                       <button
                         className="btn-maly"
+                        disabled={wymieniany === `${dzien.dzien - 1}:${i}`}
+                        onClick={() => wymienPosilek(dzien.dzien - 1, i)}
+                      >
+                        {wymieniany === `${dzien.dzien - 1}:${i}` ? "Szukam..." : "🔄 Wymień"}
+                      </button>
+                      <button
+                        className="btn-maly"
                         onClick={() => setKreatorDla({ dzien: dzien.dzien - 1, indeks: i })}
                       >
                         Zbuduj sam
@@ -802,7 +875,11 @@ export default function Home() {
                       <div className="posilek-nazwa">
                         {posilek.nazwa} <span className="podtytul">({posilek.slot})</span>
                         {/* Gotowiec to posiłek składany, nie gotowany — warto to widzieć od razu. */}
-                        {posilek.gotowiec && <span className="znacznik znacznik-baza">bez gotowania</span>}
+                        {posilek.gotowiec && (
+                          <span className="znacznik znacznik-baza">
+                            {posilek.bezGotowania ? "bez gotowania" : "składane"}
+                          </span>
+                        )}
                       </div>
                       <div className="posilek-makro">
                         {Math.round(posilek.makro.kcal)} kcal · B: {Math.round(posilek.makro.bialko)}g · T:{" "}
@@ -819,12 +896,12 @@ export default function Home() {
                       ))}
 
                       <p className="podtytul" style={{ marginTop: 10, marginBottom: 4 }}>
-                        Składniki:
+                        Składniki{liczbaOsob > 1 ? ` (na ${liczbaOsob} osób)` : ""}:
                       </p>
                       <ul>
                         {posilek.skladniki.map((s, j) => (
                           <li key={j} className="posilek-makro">
-                            {s.nazwa} — {s.ilosc} {s.jednostka}
+                            {s.nazwa} — {Math.round(s.ilosc * liczbaOsob * 10) / 10} {s.jednostka}
                           </li>
                         ))}
                       </ul>
@@ -860,7 +937,7 @@ export default function Home() {
                           <ul>
                             {dodatek.skladniki.map((s, j) => (
                               <li key={j} className="posilek-makro">
-                                {s.nazwa} — {s.ilosc} {s.jednostka}
+                                {s.nazwa} — {Math.round(s.ilosc * liczbaOsob * 10) / 10} {s.jednostka}
                               </li>
                             ))}
                           </ul>
@@ -890,11 +967,11 @@ export default function Home() {
               plec={trybKcal === "wyliczone" && dane.plec !== "" ? dane.plec : undefined}
             />
 
-            <h2>Lista zakupów na tydzień</h2>
+            <h2>Lista zakupów na tydzień{liczbaOsob > 1 ? ` (dla ${liczbaOsob} osób)` : ""}</h2>
             <div id="sekcja-lista-druk" className="lista-zakupow">
               {plan.listaZakupow.map((pozycja) => (
                 <div key={pozycja.skladnikId} className="lista-zakupow-pozycja">
-                  {pozycja.nazwa}: {pozycja.ilosc} {pozycja.jednostka}
+                  {pozycja.nazwa}: {Math.round(pozycja.ilosc * liczbaOsob * 10) / 10} {pozycja.jednostka}
                 </div>
               ))}
             </div>

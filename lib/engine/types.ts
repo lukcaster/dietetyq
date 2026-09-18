@@ -91,6 +91,11 @@ export interface GniazdoSzablonu {
   wymagane: boolean;
   /** Ile najwyżej składników może tu wejść (domyślnie 1) — np. 3 warzywa do sałatki. */
   ile?: number;
+  /**
+   * Składniki, które formalnie pasują rolą, ale w TYM daniu nie mają sensu — cała marchewka
+   * na kanapce jest warzywem, tylko nikt tego tak nie je.
+   */
+  wykluczSkladniki?: string[];
 }
 
 /**

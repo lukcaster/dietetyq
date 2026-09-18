@@ -33,7 +33,16 @@
           "warzywo"
         ],
         "wymagane": false,
-        "ile": 2
+        "ile": 2,
+        "wykluczSkladniki": [
+          "marchew",
+          "kukurydza-konserwowa",
+          "groszek-cukrowy",
+          "jarmuz",
+          "seler-naciowy",
+          "biala-rzodkiew",
+          "kapusta"
+        ]
       },
       {
         "etykieta": "sos",
@@ -297,7 +306,13 @@
           "warzywo"
         ],
         "wymagane": false,
-        "ile": 3
+        "ile": 3,
+        "wykluczSkladniki": [
+          "marchew",
+          "groszek-cukrowy",
+          "biala-rzodkiew",
+          "kapusta"
+        ]
       },
       {
         "etykieta": "sos",

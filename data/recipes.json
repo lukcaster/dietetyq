@@ -10790,5 +10790,52 @@
     "sprzet": [
       "piekarnik"
     ]
+  },
+  {
+    "id": "zapiekanka-z-ricotty-z-gruszka",
+    "nazwa": "Zapiekanka z ricotty z gruszką",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "instrukcje": [
+      "Piekarnik nagrzej do 200°C.",
+      "Ricottę zmiksuj albo dokładnie rozmieszaj z jajkami, cukrem i pastą waniliową — masa ma być gładka.",
+      "Przelej do małego naczynia żaroodpornego i piecz 30 minut, aż wierzch się zetnie i lekko zarumieni.",
+      "Gruszkę pokrój w plastry i ułóż na wierzchu dopiero po upieczeniu — pieczona puściłaby wodę."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ricotta",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-waniliowa",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "gruszka",
+        "ilosc": 170,
+        "jednostka": "g"
+      }
+    ]
   }
 ]

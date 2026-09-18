@@ -210,6 +210,8 @@ export interface PosilekWPlanie {
    * „nic nie gotujesz, składasz". UI oznacza go osobnym znacznikiem.
    */
   gotowiec?: boolean;
+  /** Gotowiec, którego naprawdę nie trzeba gotować (kanapka, miska) — w odróżnieniu od dania na ciepło. */
+  bezGotowania?: boolean;
   /**
    * Zwykłe jedzenie dołożone do posiłku, żeby domknąć białko dnia („plaster szynki").
    * Wliczone już w `makro` i w `skladnikiBazowe`, ale trzymane osobno, żeby UI mogło
@@ -353,6 +355,68 @@ function przygotujPozycje(przepis: Recipe, targetKcal: number, filtr: FiltrSklad
   return { skladniki, skladnikiBazowe, makro };
 }
 
+/**
+ * Składa gotowy posiłek z wybranego przepisu: dobiera wymagane dodatki (ryż, surówka),
+ * skaluje wszystko do celu kcal slotu i zwraca gotową pozycję planu.
+ *
+ * Wydzielone z `generujPlan`, bo dokładnie tego samego potrzebuje wymiana pojedynczego
+ * posiłku (`zaproponujZamiennik`) — inaczej dodatki i skalowanie rozjechałyby się między
+ * planem a podmianą.
+ */
+function zbudujPosilekZPrzepisu(opcje: {
+  przepis: Recipe;
+  slot: string;
+  targetKcalSlotu: number;
+  filtr: FiltrSkladnikow;
+  maSprzet: (s?: Sprzet[]) => boolean;
+  /** Wybór dodatku z puli — planer pilnuje tu powtórek w tygodniu, wymiana losuje. */
+  wybierzDodatek: (kandydaci: Recipe[], kategoria: "dodatek-skrobiowy" | "surowka") => Recipe;
+}): PosilekWPlanie {
+  const { przepis, slot, targetKcalSlotu, filtr, maSprzet, wybierzDodatek } = opcje;
+  const wszystkiePrzepisy = getRecipes();
+  const wymaganeDodatki = przepis.wymaganeDodatki ?? [];
+  const udzialDodatkow = wymaganeDodatki.reduce((suma, k) => suma + WAGA_DODATKU[k], 0);
+
+  const dodatki: DodatekWPlanie[] = [];
+  for (const kategoria of wymaganeDodatki) {
+    const kandydaciDodatku = wszystkiePrzepisy.filter((r) => {
+      if (r.kategoriaDania !== kategoria) return false;
+      if (!r.slot.includes(slot)) return false;
+      if (!maSprzet(r.sprzet)) return false;
+      return rozwiazPrzepis(r, filtr) !== null;
+    });
+    if (kandydaciDodatku.length === 0) continue;
+
+    const przepisDodatku = wybierzDodatek(kandydaciDodatku, kategoria);
+    const przygotowany = przygotujPozycje(przepisDodatku, targetKcalSlotu * WAGA_DODATKU[kategoria], filtr);
+    dodatki.push({
+      recipeId: przepisDodatku.id,
+      nazwa: przepisDodatku.nazwa,
+      kategoriaDania: kategoria,
+      skladniki: przygotowany.skladniki,
+      skladnikiBazowe: przygotowany.skladnikiBazowe,
+      instrukcje: przepisDodatku.instrukcje,
+      makro: przygotowany.makro,
+    });
+  }
+
+  const przygotowanyGlowny = przygotujPozycje(przepis, targetKcalSlotu * (1 - udzialDodatkow), filtr);
+  return {
+    slot,
+    recipeId: przepis.id,
+    nazwa: przepis.nazwa,
+    charakter: przepis.charakter,
+    czasPrzygotowania: przepis.czasPrzygotowania,
+    czasOczekiwania: przepis.czasOczekiwania,
+    uwaga: przepis.czasOczekiwania ? `Przygotuj wcześniej — wymaga ${przepis.czasOczekiwania} oczekiwania.` : undefined,
+    skladniki: przygotowanyGlowny.skladniki,
+    skladnikiBazowe: przygotowanyGlowny.skladnikiBazowe,
+    instrukcje: przepis.instrukcje,
+    makro: dodatki.reduce((suma, d) => dodajMakro(suma, d.makro), przygotowanyGlowny.makro),
+    dodatki: dodatki.length > 0 ? dodatki : undefined,
+  };
+}
+
 export function generujPlan(req: PlanRequest): WygenerowanyPlan {
   const kcalDzienne = obliczKcalDzienne(req);
   const makroDzienne = obliczMakroDzienne(kcalDzienne, req.makro);
@@ -431,6 +495,7 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
             instrukcje: gotowiec.instrukcje,
             makro: gotowiec.makro,
             gotowiec: true,
+            bezGotowania: gotowiec.naZimno,
           });
           continue;
         }
@@ -447,58 +512,22 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
       uzyteWDniu.add(przepis.id);
       uzyteWTygodniuGdziekolwiek.add(przepis.id);
 
-      const targetKcalSlotu = targetSloty[slot].kcal;
-      const wymaganeDodatki = przepis.wymaganeDodatki ?? [];
-      const udzialDodatkow = wymaganeDodatki.reduce((suma, k) => suma + WAGA_DODATKU[k], 0);
-
-      const dodatki: DodatekWPlanie[] = [];
-      for (const kategoria of wymaganeDodatki) {
-        const kandydaciDodatku = wszystkiePrzepisy.filter((r) => {
-          if (r.kategoriaDania !== kategoria) return false;
-          if (!r.slot.includes(slot)) return false;
-          if (!maSprzet(r.sprzet)) return false;
-          return rozwiazPrzepis(r, filtr) !== null;
-        });
-        if (kandydaciDodatku.length === 0) continue;
-
-        const uzyteDodatku = uzyteNaKategorieDodatku.get(kategoria)!;
-        const przepisDodatku = wybierzKandydata(kandydaciDodatku, uzyteDodatku, uzyteWDniu, ocen);
-        uzyteDodatku.add(przepisDodatku.id);
-        uzyteWDniu.add(przepisDodatku.id);
-
-        const targetKcalDodatku = targetKcalSlotu * WAGA_DODATKU[kategoria];
-        const przygotowany = przygotujPozycje(przepisDodatku, targetKcalDodatku, filtr);
-
-        dodatki.push({
-          recipeId: przepisDodatku.id,
-          nazwa: przepisDodatku.nazwa,
-          kategoriaDania: kategoria,
-          skladniki: przygotowany.skladniki,
-          skladnikiBazowe: przygotowany.skladnikiBazowe,
-          instrukcje: przepisDodatku.instrukcje,
-          makro: przygotowany.makro,
-        });
-      }
-
-      const targetKcalGlownego = targetKcalSlotu * (1 - udzialDodatkow);
-      const przygotowanyGlowny = przygotujPozycje(przepis, targetKcalGlownego, filtr);
-
-      const makroFinalne = dodatki.reduce((suma, d) => dodajMakro(suma, d.makro), przygotowanyGlowny.makro);
-
-      posilki.push({
-        slot,
-        recipeId: przepis.id,
-        nazwa: przepis.nazwa,
-        charakter: przepis.charakter,
-        czasPrzygotowania: przepis.czasPrzygotowania,
-        czasOczekiwania: przepis.czasOczekiwania,
-        uwaga: przepis.czasOczekiwania ? `Przygotuj wcześniej — wymaga ${przepis.czasOczekiwania} oczekiwania.` : undefined,
-        skladniki: przygotowanyGlowny.skladniki,
-        skladnikiBazowe: przygotowanyGlowny.skladnikiBazowe,
-        instrukcje: przepis.instrukcje,
-        makro: makroFinalne,
-        dodatki: dodatki.length > 0 ? dodatki : undefined,
-      });
+      posilki.push(
+        zbudujPosilekZPrzepisu({
+          przepis,
+          slot,
+          targetKcalSlotu: targetSloty[slot].kcal,
+          filtr,
+          maSprzet,
+          wybierzDodatek: (kandydaci, kategoria) => {
+            const uzyteDodatku = uzyteNaKategorieDodatku.get(kategoria)!;
+            const wybrany = wybierzKandydata(kandydaci, uzyteDodatku, uzyteWDniu, ocen);
+            uzyteDodatku.add(wybrany.id);
+            uzyteWDniu.add(wybrany.id);
+            return wybrany;
+          },
+        })
+      );
     }
 
     /**
@@ -551,5 +580,83 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
     dni,
     listaZakupow: zbudujListeZakupow(dni),
     ostrzezenia,
+  };
+}
+
+export interface ZapytanieOZamiennik extends Omit<PlanRequest, "sloty"> {
+  sloty: string[];
+  /** Slot, do którego szukamy innego dania. */
+  slot: string;
+  /** Id przepisów i szablonów, których user już nie chce (w tym to, co ma teraz na talerzu). */
+  wyklucz?: string[];
+  /** true = user prosi wprost o coś bez przepisu (kanapka, miska, koktajl). */
+  chceGotowca?: boolean;
+}
+
+/**
+ * Jedno danie na wymianę — „daj mi tu coś innego" na widoku planu.
+ *
+ * Świadomie NIE regeneruje planu: user zaakceptował resztę tygodnia i nie chce, żeby zmiana
+ * jednej kolacji przestawiła mu wszystko inne. Cel kcal slotu jest ten sam co w planie, więc
+ * makro dnia zostaje w tych samych widełkach.
+ */
+export function zaproponujZamiennik(req: ZapytanieOZamiennik): PosilekWPlanie | null {
+  const kcalDzienne = obliczKcalDzienne(req);
+  const makroDzienne = obliczMakroDzienne(kcalDzienne, req.makro);
+  const targetSloty = rozbijNaSloty(makroDzienne, req.sloty);
+  const cel = targetSloty[req.slot];
+  if (!cel) return null;
+
+  const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
+  const styl = req.stylGotowania ?? "normalnie";
+  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl);
+  const bezSprzetu = new Set(req.bezSprzetu ?? []);
+  const maSprzet = (potrzebny?: Sprzet[]) => !potrzebny?.some((s) => bezSprzetu.has(s));
+  const wyklucz = new Set(req.wyklucz ?? []);
+
+  if (!req.chceGotowca) {
+    const kandydaci = getRecipes().filter((r) => {
+      if ((r.kategoriaDania ?? "glowne") !== "glowne") return false;
+      if (!r.slot.includes(req.slot)) return false;
+      if (wyklucz.has(r.id)) return false;
+      if (!maSprzet(r.sprzet)) return false;
+      return rozwiazPrzepis(r, filtr) !== null;
+    });
+
+    if (kandydaci.length > 0) {
+      const przepis = losujNajlepszy(kandydaci, ocen);
+      return zbudujPosilekZPrzepisu({
+        przepis,
+        slot: req.slot,
+        targetKcalSlotu: cel.kcal,
+        filtr,
+        maSprzet,
+        // Przy wymianie nie ma historii tygodnia, więc dodatek losujemy spośród najlepszych.
+        wybierzDodatek: (kandydaciDodatku) => losujNajlepszy(kandydaciDodatku, ocen),
+      });
+    }
+  }
+
+  const gotowiec = zlozGotowiec({
+    slot: req.slot,
+    cel,
+    filtr,
+    wyklucz,
+    bezSprzetu: req.bezSprzetu,
+    lubianeSkladniki: req.lubianeSkladniki,
+  });
+  if (!gotowiec) return null;
+
+  const skladniki: SkladnikWPlanie[] = gotowiec.skladniki.map((s) => ({ ...s }));
+  return {
+    slot: req.slot,
+    recipeId: `szablon:${gotowiec.szablonId}`,
+    nazwa: gotowiec.nazwa,
+    skladniki,
+    skladnikiBazowe: skladniki.map((s) => ({ ...s })),
+    instrukcje: gotowiec.instrukcje,
+    makro: gotowiec.makro,
+    gotowiec: true,
+    bezGotowania: gotowiec.naZimno,
   };
 }

@@ -1731,7 +1731,7 @@
     "porcjaTypowa": 20,
     "maksPorcja": 40,
     "grupaPreferencji": "Roślinne i dodatki",
-    "rolaKulinarna": "sos",
+    "rolaKulinarna": "przyprawa",
     "mikroNa100g": {
       "blonnik": 3,
       "zelazo": 1.5,
@@ -1758,7 +1758,7 @@
     "porcjaTypowa": 15,
     "maksPorcja": 30,
     "grupaPreferencji": "Roślinne i dodatki",
-    "rolaKulinarna": "sos",
+    "rolaKulinarna": "przyprawa",
     "mikroNa100g": {
       "blonnik": 5.4,
       "zelazo": 2.5,
@@ -1786,7 +1786,7 @@
     "porcjaTypowa": 15,
     "maksPorcja": 30,
     "grupaPreferencji": "Roślinne i dodatki",
-    "rolaKulinarna": "sos",
+    "rolaKulinarna": "przyprawa",
     "mikroNa100g": {
       "blonnik": 0.8,
       "zelazo": 1.4,
@@ -1811,7 +1811,7 @@
     "porcjaTypowa": 10,
     "maksPorcja": 20,
     "grupaPreferencji": "Roślinne i dodatki",
-    "rolaKulinarna": "sos",
+    "rolaKulinarna": "przyprawa",
     "mikroNa100g": {
       "blonnik": 2.2,
       "zelazo": 1.1,
@@ -4286,7 +4286,7 @@
     "porcjaTypowa": 20,
     "maksPorcja": 50,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "sos",
+    "rolaKulinarna": "przyprawa",
     "kategoria": "sos-tortilla"
   },
   {
@@ -4317,7 +4317,7 @@
     "porcjaTypowa": 10,
     "maksPorcja": 30,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "sos"
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "sos-rybny",
@@ -4332,7 +4332,7 @@
     "porcjaTypowa": 10,
     "maksPorcja": 25,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "sos"
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "sos-barbecue",
