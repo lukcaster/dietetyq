@@ -127,6 +127,21 @@ const NAZWY_SLOTOW: Record<string, string> = {
   kolacja: "🌙 Kolacja",
 };
 
+/** Miękka preferencja: premia w rankingu, nie filtr (patrz PREMIA_ZA_CZAS w planner.ts). */
+const STYLE_GOTOWANIA = [
+  { id: "lubie-gotowac", emoji: "🍳", label: "Lubię gotować", opis: "dłuższe przepisy mile widziane" },
+  { id: "normalnie", emoji: "🍽️", label: "Normalnie", opis: "po prostu dobre jedzenie" },
+  { id: "minimum-roboty", emoji: "⚡", label: "Minimum roboty", opis: "kanapki, tortille, nic skomplikowanego" },
+] as const;
+
+/** Twardy filtr — bez piekarnika zapiekanki po prostu nie da się zrobić. */
+const SPRZET_OPCJE = [
+  { id: "piekarnik", label: "Piekarnik", emoji: "🔥" },
+  { id: "patelnia", label: "Patelnia", emoji: "🍳" },
+  { id: "garnek", label: "Garnek", emoji: "🥘" },
+  { id: "blender", label: "Blender", emoji: "🌀" },
+];
+
 const RESTRYKCJE_OPCJE = [
   { id: "laktoza", label: "Laktoza", emoji: "🥛" },
   { id: "gluten", label: "Gluten", emoji: "🌾" },
@@ -200,6 +215,8 @@ export default function Home() {
   const [makro, setMakro] = useState<RozkladMakro>(MAKRO_DOMYSLNE);
   const [liczbaPosilkow, setLiczbaPosilkow] = useState<3 | 4 | 5>(3);
   const sloty = UKLADY_DNIA.find((u) => u.liczba === liczbaPosilkow)!.sloty as unknown as string[];
+  const [stylGotowania, setStylGotowania] = useState<"lubie-gotowac" | "normalnie" | "minimum-roboty">("normalnie");
+  const [bezSprzetu, setBezSprzetu] = useState<string[]>([]);
   const [restrykcje, setRestrykcje] = useState<string[]>([]);
   const [preferencje, setPreferencje] = useState<Record<string, Preferencja>>({});
   const [grupySkladnikow, setGrupySkladnikow] = useState<GrupaSkladnikow[]>([]);
@@ -259,6 +276,8 @@ export default function Home() {
       const wspolne = {
         makro,
         sloty,
+        stylGotowania,
+        bezSprzetu,
         restrykcje,
         lubianeSkladniki: lubiane,
         nielubianeSkladniki: nielubiane,
@@ -538,6 +557,50 @@ export default function Home() {
                 </span>
               ))}
             </div>
+
+            {tryb === "przepisy" && (
+              <>
+                <h2 style={{ marginTop: 32 }}>Jak lubisz gotować?</h2>
+                <p className="podtytul" style={{ marginBottom: 12 }}>
+                  To podpowiedź dla silnika, nie sztywna reguła — plan dalej będzie różnorodny.
+                </p>
+                <div className="siatka-wyboru">
+                  {STYLE_GOTOWANIA.map((opcja) => (
+                    <button
+                      key={opcja.id}
+                      className={`kafelek ${stylGotowania === opcja.id ? "wybrany" : ""}`}
+                      onClick={() => setStylGotowania(opcja.id)}
+                    >
+                      <span className="emoji">{opcja.emoji}</span>
+                      {opcja.label}
+                      <span className="posilek-makro">{opcja.opis}</span>
+                    </button>
+                  ))}
+                </div>
+
+                <h2 style={{ marginTop: 32 }}>Czego nie masz w kuchni?</h2>
+                <p className="podtytul" style={{ marginBottom: 12 }}>
+                  Zaznacz sprzęt, którego nie używasz — dania, które go wymagają, w ogóle nie wejdą do planu.
+                </p>
+                <div className="pref-chipsy">
+                  {SPRZET_OPCJE.map((opcja) => {
+                    const brak = bezSprzetu.includes(opcja.id);
+                    return (
+                      <button
+                        key={opcja.id}
+                        className={`pref-chip ${brak ? "nie-lubie" : ""}`}
+                        onClick={() =>
+                          setBezSprzetu((a) => (brak ? a.filter((x) => x !== opcja.id) : [...a, opcja.id]))
+                        }
+                      >
+                        {opcja.emoji} {opcja.label}
+                        {brak ? " — nie mam" : ""}
+                      </button>
+                    );
+                  })}
+                </div>
+              </>
+            )}
 
             <div className="przyciski-nawigacji">
               <button className="btn btn-wstecz" onClick={() => setKrok(1)}>

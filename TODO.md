@@ -1,5 +1,17 @@
 # TODO — do zrobienia w następnej sesji
 
+## 19. Styl gotowania i sprzęt w kuchni — ZROBIONE, co dalej
+Pomysł usera: zamiast tylko „lubię / nie lubię składników" dać też kategorie w rodzaju „lubię piec", „chcę jak najszybciej", „nie mam piekarnika / airfryera / blendera". Mechanika w SPEC („Styl gotowania i sprzęt").
+
+Rozbite na dwie różne rzeczy: styl gotowania działa **miękko** (premia w rankingu), brak sprzętu **twardo** (filtr). Pole `sprzet[]` wyznaczone automatycznie z treści instrukcji.
+
+Co dalej:
+- **Tagowanie sprzętu jest zgadywane ze słów kluczowych**, nie wpisane ręcznie. Wyłapałem dwa fałszywe trafienia („pieczywo", „podpiecz na patelni"), ale przy 201 przepisach mogło zostać więcej. Przy dopisywaniu nowych przepisów trzeba pamiętać, żeby `sprzet` uzupełnić ręcznie — skrypt tagujący był jednorazowy i nie jest w repo.
+- **Tryb „z lodówki" nie zna sprzętu ani stylu** — tam UI o to nie pyta, a przepisy dobiera osobna ścieżka.
+- **Nie ma kategorii „meal prep"** (gotuję raz na kilka dni), o której user wspominał jako możliwej. Wymagałaby premiowania przepisów na 2+ porcje i pokazywania, co odgrzać następnego dnia.
+- Airfryer nie jest osobnym sprzętem, bo w bazie zawsze jest alternatywą dla piekarnika. Gdyby doszły przepisy wyłącznie na airfryer, trzeba będzie go rozdzielić.
+- `czasPrzygotowania` dla 143 przepisów z importu PDF było **szacowane po liczbie kroków**, więc premia za czas opiera się częściowo na zgadywanych danych.
+
 ## 18. Ciasto pierogowe z większą ilością białka — ZROBIONE
 Zgłoszenie wyszło z nieporozumienia („nie dam dzieciom odżywki białkowej w cieście na pierogi") — ciasto pierogowe **nigdy nie miało odżywki**, jest z mąki i jajka. Odżywka siedzi w `fit-pampuchy-pieczone`, `nalesniki-proteinowe-dzem`, `ciasto-proteinowe-kasza-manna-borowki` i trzech pozycjach z importu. Sam pomysł „więcej białka bez proszku" był jednak dobry.
 

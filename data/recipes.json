@@ -49,6 +49,9 @@
         "kategoria": "owoc-jagodowy",
         "domyslnaSkladnikId": "borowki"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -138,6 +141,10 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -176,6 +183,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -211,6 +222,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -259,6 +273,10 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -313,6 +331,10 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -362,6 +384,10 @@
         "ilosc": 60,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -408,6 +434,9 @@
         "ilosc": 1,
         "jednostka": "szt"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -449,6 +478,10 @@
         "kategoria": "platki-owsiane",
         "domyslnaSkladnikId": "platki-owsiane"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -491,6 +524,9 @@
         "kategoria": "sos-tortilla",
         "domyslnaSkladnikId": "sos-pomidorowy"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -513,6 +549,9 @@
         "ilosc": 80,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -535,6 +574,9 @@
         "ilosc": 200,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -557,6 +599,9 @@
         "ilosc": 70,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -585,6 +630,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -811,6 +859,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -883,6 +934,9 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -926,6 +980,9 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -965,6 +1022,9 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1013,6 +1073,10 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -1068,6 +1132,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1119,6 +1186,11 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -1149,6 +1221,10 @@
         "ilosc": 4,
         "jednostka": "szt"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -1188,6 +1264,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1239,6 +1318,10 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -1286,6 +1369,9 @@
         "ilosc": 80,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -1326,6 +1412,10 @@
         "kategoria": "platki-owsiane",
         "domyslnaSkladnikId": "platki-owsiane"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -1374,6 +1464,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1434,6 +1527,10 @@
         "kategoria": "mleko",
         "domyslnaSkladnikId": "mleko-owsiane"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia"
     ]
   },
   {
@@ -1491,6 +1588,9 @@
         "kategoria": "jogurt-smakowy",
         "domyslnaSkladnikId": "skyr-smakowy"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1546,6 +1646,9 @@
         "ilosc": 80,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1593,6 +1696,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1637,6 +1743,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -1701,6 +1811,9 @@
         "ilosc": 100,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1752,6 +1865,9 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -1835,6 +1951,10 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -1906,6 +2026,11 @@
         "ilosc": 8,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -1978,6 +2103,10 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -2018,6 +2147,9 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -2096,6 +2228,10 @@
         "ilosc": 3,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -2152,6 +2288,9 @@
         "kategoria": "slodzik-sypki",
         "domyslnaSkladnikId": "erytrytol"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -2210,6 +2349,10 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia"
     ]
   },
   {
@@ -2309,6 +2452,10 @@
         "ilosc": 30,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -2400,6 +2547,10 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -2459,6 +2610,10 @@
         "ilosc": 8,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -2524,6 +2679,9 @@
         "ilosc": 2,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -2553,6 +2711,9 @@
         "ilosc": 200,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -2659,6 +2820,10 @@
         "ilosc": 2,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -2765,6 +2930,10 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -2816,6 +2985,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -2912,6 +3085,10 @@
         "ilosc": 6,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -2966,6 +3143,10 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3029,6 +3210,11 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender",
+      "patelnia"
     ]
   },
   {
@@ -3067,6 +3253,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -3116,6 +3305,9 @@
         "ilosc": 120,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -3154,6 +3346,10 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek"
     ]
   },
   {
@@ -3224,6 +3420,10 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek"
     ]
   },
   {
@@ -3326,6 +3526,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -3379,6 +3582,11 @@
         "ilosc": 40,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3438,6 +3646,12 @@
         "ilosc": 60,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3491,6 +3705,9 @@
         "ilosc": 135,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -3549,6 +3766,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3603,6 +3824,11 @@
         "ilosc": 90,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3662,6 +3888,10 @@
         "ilosc": 7.5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -3780,6 +4010,11 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3839,6 +4074,10 @@
         "ilosc": 100,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3908,6 +4147,10 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -3956,6 +4199,9 @@
         "ilosc": 135,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -4009,6 +4255,10 @@
         "ilosc": 6,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
     ]
   },
   {
@@ -4062,6 +4312,10 @@
         "ilosc": 65,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia"
     ]
   },
   {
@@ -4120,6 +4374,10 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek"
     ]
   },
   {
@@ -4184,6 +4442,10 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -4237,6 +4499,9 @@
         "ilosc": 65,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -4275,6 +4540,9 @@
         "ilosc": 35,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -4339,6 +4607,10 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -4387,6 +4659,11 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -4441,6 +4718,10 @@
         "ilosc": 100,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia"
     ]
   },
   {
@@ -4474,6 +4755,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -4528,6 +4812,11 @@
         "ilosc": 30,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -4587,6 +4876,9 @@
         "ilosc": 36,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -4634,6 +4926,9 @@
         "ilosc": 100,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -4677,6 +4972,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -4731,6 +5029,9 @@
         "ilosc": 90,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -4785,6 +5086,10 @@
         "ilosc": 21,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "garnek"
     ]
   },
   {
@@ -4834,6 +5139,10 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -4877,6 +5186,10 @@
         "ilosc": 400,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -4931,6 +5244,9 @@
         "ilosc": 60,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -4979,6 +5295,9 @@
         "ilosc": 30,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -5038,6 +5357,9 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -5097,6 +5419,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -5155,6 +5480,9 @@
         "ilosc": 30,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -5204,6 +5532,10 @@
         "ilosc": 170,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -5306,6 +5638,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -5365,6 +5700,10 @@
         "ilosc": 6,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -5424,6 +5763,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -5458,6 +5800,9 @@
         "ilosc": 60,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -5591,6 +5936,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -5629,6 +5978,9 @@
         "ilosc": 60,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -5721,6 +6073,9 @@
         "ilosc": 120,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -5789,6 +6144,11 @@
         "ilosc": 75,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -5832,6 +6192,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -5870,6 +6233,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -5913,6 +6279,9 @@
         "ilosc": 200,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -6020,6 +6389,10 @@
         "ilosc": 35,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -6079,6 +6452,10 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -6159,6 +6536,11 @@
         "ilosc": 90,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -6276,6 +6658,9 @@
         "ilosc": 120,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -6365,6 +6750,9 @@
         "ilosc": 35,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -6429,6 +6817,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -6482,6 +6873,9 @@
         "ilosc": 175,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -6520,6 +6914,9 @@
         "ilosc": 90,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -6574,6 +6971,10 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -6623,6 +7024,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -6667,6 +7071,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -6726,6 +7133,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -6779,6 +7189,10 @@
         "ilosc": 24,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -6913,6 +7327,9 @@
         "ilosc": 135,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -6982,6 +7399,9 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -7046,6 +7466,11 @@
         "ilosc": 120,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -7153,6 +7578,9 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -7196,6 +7624,9 @@
         "ilosc": 175,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -7270,6 +7701,9 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -7324,6 +7758,11 @@
         "ilosc": 6,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender",
+      "patelnia"
     ]
   },
   {
@@ -7382,6 +7821,9 @@
         "ilosc": 220,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -7435,6 +7877,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek"
     ]
   },
   {
@@ -7482,6 +7928,9 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -7545,6 +7994,9 @@
         "ilosc": 120,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -7603,6 +8055,10 @@
         "ilosc": 55,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -7726,6 +8182,11 @@
         "ilosc": 90,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender",
+      "garnek"
     ]
   },
   {
@@ -7779,6 +8240,10 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -7838,6 +8303,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -7928,6 +8396,10 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -7981,6 +8453,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -8040,6 +8515,11 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -8094,6 +8574,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -8238,6 +8722,9 @@
         "ilosc": 210,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -8292,6 +8779,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -8366,6 +8857,9 @@
         "ilosc": 6,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -8429,6 +8923,9 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -8488,6 +8985,10 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -8537,6 +9038,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -8681,6 +9185,9 @@
         "ilosc": 6,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -8756,6 +9263,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -8852,6 +9362,9 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -8905,6 +9418,9 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -8968,6 +9484,10 @@
         "ilosc": 45,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -9037,6 +9557,9 @@
         "ilosc": 80,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -9148,6 +9671,10 @@
         "ilosc": 150,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -9207,6 +9734,10 @@
         "ilosc": 10,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
     ]
   },
   {
@@ -9234,6 +9765,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -9341,6 +9875,11 @@
         "ilosc": 75,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -9475,6 +10014,10 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -9525,6 +10068,9 @@
         "ilosc": 25,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "blender"
     ]
   },
   {
@@ -9605,6 +10151,9 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -9653,6 +10202,9 @@
         "ilosc": 30,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -9707,6 +10259,10 @@
         "ilosc": 50,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -9764,6 +10320,9 @@
         "ilosc": 60,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -9822,6 +10381,10 @@
         "ilosc": 5,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia",
+      "garnek"
     ]
   },
   {
@@ -9902,6 +10465,9 @@
         "ilosc": 160,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -9951,6 +10517,9 @@
         "ilosc": 100,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -10031,6 +10600,9 @@
         "ilosc": 24,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -10089,6 +10661,9 @@
         "ilosc": 130,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -10127,6 +10702,9 @@
         "ilosc": 15,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -10154,6 +10732,9 @@
         "ilosc": 775,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   },
   {
@@ -10205,6 +10786,9 @@
         "ilosc": 20,
         "jednostka": "g"
       }
+    ],
+    "sprzet": [
+      "piekarnik"
     ]
   }
 ]

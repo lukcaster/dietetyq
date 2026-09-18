@@ -171,6 +171,17 @@ Id ze spiżarni niesie źródło: składnik bazowy ma zwykłe id (`kurczak-piers
 
 **Wybór spośród kandydatów jest losowy, nie „pierwszy z brzegu".** `wybierzKandydata` zawęża pulę (nieużyte w tygodniu → nieużyte dzisiaj → wszystko), ocenia ją liczbą lubianych składników i **losuje spośród najlepiej ocenionych**. Losowanie jest tu wymogiem, nie ozdobnikiem: przy deterministycznym „weź pierwszy" plan zawsze składał się z pierwszych N przepisów w kolejności zapisu w `recipes.json`, a dalsza część bazy nie wypadała nigdy (mierzone: 7 unikalnych dań na tydzień przy 35 przepisach w bazie; po zmianie 16–19).
 
+### Styl gotowania i sprzęt (krok 2)
+Dwie rzeczy, które wyglądają podobnie, a muszą działać inaczej:
+
+**Styl gotowania** (`stylGotowania`: `lubie-gotowac` / `normalnie` / `minimum-roboty`) jest **miękki** — to premia w rankingu kandydata (`PREMIA_ZA_CZAS`) plus mnożnik udziału gotowców (`MNOZNIK_GOTOWCOW`). Twardy filtr po czasie przygotowania powtórzyłby błąd `charakterPerSlot`: na obiad są w bazie **dwa** przepisy poniżej 15 minut, więc „minimum roboty" dałoby ten sam obiad przez cały tydzień.
+
+**Brak sprzętu** (`bezSprzetu`: `piekarnik` / `patelnia` / `garnek` / `blender`) jest **twardy** — bez piekarnika zapiekanki po prostu nie da się zrobić, więc przepis wypada z puli, a szablony gotowców filtrujemy tak samo (koktajl bez blendera nie powstanie). Można sobie na to pozwolić, bo zmierzone: odcięcie piekarnika i blendera naraz zostawia 31-55 przepisów na slot.
+
+Pole `sprzet[]` w `recipes.json` i `szablony.json` zostało **wyznaczone z treści instrukcji** skryptem szukającym słów kluczowych (piekarnik/piecz/blaszka, blender/zmiksuj, patelnia/smaż, garnek/ugotuj). Uwaga na fałszywe trafienia: „pieczywo" i „podpiecz na patelni" trzeba było jawnie wykluczyć. Airfryer nie jest osobną pozycją — w bazie występuje wyłącznie jako alternatywa dla piekarnika.
+
+Zmierzone na 2200 kcal i 5 posiłkach: „minimum roboty" daje 10 przepisów poniżej 15 minut, zero powyżej 30 i 20 gotowców na 35 posiłków; „lubię gotować" — 33 przepisy 30+ i tylko 2 gotowce; „bez piekarnika i blendera" — zero dań z tym sprzętem, 35/35 unikalnych dań, bez ostrzeżeń.
+
 ### „Gotowce" w planie tygodniowym (`lib/engine/gotowce.ts`)
 Nie każdy posiłek musi być gotowany. Na drugie śniadanie normalny człowiek robi kanapkę albo sięga po jogurt z owocami, a nie piecze keksówkę — a baza przepisów jest najuboższa właśnie w lekkich slotach (7 przepisów na drugie śniadanie kontra 29 na kolację).
 

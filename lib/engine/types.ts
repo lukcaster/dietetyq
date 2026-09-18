@@ -111,6 +111,8 @@ export interface SzablonDania {
   instrukcje: string[];
   /** Danie składane bez gotowania — nie wchodzą do niego składniki z `wymagaGotowania`. */
   naZimno?: boolean;
+  /** Sprzęt potrzebny do złożenia dania z tego szablonu (kanapka nie potrzebuje niczego). */
+  sprzet?: Sprzet[];
 }
 
 export interface SkladnikProsty {
@@ -202,9 +204,21 @@ export interface Recipe {
   instrukcje: string[];
   skladniki: SkladnikPozycja[];
   kategoriaDania?: KategoriaDania;
+  /** Sprzęt potrzebny do zrobienia dania — patrz SPRZET. Brak = nic nie trzeba (danie na zimno). */
+  sprzet?: Sprzet[];
   /** Kategorie dodatków, które silnik musi dobrać razem z tym daniem głównym (np. ryż + surówka). */
   wymaganeDodatki?: ("dodatek-skrobiowy" | "surowka")[];
 }
 
 export const SLOTY = ["sniadanie", "drugie-sniadanie", "obiad", "podwieczorek", "kolacja"] as const;
 export type Slot = (typeof SLOTY)[number];
+
+/**
+ * Sprzęt potrzebny do zrobienia dania. Wyznaczony z treści instrukcji (skrypt tagujący, patrz
+ * TODO 19) i dopisany do `recipes.json` oraz `szablony.json`.
+ *
+ * Airfryer celowo NIE jest osobną pozycją: w bazie występuje wyłącznie jako alternatywa dla
+ * piekarnika („piekarnik/airfryer"), więc nie ma przepisu, który wymagałby go naprawdę.
+ */
+export const SPRZET = ["piekarnik", "patelnia", "garnek", "blender"] as const;
+export type Sprzet = (typeof SPRZET)[number];

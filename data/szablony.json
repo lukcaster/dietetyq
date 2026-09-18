@@ -106,7 +106,10 @@
       "Płatki zalej mlekiem lub jogurtem — na zimno (odstaw na noc) albo gotuj 5-7 min na małym ogniu.",
       "Przełóż do miski, dodaj owoce i dodatki."
     ],
-    "naZimno": true
+    "naZimno": true,
+    "sprzet": [
+      "garnek"
+    ]
   },
   {
     "id": "miska-bialkowa",
@@ -196,6 +199,9 @@
       "Rozgrzej tłuszcz na patelni.",
       "Wsad podsmaż chwilę, wbij jajka i smaż mieszając (jajecznica) albo pod przykryciem (omlet).",
       "Dopraw solą i pieprzem, podaj z pieczywem."
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   },
   {
@@ -252,6 +258,10 @@
       "Skrobię ugotuj wg opisu na opakowaniu.",
       "Białko podsmaż na tłuszczu, dodaj warzywa i duś do miękkości.",
       "Połącz ze skrobią, dopraw i polej sosem."
+    ],
+    "sprzet": [
+      "garnek",
+      "patelnia"
     ]
   },
   {
@@ -303,7 +313,10 @@
       "Posmaruj sosem, ułóż białko i warzywa, zawiń.",
       "Opcjonalnie zgrilluj zawiniętego wrapa po 2 min z każdej strony."
     ],
-    "naZimno": true
+    "naZimno": true,
+    "sprzet": [
+      "patelnia"
+    ]
   },
   {
     "id": "salatka",
@@ -401,6 +414,9 @@
     "instrukcje": [
       "Kaszę lub ryż ugotuj w mleku na małym ogniu, mieszając, aż zmięknie.",
       "Przełóż do miski, dodaj owoce i dodatki."
+    ],
+    "sprzet": [
+      "garnek"
     ]
   },
   {
@@ -450,7 +466,10 @@
       "Wszystko wrzuć do blendera.",
       "Zmiksuj do gładkości; jeśli jest za gęsty, dolej wody lub mleka."
     ],
-    "naZimno": true
+    "naZimno": true,
+    "sprzet": [
+      "blender"
+    ]
   },
   {
     "id": "mieso-z-warzywami",
@@ -495,6 +514,9 @@
       "Mięso pokrój i podsmaż na tłuszczu.",
       "Dodaj warzywa i duś do miękkości.",
       "Dopraw, w razie potrzeby dolej sosu."
+    ],
+    "sprzet": [
+      "patelnia"
     ]
   }
 ]

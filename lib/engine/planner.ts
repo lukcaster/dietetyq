@@ -11,7 +11,7 @@ import {
   zbudujFiltr,
   type FiltrSkladnikow,
 } from "./macro";
-import type { Charakter, KategoriaDania, Makro, Recipe } from "./types";
+import type { Charakter, CzasPrzygotowania, KategoriaDania, Makro, Recipe, Sprzet } from "./types";
 
 export type { PozycjaListyZakupow, SkladnikBazowyWPlanie } from "./lista-zakupow";
 
@@ -51,7 +51,39 @@ export interface PlanRequest {
    * podstawia zamiennik, a przepis bez wyjścia wypada z puli.
    */
   nielubianeSkladniki?: string[];
+  /**
+   * Sprzęt, którego user NIE ma (np. `["piekarnik"]`). Działa twardo — bez piekarnika zapiekanki
+   * po prostu nie da się zrobić. Zmierzone: odcięcie piekarnika i blendera naraz zostawia
+   * 31-55 przepisów na slot, więc pula się od tego nie zapada.
+   */
+  bezSprzetu?: Sprzet[];
+  /**
+   * Ile user chce się narobić. Działa MIĘKKO — jako premia w rankingu, nie filtr. Twardy filtr
+   * po czasie przygotowania powtórzyłby błąd `charakterPerSlot`: na obiad są w bazie tylko dwa
+   * przepisy poniżej 15 minut, więc „minimum roboty" dałoby ten sam obiad przez cały tydzień.
+   */
+  stylGotowania?: StylGotowania;
 }
+
+export type StylGotowania = "lubie-gotowac" | "normalnie" | "minimum-roboty";
+
+/**
+ * Premia w ocenie kandydata za czas przygotowania, osobno dla każdego stylu. Wartości są
+ * porównywalne z premią za lubiane składniki (1 punkt za składnik), więc styl przechyla wybór,
+ * ale nie unieważnia reszty kryteriów.
+ */
+const PREMIA_ZA_CZAS: Record<StylGotowania, Record<CzasPrzygotowania, number>> = {
+  "lubie-gotowac": { "<15": 0, "15-30": 1, "30+": 2 },
+  normalnie: { "<15": 0, "15-30": 0, "30+": 0 },
+  "minimum-roboty": { "<15": 3, "15-30": 1, "30+": -2 },
+};
+
+/** Jak styl gotowania przestawia udział gotowców (mnożnik dla SZANSA_NA_GOTOWIEC). */
+const MNOZNIK_GOTOWCOW: Record<StylGotowania, number> = {
+  "lubie-gotowac": 0.3,
+  normalnie: 1,
+  "minimum-roboty": 1.6,
+};
 
 const WSPOLCZYNNIK_CELU: Record<DaneAntropometryczne["cel"], number> = {
   redukcja: 0.85,
@@ -256,12 +288,17 @@ function wybierzKandydata(
  * Ocena przepisu = ile lubianych składników zawiera. Liczymy raz na przepis i trzymamy w mapie,
  * bo rozwijanie składników czyta pliki z dysku, a dobór leci 7 dni × liczba slotów.
  */
-function zbudujOcenePreferencji(filtr: FiltrSkladnikow, lubiane: string[]): (r: Recipe) => number {
-  if (lubiane.length === 0) return () => 0;
+function zbudujOcenePreferencji(
+  filtr: FiltrSkladnikow,
+  lubiane: string[],
+  styl: StylGotowania = "normalnie"
+): (r: Recipe) => number {
+  const zaCzas = (przepis: Recipe) => PREMIA_ZA_CZAS[styl][przepis.czasPrzygotowania] ?? 0;
+  if (lubiane.length === 0) return zaCzas;
   const cache = new Map<string, number>();
   return (przepis: Recipe) => {
     const zapamietane = cache.get(przepis.id);
-    if (zapamietane !== undefined) return zapamietane;
+    if (zapamietane !== undefined) return zapamietane + zaCzas(przepis);
 
     const uzyte = new Set<string>();
     for (const pos of przepis.skladniki) {
@@ -271,7 +308,7 @@ function zbudujOcenePreferencji(filtr: FiltrSkladnikow, lubiane: string[]): (r: 
     }
     const ocena = lubiane.reduce((suma, id) => suma + (uzyte.has(id) ? 1 : 0), 0);
     cache.set(przepis.id, ocena);
-    return ocena;
+    return ocena + zaCzas(przepis);
   };
 }
 
@@ -324,7 +361,12 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
   const dania = wszystkiePrzepisy.filter((r) => (r.kategoriaDania ?? "glowne") === "glowne");
 
   const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
-  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? []);
+  const styl = req.stylGotowania ?? "normalnie";
+  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl);
+
+  /** Bez piekarnika zapiekanki nie da się zrobić — to jedyne twarde ograniczenie poza alergenami. */
+  const bezSprzetu = new Set(req.bezSprzetu ?? []);
+  const maSprzet = (potrzebny?: Sprzet[]) => !potrzebny?.some((s) => bezSprzetu.has(s));
   const ostrzezenia: string[] = [];
   const slotyBezKandydatow = new Set<string>();
 
@@ -351,6 +393,7 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
       const kandydaci = dania.filter((r) => {
         if (!r.slot.includes(slot)) return false;
         if (preferowanyCharakter && r.charakter !== preferowanyCharakter) return false;
+        if (!maSprzet(r.sprzet)) return false;
         return rozwiazPrzepis(r, filtr) !== null;
       });
 
@@ -363,12 +406,14 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
        * a wymuszanie go przez składniki to dokładnie ta heurystyka „per składnik", którą
        * tryb z lodówki już raz wyrzucił (patrz SPEC).
        */
-      const losowanyGotowiec = !preferowanyCharakter && Math.random() < (SZANSA_NA_GOTOWIEC[slot] ?? 0);
+      const losowanyGotowiec =
+        !preferowanyCharakter && Math.random() < (SZANSA_NA_GOTOWIEC[slot] ?? 0) * MNOZNIK_GOTOWCOW[styl];
       if (losowanyGotowiec || kandydaci.length === 0) {
         const gotowiec = zlozGotowiec({
           slot,
           cel: targetSloty[slot],
           filtr,
+          bezSprzetu: req.bezSprzetu,
           wyklucz: new Set([...uzyteSzablony, ...uzyteWDniu]),
           lubianeSkladniki: req.lubianeSkladniki,
         });
@@ -411,6 +456,7 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
         const kandydaciDodatku = wszystkiePrzepisy.filter((r) => {
           if (r.kategoriaDania !== kategoria) return false;
           if (!r.slot.includes(slot)) return false;
+          if (!maSprzet(r.sprzet)) return false;
           return rozwiazPrzepis(r, filtr) !== null;
         });
         if (kandydaciDodatku.length === 0) continue;
@@ -492,8 +538,9 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
   // Cicho pominięty slot to najgorszy możliwy wynik — user dostałby dzień bez obiadu i nie wiedziałby dlaczego.
   for (const slot of slotyBezKandydatow) {
     ostrzezenia.push(
-      `Slot "${slot}" został pominięty — przy tych restrykcjach i nielubianych składnikach ` +
-        `żaden przepis z bazy nie jest wykonalny. Odznacz coś na liście "nie jem tego".`
+      `Slot "${slot}" został pominięty — przy tych restrykcjach, nielubianych składnikach ` +
+        `i dostępnym sprzęcie żaden przepis z bazy nie jest wykonalny. Odznacz coś na liście ` +
+        `"nie jem tego" albo na liście sprzętu.`
     );
   }
 

@@ -2,7 +2,7 @@ import { getIngredients, getSzablony } from "./data";
 import { dodajMakro, pustaMakro, skalujMakro, skladnikOdrzucony, type FiltrSkladnikow } from "./macro";
 import { granicePozycji, naJednostke, MIN_SENSOWNA_PORCJA_G, type JednostkaPorcji } from "./porcje";
 import { dobierzIlosci, type PozycjaDoDobrania } from "./solver";
-import type { Ingredient, Makro, SzablonDania } from "./types";
+import type { Ingredient, Makro, Sprzet, SzablonDania } from "./types";
 
 /**
  * „Gotowiec" — posiłek złożony z szablonu (`data/szablony.json`) i zwykłych składników z bazy,
@@ -239,6 +239,8 @@ export interface ZapytanieOGotowiec {
   filtr: FiltrSkladnikow;
   /** Id szablonów użytych już dziś albo w tym tygodniu — omijamy je, o ile jest z czego wybierać. */
   wyklucz?: Set<string>;
+  /** Sprzęt, którego user nie ma — koktajl bez blendera nie powstanie. */
+  bezSprzetu?: Sprzet[];
   lubianeSkladniki?: string[];
 }
 
@@ -259,7 +261,10 @@ export function zlozGotowiec(zapytanie: ZapytanieOGotowiec): Gotowiec | null {
       !skladnikOdrzucony(s, zapytanie.filtr)
   );
 
-  const naSlot = getSzablony().filter((s) => s.sloty.includes(zapytanie.slot));
+  const brakujacySprzet = new Set(zapytanie.bezSprzetu ?? []);
+  const naSlot = getSzablony().filter(
+    (s) => s.sloty.includes(zapytanie.slot) && !s.sprzet?.some((x) => brakujacySprzet.has(x))
+  );
   if (naSlot.length === 0 || dostepne.length === 0) return null;
 
   // Powtórki odcinamy twardo, ale tylko gdy jest z czego wybierać — przy jednym dostępnym

@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generujPlan, type PlanRequest } from "@/lib/engine/planner";
+import { generujPlan, type PlanRequest, type StylGotowania } from "@/lib/engine/planner";
+import { SPRZET } from "@/lib/engine/types";
+
+const STYLE: StylGotowania[] = ["lubie-gotowac", "normalnie", "minimum-roboty"];
 
 function walidujRequest(body: unknown): { ok: true; req: PlanRequest } | { ok: false; blad: string } {
   if (typeof body !== "object" || body === null) return { ok: false, blad: "Brak danych w body" };
@@ -32,6 +35,15 @@ function walidujRequest(body: unknown): { ok: true; req: PlanRequest } | { ok: f
     }
   }
 
+  if (req.bezSprzetu !== undefined) {
+    if (!Array.isArray(req.bezSprzetu) || req.bezSprzetu.some((s) => !SPRZET.includes(s))) {
+      return { ok: false, blad: `'bezSprzetu' musi być tablicą z: ${SPRZET.join(", ")}` };
+    }
+  }
+  if (req.stylGotowania !== undefined && !STYLE.includes(req.stylGotowania)) {
+    return { ok: false, blad: `'stylGotowania' musi być jednym z: ${STYLE.join(", ")}` };
+  }
+
   return {
     ok: true,
     req: {
@@ -43,6 +55,8 @@ function walidujRequest(body: unknown): { ok: true; req: PlanRequest } | { ok: f
       restrykcje: req.restrykcje ?? [],
       lubianeSkladniki: req.lubianeSkladniki ?? [],
       nielubianeSkladniki: req.nielubianeSkladniki ?? [],
+      bezSprzetu: req.bezSprzetu ?? [],
+      stylGotowania: req.stylGotowania ?? "normalnie",
     },
   };
 }
