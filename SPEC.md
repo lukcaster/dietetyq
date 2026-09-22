@@ -214,6 +214,36 @@ Zasady, które trzymają to w ryzach:
 
 Zmierzone (2200 kcal, 5 posiłków, cel białka 165 g): dni schodzące do 93-120 g białka wychodzą po domknięciu na 100-160 g, kalorie w granicach 105 % celu. Część dni zostaje poniżej celu, bo zabrakło zapasu kalorii — świadomie.
 
+## Architektura aplikacji: profil, plan, postęp
+
+Aplikacja przestała być kreatorem, a stała się **narzędziem z profilem**. Różnica jest taka, że user wypełnia ankietę raz, a potem wchodzi i widzi, co ma dziś zjeść.
+
+### Profil i dane usera (`lib/magazyn.ts`)
+Wszystko siedzi w `localStorage`: profil, aktualny plan, postęp (co zjedzone), odhaczona lista zakupów i historia wagi. **Bez konta, bez hasła, bez bazy.** Konsekwencja jest uczciwa i trzeba ją znać: dane są przypisane do przeglądarki — na telefonie będzie pusto, a wyczyszczenie danych strony kasuje wszystko.
+
+Cały dostęp idzie przez jeden moduł (`magazyn`) właśnie po to, żeby dało się to później podmienić na zapis serwerowy (kod dostępu typu „ZUPA-4827" + darmowa baza) bez przepisywania widoków. To była świadoma decyzja przy wyborze: „najpierw lokalnie, potem kod".
+
+### Ankieta powitalna (`app/Onboarding.tsx`)
+Pytamy o: imię, liczbę posiłków, **smak per posiłek**, kalorie (wprost albo z danych), makro, liczbę osób, styl gotowania, brakujący sprzęt i restrykcje. Świadomie **nie ma tu listy lubianych i nielubianych składników** — to było 49 chipsów do przeklikania przy pierwszym wejściu. Pola w profilu zostały, tylko nikt ich na razie nie wypełnia.
+
+**Smak per posiłek** (`smakPerSlot`) jest preferencją, nie filtrem — premia `PREMIA_ZA_SMAK` w rankingu kandydata. Zaznaczenie obu smaków albo żadnego znaczy „bez znaczenia". To nie to samo co stary `charakterPerSlot`, który filtrował twardo i dlatego został wyłączony: przy „wytrawnym drugim śniadaniu" pula schodziła do jednego przepisu na siedem dni. Zmierzone po zmianie: przy ustawieniu „śniadania na słodko, kolacje na słono" 6 z 6 śniadań z przepisu było słodkich, a 6 z 6 kolacji wytrawnych — przy zachowanej różnorodności dań.
+
+### Waga
+Jeśli user poda wagę, apka raz dziennie pyta o aktualną (jedno pole u góry, z opcją „nie dziś"). Historia trafia do profilu. **Przeliczanie kalorii dzieje się tylko wtedy, gdy user wybrał „policz za mnie"** — wtedy silnik liczy zapotrzebowanie z aktualnych danych przy każdym planie. Przy kaloriach wpisanych wprost waga jest tylko zapisem historii. Świadomie nie ma tu crona ani powiadomień: wymagałyby serwera, zgód przeglądarki i adresu e-mail.
+
+### Przepływ
+1. **Menu** — bez planu: trzy kafelki (na dziś / 3 dni / tydzień). Z planem: „Mój plan", lista zakupów, ustawienia i możliwość wygenerowania nowego.
+2. **Generowanie** — spinner, bo przy 200 przepisach i siedmiu dniach to trwa chwilę.
+3. **Podgląd** — cały plan z makro, ostrzeżeniami i bilansem mikro. Można wymieniać posiłki, przyjąć albo odrzucić.
+4. **Mój plan** — pokazuje **jeden posiłek: pierwszy niezjedzony**, z krokami i składnikami. Przycisk „Zjadłem" przesuwa do następnego, „Cofnij" naprawia pomyłkę.
+5. **Lista zakupów** — pozycje do odhaczania (stan trzymany w `magazyn`, więc przetrwa zamknięcie karty), z eksportem do PDF.
+
+### Wymiana posiłku
+`POST /api/plan/wymien` zwraca **trzy propozycje**, a UI pokazuje je w modalu z makro i składem. Wcześniej wymiana losowała jedno danie i podmieniała od razu — user nie wiedział, co dostanie, i klikał w kółko. Wymiana nigdy nie regeneruje planu: cel kcal slotu jest ten sam, więc dzień się nie rozjeżdża.
+
+### Tryb „z lodówki" jest zawieszony
+Kod (`lib/engine/z-lodowki.ts`, `app/KoszykLodowki.tsx`, `/api/z-lodowki`) zostaje nietknięty, ale **nie ma do niego wejścia z menu**. Powód: jakość wyników była słaba, a mechanizm skomplikowany (patrz TODO). Do ewentualnego powrotu.
+
 ## Tryb „z lodówki" (`lib/engine/z-lodowki.ts`)
 Proces odwrócony względem planera. Planer idzie *cel → przepisy → składniki*; tutaj user podaje cel makro **i koszyk tego, co ma** (albo na co ma ochotę), a silnik odpowiada, co i ile zjeść w którym slocie. Zakres to **jeden dzień** — lodówka nie starcza na tydzień, a rozmnażanie koszyka na 7 dni dawałoby siedem identycznych dni.
 

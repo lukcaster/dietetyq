@@ -40,6 +40,9 @@ function walidujRequest(body: unknown): { ok: true; req: PlanRequest } | { ok: f
       return { ok: false, blad: `'bezSprzetu' musi być tablicą z: ${SPRZET.join(", ")}` };
     }
   }
+  if (req.liczbaDni !== undefined && ![1, 3, 7].includes(req.liczbaDni)) {
+    return { ok: false, blad: "'liczbaDni' musi być 1, 3 albo 7" };
+  }
   if (req.stylGotowania !== undefined && !STYLE.includes(req.stylGotowania)) {
     return { ok: false, blad: `'stylGotowania' musi być jednym z: ${STYLE.join(", ")}` };
   }
@@ -57,6 +60,8 @@ function walidujRequest(body: unknown): { ok: true; req: PlanRequest } | { ok: f
       nielubianeSkladniki: req.nielubianeSkladniki ?? [],
       bezSprzetu: req.bezSprzetu ?? [],
       stylGotowania: req.stylGotowania ?? "normalnie",
+      liczbaDni: req.liczbaDni,
+      smakPerSlot: req.smakPerSlot,
     },
   };
 }

@@ -1,5 +1,17 @@
 # TODO — do zrobienia w następnej sesji
 
+## 20. Przebudowa na aplikację z profilem — ZROBIONE, co dalej
+Apka przestała być sześciokrokowym kreatorem. Jest profil (ankieta raz), menu, plan na 1/3/7 dni, widok „co jeść teraz" z odhaczaniem, lista zakupów do odhaczania i wymiana posiłku z trzema propozycjami. Architektura w SPEC („Architektura aplikacji").
+
+Co dalej:
+- **Dane żyją tylko w przeglądarce.** Warstwa `lib/magazyn.ts` jest wydzielona pod przyszły zapis serwerowy (kod dostępu + baza), ale dopóki go nie ma, plan ginie przy czyszczeniu danych strony i nie przechodzi na telefon.
+- **Kreator własnego posiłku (`KreatorPosilku.tsx`) wypadł z UI.** Kod jest, wejścia nie ma — wcześniej siedział pod „Zbuduj sam" przy posiłku.
+- **Tryb „z lodówki" zawieszony** na prośbę usera: kod i API zostają, ale nie ma do niego wejścia.
+- **Edycja profilu jest tylko do odczytu** — da się obejrzeć ustawienia i wyczyścić wszystko, ale nie zmienić pojedynczego pola bez wypełniania ankiety od nowa.
+- **Waga nie zmienia kalorii, gdy user wpisał je wprost.** Przeliczanie działa tylko w trybie „policz za mnie". Do przemyślenia, czy przy spadku wagi nie proponować korekty także tym, którzy podali kcal ręcznie.
+- **Postęp jest przypisany do pozycji w planie (`dzien:indeks`)**, więc po wymianie posiłku odhaczenia się nie przesuwają — ale gdyby kiedyś dochodziło usuwanie dni, trzeba to przemyśleć.
+- Nie ma cofania całego planu ani historii poprzednich planów.
+
 ## 19. Styl gotowania i sprzęt w kuchni — ZROBIONE, co dalej
 Pomysł usera: zamiast tylko „lubię / nie lubię składników" dać też kategorie w rodzaju „lubię piec", „chcę jak najszybciej", „nie mam piekarnika / airfryera / blendera". Mechanika w SPEC („Styl gotowania i sprzęt").
 

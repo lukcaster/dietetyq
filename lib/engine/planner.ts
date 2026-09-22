@@ -63,6 +63,17 @@ export interface PlanRequest {
    * przepisy poniżej 15 minut, więc „minimum roboty" dałoby ten sam obiad przez cały tydzień.
    */
   stylGotowania?: StylGotowania;
+  /** Na ile dni rozpisać plan (1, 3 albo 7). Domyślnie tydzień. */
+  liczbaDni?: number;
+  /**
+   * Preferowany charakter posiłku per slot — MIĘKKO, jako premia w rankingu.
+   *
+   * Świadomie nie jest to `charakterPerSlot`, który filtruje twardo i dlatego został wyłączony
+   * z UI: przy „wytrawnym drugim śniadaniu" pula schodziła do jednego przepisu na siedem dni.
+   * Tu user może zaznaczyć oba smaki naraz (wtedy premii nie ma) albo jeden — i wtedy dania
+   * tego smaku wychodzą częściej, ale reszta bazy nie znika.
+   */
+  smakPerSlot?: Record<string, Charakter[]>;
 }
 
 export type StylGotowania = "lubie-gotowac" | "normalnie" | "minimum-roboty";
@@ -290,12 +301,19 @@ function wybierzKandydata(
  * Ocena przepisu = ile lubianych składników zawiera. Liczymy raz na przepis i trzymamy w mapie,
  * bo rozwijanie składników czyta pliki z dysku, a dobór leci 7 dni × liczba slotów.
  */
+/** Premia za trafienie w preferowany smak slotu — tego samego rzędu co lubiany składnik. */
+const PREMIA_ZA_SMAK = 2;
+
 function zbudujOcenePreferencji(
   filtr: FiltrSkladnikow,
   lubiane: string[],
-  styl: StylGotowania = "normalnie"
+  styl: StylGotowania = "normalnie",
+  smaki?: Charakter[]
 ): (r: Recipe) => number {
-  const zaCzas = (przepis: Recipe) => PREMIA_ZA_CZAS[styl][przepis.czasPrzygotowania] ?? 0;
+  const zaSmak = (przepis: Recipe) =>
+    smaki && smaki.length === 1 && przepis.charakter === smaki[0] ? PREMIA_ZA_SMAK : 0;
+  const zaCzas = (przepis: Recipe) =>
+    (PREMIA_ZA_CZAS[styl][przepis.czasPrzygotowania] ?? 0) + zaSmak(przepis);
   if (lubiane.length === 0) return zaCzas;
   const cache = new Map<string, number>();
   return (przepis: Recipe) => {
@@ -426,7 +444,13 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
 
   const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
   const styl = req.stylGotowania ?? "normalnie";
-  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl);
+  const ocenDlaSlotu = new Map<string, (r: Recipe) => number>();
+  for (const slot of req.sloty) {
+    ocenDlaSlotu.set(
+      slot,
+      zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl, req.smakPerSlot?.[slot])
+    );
+  }
 
   /** Bez piekarnika zapiekanki nie da się zrobić — to jedyne twarde ograniczenie poza alergenami. */
   const bezSprzetu = new Set(req.bezSprzetu ?? []);
@@ -448,11 +472,13 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
 
   const dni: DzienWPlanie[] = [];
 
-  for (let dzien = 0; dzien < 7; dzien++) {
+  const liczbaDni = req.liczbaDni && req.liczbaDni > 0 ? Math.min(req.liczbaDni, 14) : 7;
+  for (let dzien = 0; dzien < liczbaDni; dzien++) {
     const posilki: PosilekWPlanie[] = [];
     const uzyteWDniu = new Set<string>();
 
     for (const slot of req.sloty) {
+      const ocen = ocenDlaSlotu.get(slot)!;
       const preferowanyCharakter = req.charakterPerSlot?.[slot];
       const kandydaci = dania.filter((r) => {
         if (!r.slot.includes(slot)) return false;
@@ -600,6 +626,19 @@ export interface ZapytanieOZamiennik extends Omit<PlanRequest, "sloty"> {
  * jednej kolacji przestawiła mu wszystko inne. Cel kcal slotu jest ten sam co w planie, więc
  * makro dnia zostaje w tych samych widełkach.
  */
+export function zaproponujZamienniki(req: ZapytanieOZamiennik, ile = 3): PosilekWPlanie[] {
+  const propozycje: PosilekWPlanie[] = [];
+  const wyklucz = [...(req.wyklucz ?? [])];
+  for (let i = 0; i < ile; i++) {
+    const p = zaproponujZamiennik({ ...req, wyklucz });
+    if (!p) break;
+    propozycje.push(p);
+    // Kolejna propozycja ma być inna — dokładamy to, co właśnie zaproponowaliśmy.
+    wyklucz.push(p.recipeId.replace(/^szablon:/, ""), p.recipeId);
+  }
+  return propozycje;
+}
+
 export function zaproponujZamiennik(req: ZapytanieOZamiennik): PosilekWPlanie | null {
   const kcalDzienne = obliczKcalDzienne(req);
   const makroDzienne = obliczMakroDzienne(kcalDzienne, req.makro);
@@ -609,7 +648,7 @@ export function zaproponujZamiennik(req: ZapytanieOZamiennik): PosilekWPlanie | 
 
   const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
   const styl = req.stylGotowania ?? "normalnie";
-  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl);
+  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl, req.smakPerSlot?.[req.slot]);
   const bezSprzetu = new Set(req.bezSprzetu ?? []);
   const maSprzet = (potrzebny?: Sprzet[]) => !potrzebny?.some((s) => bezSprzetu.has(s));
   const wyklucz = new Set(req.wyklucz ?? []);

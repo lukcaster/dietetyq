@@ -920,3 +920,157 @@ body {
     display: none !important;
   }
 }
+
+/* --- nowy szkielet aplikacji: menu, plan, zakupy --- */
+
+.ladowanie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 0;
+}
+
+.spinner {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: var(--neon-cyan);
+  animation: obrot 0.9s linear infinite;
+}
+
+@keyframes obrot {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.menu-akcje {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.waga-pytanie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(43, 240, 255, 0.08);
+  border: 1px solid rgba(43, 240, 255, 0.28);
+  font-size: 0.9rem;
+}
+
+.posilek-zjedzony {
+  opacity: 0.45;
+}
+
+/* --- lista zakupów do odhaczania --- */
+
+.zakupy-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zakupy-pozycja {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.15s ease;
+}
+
+.zakupy-pozycja:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.zakupy-pozycja.kupione {
+  color: var(--text-dim);
+  background: rgba(77, 255, 176, 0.08);
+  border-color: rgba(77, 255, 176, 0.3);
+  text-decoration: line-through;
+}
+
+.zakupy-ptaszek {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-green);
+  font-size: 0.85rem;
+}
+
+.zakupy-nazwa {
+  flex: 1;
+}
+
+.zakupy-ilosc {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* --- modal wymiany posiłku --- */
+
+.modal-tlo {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(5, 5, 12, 0.72);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.modal-panel {
+  width: 100%;
+  max-width: 560px;
+  background: #12121f;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 22px;
+  margin: auto;
+}
+
+.propozycja-wymiany {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  color: var(--text);
+  transition: all 0.15s ease;
+}
+
+.propozycja-wymiany:hover {
+  border-color: var(--neon-cyan);
+  background: rgba(43, 240, 255, 0.08);
+}
