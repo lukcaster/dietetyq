@@ -4,9 +4,26 @@ import type { Ingredient, Component, Recipe, Produkt, SzablonDania } from "./typ
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
+/**
+ * Kuratorowane pliki (ingredients, recipes, components, szablony) czytamy z dysku przy każdym
+ * wywołaniu w dev — dzięki temu ręczna edycja JSON-a działa od razu, bez restartu serwera.
+ *
+ * Na produkcji trzymamy je w pamięci, bo silnik sięga po nie **bardzo** często: przy jednej
+ * wymianie posiłku `rozwiazPrzepis` przechodzi przez 200 przepisów, a każdy składnik woła
+ * `getIngredientById`, czyli kolejne odczytanie i sparsowanie pliku. Zmierzone przed zmianą:
+ * 2,4-3,6 s na jedną wymianę.
+ */
+const cache = new Map<string, unknown>();
+
 function wczytaj<T>(plik: string): T {
+  if (process.env.NODE_ENV === "production") {
+    const zapamietane = cache.get(plik);
+    if (zapamietane !== undefined) return zapamietane as T;
+  }
   const surowy = fs.readFileSync(path.join(DATA_DIR, plik), "utf-8");
-  return JSON.parse(surowy) as T;
+  const dane = JSON.parse(surowy) as T;
+  if (process.env.NODE_ENV === "production") cache.set(plik, dane);
+  return dane;
 }
 
 export function getIngredients(): Ingredient[] {
@@ -26,9 +43,8 @@ export function getSzablony(): SzablonDania[] {
 }
 
 /**
- * Produkty z OFF czytamy raz i trzymamy w pamięci — plik ma ~1 MB i kilka tysięcy pozycji,
- * a wyszukiwarka odpytuje go przy każdym wpisanym znaku. Kuratorowane pliki (ingredients,
- * recipes) świadomie zostają bez cache'u, żeby ich ręczna edycja działała od razu w dev.
+ * Produkty z OFF czytamy raz i trzymamy w pamięci **zawsze**, także w dev — plik ma ~1 MB
+ * i kilka tysięcy pozycji, a wyszukiwarka odpytuje go przy każdym wpisanym znaku.
  */
 let cacheProduktow: Produkt[] | null = null;
 
@@ -40,8 +56,18 @@ export function getProdukty(): Produkt[] {
   return cacheProduktow;
 }
 
+/**
+ * Mapa id → składnik, przebudowywana tylko wtedy, gdy zmieni się tablica składników.
+ * `find` po 218 pozycjach przy każdym wywołaniu był drugim po odczycie pliku kosztem silnika.
+ */
+let mapaSkladnikow: { zrodlo: Ingredient[]; mapa: Map<string, Ingredient> } | null = null;
+
 export function getIngredientById(id: string): Ingredient {
-  const skladnik = getIngredients().find((s) => s.id === id);
+  const skladniki = getIngredients();
+  if (!mapaSkladnikow || mapaSkladnikow.zrodlo !== skladniki) {
+    mapaSkladnikow = { zrodlo: skladniki, mapa: new Map(skladniki.map((s) => [s.id, s])) };
+  }
+  const skladnik = mapaSkladnikow.mapa.get(id);
   if (!skladnik) throw new Error(`Nieznany składnik: ${id}`);
   return skladnik;
 }

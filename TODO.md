@@ -1,5 +1,16 @@
 # TODO — do zrobienia w następnej sesji
 
+## 21. Wolny silnik i modal, który wyglądał na zepsuty — NAPRAWIONE
+Zgłoszenie: „klikam wymień i modal otwiera się dopiero jak dam zrezygnuj z planu". To nie był błąd renderowania — modal czekał na odpowiedź serwera. Zmierzone w dev: **pierwsze wywołanie 13,7 s** (kompilacja trasy), kolejne 2,4-3,6 s.
+
+Dwie przyczyny i dwie naprawy:
+1. **Brak informacji zwrotnej.** Modal otwiera się teraz natychmiast, ze spinnerem, a propozycje dolatują do niego później.
+2. **Silnik czytał pliki z dysku przy każdym wywołaniu.** `getRecipes`/`getIngredients` parsowały JSON-y za każdym razem, a `getIngredientById` robił `find` po 218 pozycjach — przy jednej wymianie to setki odczytów. Kuratorowane pliki są teraz trzymane w pamięci **na produkcji** (w dev dalej czytane z dysku, żeby ręczna edycja JSON-a działała od razu) plus mapa id → składnik.
+
+Zmierzone po zmianie na buildzie produkcyjnym: wymiana posiłku **15-100 ms**, plan na 7 dni **83 ms**.
+
+Do zapamiętania: **w dev pierwsze wywołanie trasy API zawsze będzie wolne** (Turbopack kompiluje ją na żądanie) — to nie jest błąd aplikacji.
+
 ## 20. Przebudowa na aplikację z profilem — ZROBIONE, co dalej
 Apka przestała być sześciokrokowym kreatorem. Jest profil (ankieta raz), menu, plan na 1/3/7 dni, widok „co jeść teraz" z odhaczaniem, lista zakupów do odhaczania i wymiana posiłku z trzema propozycjami. Architektura w SPEC („Architektura aplikacji").
 

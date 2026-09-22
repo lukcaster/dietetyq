@@ -10837,5 +10837,410 @@
         "jednostka": "g"
       }
     ]
+  },
+  {
+    "id": "kanapka-z-serem-i-warzywami",
+    "nazwa": "Kanapka z serem żółtym i warzywami",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Pieczywo posmaruj masłem.",
+      "Ułóż plastry sera.",
+      "Dodaj pokrojonego pomidora i ogórka, dopraw solą i pieprzem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "chleb-pszenny",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "kanapka-z-szynka-i-serem",
+    "nazwa": "Kanapka z szynką, serem i papryką",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Pieczywo posmaruj masłem.",
+      "Ułóż szynkę i plastry sera.",
+      "Dołóż paprykę i ogórka pokrojone w paski."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szynka",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 50,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "kanapka-z-salami",
+    "nazwa": "Bułka z salami i warzywami",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Bułkę przekrój i posmaruj masłem.",
+      "Ułóż salami i ser.",
+      "Dołóż sałatę i plastry pomidora."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "bulka-grahamka",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "salami",
+        "ilosc": 45,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "salata",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 100,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "kurczak-smazony-z-ziemniakami-i-surowka",
+    "nazwa": "Smażony kurczak z ziemniakami i surówką z kapusty",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "instrukcje": [
+      "Ziemniaki obierz i ugotuj w osolonej wodzie.",
+      "Kurczaka pokrój na płaty, dopraw solą, pieprzem i słodką papryką. Smaż na oleju po 4-5 minut z każdej strony.",
+      "Kapustę poszatkuj, marchew zetrzyj. Wymieszaj z jogurtem, dopraw solą i szczyptą cukru.",
+      "Podawaj wszystko razem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kapusta",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 30,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "bitki-wolowe-z-ziemniakami",
+    "nazwa": "Bitki wołowe w sosie z ziemniakami",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "instrukcje": [
+      "Wołowinę pokrój w plastry w poprzek włókien i rozbij tłuczkiem.",
+      "Obsmaż na mocno rozgrzanym oleju z obu stron, przełóż do garnka.",
+      "Na tej samej patelni zeszklij cebulę, przełóż do mięsa, zalej bulionem i duś pod przykryciem 50-60 minut, aż mięso zmięknie.",
+      "Ziemniaki ugotuj. Sos dopraw solą, pieprzem i majerankiem; jeśli ma być gęstszy, chwilę odparuj.",
+      "Podawaj z ogórkiem kiszonym."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "wolowina-rostbef",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "ryba-z-kapusta-kiszona-i-ziemniakami",
+    "nazwa": "Ryba z kapustą kiszoną i ziemniakami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "instrukcje": [
+      "Ziemniaki obierz i ugotuj w osolonej wodzie.",
+      "Kapustę kiszoną przełóż do garnka z posiekaną cebulą i startą marchewką, podlej wodą i duś 20 minut. Dopraw pieprzem i liściem laurowym.",
+      "Rybę dopraw solą i skrop cytryną, usmaż na oleju po 3-4 minuty z każdej strony.",
+      "Podawaj wszystko razem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "mintaj",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kapusta-kiszona",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "kotlet-schabowy-z-piekarnika",
+    "nazwa": "Kotlet z piekarnika z ziemniakami",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "piekarnik",
+      "garnek"
+    ],
+    "instrukcje": [
+      "Piekarnik nagrzej do 200°C.",
+      "Mięso pokrój na płaty i rozbij tłuczkiem, dopraw solą i pieprzem.",
+      "Obtocz w roztrzepanym jajku, a potem w bułce tartej. Ułóż na blaszce i skrop olejem — tyle wystarczy zamiast smażenia w tłuszczu.",
+      "Piecz 25 minut, w połowie przewróć na drugą stronę.",
+      "Podawaj z ugotowanymi ziemniakami i ogórkiem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "poledwica-wieprzowa",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "bulka-tarta",
+        "ilosc": 35,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "pulpety-drobiowe-w-sosie-koperkowym",
+    "nazwa": "Pulpety drobiowe w sosie koperkowym z ziemniakami",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "garnek"
+    ],
+    "instrukcje": [
+      "Mięso wymieszaj z bułką tartą i jajkiem, dopraw solą i pieprzem. Uformuj pulpety.",
+      "Bulion zagotuj, wrzuć pulpety i gotuj na małym ogniu 15 minut.",
+      "Ziemniaki ugotuj osobno.",
+      "Jogurt rozmieszaj z odrobiną gorącego bulionu (inaczej się zwarzy), wlej do garnka i dodaj posiekany koperek.",
+      "Podawaj pulpety z sosem i ziemniakami."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "indyk-mielony",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulka-tarta",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 350,
+        "jednostka": "g"
+      }
+    ]
   }
 ]

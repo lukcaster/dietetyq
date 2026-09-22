@@ -36,6 +36,13 @@ export default function ModalWymiany({
           Każda propozycja trafia w ten sam cel kalorii, więc dzień się nie rozjedzie.
         </p>
 
+        {propozycje.length === 0 && pracuje && (
+          <div className="ladowanie">
+            <div className="spinner" />
+            <p className="podtytul">Szukam czegoś innego…</p>
+          </div>
+        )}
+
         {propozycje.map((p) => (
           <button key={p.recipeId} className="propozycja-wymiany" onClick={() => onWybierz(p)}>
             <span className="posilek-nazwa">

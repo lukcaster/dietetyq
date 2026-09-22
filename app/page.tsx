@@ -170,6 +170,9 @@ export default function Home() {
   async function pokazPropozycje(indeksDnia: number, indeksPosilku: number) {
     if (!profil || !edytowany) return;
     const posilek = edytowany.dni[indeksDnia].posilki[indeksPosilku];
+    // Modal otwieramy OD RAZU, z pustą listą i spinnerem. Wcześniej czekał na odpowiedź
+    // (2-3 s, a przy pierwszym wywołaniu w dev nawet 14 s) i wyglądało to jak zepsuty przycisk.
+    setWymiana({ dzien: indeksDnia, indeks: indeksPosilku, propozycje: [] });
     setPracuje(true);
     setBlad(null);
     try {
@@ -187,6 +190,7 @@ export default function Home() {
       setWymiana({ dzien: indeksDnia, indeks: indeksPosilku, propozycje: wynik.propozycje });
     } catch (e) {
       setBlad(e instanceof Error ? e.message : "Nieznany błąd");
+      setWymiana(null);
     } finally {
       setPracuje(false);
     }
