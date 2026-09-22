@@ -4710,5 +4710,67 @@
     "porcjaTypowa": 20,
     "maksPorcja": 50,
     "grupaPreferencji": "Nabiał i jaja"
+  },
+  {
+    "id": "kielbasa",
+    "nazwa": "Kiełbasa zwyczajna",
+    "makroNa100g": {
+      "kcal": 298,
+      "bialko": 12,
+      "tluszcz": 27,
+      "wegle": 1.5
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 80,
+    "maksPorcja": 150,
+    "grupaPreferencji": "Mięso i ryby",
+    "rolaKulinarna": "wedlina"
+  },
+  {
+    "id": "smietana-18",
+    "nazwa": "Śmietana 18%",
+    "makroNa100g": {
+      "kcal": 184,
+      "bialko": 2.7,
+      "tluszcz": 18,
+      "wegle": 3.6
+    },
+    "tagiAlergenow": [
+      "laktoza"
+    ],
+    "porcjaTypowa": 30,
+    "maksPorcja": 80,
+    "grupaPreferencji": "Nabiał i jaja"
+  },
+  {
+    "id": "groszek-konserwowy",
+    "nazwa": "Groszek konserwowy",
+    "makroNa100g": {
+      "kcal": 72,
+      "bialko": 4.4,
+      "tluszcz": 0.4,
+      "wegle": 12
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 80,
+    "maksPorcja": 200,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo"
+  },
+  {
+    "id": "grzyby-suszone",
+    "nazwa": "Grzyby suszone",
+    "makroNa100g": {
+      "kcal": 310,
+      "bialko": 27,
+      "tluszcz": 3,
+      "wegle": 50
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 20,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "wymagaGotowania": true
   }
 ]

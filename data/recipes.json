@@ -11242,5 +11242,869 @@
         "jednostka": "g"
       }
     ]
+  },
+  {
+    "id": "rosol-z-makaronem",
+    "nazwa": "Rosół z makaronem",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Kurczaka zalej 2 litrami zimnej wody, zagotuj i zbierz szumowiny.",
+      "Dodaj obraną marchew, pietruszkę, seler i por oraz przypaloną na suchej patelni połówkę cebuli. Dopraw solą, pieprzem i listkiem laurowym.",
+      "Gotuj na małym ogniu 1,5-2 godziny — rosół ma ledwo mrugać, wtedy zostaje klarowny.",
+      "Makaron ugotuj osobno, żeby nie zmętnił wywaru.",
+      "Do talerza nałóż makaron, pokrojone warzywa i mięso, zalej wywarem, posyp natką."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "seler-korzeniowy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "por",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-pszenny",
+        "ilosc": 200,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "zupa-pomidorowa-z-ryzem",
+    "nazwa": "Zupa pomidorowa z ryżem",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Warzywa obierz, pokrój i zalej bulionem. Gotuj 20 minut do miękkości.",
+      "Dodaj pomidory z puszki i koncentrat, gotuj jeszcze 10 minut.",
+      "Ryż ugotuj osobno.",
+      "Śmietanę rozmieszaj z kilkoma łyżkami gorącej zupy (inaczej się zwarzy) i wlej do garnka. Już nie gotuj.",
+      "Dopraw solą, pieprzem i szczyptą cukru. Podawaj z ryżem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "pomidory-krojone",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 1200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ryz-bialy-surowy",
+        "ilosc": 160,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 120,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "zupa-ogorkowa",
+    "nazwa": "Zupa ogórkowa z ziemniakami",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki pokrój w kostkę, marchew i pietruszkę zetrzyj na grubych oczkach. Zalej bulionem i gotuj 15 minut.",
+      "Ogórki kiszone zetrzyj i dodaj do garnka razem z kilkoma łyżkami zalewy — to ona daje kwaśność.",
+      "Gotuj jeszcze 10 minut, aż ziemniaki będą miękkie.",
+      "Śmietanę rozmieszaj z gorącą zupą i wlej do garnka. Dopraw pieprzem i koperkiem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 1200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "krupnik",
+    "nazwa": "Krupnik z kaszą jęczmienną",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Kaszę przepłucz na sicie.",
+      "Warzywa obierz i pokrój w kostkę, zalej bulionem i gotuj 15 minut.",
+      "Wsyp kaszę i gotuj kolejne 20 minut, aż zmięknie i zupa zgęstnieje.",
+      "Dopraw solą, pieprzem i majerankiem, na koniec dodaj masło."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kasza-jeczmienna",
+        "ilosc": 160,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "seler-korzeniowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 1400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "barszcz-czerwony-z-ziemniakami",
+    "nazwa": "Barszcz czerwony z ziemniakami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Buraki obierz i zetrzyj na grubych oczkach albo pokrój w słupki.",
+      "Zalej bulionem razem z marchwią i pietruszką, dodaj liść laurowy. Gotuj 30 minut na małym ogniu.",
+      "Dopraw solą, pieprzem, majerankiem i odrobiną soku z cytryny — kwas utrwala kolor.",
+      "Ziemniaki ugotuj osobno i podaj obok albo wrzuć do talerza."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "burak",
+        "ilosc": 700,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 1400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 6,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "golabki-w-sosie-pomidorowym",
+    "nazwa": "Gołąbki w sosie pomidorowym",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ryż ugotuj na pół miękko i ostudź.",
+      "Kapustę sparz we wrzątku, oddzielaj liście i ścinaj zgrubienia.",
+      "Mięso wymieszaj z ryżem i podsmażoną cebulą, dopraw solą i pieprzem.",
+      "Nakładaj farsz na liście, zawijaj i układaj ciasno w garnku. Zalej wodą do połowy wysokości i duś 60 minut na małym ogniu.",
+      "Pomidory z koncentratem zagotuj, dopraw i polej gołąbki."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kapusta",
+        "ilosc": 800,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ryz-bialy-surowy",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-krojone",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "bigos",
+    "nazwa": "Bigos",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Grzyby zalej wrzątkiem i odstaw na 30 minut.",
+      "Kapustę kiszoną odciśnij i posiekaj, białą poszatkuj. Włóż obie do dużego garnka, zalej wodą i duś 40 minut.",
+      "Boczek i kiełbasę pokrój, podsmaż razem z cebulą, przełóż do kapusty wraz z grzybami i wodą z moczenia.",
+      "Duś jeszcze co najmniej godzinę na małym ogniu, mieszając. Dopraw pieprzem, majerankiem i listkiem laurowym.",
+      "Bigos jest najlepszy odgrzewany następnego dnia."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kapusta-kiszona",
+        "ilosc": 800,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kapusta",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kielbasa",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "boczek",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "grzyby-suszone",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ],
+    "czasOczekiwania": "najlepszy na drugi dzień"
+  },
+  {
+    "id": "fasolka-po-bretonsku",
+    "nazwa": "Fasolka po bretońsku",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Boczek i kiełbasę pokrój w kostkę, podsmaż w garnku z posiekaną cebulą.",
+      "Dodaj odsączoną fasolę i koncentrat pomidorowy, podlej wodą.",
+      "Duś 20 minut, aż sos zgęstnieje.",
+      "Dopraw solą, pieprzem, majerankiem i odrobiną słodkiej papryki. Podawaj z chlebem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "fasola-biala-konserwowa",
+        "ilosc": 800,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kielbasa",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "boczek",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 240,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "leczo-z-kurczakiem",
+    "nazwa": "Leczo z kurczakiem, papryką i cukinią",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Kurczaka pokrój w kostkę, dopraw i obsmaż na oleju.",
+      "Dodaj cebulę i czosnek, chwilę podsmaż.",
+      "Wrzuć paprykę i cukinię pokrojone w grubą kostkę, smaż 5 minut na mocnym ogniu.",
+      "Wlej pomidory z puszki i koncentrat, dopraw papryką słodką, solą i pieprzem. Duś 15 minut.",
+      "Podawaj z pieczywem albo ryżem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukinia",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-krojone",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "patelnia"
+    ]
+  },
+  {
+    "id": "placki-ziemniaczane",
+    "nazwa": "Placki ziemniaczane",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki i cebulę zetrzyj na drobnych oczkach. Odlej nadmiar wody, ale zostaw skrobię z dna.",
+      "Wymieszaj z jajkiem i mąką, dopraw solą i pieprzem.",
+      "Nakładaj łyżką na rozgrzany olej i smaż po 3-4 minuty z każdej strony, aż będą złote i chrupiące.",
+      "Odsącz na ręczniku papierowym. Podawaj z jogurtem zamiast śmietany."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 900,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 45,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 150,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "patelnia"
+    ]
+  },
+  {
+    "id": "kopytka",
+    "nazwa": "Kopytka z masłem i bułką tartą",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki ugotuj, odcedź i dokładnie przeciśnij przez praskę. Ostudź.",
+      "Dodaj mąkę i jajko, zagnieć ciasto — im mniej wyrabiasz, tym kopytka są delikatniejsze.",
+      "Uformuj wałki, spłaszcz i pokrój ukośnie na kopytka.",
+      "Wrzucaj na osolony wrzątek i gotuj 2-3 minuty od wypłynięcia.",
+      "Bułkę tartą zarumień na maśle i polej nią kopytka."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 1000,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulka-tarta",
+        "ilosc": 40,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ]
+  },
+  {
+    "id": "leniwe-z-twarogu",
+    "nazwa": "Leniwe z twarogu",
+    "slot": [
+      "obiad",
+      "sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Twaróg zmiel albo dokładnie rozgnieć widelcem.",
+      "Wymieszaj z jajkami, mąką i szczyptą soli na jednolite ciasto.",
+      "Uformuj wałki, spłaszcz i pokrój ukośnie.",
+      "Gotuj w osolonym wrzątku 2-3 minuty od wypłynięcia.",
+      "Bułkę tartą zarumień na maśle, polej kluski i posyp cukrem albo cynamonem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulka-tarta",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ]
+  },
+  {
+    "id": "makaron-z-twarogiem",
+    "nazwa": "Makaron z twarogiem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "slodkie",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Makaron ugotuj al dente i odcedź.",
+      "Twaróg rozgnieć widelcem i wymieszaj z jogurtem na gładką masę.",
+      "Połącz z gorącym makaronem, dosłodź cukrem albo posyp cynamonem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "makaron-pszenny",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "twarozek-ze-szczypiorkiem",
+    "nazwa": "Twarożek ze szczypiorkiem i rzodkiewką",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "instrukcje": [
+      "Twaróg rozgnieć widelcem i wymieszaj z jogurtem na kremową masę.",
+      "Dodaj posiekany szczypiorek i pokrojoną rzodkiewkę.",
+      "Dopraw solą i pieprzem, podawaj z pieczywem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rzodkiewka",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "pasta-jajeczna-ze-szczypiorkiem",
+    "nazwa": "Pasta jajeczna ze szczypiorkiem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Jajka ugotuj na twardo (8-9 minut), ostudź i obierz.",
+      "Rozgnieć widelcem, wymieszaj z jogurtem i majonezem.",
+      "Dodaj posiekany szczypiorek, dopraw solą i pieprzem.",
+      "Podawaj na pieczywie, ze świeżym ogórkiem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ]
+  },
+  {
+    "id": "salatka-jarzynowa",
+    "nazwa": "Sałatka jarzynowa",
+    "slot": [
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki, marchew i pietruszkę ugotuj w mundurkach do miękkości, ostudź i obierz. Jajka ugotuj na twardo.",
+      "Wszystko pokrój w drobną kostkę.",
+      "Dodaj odsączony groszek i pokrojone ogórki kiszone.",
+      "Wymieszaj z majonezem i jogurtem, dopraw solą i pieprzem. Najlepsza po kilku godzinach w lodówce."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "groszek-konserwowy",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ],
+    "czasOczekiwania": "kilka godzin w lodówce"
   }
 ]

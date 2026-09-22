@@ -1,5 +1,16 @@
 # TODO — do zrobienia w następnej sesji
 
+## 22. Polska klasyka w bazie — ZROBIONE
+Baza miała sporą dziurę: **zero zup** poza kremami, brak klusek, gołąbków, bigosu, fasolki, twarożku i sałatki jarzynowej. Doszło 16 przepisów i 4 składniki (`kielbasa`, `smietana-18`, `groszek-konserwowy`, `grzyby-suszone`).
+
+Zupy: rosół z makaronem, pomidorowa z ryżem, ogórkowa, krupnik, barszcz czerwony. Drugie dania: gołąbki, bigos, fasolka po bretońsku, leczo z kurczakiem, placki ziemniaczane, kopytka, leniwe, makaron z twarogiem. Na kolację: twarożek ze szczypiorkiem, pasta jajeczna, sałatka jarzynowa.
+
+Uwagi:
+- **Żurku nie ma**, bo wymaga zakwasu — nie ma go w bazie i trudno go sensownie policzyć.
+- **Zupy są rozpisane na 4-6 porcji**, więc silnik skaluje je w dół do jednej. To ten sam problem, co w punkcie o dużych daniach: sensowniej byłoby powiedzieć „ugotuj garnek, jedz przez trzy dni".
+- Bigos i fasolka to dania tłuste (28-31 g tłuszczu na porcję) — przy niskim celu kalorycznym wyjdą z nich małe porcje.
+- Przy 226 przepisach **pojedyncze danie pojawia się w planie rzadko** (zmierzone: 1-2 nowe pozycje na 35 posiłków tygodnia). To normalne przy tej wielkości bazy, ale znaczy też, że dokładanie kolejnych przepisów ma coraz mniejszy wpływ na to, co user realnie widzi.
+
 ## 21. Wolny silnik i modal, który wyglądał na zepsuty — NAPRAWIONE
 Zgłoszenie: „klikam wymień i modal otwiera się dopiero jak dam zrezygnuj z planu". To nie był błąd renderowania — modal czekał na odpowiedź serwera. Zmierzone w dev: **pierwsze wywołanie 13,7 s** (kompilacja trasy), kolejne 2,4-3,6 s.
 
