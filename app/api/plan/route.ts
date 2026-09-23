@@ -61,6 +61,7 @@ function walidujRequest(body: unknown): { ok: true; req: PlanRequest } | { ok: f
       bezSprzetu: req.bezSprzetu ?? [],
       stylGotowania: req.stylGotowania ?? "normalnie",
       liczbaDni: req.liczbaDni,
+      dataStartu: req.dataStartu,
       smakPerSlot: req.smakPerSlot,
     },
   };

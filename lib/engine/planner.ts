@@ -1,4 +1,4 @@
-import { getIngredientById, getRecipes } from "./data";
+import { getComponentById, getIngredientById, getRecipes } from "./data";
 import { domknijBialko, makroDosypek, type Dosypka } from "./domykanie";
 import { zlozGotowiec } from "./gotowce";
 import { zbudujListeZakupow, type PozycjaListyZakupow, type SkladnikBazowyWPlanie } from "./lista-zakupow";
@@ -11,6 +11,7 @@ import {
   zbudujFiltr,
   type FiltrSkladnikow,
 } from "./macro";
+import { jestKomponentem } from "./types";
 import type { Charakter, CzasPrzygotowania, KategoriaDania, Makro, Recipe, Sprzet } from "./types";
 
 export type { PozycjaListyZakupow, SkladnikBazowyWPlanie } from "./lista-zakupow";
@@ -65,6 +66,12 @@ export interface PlanRequest {
   stylGotowania?: StylGotowania;
   /** Na ile dni rozpisać plan (1, 3 albo 7). Domyślnie tydzień. */
   liczbaDni?: number;
+  /**
+   * Data pierwszego dnia planu (ISO, „2026-09-23"). Potrzebna wyłącznie po to, żeby wiedzieć,
+   * które dni wypadają w weekend — wtedy trafiają tam dania wymagające dłuższego gotowania.
+   * Brak daty = nie rozróżniamy dni i budżet trudnych dań rozkłada się po kolei.
+   */
+  dataStartu?: string;
   /**
    * Preferowany charakter posiłku per slot — MIĘKKO, jako premia w rankingu.
    *
@@ -141,6 +148,27 @@ const SZANSA_NA_GOTOWIEC: Record<string, number> = {
   kolacja: 0.2,
 };
 
+/**
+ * Ile dań „na dłużej" wolno wrzucić do planu.
+ *
+ * Trudne = czas przygotowania 30+ minut ALBO wymagające oczekiwania (wyrastanie, noc w lodówce).
+ * W bazie to prawie połowa przepisów (104 z 216), więc bez limitu plan na tydzień potrafił
+ * składać się niemal wyłącznie z nich — a nikt nie gotuje godzinę siedem dni z rzędu.
+ *
+ * Limit jest na CAŁY plan, nie na dzień: tydzień dostaje trzy takie dania, trzy dni dwa,
+ * jeden dzień najwyżej jedno.
+ */
+const BUDZET_TRUDNYCH: Record<number, number> = { 1: 1, 3: 2, 7: 3 };
+
+/** Dla nietypowej długości planu: mniej więcej jedno trudne danie na 2-3 dni. */
+function budzetTrudnych(liczbaDni: number): number {
+  return BUDZET_TRUDNYCH[liczbaDni] ?? Math.max(1, Math.round(liczbaDni / 2.5));
+}
+
+function jestTrudny(przepis: Recipe): boolean {
+  return przepis.czasPrzygotowania === "30+" || przepis.czasOczekiwania !== undefined;
+}
+
 const INDEKS_AKTYWNOSCI_POZA_PRACA: Record<AktywnoscPozaPraca, number> = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6 };
 
 /**
@@ -200,6 +228,19 @@ export interface DodatekWPlanie {
   makro: Makro;
 }
 
+/**
+ * Półprodukt, który trzeba zrobić przed daniem: ciasto na pierogi, ciasto drożdżowe na pizzę.
+ *
+ * Wcześniej do planu trafiała sama pozycja „Ciasto pierogowe — 500 g" bez składu i bez
+ * instrukcji, a przepis mówił „rozwałkuj ciasto" — user nie miał z czego go zrobić.
+ */
+export interface KomponentWPlanie {
+  komponentId: string;
+  nazwa: string;
+  skladniki: SkladnikWPlanie[];
+  instrukcje: string[];
+}
+
 export interface PosilekWPlanie {
   slot: string;
   recipeId: string;
@@ -229,6 +270,8 @@ export interface PosilekWPlanie {
    * powiedzieć wprost, co jest z przepisu, a co dołożone — patrz domykanie.ts.
    */
   dosypki?: Dosypka[];
+  /** Półprodukty do przygotowania przed daniem (ciasto) — patrz KomponentWPlanie. */
+  komponenty?: KomponentWPlanie[];
 }
 
 export interface DzienWPlanie {
@@ -336,6 +379,7 @@ interface PrzygotowanaPozycja {
   skladniki: SkladnikWPlanie[];
   skladnikiBazowe: SkladnikBazowyWPlanie[];
   makro: Makro;
+  komponenty: KomponentWPlanie[];
 }
 
 /** Skaluje przepis do targetKcal i buduje jego składniki w dwóch postaciach: do przepisu i do listy zakupów. */
@@ -370,7 +414,32 @@ function przygotujPozycje(przepis: Recipe, targetKcal: number, filtr: FiltrSklad
     }
   }
 
-  return { skladniki, skladnikiBazowe, makro };
+  /**
+   * Komponenty rozpisujemy osobno: ich składniki i instrukcje są userowi potrzebne, żeby
+   * w ogóle zrobić danie. Skalujemy je tym samym współczynnikiem co resztę przepisu.
+   */
+  const komponenty: KomponentWPlanie[] = [];
+  for (const pos of przepis.skladniki) {
+    if (!jestKomponentem(pos)) continue;
+    const komponent = getComponentById(pos.komponentId);
+    const proporcja = (pos.ilosc / komponent.iloscWynikowa) * wspolczynnikSkalowania;
+    komponenty.push({
+      komponentId: komponent.id,
+      nazwa: komponent.nazwa,
+      instrukcje: komponent.instrukcje,
+      skladniki: komponent.skladniki.map((sur) => ({
+        skladnikId: sur.skladnikId,
+        nazwa: getIngredientById(sur.skladnikId).nazwa,
+        ilosc:
+          sur.jednostka === "szt"
+            ? Math.max(1, Math.round(sur.ilosc * proporcja))
+            : Math.round(sur.ilosc * proporcja * 10) / 10,
+        jednostka: sur.jednostka,
+      })),
+    });
+  }
+
+  return { skladniki, skladnikiBazowe, makro, komponenty };
 }
 
 /**
@@ -432,6 +501,7 @@ function zbudujPosilekZPrzepisu(opcje: {
     instrukcje: przepis.instrukcje,
     makro: dodatki.reduce((suma, d) => dodajMakro(suma, d.makro), przygotowanyGlowny.makro),
     dodatki: dodatki.length > 0 ? dodatki : undefined,
+    komponenty: przygotowanyGlowny.komponenty.length > 0 ? przygotowanyGlowny.komponenty : undefined,
   };
 }
 
@@ -473,6 +543,35 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
   const dni: DzienWPlanie[] = [];
 
   const liczbaDni = req.liczbaDni && req.liczbaDni > 0 ? Math.min(req.liczbaDni, 14) : 7;
+
+  /**
+   * Budżet dań „na dłużej" i rozkładanie ich na weekend.
+   *
+   * Gdy znamy datę startu, w dni robocze wstrzymujemy się z trudnym daniem tak długo, jak
+   * zostało dość weekendowych dni, żeby pomieścić resztę budżetu. Dzięki temu pieczenie
+   * i wyrastanie ciasta ląduje w sobotę, a nie we wtorek przed pracą.
+   */
+  const start = req.dataStartu ? new Date(req.dataStartu) : null;
+  const znamyDate = start !== null && !Number.isNaN(start.getTime());
+  const jestWeekend = (indeksDnia: number): boolean => {
+    if (!znamyDate) return false;
+    const data = new Date(start!);
+    data.setDate(data.getDate() + indeksDnia);
+    const dzienTygodnia = data.getDay();
+    return dzienTygodnia === 0 || dzienTygodnia === 6;
+  };
+  const budzet = budzetTrudnych(liczbaDni);
+  let trudnychUzytych = 0;
+
+  const wolnoTrudne = (indeksDnia: number): boolean => {
+    if (trudnychUzytych >= budzet) return false;
+    if (!znamyDate || jestWeekend(indeksDnia)) return true;
+    let weekendowychPrzedNami = 0;
+    for (let d = indeksDnia + 1; d < liczbaDni; d++) if (jestWeekend(d)) weekendowychPrzedNami++;
+    // Trzymamy budżet dla nadchodzących weekendów; gdy ich nie starcza, gotujemy w tygodniu.
+    return weekendowychPrzedNami < budzet - trudnychUzytych;
+  };
+
   for (let dzien = 0; dzien < liczbaDni; dzien++) {
     const posilki: PosilekWPlanie[] = [];
     const uzyteWDniu = new Set<string>();
@@ -480,12 +579,17 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
     for (const slot of req.sloty) {
       const ocen = ocenDlaSlotu.get(slot)!;
       const preferowanyCharakter = req.charakterPerSlot?.[slot];
-      const kandydaci = dania.filter((r) => {
+      const wszyscyKandydaci = dania.filter((r) => {
         if (!r.slot.includes(slot)) return false;
         if (preferowanyCharakter && r.charakter !== preferowanyCharakter) return false;
         if (!maSprzet(r.sprzet)) return false;
         return rozwiazPrzepis(r, filtr) !== null;
       });
+
+      // Budżet trudnych dań wyczerpany (albo dziś dzień roboczy) — zostawiamy tylko szybkie.
+      // Gdyby po odcięciu nie zostało nic, wracamy do pełnej puli: pusty slot jest gorszy.
+      const szybcy = wszyscyKandydaci.filter((r) => !jestTrudny(r));
+      const kandydaci = wolnoTrudne(dzien) || szybcy.length === 0 ? wszyscyKandydaci : szybcy;
 
       /**
        * Gotowiec wchodzi w dwóch sytuacjach: z losowania (patrz SZANSA_NA_GOTOWIEC) albo
@@ -534,6 +638,7 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
 
       const uzyte = uzyteNaSlot.get(slot)!;
       const przepis = wybierzKandydata(kandydaci, uzyte, uzyteWDniu, ocen, uzyteWTygodniuGdziekolwiek);
+      if (jestTrudny(przepis)) trudnychUzytych++;
       uzyte.add(przepis.id);
       uzyteWDniu.add(przepis.id);
       uzyteWTygodniuGdziekolwiek.add(przepis.id);

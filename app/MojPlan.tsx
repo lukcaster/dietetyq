@@ -154,6 +154,27 @@ export default function MojPlan({
             </>
           )}
 
+          {/* Ciasto trzeba zrobić PRZED daniem, więc idzie nad instrukcjami przepisu. */}
+          {posilek.komponenty?.map((k, i) => (
+            <div key={i} className="komponent-blok">
+              <div className="posilek-nazwa">🥣 Najpierw: {k.nazwa}</div>
+              <ul>
+                {k.skladniki.map((s, j) => (
+                  <li key={j} className="posilek-makro">
+                    {s.nazwa} — {Math.round(s.ilosc * mnoznik * 10) / 10} {s.jednostka}
+                  </li>
+                ))}
+              </ul>
+              <ol className="instrukcje">
+                {k.instrukcje.map((krok, j) => (
+                  <li key={j} className="posilek-makro">
+                    {krok}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+
           {posilek.instrukcje.length > 0 && (
             <>
               <p className="podtytul" style={{ marginTop: 14, marginBottom: 4 }}>

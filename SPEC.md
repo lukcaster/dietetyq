@@ -182,6 +182,20 @@ Pole `sprzet[]` w `recipes.json` i `szablony.json` zostało **wyznaczone z treś
 
 Zmierzone na 2200 kcal i 5 posiłkach: „minimum roboty" daje 10 przepisów poniżej 15 minut, zero powyżej 30 i 20 gotowców na 35 posiłków; „lubię gotować" — 33 przepisy 30+ i tylko 2 gotowce; „bez piekarnika i blendera" — zero dań z tym sprzętem, 35/35 unikalnych dań, bez ostrzeżeń.
 
+### Ile gotowania wchodzi do planu (budżet trudnych dań)
+**Trudne danie** = czas przygotowania `30+` albo `czasOczekiwania` (wyrastanie ciasta, noc w lodówce). W bazie to prawie połowa przepisów (104 z 216 w chwili wprowadzenia), więc bez limitu plan na tydzień potrafił składać się niemal wyłącznie z nich — a nikt nie gotuje godzinę siedem dni z rzędu.
+
+Limit jest **na cały plan**, nie na dzień (`BUDZET_TRUDNYCH`): tydzień dostaje 3 takie dania, trzy dni 2, jeden dzień 1. Gdy budżet się wyczerpie, trudne przepisy wypadają z puli kandydatów — chyba że po odcięciu nie zostałoby nic, bo pusty slot jest gorszy niż długie gotowanie. Można sobie na to pozwolić: po odfiltrowaniu trudnych na obiad zostaje 27 przepisów.
+
+**Weekend.** Request przyjmuje `dataStartu` (ISO), z której liczymy, które dni planu wypadają w sobotę i niedzielę. W dni robocze wstrzymujemy się z trudnym daniem tak długo, jak zostało dość weekendowych dni, żeby pomieścić resztę budżetu (`weekendowychPrzedNami < budzet - trudnychUzytych`). To heurystyka licząca **dni**, nie sloty — jeden weekendowy dzień potrafi wziąć dwa trudne dania, więc przy budżecie 3 i dwóch weekendach jedno danie i tak wyląduje w tygodniu. Bez daty wszystko rozkłada się po kolei.
+
+Zmierzone (10 planów każdej długości, start w środę): trudnych dań dokładnie 1/2/3 przy budżecie 1/2/3, zero przekroczeń. Przy starcie w poniedziałek 2 z 3 trudnych dań lądują w sobotę.
+
+### Półprodukty w planie (ciasto)
+Przepis na pierogi mówi „rozwałkuj ciasto", ale samo ciasto jest osobnym komponentem (`components.json`). Do wersji z tym zapisem **instrukcje komponentu nigdy nie trafiały do usera** — silnik czytał je wyłącznie do liczenia makro, więc w planie pojawiała się jedna pozycja „Ciasto pierogowe — 500 g" bez składu i bez przepisu.
+
+Teraz posiłek ma pole `komponenty[]` z nazwą, **przeskalowanymi składnikami** i instrukcjami, a UI pokazuje je nad krokami dania („🥣 Najpierw: Ciasto pierogowe"). Skalowanie idzie tym samym współczynnikiem co reszta przepisu, więc przy porcji na jedną osobę wychodzi realna ilość mąki, a nie ilość na cały garnek.
+
 ### „Gotowce" w planie tygodniowym (`lib/engine/gotowce.ts`)
 Nie każdy posiłek musi być gotowany. Na drugie śniadanie normalny człowiek robi kanapkę albo sięga po jogurt z owocami, a nie piecze keksówkę — a baza przepisów jest najuboższa właśnie w lekkich slotach (7 przepisów na drugie śniadanie kontra 29 na kolację).
 

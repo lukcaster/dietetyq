@@ -123,7 +123,13 @@ export default function Home() {
       const odpowiedz = await fetch("/api/plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...daneZProfilu(profil), liczbaDni }),
+        // Data startu mówi silnikowi, które dni planu wypadają w weekend — tam trafiają
+        // dania wymagające dłuższego gotowania.
+        body: JSON.stringify({
+          ...daneZProfilu(profil),
+          liczbaDni,
+          dataStartu: new Date().toISOString().slice(0, 10),
+        }),
       });
       const wynik = await odpowiedz.json();
       if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się ułożyć planu");

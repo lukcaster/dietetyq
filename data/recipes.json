@@ -12106,5 +12106,151 @@
       "garnek"
     ],
     "czasOczekiwania": "kilka godzin w lodówce"
+  },
+  {
+    "id": "jajecznica-ze-szczypiorkiem",
+    "nazwa": "Jajecznica ze szczypiorkiem na maśle",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "sprzet": [
+      "patelnia"
+    ],
+    "instrukcje": [
+      "Masło rozpuść na patelni na małym ogniu — jajecznica nie lubi mocnego ognia.",
+      "Wbij jajka, dopraw solą i pieprzem.",
+      "Mieszaj drewnianą łyżką, aż się zetną, ale zostaną wilgotne. Zdejmij z ognia chwilę przed tym, jak uznasz je za gotowe — dojdą same.",
+      "Posyp szczypiorkiem i podawaj z pieczywem oraz pomidorem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 120,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "jajecznica-z-pomidorami",
+    "nazwa": "Jajecznica z pomidorami",
+    "slot": [
+      "sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "sprzet": [
+      "patelnia"
+    ],
+    "instrukcje": [
+      "Pomidory sparz i obierz ze skórki (albo zostaw, jeśli nie przeszkadza), pokrój w kostkę.",
+      "Na maśle podsmaż pomidory 3-4 minuty, aż puszczą wodę i lekko odparują.",
+      "Wbij jajka, dopraw solą i pieprzem, mieszaj do ścięcia.",
+      "Posyp szczypiorkiem, podawaj z pieczywem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "jajecznica-z-kielbasa",
+    "nazwa": "Jajecznica z kiełbasą i cebulą",
+    "slot": [
+      "sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "sprzet": [
+      "patelnia"
+    ],
+    "instrukcje": [
+      "Kiełbasę pokrój w plasterki, cebulę w kostkę. Podsmaż razem na oleju, aż się zarumienią — kiełbasa puści własny tłuszcz.",
+      "Zmniejsz ogień, wbij jajka i dopraw pieprzem (soli zwykle nie trzeba, kiełbasa jest słona).",
+      "Mieszaj do ścięcia, podawaj z pieczywem i ogórkiem kiszonym."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "kielbasa",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chleb-zytni-razowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ]
   }
 ]

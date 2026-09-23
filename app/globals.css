@@ -1074,3 +1074,12 @@ body {
   border-color: var(--neon-cyan);
   background: rgba(43, 240, 255, 0.08);
 }
+
+/* Półprodukt (ciasto) — wyróżniony, bo trzeba go zrobić PRZED właściwym daniem. */
+.komponent-blok {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(155, 92, 255, 0.08);
+  border: 1px solid rgba(155, 92, 255, 0.28);
+}

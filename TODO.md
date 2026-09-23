@@ -1,5 +1,19 @@
 # TODO — do zrobienia w następnej sesji
 
+## 23. Trzy zgłoszenia: jajecznica, za dużo gotowania, brak przepisu na ciasto — ZROBIONE
+
+**1. „Nigdy nie trafiłem jajecznicy".** To była matematyka, nie błąd: 76 przepisów na śniadanie znaczy ~9% szans na konkretne danie w tygodniu. Doszły trzy klasyki (ze szczypiorkiem na maśle, z pomidorami, z kiełbasą). Teraz 7 z 79 śniadań to jajecznica, czyli **~48% szans na tydzień**. Dalej nie ma gwarancji — to jest wbudowane w wielkość bazy.
+
+**2. Za dużo skomplikowanych przepisów.** Wprowadzony budżet trudnych dań na plan (1/2/3 dla 1/3/7 dni) z rozkładaniem na weekend po dacie startu. Mechanika w SPEC.
+
+**3. Przepis na pizzę i pierogi nie mówił, jak zrobić ciasto.** Prawdziwy bug: instrukcje komponentów były czytane tylko do makro. Naprawione, patrz SPEC („Półprodukty w planie").
+
+Co dalej:
+- **Klasyki toną w dużej bazie.** Przy 229 przepisach każdy pojedynczy jest rzadki. Docelowym rozwiązaniem nie jest dokładanie kolejnych wariantów, tylko mechanizm „ulubione" — user oznacza dania, które mają wypadać częściej.
+- **Rozkładanie na weekend liczy dni, nie sloty.** Jeden weekendowy dzień potrafi wziąć dwa trudne dania, więc przy budżecie 3 i dwóch dniach weekendu jedno i tak trafia w tydzień.
+- **Budżet nie zna godzin.** Nie odróżnia „30+ minut" od „dwie godziny duszenia" — bigos i kotlet z piekarnika są traktowane tak samo.
+- **Tryb „z lodówki" nie zna budżetu** (i tak jest zawieszony).
+
 ## 22. Polska klasyka w bazie — ZROBIONE
 Baza miała sporą dziurę: **zero zup** poza kremami, brak klusek, gołąbków, bigosu, fasolki, twarożku i sałatki jarzynowej. Doszło 16 przepisów i 4 składniki (`kielbasa`, `smietana-18`, `groszek-konserwowy`, `grzyby-suszone`).
 
