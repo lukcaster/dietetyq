@@ -182,6 +182,17 @@ Pole `sprzet[]` w `recipes.json` i `szablony.json` zostało **wyznaczone z treś
 
 Zmierzone na 2200 kcal i 5 posiłkach: „minimum roboty" daje 10 przepisów poniżej 15 minut, zero powyżej 30 i 20 gotowców na 35 posiłków; „lubię gotować" — 33 przepisy 30+ i tylko 2 gotowce; „bez piekarnika i blendera" — zero dań z tym sprzętem, 35/35 unikalnych dań, bez ostrzeżeń.
 
+### Rodzaj potrawy i ulubione kategorie
+Każdy przepis główny ma pole `rodzaj` (`RODZAJE_POTRAW`): jajka, naleśniki, owsianki, kanapki, wrapy, zupy, jednogarnkowe, mięso z dodatkami, makarony, kluski, sałatki, koktajle, wypieki, przekąski. To **czwarta oś** obok `slot` (kiedy jeść), `charakter` (słodkie/wytrawne) i `kategoriaDania` (główne/dodatek) — opisuje, czym danie właściwie jest.
+
+Powstała z konkretnego zgłoszenia: „nigdy nie trafiłem jajecznicy", „naleśniki też rzadko są". Przy 229 przepisach konkretny klasyk ma kilka procent szans na tydzień i żadne dokładanie wariantów tego nie naprawi — potrzebny był mechanizm, w którym user mówi, co lubi.
+
+Rodzaje przypisane skryptem z nazw i składów (pierwszy pasujący wzorzec wygrywa, wzorce specyficzne przed ogólnymi). Wszystkie 219 dań głównych ma rodzaj. Uwaga przy dopisywaniu przepisów: **`rodzaj` trzeba uzupełnić ręcznie**, skrypt był jednorazowy.
+
+**Jak mocno to działa.** `PREMIA_ZA_RODZAJ` to 4 punkty, ale kluczowy jest inny mechanizm: `losujNajlepszy` wybiera wyłącznie spośród najwyżej ocenionych kandydatów, więc **każda dodatnia premia działa w praktyce jak twardy filtr**. Zmierzone: przy trzech zaznaczonych rodzajach dawało to **86%** posiłków z tych kategorii, czyli tydzień samych jajek, naleśników i zup.
+
+Dlatego premia wchodzi **losowo, w ~65% posiłków** (`SZANSA_NA_ULUBIONY`). Po zmianie: **67% udziału ulubionych** przy 27% bez preferencji, a w planie nadal pojawia się 9 pozostałych kategorii. To jest ta „miękkość", którą deklarują pozostałe preferencje — warto o niej pamiętać, jeśli kiedyś dojdzie kolejna premia do rankingu.
+
 ### Ile gotowania wchodzi do planu (budżet trudnych dań)
 **Trudne danie** = czas przygotowania `30+` albo `czasOczekiwania` (wyrastanie ciasta, noc w lodówce). W bazie to prawie połowa przepisów (104 z 216 w chwili wprowadzenia), więc bez limitu plan na tydzień potrafił składać się niemal wyłącznie z nich — a nikt nie gotuje godzinę siedem dni z rzędu.
 
@@ -190,6 +201,8 @@ Limit jest **na cały plan**, nie na dzień (`BUDZET_TRUDNYCH`): tydzień dostaj
 **Weekend.** Request przyjmuje `dataStartu` (ISO), z której liczymy, które dni planu wypadają w sobotę i niedzielę. W dni robocze wstrzymujemy się z trudnym daniem tak długo, jak zostało dość weekendowych dni, żeby pomieścić resztę budżetu (`weekendowychPrzedNami < budzet - trudnychUzytych`). To heurystyka licząca **dni**, nie sloty — jeden weekendowy dzień potrafi wziąć dwa trudne dania, więc przy budżecie 3 i dwóch weekendach jedno danie i tak wyląduje w tygodniu. Bez daty wszystko rozkłada się po kolei.
 
 Zmierzone (10 planów każdej długości, start w środę): trudnych dań dokładnie 1/2/3 przy budżecie 1/2/3, zero przekroczeń. Przy starcie w poniedziałek 2 z 3 trudnych dań lądują w sobotę.
+
+**Budżet obowiązuje wyłącznie przy układaniu planu.** Przy ręcznej wymianie user świadomie wybiera, co chce ugotować, więc dania „na dłużej" muszą być osiągalne — lista propozycji jest celowo mieszana (`preferuj`: szybkie / trudne / dowolne). Bez tego przy stylu „minimum roboty" przepisy 30+ nie wypadały nawet przy ręcznej wymianie, bo przegrywały w rankingu.
 
 ### Półprodukty w planie (ciasto)
 Przepis na pierogi mówi „rozwałkuj ciasto", ale samo ciasto jest osobnym komponentem (`components.json`). Do wersji z tym zapisem **instrukcje komponentu nigdy nie trafiały do usera** — silnik czytał je wyłącznie do liczenia makro, więc w planie pojawiała się jedna pozycja „Ciasto pierogowe — 500 g" bez składu i bez przepisu.

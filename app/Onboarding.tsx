@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PUSTY_PROFIL, SLOTY_DLA_LICZBY, type DanePomiarowe, type Profil } from "@/lib/magazyn";
-import type { Charakter, Sprzet } from "@/lib/engine/types";
+import type { Charakter, RodzajPotrawy, Sprzet } from "@/lib/engine/types";
 
 /**
  * Ankieta powitalna — wypełniana raz, przy pierwszym wejściu. Wynik ląduje w profilu
@@ -38,6 +38,27 @@ const NAZWY_SLOTOW: Record<string, string> = {
 const SMAKI: { id: Charakter; label: string }[] = [
   { id: "slodkie", label: "🍯 Słodko" },
   { id: "wytrawne", label: "🧂 Słono" },
+];
+
+/**
+ * Rodzaje potraw do zaznaczenia. Nie pytamy tu o pojedyncze składniki (to było 49 chipsów),
+ * tylko o to, co user lubi jeść — w kategoriach, którymi myśli o jedzeniu.
+ */
+const RODZAJE: { id: RodzajPotrawy; label: string }[] = [
+  { id: "jajka", label: "🍳 Jajecznica i omlety" },
+  { id: "nalesniki", label: "🥞 Naleśniki i placki" },
+  { id: "owsianki", label: "🥣 Owsianki" },
+  { id: "kanapki", label: "🥪 Kanapki" },
+  { id: "wrapy", label: "🌯 Tortille i wrapy" },
+  { id: "zupy", label: "🍲 Zupy" },
+  { id: "jednogarnkowe", label: "🥘 Dania jednogarnkowe" },
+  { id: "miesoZDodatkiem", label: "🍖 Mięso z dodatkami" },
+  { id: "makarony", label: "🍝 Makarony" },
+  { id: "kluski", label: "🥟 Pierogi i kluski" },
+  { id: "salatki", label: "🥗 Sałatki" },
+  { id: "koktajle", label: "🥤 Koktajle" },
+  { id: "wypieki", label: "🍕 Wypieki i zapiekanki" },
+  { id: "przekaski", label: "🍫 Przekąski" },
 ];
 
 const STYLE = [
@@ -83,6 +104,7 @@ export default function Onboarding({ onGotowe }: { onGotowe: (profil: Profil) =>
   const [makro, setMakro] = useState(PUSTY_PROFIL.makro);
   const [dane, setDane] = useState<DanePomiarowe>({});
   const [liczbaOsob, setLiczbaOsob] = useState(1);
+  const [ulubioneRodzaje, setUlubioneRodzaje] = useState<RodzajPotrawy[]>([]);
   const [stylGotowania, setStylGotowania] = useState<Profil["stylGotowania"]>("normalnie");
   const [bezSprzetu, setBezSprzetu] = useState<Sprzet[]>([]);
   const [restrykcje, setRestrykcje] = useState<string[]>([]);
@@ -114,6 +136,7 @@ export default function Onboarding({ onGotowe }: { onGotowe: (profil: Profil) =>
       stylGotowania,
       bezSprzetu,
       restrykcje,
+      ulubioneRodzaje,
     });
   }
 
@@ -308,6 +331,28 @@ export default function Onboarding({ onGotowe }: { onGotowe: (profil: Profil) =>
             {n === 1 ? "tylko ja" : `${n} osoby`}
           </button>
         ))}
+      </div>
+
+      <h2 style={{ marginTop: 28 }}>Co lubisz jeść?</h2>
+      <p className="podtytul" style={{ marginBottom: 12 }}>
+        Zaznacz, na co masz ochotę najczęściej — te dania będą wypadać częściej. Nic nie
+        zaznaczysz? Wtedy dobieramy z całej bazy po równo.
+      </p>
+      <div className="pref-chipsy">
+        {RODZAJE.map((r) => {
+          const lubi = ulubioneRodzaje.includes(r.id);
+          return (
+            <button
+              key={r.id}
+              className={`pref-chip ${lubi ? "lubie" : ""}`}
+              onClick={() =>
+                setUlubioneRodzaje((a) => (lubi ? a.filter((x) => x !== r.id) : [...a, r.id]))
+              }
+            >
+              {r.label}
+            </button>
+          );
+        })}
       </div>
 
       <h2 style={{ marginTop: 28 }}>Jak lubisz gotować?</h2>

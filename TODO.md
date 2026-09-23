@@ -1,5 +1,22 @@
 # TODO — do zrobienia w następnej sesji
 
+## 24. Ulubione rodzaje potraw + wymiana bez limitu — ZROBIONE
+Dwa zgłoszenia naraz: budżet trudnych dań ma dotyczyć silnika, ale przy ręcznej wymianie user powinien móc sięgnąć po długie danie; plus nowa kategoria preferencji („co lubisz: naleśniki, jajecznica, jednogarnkowe…").
+
+- Wszystkie 219 dań głównych dostało pole `rodzaj` (14 kategorii), przypisane skryptem z nazw i składów.
+- Profil ma `ulubioneRodzaje`, ankieta pyta o nie chipsami, silnik premiuje je w rankingu.
+- Wymiana proponuje mieszankę: szybkie / na dłużej / dowolne.
+
+Zmierzone: udział ulubionych rodzajów **27% → 67%** (przy trzech zaznaczonych), przy zachowaniu 9 pozostałych kategorii w planie.
+
+**Ważna obserwacja o rankingu:** `losujNajlepszy` bierze tylko najwyżej ocenionych, więc każda dodatnia premia działa jak filtr — pierwsza wersja dała 86% i monokulturę. Stąd `SZANSA_NA_ULUBIONY = 0.65`. Jeśli kiedyś dojdzie kolejna premia, ten sam problem wróci.
+
+Co dalej:
+- **`rodzaj` trzeba uzupełniać ręcznie** przy nowych przepisach — skrypt tagujący był jednorazowy i nie jest w repo.
+- **Podział na rodzaje jest miejscami arbitralny**: „Pasta jajeczna" jest w `jajka`, choć je się ją na kanapce; hummus wylądował w `przekaski`.
+- **Nie da się zmienić ulubionych bez wypełniania ankiety od nowa** — to ten sam brak edycji profilu, co w punkcie 20.
+- Sprawdzarka bazy nie weryfikuje, czy każdy przepis ma `rodzaj`.
+
 ## 23. Trzy zgłoszenia: jajecznica, za dużo gotowania, brak przepisu na ciasto — ZROBIONE
 
 **1. „Nigdy nie trafiłem jajecznicy".** To była matematyka, nie błąd: 76 przepisów na śniadanie znaczy ~9% szans na konkretne danie w tygodniu. Doszły trzy klasyki (ze szczypiorkiem na maśle, z pomidorami, z kiełbasą). Teraz 7 z 79 śniadań to jajecznica, czyli **~48% szans na tydzień**. Dalej nie ma gwarancji — to jest wbudowane w wielkość bazy.

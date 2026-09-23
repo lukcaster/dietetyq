@@ -12,7 +12,7 @@ import {
   type FiltrSkladnikow,
 } from "./macro";
 import { jestKomponentem } from "./types";
-import type { Charakter, CzasPrzygotowania, KategoriaDania, Makro, Recipe, Sprzet } from "./types";
+import type { Charakter, CzasPrzygotowania, KategoriaDania, Makro, Recipe, RodzajPotrawy, Sprzet } from "./types";
 
 export type { PozycjaListyZakupow, SkladnikBazowyWPlanie } from "./lista-zakupow";
 
@@ -64,6 +64,12 @@ export interface PlanRequest {
    * przepisy poniżej 15 minut, więc „minimum roboty" dałoby ten sam obiad przez cały tydzień.
    */
   stylGotowania?: StylGotowania;
+  /**
+   * Rodzaje potraw, które user lubi (naleśniki, jajka, zupy…). Działa MIĘKKO, jak lubiane
+   * składniki: podbija te dania w rankingu, ale nie wyklucza reszty. Przy 229 przepisach
+   * konkretny klasyk wypada rzadko i to jest jedyny sposób, żeby wychodził częściej.
+   */
+  ulubioneRodzaje?: RodzajPotrawy[];
   /** Na ile dni rozpisać plan (1, 3 albo 7). Domyślnie tydzień. */
   liczbaDni?: number;
   /**
@@ -347,16 +353,39 @@ function wybierzKandydata(
 /** Premia za trafienie w preferowany smak slotu — tego samego rzędu co lubiany składnik. */
 const PREMIA_ZA_SMAK = 2;
 
+/**
+ * Premia za ulubiony rodzaj potrawy. Wyższa niż za smak, bo to bezpośrednia odpowiedź na
+ * „nigdy nie trafiłem jajecznicy" — ma realnie przesuwać wybór, a nie tylko rozstrzygać remisy.
+ * Dalej jest to jednak premia, nie filtr: dania spoza ulubionych rodzajów nadal wychodzą.
+ */
+const PREMIA_ZA_RODZAJ = 4;
+
+/**
+ * Jak często premia za ulubiony rodzaj w ogóle wchodzi w grę.
+ *
+ * `losujNajlepszy` wybiera wyłącznie spośród najwyżej ocenionych, więc KAŻDA dodatnia premia
+ * działa w praktyce jak twardy filtr. Zmierzone: przy trzech zaznaczonych rodzajach dawało to
+ * 86% posiłków z tych kategorii — czyli tydzień samych jajek, naleśników i zup.
+ *
+ * Dlatego premię stosujemy losowo, mniej więcej w dwóch trzecich posiłków. Ulubione wychodzą
+ * wyraźnie częściej, ale reszta bazy nie znika. To jest ta „miękkość", którą obiecuje SPEC.
+ */
+const SZANSA_NA_ULUBIONY = 0.65;
+
 function zbudujOcenePreferencji(
   filtr: FiltrSkladnikow,
   lubiane: string[],
   styl: StylGotowania = "normalnie",
-  smaki?: Charakter[]
+  smaki?: Charakter[],
+  ulubioneRodzaje?: RodzajPotrawy[]
 ): (r: Recipe) => number {
+  const ulubione = new Set(ulubioneRodzaje ?? []);
   const zaSmak = (przepis: Recipe) =>
     smaki && smaki.length === 1 && przepis.charakter === smaki[0] ? PREMIA_ZA_SMAK : 0;
+  const zaRodzaj = (przepis: Recipe) =>
+    przepis.rodzaj !== undefined && ulubione.has(przepis.rodzaj) ? PREMIA_ZA_RODZAJ : 0;
   const zaCzas = (przepis: Recipe) =>
-    (PREMIA_ZA_CZAS[styl][przepis.czasPrzygotowania] ?? 0) + zaSmak(przepis);
+    (PREMIA_ZA_CZAS[styl][przepis.czasPrzygotowania] ?? 0) + zaSmak(przepis) + zaRodzaj(przepis);
   if (lubiane.length === 0) return zaCzas;
   const cache = new Map<string, number>();
   return (przepis: Recipe) => {
@@ -514,9 +543,16 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
 
   const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
   const styl = req.stylGotowania ?? "normalnie";
+  // Dwie oceny na slot: z premią za ulubiony rodzaj i bez niej. Którą weźmiemy, decyduje
+  // losowanie przy każdym posiłku — patrz SZANSA_NA_ULUBIONY.
   const ocenDlaSlotu = new Map<string, (r: Recipe) => number>();
+  const ocenBezUlubionych = new Map<string, (r: Recipe) => number>();
   for (const slot of req.sloty) {
     ocenDlaSlotu.set(
+      slot,
+      zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl, req.smakPerSlot?.[slot], req.ulubioneRodzaje)
+    );
+    ocenBezUlubionych.set(
       slot,
       zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl, req.smakPerSlot?.[slot])
     );
@@ -577,7 +613,8 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
     const uzyteWDniu = new Set<string>();
 
     for (const slot of req.sloty) {
-      const ocen = ocenDlaSlotu.get(slot)!;
+      const ocen =
+        Math.random() < SZANSA_NA_ULUBIONY ? ocenDlaSlotu.get(slot)! : ocenBezUlubionych.get(slot)!;
       const preferowanyCharakter = req.charakterPerSlot?.[slot];
       const wszyscyKandydaci = dania.filter((r) => {
         if (!r.slot.includes(slot)) return false;
@@ -722,6 +759,12 @@ export interface ZapytanieOZamiennik extends Omit<PlanRequest, "sloty"> {
   wyklucz?: string[];
   /** true = user prosi wprost o coś bez przepisu (kanapka, miska, koktajl). */
   chceGotowca?: boolean;
+  /**
+   * Czego szukamy w tej propozycji. Budżet trudnych dań obowiązuje **tylko przy układaniu
+   * planu** — przy wymianie user świadomie wybiera, co chce zrobić, więc dania „na dłużej"
+   * muszą być osiągalne. Dlatego lista propozycji jest celowo mieszana.
+   */
+  preferuj?: "dowolne" | "szybkie" | "trudne";
 }
 
 /**
@@ -734,8 +777,17 @@ export interface ZapytanieOZamiennik extends Omit<PlanRequest, "sloty"> {
 export function zaproponujZamienniki(req: ZapytanieOZamiennik, ile = 3): PosilekWPlanie[] {
   const propozycje: PosilekWPlanie[] = [];
   const wyklucz = [...(req.wyklucz ?? [])];
+
+  /**
+   * Celowo mieszamy: coś szybkiego, coś „na dłużej" i jedna propozycja bez preferencji.
+   * Bez tego przy stylu „minimum roboty" dania 30+ nigdy nie wypadały nawet przy ręcznej
+   * wymianie, bo przegrywały w rankingu — a to właśnie wtedy user chce po nie sięgnąć.
+   */
+  const kolejnosc: ZapytanieOZamiennik["preferuj"][] = ["szybkie", "trudne", "dowolne"];
+
   for (let i = 0; i < ile; i++) {
-    const p = zaproponujZamiennik({ ...req, wyklucz });
+    const preferuj = kolejnosc[i % kolejnosc.length];
+    const p = zaproponujZamiennik({ ...req, wyklucz, preferuj }) ?? zaproponujZamiennik({ ...req, wyklucz });
     if (!p) break;
     propozycje.push(p);
     // Kolejna propozycja ma być inna — dokładamy to, co właśnie zaproponowaliśmy.
@@ -753,7 +805,13 @@ export function zaproponujZamiennik(req: ZapytanieOZamiennik): PosilekWPlanie | 
 
   const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
   const styl = req.stylGotowania ?? "normalnie";
-  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], styl, req.smakPerSlot?.[req.slot]);
+  const ocen = zbudujOcenePreferencji(
+    filtr,
+    req.lubianeSkladniki ?? [],
+    styl,
+    req.smakPerSlot?.[req.slot],
+    req.ulubioneRodzaje
+  );
   const bezSprzetu = new Set(req.bezSprzetu ?? []);
   const maSprzet = (potrzebny?: Sprzet[]) => !potrzebny?.some((s) => bezSprzetu.has(s));
   const wyklucz = new Set(req.wyklucz ?? []);
@@ -764,6 +822,8 @@ export function zaproponujZamiennik(req: ZapytanieOZamiennik): PosilekWPlanie | 
       if (!r.slot.includes(req.slot)) return false;
       if (wyklucz.has(r.id)) return false;
       if (!maSprzet(r.sprzet)) return false;
+      if (req.preferuj === "szybkie" && jestTrudny(r)) return false;
+      if (req.preferuj === "trudne" && !jestTrudny(r)) return false;
       return rozwiazPrzepis(r, filtr) !== null;
     });
 

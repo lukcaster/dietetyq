@@ -1,5 +1,5 @@
 import type { WygenerowanyPlan } from "./engine/planner";
-import type { Charakter, Sprzet } from "./engine/types";
+import type { Charakter, RodzajPotrawy, Sprzet } from "./engine/types";
 
 /**
  * Warstwa zapisu danych usera.
@@ -47,6 +47,8 @@ export interface Profil {
   lubianeSkladniki: string[];
   bezSprzetu: Sprzet[];
   stylGotowania: "lubie-gotowac" | "normalnie" | "minimum-roboty";
+  /** Rodzaje potraw, które user lubi — te dania wypadają w planie częściej. */
+  ulubioneRodzaje: RodzajPotrawy[];
 }
 
 export interface PostepPlanu {
@@ -136,6 +138,7 @@ export const PUSTY_PROFIL: Omit<Profil, "nick" | "utworzony"> = {
   lubianeSkladniki: [],
   bezSprzetu: [],
   stylGotowania: "normalnie",
+  ulubioneRodzaje: [],
 };
 
 /** Sloty wynikające z liczby posiłków — ta sama tabela co w kroku 2 starego formularza. */

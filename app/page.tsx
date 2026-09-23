@@ -29,6 +29,24 @@ const NAZWY_SLOTOW: Record<string, string> = {
   kolacja: "🌙 Kolacja",
 };
 
+/** Etykiety rodzajów potraw — te same, co w ankiecie (app/Onboarding.tsx). */
+const ETYKIETY_RODZAJOW: Record<string, string> = {
+  jajka: "jajecznica i omlety",
+  nalesniki: "naleśniki i placki",
+  owsianki: "owsianki",
+  kanapki: "kanapki",
+  wrapy: "tortille i wrapy",
+  zupy: "zupy",
+  jednogarnkowe: "dania jednogarnkowe",
+  miesoZDodatkiem: "mięso z dodatkami",
+  makarony: "makarony",
+  kluski: "pierogi i kluski",
+  salatki: "sałatki",
+  koktajle: "koktajle",
+  wypieki: "wypieki i zapiekanki",
+  przekaski: "przekąski",
+};
+
 const DLUGOSCI_PLANU = [
   { dni: 1, label: "Na dziś", opis: "jeden dzień" },
   { dni: 3, label: "Na 3 dni", opis: "np. początek tygodnia" },
@@ -112,6 +130,7 @@ export default function Home() {
       nielubianeSkladniki: p.nielubianeSkladniki,
       bezSprzetu: p.bezSprzetu,
       stylGotowania: p.stylGotowania,
+      ulubioneRodzaje: p.ulubioneRodzaje ?? [],
     };
   }
 
@@ -456,6 +475,8 @@ export default function Home() {
                   {profil.liczbaOsob > 1 && ` · gotujesz dla ${profil.liczbaOsob} osób`}
                   {profil.bezSprzetu.length > 0 && ` · nie masz: ${profil.bezSprzetu.join(", ")}`}
                   {profil.restrykcje.length > 0 && ` · nie jesz: ${profil.restrykcje.join(", ")}`}
+                  {(profil.ulubioneRodzaje?.length ?? 0) > 0 &&
+                    ` · lubisz: ${profil.ulubioneRodzaje.map((r) => ETYKIETY_RODZAJOW[r] ?? r).join(", ")}`}
                 </p>
 
                 {historiaWagi.length > 0 && (

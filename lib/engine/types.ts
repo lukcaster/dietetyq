@@ -211,6 +211,8 @@ export interface Recipe {
   kategoriaDania?: KategoriaDania;
   /** Sprzęt potrzebny do zrobienia dania — patrz SPRZET. Brak = nic nie trzeba (danie na zimno). */
   sprzet?: Sprzet[];
+  /** Rodzaj potrawy — patrz RODZAJE_POTRAW. Ustawiony dla wszystkich dań głównych. */
+  rodzaj?: RodzajPotrawy;
   /** Kategorie dodatków, które silnik musi dobrać razem z tym daniem głównym (np. ryż + surówka). */
   wymaganeDodatki?: ("dodatek-skrobiowy" | "surowka")[];
 }
@@ -227,3 +229,31 @@ export type Slot = (typeof SLOTY)[number];
  */
 export const SPRZET = ["piekarnik", "patelnia", "garnek", "blender"] as const;
 export type Sprzet = (typeof SPRZET)[number];
+
+/**
+ * Rodzaj potrawy — „co to właściwie jest", w kategoriach, którymi ludzie myślą o jedzeniu.
+ *
+ * Inna oś niż `slot` (kiedy to jeść), `charakter` (słodkie/wytrawne) i `kategoriaDania`
+ * (danie główne czy dodatek). Służy do jednego: user zaznacza, co lubi, a te dania wypadają
+ * częściej. Powstało z obserwacji, że przy 229 przepisach klasyki toną — „nigdy nie trafiłem
+ * jajecznicy", „naleśniki też rzadko są".
+ *
+ * Przypisane skryptem z nazw i składów; każdy przepis główny ma dokładnie jeden rodzaj.
+ */
+export const RODZAJE_POTRAW = [
+  "jajka",
+  "nalesniki",
+  "owsianki",
+  "kanapki",
+  "wrapy",
+  "zupy",
+  "jednogarnkowe",
+  "miesoZDodatkiem",
+  "makarony",
+  "kluski",
+  "salatki",
+  "koktajle",
+  "wypieki",
+  "przekaski",
+] as const;
+export type RodzajPotrawy = (typeof RODZAJE_POTRAW)[number];

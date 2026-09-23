@@ -52,7 +52,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "nocne-chia-z-owocami",
@@ -97,7 +98,8 @@
         "kategoria": "owoc-jagodowy",
         "domyslnaSkladnikId": "truskawki"
       }
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "pierogi-fit-szpinak-feta",
@@ -145,7 +147,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "pierogi-fit-indyk",
@@ -187,7 +190,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "pierogi-fit-truskawkowe",
@@ -225,7 +229,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "fit-sernik-baskijski",
@@ -277,7 +282,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "fit-ciasto-owsiane-czekoladowe",
@@ -335,7 +341,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "fit-keksowka-skyrowa-cytrynowa",
@@ -388,7 +395,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "kotlety-mielone-pieczone-owsiane",
@@ -437,7 +445,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "nuggetsy-kurczak-pieczone",
@@ -482,7 +491,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "tortilla-pizza",
@@ -527,7 +537,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "dodatek-ryz-bialy",
@@ -862,7 +873,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "fit-pampuchy-pieczone",
@@ -937,7 +949,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "tortilla-szynka-ser-warzywa",
@@ -983,7 +996,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "tortilla-z-jajkiem-na-patelni",
@@ -1025,7 +1039,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "tortilla-kurczak-rukola",
@@ -1077,7 +1092,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "tortilla-mielone-mcwrap-styl",
@@ -1135,7 +1151,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "szakszuka-chorizo",
@@ -1191,7 +1208,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "jajecznica-na-boczku",
@@ -1225,7 +1243,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "grzanki-mozzarella",
@@ -1267,7 +1286,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "mini-pizza-z-serka-wiejskiego",
@@ -1322,7 +1342,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "buleczki-z-serka-wiejskiego",
@@ -1372,7 +1393,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "kotlet-drobiowy-owsiany-pieczony",
@@ -1416,7 +1438,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "pulpeciki-w-sosie-pomidorowym",
@@ -1467,7 +1490,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "nalesniki-czekolada-daktylowa",
@@ -1531,7 +1555,8 @@
     "sprzet": [
       "blender",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "nalesniki-twarog-skyr",
@@ -1591,7 +1616,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "nalesniki-proteinowe-dzem",
@@ -1649,7 +1675,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "nalesniki-wysokobialkowe",
@@ -1699,7 +1726,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "kurczak-warzywa-skrobia",
@@ -1747,7 +1775,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "omlet-slodki",
@@ -1814,7 +1843,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "omlet-slony",
@@ -1868,7 +1898,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "udon-gochujang",
@@ -1955,7 +1986,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "salatka-big-mac",
@@ -2031,7 +2063,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "placek-bananowo-kakaowy-z-patelni",
@@ -2107,7 +2140,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "kurczak-w-sosie-serkowym-z-makaronem",
@@ -2150,7 +2184,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "sernik-waniliowy-proteinowy",
@@ -2232,7 +2267,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "sernik-marakuja-na-zimno",
@@ -2291,7 +2327,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "placuszki-bananowo-kakaowe-z-cukinia",
@@ -2353,7 +2390,8 @@
     "sprzet": [
       "blender",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "tteokbokki-z-mielonym-gochujang",
@@ -2456,7 +2494,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "sernik-jablkowo-cynamonowy",
@@ -2551,7 +2590,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "ciasto-proteinowe-kasza-manna-borowki",
@@ -2614,7 +2654,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "pizza-buleczki-z-serka-wiejskiego",
@@ -2682,7 +2723,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "warzywa-z-serem-smazeniowym",
@@ -2714,7 +2756,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "curry-z-czerwonej-soczewicy",
@@ -2824,7 +2867,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "ramen-serowy-z-wolowina",
@@ -2934,7 +2978,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "patelnia-yolo-mielone-pieczarki-ziemniaki",
@@ -2989,7 +3034,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "turecka-kanapka-kotlety-z-soczewicy",
@@ -3089,7 +3135,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "gulasz-z-ciecierzycy-z-ziemniakami-oraz-kalafiorem",
@@ -3147,7 +3194,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "dutch-baby-z-owocami",
@@ -3215,7 +3263,8 @@
       "piekarnik",
       "blender",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "grillowana-kukurydza-z-sosem",
@@ -3256,7 +3305,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "pasta-jajeczna-z-lososiem-ogorkiem-oraz-chlebem-razowym",
@@ -3308,7 +3358,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "pieczony-dorsz-z-ryzem-oraz-burakiem",
@@ -3350,7 +3401,8 @@
     "sprzet": [
       "piekarnik",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "pieczony-losos-teriyaki-z-ryzem-i-surowka-z-marchwi-oraz-bia",
@@ -3424,7 +3476,8 @@
     "sprzet": [
       "piekarnik",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "lunchbox-weganski-z-hummusem-i-pieczywem-chrupkim",
@@ -3472,7 +3525,8 @@
         "ilosc": 26,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "kakaowa-kasza-gryczana-z-owocami",
@@ -3529,7 +3583,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami-koktajlowymi",
@@ -3587,7 +3642,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "zupa-krem-z-ciecierzycy-z-grzankami",
@@ -3652,7 +3708,8 @@
       "blender",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "orzechowa-owsianka-z-bananem-i-dzemem-z-czarnych-porzeczek",
@@ -3708,7 +3765,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "angielskie-sniadanie",
@@ -3770,7 +3828,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "zupa-krem-z-pomidorow-z-pestkami-dyni",
@@ -3829,7 +3888,8 @@
       "blender",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "salatka-z-tunczykiem-ogorkiem-selerem-naciowym-kukurydza-i-g",
@@ -3892,7 +3952,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kanapki-z-plastrem-weganskim-hummusem-i-warzywami",
@@ -3930,7 +3991,8 @@
         "ilosc": 75,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "jablko-nerkowce",
@@ -3956,7 +4018,8 @@
         "ilosc": 60,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "slodki-omlet-z-musem-owocowym",
@@ -4015,7 +4078,8 @@
       "blender",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "makaron-z-tunczykiem-szpinakiem-oraz-pomidorkami-koktajlowym",
@@ -4078,7 +4142,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "makaron-z-sosem-bolonskim-z-soczewicy-czerwonej",
@@ -4151,7 +4216,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "jogurt-skyr-sojowy-z-domowa-granola-z-orzechami-nerkowca-ora",
@@ -4202,7 +4268,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "hummus-z-pieczona-papryka",
@@ -4259,7 +4326,8 @@
     "sprzet": [
       "piekarnik",
       "blender"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "ryzowe-placuszki-z-owocami",
@@ -4316,7 +4384,8 @@
     "sprzet": [
       "blender",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "szybka-pieczona-ryba",
@@ -4378,7 +4447,8 @@
     "sprzet": [
       "piekarnik",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "zupa-srodziemnomorska",
@@ -4446,7 +4516,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "kakaowa-owsianka-z-siekanymi-orzechami",
@@ -4502,7 +4573,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "zielone-smoothie-ananas-jablko-oraz-szpinak",
@@ -4543,7 +4615,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "gulasz-z-soczewicy-czerwonej",
@@ -4611,7 +4684,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "ryba-z-ryzem-i-surowka-z-kapusty-pekinskiej",
@@ -4664,7 +4738,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "smalec-z-fasoli",
@@ -4722,7 +4797,8 @@
     "sprzet": [
       "blender",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "owsiane-kulki-z-daktylami",
@@ -4758,7 +4834,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "zapiekany-makaron-ze-szpinakiem-oraz-lososiem",
@@ -4817,7 +4894,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "muffiny-cytrynowe",
@@ -4879,7 +4957,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "placki-bananowe",
@@ -4929,7 +5008,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "koktajl-z-gruszka-oraz-szpinakiem",
@@ -4975,7 +5055,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "carpaccio-z-buraka-z-serkiem-wiejskim",
@@ -5032,7 +5113,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "pasta-z-zielonej-soczewicy-z-warzywami",
@@ -5090,7 +5172,8 @@
     "sprzet": [
       "blender",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "chrupiace-tosty-z-serkiem-szpinakiem-i-pomidorem",
@@ -5143,7 +5226,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "gulasz-wolowy-z-marchwia-oraz-ziemniakami",
@@ -5190,7 +5274,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "salatka-tex-mex",
@@ -5247,7 +5332,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "smoothie-z-malin-oraz-borowek",
@@ -5298,7 +5384,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "salatka-makaronowa-z-tunczykiem-i-jogurtowo-cytrynowym-dress",
@@ -5360,7 +5447,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "quesadilla-z-kurczakiem",
@@ -5422,7 +5510,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "kakaowa-gryczanka-ze-sliwkami-oraz-morelami",
@@ -5483,7 +5572,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "faszerowane-bataty",
@@ -5536,7 +5626,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "tortilla-z-lososiem-szpinakiem-koperkiem-oraz-ogorkiem",
@@ -5584,7 +5675,8 @@
         "ilosc": 60,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "kanapki-z-baklazanem-oraz-kurczakiem",
@@ -5641,7 +5733,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "makaron-z-lososiem-w-delikatnym-sosie-kokosowym",
@@ -5704,7 +5797,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "salatka-z-tunczykiem-ryzem-papryka-czerwona-oraz-kukurydza-k",
@@ -5766,7 +5860,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "owsiane-kulki-z-gorzka-czekolada-i-bananem",
@@ -5803,7 +5898,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "kokosowy-pudding-chia-z-kakao-i-daktylami",
@@ -5867,7 +5963,8 @@
         "ilosc": 100,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "noodle-z-mielonym-miesem-drobiowym",
@@ -5940,7 +6037,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "kanapki-z-tofu-maslem-orzechowym-oraz-dzemem-wisniowym",
@@ -5981,7 +6079,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "salatka-z-pomidorkow-koktajlowych-ogorka-oraz-papryki-czerwo",
@@ -6029,7 +6128,8 @@
         "ilosc": 30,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "omlet-ze-szpinakiem-podany-z-chrupiacym-pieczywem-i-kawalkam",
@@ -6076,7 +6176,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "pulpety-w-sosie-z-czerwonych-warzyw",
@@ -6149,7 +6250,8 @@
       "blender",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "tosty-z-jajkiem-sadzonym-i-awokado",
@@ -6195,7 +6297,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "koktajl-z-jarmuzu",
@@ -6236,7 +6339,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "kanapka-z-jajecznica-i-awokado",
@@ -6282,7 +6386,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "czekoladowa-owsianka",
@@ -6340,7 +6445,8 @@
         "ilosc": 5,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "ryzowy-pudding-z-prazonymi-owocami",
@@ -6393,7 +6499,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "stir-fry-z-miesem-szpinakiem-oraz-fasolka-szparagowa",
@@ -6456,7 +6563,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "jablko-migdaly",
@@ -6482,7 +6590,8 @@
         "ilosc": 55,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "pasta-z-soczewicy-zielonej-marchwi-oraz-pietruszki-z-chlebem",
@@ -6541,7 +6650,8 @@
       "blender",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "salatka-hawajska-z-szynka-i-ananasem",
@@ -6610,7 +6720,8 @@
         "ilosc": 60,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "owsianka-a-la-mars",
@@ -6661,7 +6772,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "hummus-z-marchwia-ogorkiem-oraz-papryka-czerwona",
@@ -6698,7 +6810,8 @@
         "ilosc": 150,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "platki-owsiane-z-mlekiem-i-owocami",
@@ -6753,7 +6866,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "rosol-azjatycki",
@@ -6820,7 +6934,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "czekoladowe-smoothie",
@@ -6876,7 +6991,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "koktajle"
   },
   {
     "id": "kanapka-z-szynka-z-kurczaka-pasta-z-suszonymi-pomidorami-ora",
@@ -6917,7 +7033,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "grillowany-kurczak-z-salatka-i-pieczywem",
@@ -6975,7 +7092,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "grahamka-z-kurczakiem-salata-pomidorem-oraz-ogorkiem",
@@ -7027,7 +7145,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "pudding-chia-z-musem-mango",
@@ -7074,7 +7193,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "tortilla-z-szynka-z-kurczaka-i-warzywami",
@@ -7136,7 +7256,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "tagliatelle-z-brukselka-oraz-orzechami-pistacjowymi",
@@ -7193,7 +7314,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "pieczywo-z-pasta-z-tunczyka-z-ogorkiem-oraz-koperkiem",
@@ -7247,7 +7369,8 @@
         "ilosc": 40,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "banan-migdaly",
@@ -7273,7 +7396,8 @@
         "ilosc": 45,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "racuszki-jablkowo-owsiane",
@@ -7330,7 +7454,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "burger-curry-z-miesa",
@@ -7402,7 +7527,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "pasta-z-lososia-z-chlebem-razowym",
@@ -7471,7 +7597,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "slodka-kanapka-z-wafli-ryzowych",
@@ -7509,7 +7636,8 @@
         "ilosc": 20,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kanapki-z-pasta-pomidorowa-z-kurczaka",
@@ -7581,7 +7709,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "delikatne-risotto-z-dynia",
@@ -7627,7 +7756,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "salatka-nicejska",
@@ -7704,7 +7834,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "frytki-z-selera-z-domowym-ketchupem",
@@ -7763,7 +7894,8 @@
       "piekarnik",
       "blender",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "owsianka-na-mleku-roslinnym-z-wisniami-orzechami-wloskimi-ba",
@@ -7824,7 +7956,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "pieczona-ryba-z-batatami",
@@ -7881,7 +8014,8 @@
     "sprzet": [
       "piekarnik",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "kanapka-z-jajkiem-sadzonym",
@@ -7931,7 +8065,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "jablko-orzechy-laskowe",
@@ -7957,7 +8092,8 @@
         "ilosc": 50,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "tradycyjna-jajecznica-z-pieczywem",
@@ -7997,7 +8133,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "gyros-bowl",
@@ -8059,7 +8196,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "buddha-bowl-z-hummusem-i-kuskusem",
@@ -8108,7 +8246,8 @@
         "ilosc": 10,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "jablko-orzechy",
@@ -8134,7 +8273,8 @@
         "ilosc": 30,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "muffinki-czekoladowo-buraczane",
@@ -8187,7 +8327,8 @@
       "piekarnik",
       "blender",
       "garnek"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "bowl-bbq-z-kurczakiem-oraz-batatem",
@@ -8244,7 +8385,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "sushi-bowl",
@@ -8306,7 +8448,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "mandarynki-orzechy",
@@ -8332,7 +8475,8 @@
         "ilosc": 30,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "zupa-pho-z-wolowina",
@@ -8400,7 +8544,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "wrap-z-tunczykiem",
@@ -8456,7 +8601,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "kanapka-z-pasta-z-dorsza",
@@ -8520,7 +8666,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kaszotto-buraczane-z-ciecierzyca-oraz-serem-typu-feta",
@@ -8578,7 +8725,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "wrap-z-wedzonym-pstragiem",
@@ -8631,7 +8779,8 @@
         "ilosc": 5,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "hummus-z-warzywami",
@@ -8668,7 +8817,8 @@
         "ilosc": 80,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "pieczona-owsianka-z-marchewka",
@@ -8725,7 +8875,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "chili-con-carne-z-czerwonej-fasoli-konserwowej-oraz-miesa",
@@ -8783,7 +8934,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "kanapka-z-pieczonym-indykiem-hummusem-i-warzywami",
@@ -8860,7 +9012,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "czekolada-gorzka",
@@ -8885,7 +9038,8 @@
         "ilosc": 120,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "kanapki-z-chleba-zytniego-razowego-z-pasta-jajeczna-i-ogorki",
@@ -8926,7 +9080,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "dal-z-marchwia",
@@ -8989,7 +9144,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "tortilla-na-cieplo-z-wedlina-serem-i-jajkiem",
@@ -9041,7 +9197,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "banan-nerkowce",
@@ -9067,7 +9224,8 @@
         "ilosc": 50,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "pudding-chia-na-mleku-roslinnym-z-owocami-granatu",
@@ -9121,7 +9279,8 @@
         "ilosc": 20,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "tortilla-w-stylu-mcwrapa",
@@ -9188,7 +9347,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "tortilla-z-twarozkiem-szynka-salata-i-ogorkiem",
@@ -9236,7 +9396,8 @@
         "ilosc": 15,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "pieczone-chipsy-z-ziemniakow",
@@ -9266,7 +9427,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "tost-z-serem-mozzarella-oraz-suszonymi-pomidorami",
@@ -9299,7 +9461,8 @@
         "ilosc": 25,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "delikatny-losos-z-kuskusem",
@@ -9365,7 +9528,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "omletowa-tortilla",
@@ -9421,7 +9585,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "duszony-dorsz-z-zurawina-i-puree-ziemniaczanym",
@@ -9488,7 +9653,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "wrap-z-indykiem-i-dodatkami",
@@ -9560,7 +9726,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "wrapy"
   },
   {
     "id": "bulka-owsiana-z-serem-i-chorizo",
@@ -9618,7 +9785,8 @@
         "ilosc": 5,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "tunczyk-w-sezamie-z-ryzem-i-salatka-z-ogorka",
@@ -9675,7 +9843,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "salatka-z-kurczakiem-i-pieczonym-batatem",
@@ -9738,7 +9907,8 @@
     "sprzet": [
       "piekarnik",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "frytki-z-batatow",
@@ -9768,7 +9938,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "kanapki-z-pasta-z-makreli",
@@ -9816,7 +9987,8 @@
         "ilosc": 160,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "lekka-zupa-gulaszowa-z-indyka",
@@ -9880,7 +10052,8 @@
       "piekarnik",
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "grzanki-z-tunczykiem-i-pomidorami",
@@ -9923,7 +10096,8 @@
         "ilosc": 180,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kanapka-z-tofu-twarozkiem",
@@ -9966,7 +10140,8 @@
         "ilosc": 160,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "klopsiki-z-miesa-w-sosie-pomidorowym-z-kasza-gryczana",
@@ -10018,7 +10193,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "deser-z-chia-bananem-i-waniliowym-musem-z-tofu",
@@ -10071,7 +10247,8 @@
     ],
     "sprzet": [
       "blender"
-    ]
+    ],
+    "rodzaj": "owsianki"
   },
   {
     "id": "melon-orzechy",
@@ -10097,7 +10274,8 @@
         "ilosc": 30,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "jajecznica-z-boczniakami-oraz-chlebem-bezglutenowym",
@@ -10154,7 +10332,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "kurczak-po-hiszpansku",
@@ -10205,7 +10384,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "salatka-z-komosy-ryzowej-oraz-lososia",
@@ -10263,7 +10443,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "tosty-francuskie-z-szynka-i-warzywami",
@@ -10323,7 +10504,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kotlety-mielone-z-kasza-jaglana-i-surowka",
@@ -10385,7 +10567,8 @@
     "sprzet": [
       "patelnia",
       "garnek"
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "kiwi-orzechy",
@@ -10411,7 +10594,8 @@
         "ilosc": 35,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "kanapki-z-pasta-curry-z-kurczaka",
@@ -10468,7 +10652,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "szakszuka-z-cukinia-oraz-papryka-czerwona",
@@ -10520,7 +10705,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "banan-orzechy-wloskie",
@@ -10546,7 +10732,8 @@
         "ilosc": 45,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "omlet-z-lososiem-szpinakiem-oraz-pomidorkami-koktajlowymi",
@@ -10603,7 +10790,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "salatka-z-tunczykiem-kaparami-oraz-oliwkami-i-pieczywem",
@@ -10664,7 +10852,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "salatki"
   },
   {
     "id": "frytki-z-marchwi-oraz-pietruszki",
@@ -10705,7 +10894,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "przekaski"
   },
   {
     "id": "dodatek-bulki-domowe",
@@ -10789,7 +10979,8 @@
     ],
     "sprzet": [
       "piekarnik"
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "zapiekanka-z-ricotty-z-gruszka",
@@ -10836,7 +11027,8 @@
         "ilosc": 170,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "wypieki"
   },
   {
     "id": "kanapka-z-serem-i-warzywami",
@@ -10880,7 +11072,8 @@
         "ilosc": 60,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kanapka-z-szynka-i-serem",
@@ -10929,7 +11122,8 @@
         "ilosc": 50,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kanapka-z-salami",
@@ -10978,7 +11172,8 @@
         "ilosc": 100,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "kurczak-smazony-z-ziemniakami-i-surowka",
@@ -11030,7 +11225,8 @@
         "ilosc": 30,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "bitki-wolowe-z-ziemniakami",
@@ -11083,7 +11279,8 @@
         "ilosc": 80,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "ryba-z-kapusta-kiszona-i-ziemniakami",
@@ -11136,7 +11333,8 @@
         "ilosc": 10,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "kotlet-schabowy-z-piekarnika",
@@ -11189,7 +11387,8 @@
         "ilosc": 80,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "pulpety-drobiowe-w-sosie-koperkowym",
@@ -11241,7 +11440,8 @@
         "ilosc": 350,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "miesoZDodatkiem"
   },
   {
     "id": "rosol-z-makaronem",
@@ -11298,7 +11498,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "zupa-pomidorowa-z-ryzem",
@@ -11355,7 +11556,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "zupa-ogorkowa",
@@ -11411,7 +11613,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "krupnik",
@@ -11467,7 +11670,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "barszcz-czerwony-z-ziemniakami",
@@ -11519,7 +11723,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "zupy"
   },
   {
     "id": "golabki-w-sosie-pomidorowym",
@@ -11576,7 +11781,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "bigos",
@@ -11635,7 +11841,8 @@
     "sprzet": [
       "garnek"
     ],
-    "czasOczekiwania": "najlepszy na drugi dzień"
+    "czasOczekiwania": "najlepszy na drugi dzień",
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "fasolka-po-bretonsku",
@@ -11687,7 +11894,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "leczo-z-kurczakiem",
@@ -11750,7 +11958,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "jednogarnkowe"
   },
   {
     "id": "placki-ziemniaczane",
@@ -11802,7 +12011,8 @@
     ],
     "sprzet": [
       "patelnia"
-    ]
+    ],
+    "rodzaj": "nalesniki"
   },
   {
     "id": "kopytka",
@@ -11850,7 +12060,8 @@
     "sprzet": [
       "garnek",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "leniwe-z-twarogu",
@@ -11904,7 +12115,8 @@
     "sprzet": [
       "garnek",
       "patelnia"
-    ]
+    ],
+    "rodzaj": "kluski"
   },
   {
     "id": "makaron-z-twarogiem",
@@ -11945,7 +12157,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "makarony"
   },
   {
     "id": "twarozek-ze-szczypiorkiem",
@@ -11989,7 +12202,8 @@
         "ilosc": 80,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "kanapki"
   },
   {
     "id": "pasta-jajeczna-ze-szczypiorkiem",
@@ -12042,7 +12256,8 @@
     ],
     "sprzet": [
       "garnek"
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "salatka-jarzynowa",
@@ -12105,7 +12320,8 @@
     "sprzet": [
       "garnek"
     ],
-    "czasOczekiwania": "kilka godzin w lodówce"
+    "czasOczekiwania": "kilka godzin w lodówce",
+    "rodzaj": "salatki"
   },
   {
     "id": "jajecznica-ze-szczypiorkiem",
@@ -12153,7 +12369,8 @@
         "ilosc": 120,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "jajecznica-z-pomidorami",
@@ -12200,7 +12417,8 @@
         "ilosc": 80,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "jajka"
   },
   {
     "id": "jajecznica-z-kielbasa",
@@ -12251,6 +12469,7 @@
         "ilosc": 60,
         "jednostka": "g"
       }
-    ]
+    ],
+    "rodzaj": "jajka"
   }
 ]
