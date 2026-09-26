@@ -182,6 +182,19 @@ Pole `sprzet[]` w `recipes.json` i `szablony.json` zostało **wyznaczone z treś
 
 Zmierzone na 2200 kcal i 5 posiłkach: „minimum roboty" daje 10 przepisów poniżej 15 minut, zero powyżej 30 i 20 gotowców na 35 posiłków; „lubię gotować" — 33 przepisy 30+ i tylko 2 gotowce; „bez piekarnika i blendera" — zero dań z tym sprzętem, 35/35 unikalnych dań, bez ostrzeżeń.
 
+### „Ułożę plan sam" (`app/UlozSam.tsx`)
+Druga droga obok generowania: user wypełnia każdy slot ręcznie. Na każdy posiłek ma trzy opcje:
+
+1. **Wybierz przepis** — przeglądarka całej bazy zawężona do slotu (`app/WybierzPrzepis.tsx`), z wyszukiwarką po nazwie i filtrem po rodzaju potrawy. Lista jest posortowana **po odległości od celu kcal**, bo te przepisy zmienią się przy skalowaniu najmniej. Wybrany przepis idzie przez `/api/posilek/z-przepisu`, który dobiera mu wymagane dodatki, rozpisuje komponenty (ciasto) i skaluje do celu slotu — dokładnie tak samo jak przy generowaniu planu.
+2. **Zbuduj sam** — ten sam `KreatorPosilku`, który przed przebudową siedział pod „Zbuduj sam" przy posiłku. Wrócił do użycia bez zmian.
+3. **Dobierz za mnie** — jedno kliknięcie dla slotów, na których userowi nie zależy; korzysta z endpointu wymiany. Ta opcja jest tu z praktycznego powodu: ręczne ułożenie tygodnia to 35 decyzji i bez niej nikt by tego nie skończył.
+
+**Makro liczymy na bieżąco**, a gdy dzień rozjeżdża się o więcej niż 20% od celu (ten sam próg co w trybie z lodówki), pokazujemy pod nim, czego konkretnie brakuje. **Zapisu nie blokujemy** — to user układa ten plan i on decyduje; apka ostrzega, nie zabrania. Zapisany plan wchodzi w normalny podgląd, więc można go jeszcze przejrzeć i przyjąć albo odrzucić.
+
+Zmierzone: ręcznie złożony dzień (jajecznica / bitki / kanapka) trafia w 2200 z 2200 kcal, przy białku 126 g wobec celu 165 — i to jest właśnie przypadek, w którym ostrzeżenie się pokazuje.
+
+> **Uwaga architektoniczna.** Widok potrzebuje celów makro dla slotów, ale `planner.ts` czyta `data/*.json` przez `fs` i **nie da się go zaimportować do komponentu klienckiego** (`Can't resolve 'fs'`). Dlatego czysta arytmetyka celów (PAL, zapotrzebowanie, rozbicie na sloty) siedzi w osobnym `lib/engine/cele.ts`, który nie zna bazy danych, a planer ją tylko re-eksportuje. Przy dokładaniu kolejnych funkcji wołanych z przeglądarki trzeba pamiętać o tej granicy.
+
 ### Rodzaj potrawy i ulubione kategorie
 Każdy przepis główny ma pole `rodzaj` (`RODZAJE_POTRAW`): jajka, naleśniki, owsianki, kanapki, wrapy, zupy, jednogarnkowe, mięso z dodatkami, makarony, kluski, sałatki, koktajle, wypieki, przekąski. To **czwarta oś** obok `slot` (kiedy jeść), `charakter` (słodkie/wytrawne) i `kategoriaDania` (główne/dodatek) — opisuje, czym danie właściwie jest.
 

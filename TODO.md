@@ -1,5 +1,19 @@
 # TODO — do zrobienia w następnej sesji
 
+## 25. Ręczne układanie planu — ZROBIONE, co dalej
+Tryb „ułożę plan sam": każdy slot wypełniany ręcznie, z trzema drogami (przepis z bazy / własny posiłek z kreatora / dobierz za mnie). Mechanika w SPEC.
+
+Duża część roboty była już w repo i wystarczyło ją podpiąć: `KreatorPosilku` (wypadł z UI przy przebudowie), `/api/recipes`, `/api/posilek/dopasuj` i `zbudujPosilekZPrzepisu`. Nowe: `/api/posilek/z-przepisu`, przeglądarka przepisów i sam widok.
+
+Przy okazji: **`lib/engine/cele.ts`** — czysta arytmetyka celów wydzielona z planera, bo planer ciągnie `fs` i nie wchodzi do bundla przeglądarki.
+
+Co dalej:
+- **Ręczny plan na 7 dni to 35 decyzji.** Jest „dobierz za mnie" per slot, ale nie ma „uzupełnij wszystkie puste naraz" — to byłby naturalny następny krok.
+- **Nie da się edytować już zapisanego planu** tym trybem; ręczne układanie działa tylko na nowym.
+- **Ostrzeżenie o makro liczy tylko dzień**, nie pilnuje pojedynczego posiłku (ten z kreatora ma własne ostrzeżenia).
+- **Przy niepełnym planie zapis jest dozwolony** — powstaje dzień z mniejszą liczbą posiłków. Świadomie, ale warto to obserwować.
+- Lista w przeglądarce przepisów nie pokazuje składników, tylko makro i czas — przy wyborze „w ciemno" to może być za mało.
+
 ## 24. Ulubione rodzaje potraw + wymiana bez limitu — ZROBIONE
 Dwa zgłoszenia naraz: budżet trudnych dań ma dotyczyć silnika, ale przy ręcznej wymianie user powinien móc sięgnąć po długie danie; plus nowa kategoria preferencji („co lubisz: naleśniki, jajecznica, jednogarnkowe…").
 

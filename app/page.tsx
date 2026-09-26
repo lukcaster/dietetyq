@@ -6,8 +6,11 @@ import ListaZakupow from "./ListaZakupow";
 import ModalWymiany from "./ModalWymiany";
 import MojPlan, { kluczPosilku } from "./MojPlan";
 import Onboarding from "./Onboarding";
+import UlozSam from "./UlozSam";
 import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
+import type { DaneAntropometryczne } from "@/lib/engine/cele";
+import { celeSlotowDla } from "@/lib/engine/cele";
 import { magazyn, SLOTY_DLA_LICZBY, type Profil } from "@/lib/magazyn";
 
 /**
@@ -19,7 +22,7 @@ import { magazyn, SLOTY_DLA_LICZBY, type Profil } from "@/lib/magazyn";
  * bo jakość wyników była słaba (patrz TODO).
  */
 
-type Widok = "menu" | "podglad" | "plan" | "calyPlan" | "zakupy" | "profil";
+type Widok = "menu" | "podglad" | "plan" | "calyPlan" | "zakupy" | "profil" | "ulozSam";
 
 const NAZWY_SLOTOW: Record<string, string> = {
   sniadanie: "🌅 Śniadanie",
@@ -89,6 +92,8 @@ export default function Home() {
   const [nowaWaga, setNowaWaga] = useState<number | "">("");
   /** Otwarty modal wymiany: który posiłek i co proponujemy w zamian. */
   const [wymiana, setWymiana] = useState<{ dzien: number; indeks: number; propozycje: PosilekWPlanie[] } | null>(null);
+  /** Na ile dni user układa plan ręcznie (tryb „ułożę sam"). */
+  const [dniRecznie, setDniRecznie] = useState(1);
 
   // Dane usera leżą w przeglądarce, więc czytamy je dopiero po stronie klienta.
   useEffect(() => {
@@ -121,7 +126,9 @@ export default function Home() {
       p.dane?.cel;
     return {
       kcalDzienne: p.kcalDzienne,
-      dane: !p.kcalDzienne && daneKompletne ? p.dane : undefined,
+      // Profil trzyma dane z opcjonalnymi polami (user może wypełnić część); kompletność
+      // sprawdzamy wyżej, więc tutaj zawężamy typ jawnie.
+      dane: !p.kcalDzienne && daneKompletne ? (p.dane as DaneAntropometryczne) : undefined,
       makro: p.makro,
       sloty: SLOTY_DLA_LICZBY[p.liczbaPosilkow],
       smakPerSlot: p.smakPerSlot,
@@ -335,6 +342,28 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
+
+                <h2 style={{ marginTop: 28 }}>Wolisz wybrać sam?</h2>
+                <p className="podtytul" style={{ marginBottom: 12 }}>
+                  Wtedy każdy posiłek wybierasz z bazy albo składasz ze składników. Możesz też
+                  poprosić o dobranie pojedynczych slotów.
+                </p>
+                <div className="siatka-wyboru">
+                  {DLUGOSCI_PLANU.map((d) => (
+                    <button
+                      key={d.dni}
+                      className="kafelek"
+                      onClick={() => {
+                        setDniRecznie(d.dni);
+                        setWidok("ulozSam");
+                      }}
+                    >
+                      <span className="emoji">✍️</span>
+                      Ułożę sam na {d.dni}{" "}
+                      {d.dni === 1 ? "dzień" : "dni"}
+                    </button>
+                  ))}
+                </div>
               </>
             )}
 
@@ -464,6 +493,26 @@ export default function Home() {
                 </div>
               </>
             )}
+
+            {!generuje && widok === "ulozSam" && (() => {
+              const dane = daneZProfilu(profil);
+              const { kcalDzienne, makroDzienne, celeSlotow } = celeSlotowDla(dane);
+              return (
+                <UlozSam
+                  profil={profil}
+                  liczbaDni={dniRecznie}
+                  celeSlotow={celeSlotow}
+                  kcalDzienne={kcalDzienne}
+                  makroDzienne={makroDzienne}
+                  daneZapytania={dane}
+                  onAnuluj={() => setWidok("menu")}
+                  onZapisz={(nowy) => {
+                    setPodglad(nowy);
+                    setWidok("podglad");
+                  }}
+                />
+              );
+            })()}
 
             {!generuje && widok === "profil" && (
               <>

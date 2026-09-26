@@ -12,28 +12,22 @@ import {
   type FiltrSkladnikow,
 } from "./macro";
 import { jestKomponentem } from "./types";
+import {
+  obliczKcalDzienne,
+  obliczMakroDzienne,
+  rozbijNaSloty,
+  DOMYSLNY_ROZKLAD_MAKRO,
+  type AktywnoscPozaPraca,
+  type AktywnoscWPracy,
+  type DaneAntropometryczne,
+  type RozkladMakroProcentowy,
+} from "./cele";
+
+export { obliczPAL, obliczKcalDzienne, obliczMakroDzienne, rozbijNaSloty, celeSlotowDla, DOMYSLNY_ROZKLAD_MAKRO } from "./cele";
+export type { AktywnoscPozaPraca, AktywnoscWPracy, DaneAntropometryczne, RozkladMakroProcentowy } from "./cele";
 import type { Charakter, CzasPrzygotowania, KategoriaDania, Makro, Recipe, RodzajPotrawy, Sprzet } from "./types";
 
 export type { PozycjaListyZakupow, SkladnikBazowyWPlanie } from "./lista-zakupow";
-
-export type AktywnoscWPracy = 1 | 2 | 3 | 4;
-export type AktywnoscPozaPraca = "A" | "B" | "C" | "D" | "E" | "F";
-
-export interface DaneAntropometryczne {
-  waga: number;
-  wzrost: number;
-  wiek: number;
-  plec: "M" | "K";
-  aktywnoscPraca: AktywnoscWPracy;
-  aktywnoscPozaPraca: AktywnoscPozaPraca;
-  cel: "redukcja" | "utrzymanie" | "masa";
-}
-
-export interface RozkladMakroProcentowy {
-  bialko: number;
-  tluszcz: number;
-  wegle: number;
-}
 
 export interface PlanRequest {
   kcalDzienne?: number;
@@ -109,26 +103,6 @@ const MNOZNIK_GOTOWCOW: Record<StylGotowania, number> = {
   "minimum-roboty": 1.6,
 };
 
-const WSPOLCZYNNIK_CELU: Record<DaneAntropometryczne["cel"], number> = {
-  redukcja: 0.85,
-  utrzymanie: 1.0,
-  masa: 1.15,
-};
-
-/**
- * Udział w KALORIACH, nie w gramach — przeliczenie na gramy robi obliczMakroDzienne
- * (białko i węgle po 4 kcal/g, tłuszcz 9 kcal/g).
- */
-export const DOMYSLNY_ROZKLAD_MAKRO: RozkladMakroProcentowy = { bialko: 30, tluszcz: 35, wegle: 35 };
-
-const WAGI_SLOTOW: Record<string, number> = {
-  sniadanie: 0.25,
-  "drugie-sniadanie": 0.1,
-  obiad: 0.3,
-  podwieczorek: 0.1,
-  kolacja: 0.25,
-};
-
 /** Jaki % kcal posiłku zabiera dany dodatek (reszta zostaje dla dania głównego). */
 const WAGA_DODATKU: Record<"dodatek-skrobiowy" | "surowka", number> = {
   "dodatek-skrobiowy": 0.22,
@@ -173,47 +147,6 @@ function budzetTrudnych(liczbaDni: number): number {
 
 function jestTrudny(przepis: Recipe): boolean {
   return przepis.czasPrzygotowania === "30+" || przepis.czasOczekiwania !== undefined;
-}
-
-const INDEKS_AKTYWNOSCI_POZA_PRACA: Record<AktywnoscPozaPraca, number> = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6 };
-
-/**
- * PAL (Physical Activity Level) wg tabeli: A.1 = 1.4, każdy krok pracy (1-4) i wysiłku
- * poza pracą (A-F) dodaje 0.1. Np. C.4 = 1.4 + (3-1)*0.1 + (4-1)*0.1 = 1.9.
- */
-export function obliczPAL(aktywnoscPraca: AktywnoscWPracy, aktywnoscPozaPraca: AktywnoscPozaPraca): number {
-  const indeksPozaPraca = INDEKS_AKTYWNOSCI_POZA_PRACA[aktywnoscPozaPraca];
-  return 1.4 + (indeksPozaPraca - 1) * 0.1 + (aktywnoscPraca - 1) * 0.1;
-}
-
-/** Przyjmuje dowolny obiekt z kcal albo danymi antropometrycznymi — używa tego też tryb "z lodówki". */
-export function obliczKcalDzienne(req: { kcalDzienne?: number; dane?: DaneAntropometryczne }): number {
-  if (req.kcalDzienne) return req.kcalDzienne;
-  if (!req.dane) throw new Error("Podaj kcalDzienne albo dane antropometryczne (dane)");
-  const { waga, wzrost, wiek, plec, aktywnoscPraca, aktywnoscPozaPraca, cel } = req.dane;
-  const bmr = plec === "M" ? 10 * waga + 6.25 * wzrost - 5 * wiek + 5 : 10 * waga + 6.25 * wzrost - 5 * wiek - 161;
-  const pal = obliczPAL(aktywnoscPraca, aktywnoscPozaPraca);
-  const tdee = bmr * pal;
-  return Math.round(tdee * WSPOLCZYNNIK_CELU[cel]);
-}
-
-export function obliczMakroDzienne(kcal: number, rozklad: RozkladMakroProcentowy = DOMYSLNY_ROZKLAD_MAKRO): Makro {
-  return {
-    kcal,
-    bialko: (kcal * rozklad.bialko) / 100 / 4,
-    tluszcz: (kcal * rozklad.tluszcz) / 100 / 9,
-    wegle: (kcal * rozklad.wegle) / 100 / 4,
-  };
-}
-
-export function rozbijNaSloty(makroDzienne: Makro, sloty: string[]): Record<string, Makro> {
-  const sumaWag = sloty.reduce((s, slot) => s + (WAGI_SLOTOW[slot] ?? 0.2), 0);
-  const wynik: Record<string, Makro> = {};
-  for (const slot of sloty) {
-    const waga = (WAGI_SLOTOW[slot] ?? 0.2) / sumaWag;
-    wynik[slot] = skalujMakro(makroDzienne, waga);
-  }
-  return wynik;
 }
 
 export interface SkladnikWPlanie {
@@ -863,4 +796,43 @@ export function zaproponujZamiennik(req: ZapytanieOZamiennik): PosilekWPlanie | 
     gotowiec: true,
     bezGotowania: gotowiec.naZimno,
   };
+}
+
+export interface ZapytanieOPosilekZPrzepisu extends Omit<PlanRequest, "sloty"> {
+  sloty: string[];
+  slot: string;
+  recipeId: string;
+}
+
+/**
+ * Bierze **konkretny** przepis wskazany przez usera i składa z niego posiłek na dany slot:
+ * dobiera wymagane dodatki, skaluje do celu kcal i rozpisuje komponenty (ciasto).
+ *
+ * Używa tego tryb „ułożę plan sam" — tam user wybiera danie z listy, a nie silnik z rankingu.
+ * Skalowanie jest to samo co w planie, więc ręcznie ułożony dzień trafia w te same widełki.
+ */
+export function zbudujPosilekZWybranegoPrzepisu(req: ZapytanieOPosilekZPrzepisu): PosilekWPlanie | null {
+  const kcalDzienne = obliczKcalDzienne(req);
+  const makroDzienne = obliczMakroDzienne(kcalDzienne, req.makro);
+  const cel = rozbijNaSloty(makroDzienne, req.sloty)[req.slot];
+  if (!cel) return null;
+
+  const przepis = getRecipes().find((r) => r.id === req.recipeId);
+  if (!przepis) return null;
+
+  const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
+  if (rozwiazPrzepis(przepis, filtr) === null) return null;
+
+  const bezSprzetu = new Set(req.bezSprzetu ?? []);
+  const maSprzet = (potrzebny?: Sprzet[]) => !potrzebny?.some((s) => bezSprzetu.has(s));
+  const ocen = zbudujOcenePreferencji(filtr, req.lubianeSkladniki ?? [], req.stylGotowania ?? "normalnie");
+
+  return zbudujPosilekZPrzepisu({
+    przepis,
+    slot: req.slot,
+    targetKcalSlotu: cel.kcal,
+    filtr,
+    maSprzet,
+    wybierzDodatek: (kandydaci) => losujNajlepszy(kandydaci, ocen),
+  });
 }

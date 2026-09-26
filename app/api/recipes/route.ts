@@ -11,6 +11,11 @@ export async function GET(request: NextRequest) {
   const filtr = zbudujFiltr(rozdziel(searchParams.get("wyklucz")), rozdziel(searchParams.get("nielubiane")));
 
   let przepisy = getRecipes();
+  // Domyślnie tylko dania główne — dodatki (ryż, surówka) nie są samodzielnym posiłkiem
+  // i w przeglądarce przepisów wyglądałyby jak pomyłka. `kategoria=wszystko` je przywraca.
+  if (searchParams.get("kategoria") !== "wszystko") {
+    przepisy = przepisy.filter((r) => (r.kategoriaDania ?? "glowne") === "glowne");
+  }
   if (slot) przepisy = przepisy.filter((r) => r.slot.includes(slot));
   if (charakter) przepisy = przepisy.filter((r) => r.charakter === charakter);
 
@@ -24,6 +29,8 @@ export async function GET(request: NextRequest) {
       porcje: przepis.porcje,
       czasPrzygotowania: przepis.czasPrzygotowania,
       czasOczekiwania: przepis.czasOczekiwania ?? null,
+      rodzaj: przepis.rodzaj ?? null,
+      kategoriaDania: przepis.kategoriaDania ?? "glowne",
       instrukcje: przepis.instrukcje,
       wykonalnyPrzyRestrykcjach: rozwiazany !== null,
       makroCalkowite: rozwiazany?.makroCalkowite ?? null,
