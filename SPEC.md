@@ -350,6 +350,13 @@ Zapas z pola `dostepneIlosc` jest twardym limitem na cały dzień — dzielimy g
 
 Produkty z Open Food Facts nie mają roli kulinarnej (nikt nie otagował 4800 pozycji), więc nie mogą wypełnić gniazda. Nie wyrzucamy ich jednak z koszyka — user dodał je świadomie — tylko dokładamy jako uzupełnienie do posiłków, mówiąc wprost, że akurat tego nie potrafimy ocenić.
 
+### Węglowodany zawierają błonnik (uwaga przy przepisach z zagranicy)
+W `ingredients.json` pole `wegle` liczy **wszystkie** węglowodany, w tym błonnik, który dodatkowo raportujemy osobno w `mikroNa100g.blonnik`. To konwencja europejska.
+
+Brytyjskie i amerykańskie przepisy podają zwykle **carbs bez błonnika** (dlatego wymieniają „Fibre" jako osobną pozycję). Przy przenoszeniu takiego przepisu nasze węgle wyjdą wyższe i **to nie jest błąd** — zmierzone na dwóch przepisach: mus daktylowy 61 g wobec podanych 41 g przy 14 g błonnika, wołowina fajita 20 g wobec 12 g przy 4 g błonnika. Oba razy różnica to dokładnie błonnik.
+
+Konsekwencja praktyczna: przy takich przepisach zgadzać się będą **kcal i białko**, a węgle będą systematycznie wyższe. Jeśli kcal też się rozjeżdżają, to znaczy, że problem jest gdzie indziej (zwykle w wariancie produktu: light kontra zwykły, chude mięso kontra tłustsze).
+
 ### Skąd biorą się przepisy w bazie
 Baza jest **kuratorowana ręcznie** — nie ma w niej importu z internetu i nie ma być. Część pozycji powstała z planów dietetycznych, które user kupił dla siebie, i przy ich przenoszeniu obowiązuje zasada, którą warto znać przy kolejnych takich importach:
 

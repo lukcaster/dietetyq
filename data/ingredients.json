@@ -4801,5 +4801,94 @@
     "maksPorcja": 15,
     "grupaPreferencji": "Owoce i słodkie",
     "rolaKulinarna": "posypka"
+  },
+  {
+    "id": "wolowina-lopatka",
+    "nazwa": "Wołowina łopatka (chuck)",
+    "makroNa100g": {
+      "kcal": 190,
+      "bialko": 20,
+      "tluszcz": 12,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "maksPorcja": 250,
+    "grupaPreferencji": "Mięso i ryby",
+    "rolaKulinarna": "mieso",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "jogurt-grecki-0",
+    "nazwa": "Jogurt grecki 0% tłuszczu",
+    "makroNa100g": {
+      "kcal": 57,
+      "bialko": 10,
+      "tluszcz": 0.2,
+      "wegle": 3.6
+    },
+    "tagiAlergenow": [
+      "laktoza"
+    ],
+    "porcjaTypowa": 150,
+    "maksPorcja": 400,
+    "kategoria": "jogurt",
+    "grupaPreferencji": "Nabiał i jaja",
+    "rolaKulinarna": "jogurt"
+  },
+  {
+    "id": "limonka",
+    "nazwa": "Limonka (sok)",
+    "makroNa100g": {
+      "kcal": 25,
+      "bialko": 0.4,
+      "tluszcz": 0.1,
+      "wegle": 8.4
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 15,
+    "maksPorcja": 40
+  },
+  {
+    "id": "papryka-wedzona",
+    "nazwa": "Papryka wędzona",
+    "makroNa100g": {
+      "kcal": 282,
+      "bialko": 14,
+      "tluszcz": 13,
+      "wegle": 54
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 5,
+    "maksPorcja": 20,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "cebula-w-proszku",
+    "nazwa": "Cebula w proszku",
+    "makroNa100g": {
+      "kcal": 341,
+      "bialko": 10,
+      "tluszcz": 1,
+      "wegle": 79
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 5,
+    "maksPorcja": 20,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "chili-w-proszku",
+    "nazwa": "Chili w proszku",
+    "makroNa100g": {
+      "kcal": 282,
+      "bialko": 13,
+      "tluszcz": 14,
+      "wegle": 50
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 5,
+    "maksPorcja": 20,
+    "rolaKulinarna": "przyprawa"
   }
 ]

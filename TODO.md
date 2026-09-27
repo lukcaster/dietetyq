@@ -1,5 +1,16 @@
 # TODO — do zrobienia w następnej sesji
 
+## 28. Fajita z wołowiny i mus daktylowy — DODANE, plus wniosek o błonniku
+Dwa przepisy od użytkownika. Doszło 6 składników: `wolowina-lopatka` (chuck), `jogurt-grecki-0`, `limonka`, `papryka-wedzona`, `cebula-w-proszku`, `chili-w-proszku`.
+
+**Mus daktylowy był opisany jako 1 porcja, a to 3 porcje.** Podane 400 kcal nie mogło dotyczyć całości — same daktyle i chia to już 715 kcal. Zapisany jako 3 porcje: wychodzi 410 kcal i 30 g białka na porcję wobec podanych 400 i 29. Czyli autor podał makro porcji, a liczbę porcji pomylił.
+
+**Fajita:** 334 kcal/porcja wobec podanych 280 (+19%). Białko 28 wobec 26, tłuszcz 17 wobec 16 — te trafiają. Rozjazd siedzi w kaloriach z węglowodanów (błonnik, patrz niżej) i w oszacowaniu tłustości chucka: przyjąłem 190 kcal/100 g, czyli między USDA „lean only" (137) a „lean and fat" (225). Gdyby autor używał chudszego mięsa, wyszłoby bliżej.
+
+Przepis ma `wymaganeDodatki: ["dodatek-skrobiowy"]`, więc silnik sam dobiera ryż albo ziemniaki — zgodnie z „można podać w tortilli albo z ziemniakami/ryżem".
+
+**Wniosek ogólny, dopisany do SPEC:** nasze `wegle` zawierają błonnik (konwencja europejska), a przepisy anglojęzyczne podają carbs bez błonnika — stąd osobna pozycja „Fibre". W obu przepisach różnica w węglach równała się **dokładnie** podanemu błonnikowi. Przy kolejnych zagranicznych przepisach należy tego oczekiwać i nie traktować jako błędu.
+
 ## 27. Cztery wypieki od użytkownika — DODANE
 Ciasto bananowe z serkiem wiejskim (10 porcji), sernik skyrowy z owocami (8), jabłecznik z kruszonką (1) i pizzerki na drożdżach (6). Doszły dwa składniki: `ziola-prowansalskie`, `maliny-liofilizowane`.
 

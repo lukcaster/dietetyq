@@ -12772,5 +12772,153 @@
       "piekarnik"
     ],
     "czasOczekiwania": "45-60 min (wyrastanie)"
+  },
+  {
+    "id": "wolowina-fajita-z-piekarnika",
+    "nazwa": "Wolno pieczona wołowina fajita",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 5,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "3-3,5 h pieczenia",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "rodzaj": "jednogarnkowe",
+    "wymaganeDodatki": [
+      "dodatek-skrobiowy"
+    ],
+    "instrukcje": [
+      "Wołowinę ułóż w środku dużego naczynia żaroodpornego.",
+      "Wokół mięsa rozłóż pokrojone pomidory, paprykę, cebulę i ząbki czosnku.",
+      "Skrop oliwą i sokiem z limonki, posyp wszystkimi przyprawami: wędzoną papryką, kuminem, czosnkiem i cebulą w proszku oraz chili. Dopraw solą i pieprzem, dokładnie obtocz.",
+      "Przykryj pokrywką albo folią aluminiową i piecz 3-3,5 godziny w 160°C z termoobiegiem, aż mięso będzie się rozpadać.",
+      "Wyjmij wołowinę, poszarp dwoma widelcami i wmieszaj z powrotem do warzyw i sosu, który się wytworzył.",
+      "Podziel na 5 porcji. Pasuje do ryżu, ziemniaków, do tortilli albo na sałatkę."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "wolowina-lopatka",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 18,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "limonka",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula-w-proszku",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chili-w-proszku",
+        "ilosc": 12,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "mus-czekoladowo-daktylowy",
+    "nazwa": "Mus czekoladowo-daktylowy z chia",
+    "slot": [
+      "podwieczorek",
+      "drugie-sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 3,
+    "czasPrzygotowania": "<15",
+    "czasOczekiwania": "2+ h w lodówce",
+    "sprzet": [
+      "blender"
+    ],
+    "rodzaj": "owsianki",
+    "instrukcje": [
+      "Wszystko poza chia wrzuć do blendera: daktyle, kakao, jogurt, mleko, odżywkę, wanilię i szczyptę soli. Miksuj do gładkości.",
+      "Dopiero teraz wmieszaj siemię chia — zmiksowane straciłoby zdolność do żelowania.",
+      "Odstaw do lodówki na minimum 2 godziny, aż stężeje.",
+      "Wychodzą 3 porcje — dobrze trzyma się w lodówce kilka dni."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "siemie-chia",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki-0",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "odzywka-bialkowa-whey",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-waniliowa",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ]
   }
 ]
