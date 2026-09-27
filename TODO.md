@@ -1,5 +1,12 @@
 # TODO — do zrobienia w następnej sesji
 
+## 26. Angielskie śniadanie bez kiełbasek — NAPRAWIONE, ale to sygnał
+Zgłoszenie: „na pewno śniadanie angielskie bez kiełbasek to nie wchodzi w grę". Racja — przepis przyszedł z importu PDF-a w wersji bezmięsnej (fasola, pieczarki, pomidor, jedno jajko, tost). Dołożone kiełbaski (100 g) i boczek (50 g), drugie jajko, wyrzucony sos sojowy (w angielskim śniadaniu nie ma czego szukać), oliwa zmniejszona do 5 g, bo mięso wytapia własny tłuszcz. Instrukcje przepisane tak, żeby smażyć w kolejności: mięso, potem resztа na wytopionym tłuszczu.
+
+Makro: 629 → **1224 kcal** (B 55, T 76). Dużo, ale uczciwie — tyle waży pełne angielskie. Silnik i tak skaluje: przy celu 688 kcal wychodzi 56 g kiełbasy, 28 g boczku i 2 jajka, przy 550 kcal — 45 g kiełbasy i jedno jajko.
+
+**Szerszy wniosek, wart zapamiętania:** to nie był błąd silnika, tylko **złe dane z importu**. Ze 143 przepisów wciągniętych z PDF-ów mogą być inne, które nazywają się jak klasyk, a składem nim nie są — parser brał skład dosłownie, a plany były układane pod konkretną osobę (stąd wersje bezmięsne). Warto przejrzeć pozycje o „mocnych" nazwach (bigos, żurek, schabowy, spaghetti) i sprawdzić, czy skład się zgadza. Sprawdzarka bazy tego nie wyłapie — ona pilnuje struktury i makro, nie sensu kulinarnego.
+
 ## 25. Ręczne układanie planu — ZROBIONE, co dalej
 Tryb „ułożę plan sam": każdy slot wypełniany ręcznie, z trzema drogami (przepis z bazy / własny posiłek z kreatora / dobierz za mnie). Mechanika w SPEC.
 

@@ -3770,7 +3770,7 @@
   },
   {
     "id": "angielskie-sniadanie",
-    "nazwa": "Angielskie śniadanie",
+    "nazwa": "Angielskie śniadanie z kiełbaskami i boczkiem",
     "slot": [
       "sniadanie"
     ],
@@ -3778,20 +3778,36 @@
     "porcje": 1,
     "czasPrzygotowania": "15-30",
     "instrukcje": [
-      "Fasolę przełóż do rondelka z koncentratem pomidorowym i odrobiną wody, dopraw i podgrzewaj kilka minut.",
-      "Pieczarki pokrój i podsmaż na oliwie, pod koniec skrop sosem sojowym. Pomidora przekrój na pół i podsmaż na tej samej patelni.",
-      "Jajko usmaż sadzone.",
-      "Chleb podpiecz i podaj ze wszystkim razem."
+      "Fasolę przełóż do rondelka z koncentratem pomidorowym i odrobiną wody, dopraw solą i pieprzem, podgrzewaj na małym ogniu.",
+      "Kiełbaski i boczek smaż na patelni na odrobinie oleju — wytopią własny tłuszcz, na którym usmażysz resztę. Odłóż na talerz i trzymaj w cieple.",
+      "Na tym samym tłuszczu podsmaż pokrojone pieczarki, a obok pomidora przekrojonego na pół.",
+      "Jajka usmaż sadzone — na wolnym ogniu, żeby białko się zetnie, a żółtko zostało płynne.",
+      "Chleb podpiecz i podaj wszystko razem na jednym talerzu."
     ],
     "skladniki": [
       {
-        "skladnikId": "chleb-zytni-razowy",
-        "ilosc": 90,
+        "skladnikId": "kielbasa",
+        "ilosc": 100,
         "jednostka": "g"
       },
       {
+        "skladnikId": "boczek",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
         "skladnikId": "fasola-biala-konserwowa",
-        "ilosc": 100,
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 25,
         "jednostka": "g"
       },
       {
@@ -3801,27 +3817,17 @@
       },
       {
         "skladnikId": "pomidor",
-        "ilosc": 160,
+        "ilosc": 120,
         "jednostka": "g"
       },
       {
-        "skladnikId": "jajko",
-        "ilosc": 1,
-        "jednostka": "szt"
-      },
-      {
-        "skladnikId": "koncentrat-pomidorowy",
-        "ilosc": 25,
+        "skladnikId": "chleb-pszenny",
+        "ilosc": 80,
         "jednostka": "g"
       },
       {
-        "skladnikId": "oliwa-z-oliwek",
-        "ilosc": 15,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "sos-sojowy",
-        "ilosc": 10,
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
         "jednostka": "g"
       }
     ],
