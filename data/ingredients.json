@@ -4772,5 +4772,34 @@
     "grupaPreferencji": "Warzywa",
     "rolaKulinarna": "warzywo",
     "wymagaGotowania": true
+  },
+  {
+    "id": "ziola-prowansalskie",
+    "nazwa": "Zioła prowansalskie",
+    "makroNa100g": {
+      "kcal": 265,
+      "bialko": 9,
+      "tluszcz": 4.3,
+      "wegle": 64
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 3,
+    "maksPorcja": 10,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "maliny-liofilizowane",
+    "nazwa": "Maliny liofilizowane",
+    "makroNa100g": {
+      "kcal": 370,
+      "bialko": 8,
+      "tluszcz": 3,
+      "wegle": 74
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 5,
+    "maksPorcja": 15,
+    "grupaPreferencji": "Owoce i słodkie",
+    "rolaKulinarna": "posypka"
   }
 ]

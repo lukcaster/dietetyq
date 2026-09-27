@@ -12477,5 +12477,300 @@
       }
     ],
     "rodzaj": "jajka"
+  },
+  {
+    "id": "ciasto-bananowe-z-serkiem-wiejskim",
+    "nazwa": "Wilgotne ciasto bananowe z serkiem wiejskim i czekoladą",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 10,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Piekarnik nagrzej do 180°C (góra-dół). Keksówkę 25 × 12 cm wyłóż papierem.",
+      "Banany rozgnieć widelcem na gładko — im dojrzalsze, tym lepiej, bo dają słodycz i wilgotność.",
+      "Dodaj jajka, serek wiejski i miód, zmiksuj. Wsyp mąkę owsianą z proszkiem do pieczenia i wymieszaj tylko do połączenia.",
+      "Przelej do formy i piecz godzinę. Potem przykryj folią aluminiową (żeby wierzch się nie przypalił) i piecz jeszcze 15-20 minut, aż patyczek wyjdzie suchy.",
+      "Czekoladę rozpuść i polej ostudzone ciasto, posyp liofilizowanymi malinami."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "banan",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "serek-wiejski",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-owsiana",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny-liofilizowane",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ]
+  },
+  {
+    "id": "sernik-skyrowy-z-owocami",
+    "nazwa": "Sernik skyrowy z borówkami i malinami",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Piekarnik nagrzej do 180°C (góra-dół). Formę 16-18 cm wyłóż papierem.",
+      "Zmiksuj skyr jagodowy, skyr naturalny i twaróg na gładką masę.",
+      "Dodaj jajka, budyń w proszku, skrobię i erytrytol — miksuj krótko, tylko do połączenia. Za długie miksowanie napowietrza masę i sernik opada.",
+      "Piecz około 50 minut. Środek może jeszcze lekko falować — wtedy wyjdzie kremowy. Jeśli wolisz zbity, piecz godzinę.",
+      "Ostudź w piekarniku przy otwartych drzwiczkach, żeby nie pękł. Na wierzch wyłóż borówki i maliny.",
+      "Czas zależy od formy: 16 cm to 50-55 minut, 18 cm 40-45, 20-22 cm 35-40, 24-26 cm 30-35 minut."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "skyr-smakowy",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "skyr-naturalny",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 4,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "budyn-waniliowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "skrobia-ziemniaczana",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "erytrytol",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "borowki",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 150,
+        "jednostka": "g"
+      }
+    ],
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ]
+  },
+  {
+    "id": "jablecznik-z-kruszonka",
+    "nazwa": "Jabłecznik z kruszonką",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Piekarnik nagrzej do 180°C (góra-dół); w airfryerze wystarczy 160°C.",
+      "Wymieszaj mąkę owsianą, jajko, mleko, odżywkę, erytrytol, cynamon i proszek do pieczenia.",
+      "Jabłko zetrzyj albo pokrój w kostkę i wmieszaj do ciasta. Przelej do małej formy.",
+      "Kruszonka: mąkę owsianą rozetrzyj palcami z zimnym masłem i erytrytolem na grudki, rozsyp po wierzchu.",
+      "Piecz 35 minut w piekarniku albo 30 minut w airfryerze w 160°C."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "maka-owsiana",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "odzywka-bialkowa-whey",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "erytrytol",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cynamon",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jablko",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ]
+  },
+  {
+    "id": "pizzerki-na-drozdzach",
+    "nazwa": "Pizzerki na drożdżach ze skyrem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Mąkę wymieszaj z drożdżami i solą, dodaj skyr i jajka. Wyrabiaj, aż ciasto będzie gładkie i elastyczne.",
+      "Przykryj i odstaw na 45-60 minut, aż wyrośnie.",
+      "Sos: passatę wymieszaj z oregano, ziołami prowansalskimi, solą i kilkoma kroplami soku z cytryny.",
+      "Ciasto podziel na 6 części, rozpłaszcz na placki. Posmaruj sosem, ułóż pieczarki w plasterkach, salami i startą mozzarellę.",
+      "Piecz w 180°C (góra-dół) przez 30 minut.",
+      "Sos czosnkowy: jogurt grecki wymieszaj z majonezem, ziołami i przeciśniętym czosnkiem. Podawaj obok."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "skyr-naturalny",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "drozdze-piekarskie",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-pomidorowy",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziola-prowansalskie",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pieczarki",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "salami",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 6,
+        "jednostka": "g"
+      }
+    ],
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "czasOczekiwania": "45-60 min (wyrastanie)"
   }
 ]

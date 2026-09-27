@@ -1,5 +1,19 @@
 # TODO — do zrobienia w następnej sesji
 
+## 27. Cztery wypieki od użytkownika — DODANE
+Ciasto bananowe z serkiem wiejskim (10 porcji), sernik skyrowy z owocami (8), jabłecznik z kruszonką (1) i pizzerki na drożdżach (6). Doszły dwa składniki: `ziola-prowansalskie`, `maliny-liofilizowane`.
+
+Kontrola makro względem wartości podanych przez użytkownika — **białko trafia niemal co do grama**, co potwierdza dobre mapowanie składników:
+
+| przepis | nasze kcal/porcja | podane | rozjazd |
+|---------|------------------|--------|---------|
+| ciasto bananowe | 213 | 200 | +7% |
+| sernik skyrowy | 202 | 190 | +7% |
+| jabłecznik | 707 | 675 | +5% |
+| pizzerki (1 szt) | 404 | 363 | +11% |
+
+Rozjazdy biorą się z wariantów produktów, których nie mamy osobno w bazie: **serek wiejski lekki** (mamy zwykły, 98 kcal), **majonez light** (mamy zwykły, 680 kcal) i grubość plastrów salami (założone 12 × 10 g). Gdyby te wersje light miały być dokładne, trzeba je dodać jako osobne składniki — na razie świadomie nie, bo to mnoży bazę o warianty tego samego.
+
 ## 26. Angielskie śniadanie bez kiełbasek — NAPRAWIONE, ale to sygnał
 Zgłoszenie: „na pewno śniadanie angielskie bez kiełbasek to nie wchodzi w grę". Racja — przepis przyszedł z importu PDF-a w wersji bezmięsnej (fasola, pieczarki, pomidor, jedno jajko, tost). Dołożone kiełbaski (100 g) i boczek (50 g), drugie jajko, wyrzucony sos sojowy (w angielskim śniadaniu nie ma czego szukać), oliwa zmniejszona do 5 g, bo mięso wytapia własny tłuszcz. Instrukcje przepisane tak, żeby smażyć w kolejności: mięso, potem resztа na wytopionym tłuszczu.
 
