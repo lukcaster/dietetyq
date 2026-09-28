@@ -143,5 +143,33 @@
       "Dodaj jajka i letnią wodę, wyrabiaj 8-10 minut, aż ciasto będzie gładkie i elastyczne.",
       "Przykryj i odstaw do wyrośnięcia na około godzinę, aż podwoi objętość."
     ]
+  },
+  {
+    "id": "ciasto-nalesnikowe-z-soczewicy",
+    "nazwa": "Ciasto naleśnikowe z soczewicy",
+    "iloscWynikowa": 510,
+    "jednostkaWynikowa": "g",
+    "skladniki": [
+      {
+        "skladnikId": "soczewica-zielona",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 360,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "kminek",
+        "ilosc": 3,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Soczewicę zalej wodą i zostaw na noc — bez namoczenia nie zmiksuje się na gładko.",
+      "Następnego dnia zblenduj całość razem z wodą i kminkiem na jednolite, rzadkie ciasto. Dopraw solą.",
+      "Ciasto ma mieć konsystencję śmietany — jeśli jest za gęste, dolej odrobinę wody."
+    ]
   }
 ]

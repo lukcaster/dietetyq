@@ -4890,5 +4890,19 @@
     "porcjaTypowa": 5,
     "maksPorcja": 20,
     "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "kminek",
+    "nazwa": "Kminek",
+    "makroNa100g": {
+      "kcal": 333,
+      "bialko": 20,
+      "tluszcz": 15,
+      "wegle": 50
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 3,
+    "maksPorcja": 10,
+    "rolaKulinarna": "przyprawa"
   }
 ]

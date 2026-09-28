@@ -1,5 +1,14 @@
 # TODO — do zrobienia w następnej sesji
 
+## 29. Naleśniki z soczewicy — jedno ciasto, pięć nadzień
+Ciasto z namoczonej soczewicy poszło jako **komponent** (`ciasto-nalesnikowe-z-soczewicy`), a nie powtórzony skład w pięciu przepisach — dzięki temu instrukcje moczenia i blendowania są w jednym miejscu i wyświetlają się przy każdym daniu (mechanizm z punktu 23). Doszedł składnik `kminek`.
+
+Nadzienia: łosoś z serkiem i rukolą, szynka z papryką i ogórkiem, pasta czekoladowo-daktylowa, dżem, serek śmietankowy z malinami i borówkami.
+
+**Rozjazd makro względem podanych wartości: 913 kcal wobec 734, tłuszcz 31 g wobec 15,4 g.** Rozbicie pokazuje, że różnica tłuszczu to **dokładnie olej (10 g) plus serek śmietankowy (9,6 g)**. Czyli albo autor nie liczył oleju do smażenia (większość zostaje na patelni), albo użył chudego twarożku zamiast serka. Białko trafia dobrze (62 wobec 57,4).
+
+Do rozważenia przy kolejnych przepisach smażonych: **czy liczyć pełną ilość oleju z przepisu**. Dziś liczymy całą, choć na naleśnikach zostaje może jedna trzecia. To systematycznie zawyża tłuszcz w każdym smażonym daniu w bazie.
+
 ## 28. Fajita z wołowiny i mus daktylowy — DODANE, plus wniosek o błonniku
 Dwa przepisy od użytkownika. Doszło 6 składników: `wolowina-lopatka` (chuck), `jogurt-grecki-0`, `limonka`, `papryka-wedzona`, `cebula-w-proszku`, `chili-w-proszku`.
 

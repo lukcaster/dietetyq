@@ -12920,5 +12920,250 @@
         "jednostka": "g"
       }
     ]
+  },
+  {
+    "id": "nalesniki-soczewicowe-z-lososiem",
+    "nazwa": "Naleśniki z soczewicy z łososiem i serkiem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "noc (moczenie soczewicy)",
+    "sprzet": [
+      "patelnia",
+      "blender"
+    ],
+    "rodzaj": "nalesniki",
+    "instrukcje": [
+      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
+      "Gotowe naleśniki posmaruj serkiem śmietankowym.",
+      "Ułóż plastry wędzonego łososia i rukolę, dopraw pieprzem.",
+      "Złóż na cztery albo zwiń w rulon."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
+        "ilosc": 510,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "losos-wedzony",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "nalesniki-soczewicowe-z-szynka",
+    "nazwa": "Naleśniki z soczewicy z szynką i warzywami",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "noc (moczenie soczewicy)",
+    "sprzet": [
+      "patelnia",
+      "blender"
+    ],
+    "rodzaj": "nalesniki",
+    "instrukcje": [
+      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
+      "Naleśniki posmaruj serkiem śmietankowym.",
+      "Ułóż szynkę oraz paprykę i ogórka pokrojone w cienkie paski.",
+      "Zwiń w rulon i przekrój na pół."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
+        "ilosc": 510,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szynka",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "nalesniki-soczewicowe-z-czekolada-daktylowa",
+    "nazwa": "Naleśniki z soczewicy z pastą czekoladowo-daktylową",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "noc (moczenie soczewicy)",
+    "sprzet": [
+      "patelnia",
+      "blender"
+    ],
+    "rodzaj": "nalesniki",
+    "instrukcje": [
+      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
+      "Daktyle zalej wrzątkiem na 10 minut, odsącz i zmiksuj z kakao oraz mlekiem na gładką pastę.",
+      "Posmaruj nią naleśniki i zwiń."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
+        "ilosc": 510,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 30,
+        "jednostka": "ml"
+      }
+    ]
+  },
+  {
+    "id": "nalesniki-soczewicowe-z-dzemem",
+    "nazwa": "Naleśniki z soczewicy z dżemem",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "noc (moczenie soczewicy)",
+    "sprzet": [
+      "patelnia",
+      "blender"
+    ],
+    "rodzaj": "nalesniki",
+    "instrukcje": [
+      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
+      "Naleśniki posmaruj dżemem i złóż na cztery.",
+      "Najprostsza wersja — dobra, gdy nie ma czasu na nic więcej."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
+        "ilosc": 510,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "dzem-owocowy",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ]
+  },
+  {
+    "id": "nalesniki-soczewicowe-z-serkiem-i-owocami",
+    "nazwa": "Naleśniki z soczewicy z serkiem i owocami",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "noc (moczenie soczewicy)",
+    "sprzet": [
+      "patelnia",
+      "blender"
+    ],
+    "rodzaj": "nalesniki",
+    "instrukcje": [
+      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
+      "Serek śmietankowy rozmieszaj, żeby dał się rozsmarować.",
+      "Posmaruj naleśniki, na wierzch wyłóż maliny i borówki.",
+      "Zwiń albo złóż na cztery."
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
+        "ilosc": 510,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "borowki",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ]
   }
 ]
