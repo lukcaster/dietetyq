@@ -4918,5 +4918,54 @@
     "porcjaTypowa": 2,
     "maksPorcja": 5,
     "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "majonez-light",
+    "nazwa": "Majonez light",
+    "makroNa100g": {
+      "kcal": 330,
+      "bialko": 1,
+      "tluszcz": 31,
+      "wegle": 10
+    },
+    "tagiAlergenow": [
+      "jajka"
+    ],
+    "porcjaTypowa": 20,
+    "maksPorcja": 50,
+    "grupaPreferencji": "Dodatki",
+    "rolaKulinarna": "sos"
+  },
+  {
+    "id": "ser-zolty-light",
+    "nazwa": "Ser żółty light",
+    "makroNa100g": {
+      "kcal": 250,
+      "bialko": 26,
+      "tluszcz": 15,
+      "wegle": 1.5
+    },
+    "tagiAlergenow": [
+      "laktoza"
+    ],
+    "porcjaTypowa": 40,
+    "maksPorcja": 80,
+    "kategoria": "ser-zolty-twardy",
+    "grupaPreferencji": "Nabiał i jaja",
+    "rolaKulinarna": "ser"
+  },
+  {
+    "id": "ocet-balsamiczny",
+    "nazwa": "Ocet balsamiczny",
+    "makroNa100g": {
+      "kcal": 88,
+      "bialko": 0.5,
+      "tluszcz": 0,
+      "wegle": 17
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
   }
 ]

@@ -1,5 +1,14 @@
 # TODO — do zrobienia w następnej sesji
 
+## 30. Produkty light weszły do bazy — i to była właściwa decyzja
+Przy frytkach z wołowiną (styl In-N-Out) po raz trzeci wyszło, że rozjazd makro siedzi wyłącznie w produktach **light**: majonez light, ser żółty light. Dodane jako osobne składniki, bo to nie są „chudsze warianty tego samego" — w sklepie to inne produkty, a różnica w jednym daniu sięgała **22 g tłuszczu**.
+
+Doszedł też `ocet-balsamiczny`.
+
+Stan po dodaniu: 639 kcal/porcja wobec podanych 533, tłuszcz 20 wobec 10 g. Białko trafia idealnie (54 wobec 53,5), a **90 ze 106 kcal różnicy to właśnie tłuszcz**. Rozbicie pokazuje, że została jedna pozycja: nasza wołowina mielona ma **5% tłuszczu**, a przepis zakłada **2% lub mniej** (15 g wobec 6 g z 300 g mięsa).
+
+Do decyzji: czy dodać trzeci wariant mielonej wołowiny (2%). Argument za — użytkownik realnie taką kupuje i wtedy liczby by się domknęły. Argument przeciw — mamy już „chudą" 5% i mnożenie wariantów tego samego składnika psuje bazę. **Nie dodane, czeka na odpowiedź użytkownika.**
+
 ## 29. Naleśniki z soczewicy — jedno ciasto, pięć nadzień
 Ciasto z namoczonej soczewicy poszło jako **komponent** (`ciasto-nalesnikowe-z-soczewicy`), a nie powtórzony skład w pięciu przepisach — dzięki temu instrukcje moczenia i blendowania są w jednym miejscu i wyświetlają się przy każdym daniu (mechanizm z punktu 23). Doszedł składnik `kminek`.
 

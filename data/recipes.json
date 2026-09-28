@@ -13246,5 +13246,107 @@
         "jednostka": "g"
       }
     ]
+  },
+  {
+    "id": "frytki-z-wolowina-i-sosem",
+    "nazwa": "Frytki z wołowiną, serem i sosem burgerowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
+    ],
+    "rodzaj": "miesoZDodatkiem",
+    "instrukcje": [
+      "Ziemniaki pokrój w cienkie frytki, wymieszaj z papryką i odrobiną oleju (najlepiej spryskać).",
+      "Piecz w 200°C przez 20-25 minut albo w airfryerze w 180°C tyle samo. Sól dodaj DOPIERO po upieczeniu, na gorące — inaczej frytki puszczą wodę i zwiotczeją.",
+      "Mięso wymieszaj z wędzoną papryką, czosnkiem w proszku, solą i szczyptą sody oczyszczonej — soda nie pozwoli mu wyschnąć.",
+      "Usmaż wołowinę na mocno rozgrzanej patelni, rozbijając ją łopatką. Zdejmij z patelni.",
+      "Na tej samej patelni zeszklij cebulę, dodaj ocet balsamiczny i erytrytol, smaż do skarmelizowania.",
+      "Sos: wymieszaj keczup, jogurt grecki, majonez light, musztardę i drobno posiekany ogórek kiszony. Kropla sosu worcestershire, jeśli masz.",
+      "Na frytkach ułóż mięso, plastry sera (od ciepła się rozpuszczą), cebulę i polej sosem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty-light",
+        "ilosc": 75,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "keczup",
+        "ilosc": 45,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki-0",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez-light",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "musztarda",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ocet-balsamiczny",
+        "ilosc": 10,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "erytrytol",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "soda-oczyszczona",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ]
   }
 ]
