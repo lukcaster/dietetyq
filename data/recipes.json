@@ -13165,5 +13165,86 @@
         "jednostka": "g"
       }
     ]
+  },
+  {
+    "id": "makaron-z-kurczakiem-i-chorizo",
+    "nazwa": "Kremowy makaron z kurczakiem i chorizo z jednej patelni",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 5,
+    "czasPrzygotowania": "30+",
+    "sprzet": [
+      "patelnia"
+    ],
+    "rodzaj": "makarony",
+    "instrukcje": [
+      "Kurczaka pokrój w kostkę i wymieszaj z papryką, oregano, solą, pieprzem i szczyptą sody oczyszczonej. Soda zmiękcza mięso — zostaw je tak na 15 minut, jeśli masz czas.",
+      "Chorizo wrzuć na SUCHĄ patelnię i smaż, aż się zrumieni i wytopi tłuszcz. To on będzie bazą smaku całego dania, więc nie dolewaj oleju.",
+      "Dodaj pokrojoną cebulę i zeszklij ją na wytopionym tłuszczu.",
+      "Wrzuć kurczaka i koncentrat pomidorowy, smaż kilka minut, aż mięso będzie w połowie gotowe.",
+      "Wsyp suchy makaron i zalej bulionem. Gotuj bez przykrycia, mieszając, aż makaron zmięknie, a sos zgęstnieje (ok. 12-15 minut).",
+      "Zdejmij z ognia, wmieszaj śmietankę i dopraw do smaku. Posyp szczypiorkiem.",
+      "Podziel na 5 porcji — świetnie sprawdza się jako meal prep na kilka dni."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 650,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-pszenny",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chorizo",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 110,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 800,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 100,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 6,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "soda-oczyszczona",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ]
   }
 ]

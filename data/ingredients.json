@@ -4904,5 +4904,19 @@
     "porcjaTypowa": 3,
     "maksPorcja": 10,
     "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "soda-oczyszczona",
+    "nazwa": "Soda oczyszczona",
+    "makroNa100g": {
+      "kcal": 0,
+      "bialko": 0,
+      "tluszcz": 0,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 2,
+    "maksPorcja": 5,
+    "rolaKulinarna": "przyprawa"
   }
 ]
