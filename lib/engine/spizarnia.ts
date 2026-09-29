@@ -119,6 +119,32 @@ export interface OpcjeWyszukiwania {
 
 const DOMYSLNY_LIMIT = 25;
 
+/**
+ * Ile znaków wspólnego początku wystarczy, żeby uznać dwa słowa za to samo mimo odmiany.
+ * Polski odmienia końcówki, a nie rdzenie: "naleśniki" vs "naleśnikowe" dzielą 8 znaków,
+ * "ciasto" vs "ciasta" — tylko 5, więc niżej zejść się nie da.
+ *
+ * Ceną są pojedyncze pudła na ogonie listy ("ziemniaki" złapie "orzeszki ziemne" — wspólne
+ * "ziemn"). Świadomie to przyjmujemy: wynik za dużo jest o klasę tańszy niż brak wyniku,
+ * bo trafne dopasowania i tak stoją wyżej w punktacji.
+ */
+const WSPOLNY_RDZEN = 5;
+
+/**
+ * Dopasowanie słowa do słowa z nazwy. Samo `includes` na całej nazwie gubiło odmiany:
+ * user szukał "naleśniki", a ciasto nazywa się "Ciasto naleśnikowe z soczewicy" — zero wyników,
+ * więc półprodukty wyglądały, jakby ich w ogóle nie było w bazie.
+ */
+function pasujeSlowo(szukane: string, wNazwie: string): boolean {
+  if (wNazwie.startsWith(szukane)) return true;
+  // Odwrotny kierunek tylko dla sensownych słów: gdyby "z" z "z soczewicy" liczyło się
+  // jako dopasowanie, każde zapytanie na "z" pasowałoby do połowy bazy.
+  if (wNazwie.length >= 3 && szukane.startsWith(wNazwie)) return true;
+  let wspolne = 0;
+  while (wspolne < szukane.length && wspolne < wNazwie.length && szukane[wspolne] === wNazwie[wspolne]) wspolne++;
+  return wspolne >= WSPOLNY_RDZEN;
+}
+
 export function szukajWSpizarni(fraza: string, opcje: OpcjeWyszukiwania = {}): PozycjaSpizarni[] {
   const { limit = DOMYSLNY_LIMIT, restrykcje = [], dopuscNieznaneAlergeny = false, tylkoBaza = false } = opcje;
   const szukane = znormalizuj(fraza);
@@ -144,8 +170,8 @@ export function szukajWSpizarni(fraza: string, opcje: OpcjeWyszukiwania = {}): P
     if (maZakazanyAlergen(pozycja, restrykcje)) return false;
     if (pozycja.alergenyNieznane && restrykcje.length > 0 && !dopuscNieznaneAlergeny) return false;
     if (slowa.length === 0) return true;
-    const stog = znormalizuj(`${pozycja.nazwa} ${pozycja.marka ?? ""}`);
-    return slowa.every((slowo) => stog.includes(slowo));
+    const stog = znormalizuj(`${pozycja.nazwa} ${pozycja.marka ?? ""}`).split(" ").filter(Boolean);
+    return slowa.every((slowo) => stog.some((slowoStogu) => pasujeSlowo(slowo, slowoStogu)));
   });
 
   return dopasowane
@@ -160,7 +186,9 @@ export function szukajWSpizarni(fraza: string, opcje: OpcjeWyszukiwania = {}): P
  * do przepisów. Wśród produktów decyduje trafność nazwy, a przy remisie popularność w OFF.
  */
 function punktacja(pozycja: PozycjaSpizarni, popularnosc: number, szukane: string): number {
-  let punkty = pozycja.zrodlo === "baza" ? 10_000 : 0;
+  // Komponenty idą razem z bazą: to nasze własne, policzone receptury, a nie crowdsourcowany OFF.
+  // Z zerową punktacją tonęły pod produktami sklepowymi i nie mieściły się w limicie wyników.
+  let punkty = pozycja.zrodlo === "off" ? 0 : 10_000;
   const nazwa = znormalizuj(pozycja.nazwa);
   if (szukane.length > 0) {
     if (nazwa === szukane) punkty += 5_000;

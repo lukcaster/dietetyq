@@ -210,10 +210,17 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
 
       <input
         className="kreator-input"
-        placeholder="Szukaj składnika lub produktu ze sklepu..."
+        placeholder="Szukaj składnika, ciasta albo produktu ze sklepu..."
         value={fraza}
         onChange={(e) => setFraza(e.target.value)}
       />
+
+      {/* Półprodukty są w tej samej wyszukiwarce co surowce, ale nikt tego nie zgadnie —
+          bez tej linijki user szukał ciasta naleśnikowego i uznawał, że go nie ma. */}
+      <p className="podtytul" style={{ marginTop: -6 }}>
+        Wpisz np. <strong>ciasto</strong>, żeby wrzucić gotowy półprodukt (naleśnikowe, pierogowe) — rozpiszemy go
+        potem na mąkę, jajka i resztę.
+      </p>
 
       {szukam && <p className="posilek-makro">Szukam...</p>}
 
@@ -228,11 +235,9 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
               <span className="posilek-makro">
                 {Math.round(wynik.makroNa100g.kcal)} kcal / 100 g · B: {wynik.makroNa100g.bialko} · T:{" "}
                 {wynik.makroNa100g.tluszcz} · W: {wynik.makroNa100g.wegle}
-                {wynik.zrodlo === "baza" ? (
-                  <span className="znacznik znacznik-baza">baza</span>
-                ) : (
-                  <span className="znacznik znacznik-sklep">sklep</span>
-                )}
+                {wynik.zrodlo === "komponent" && <span className="znacznik znacznik-baza">🥣 ciasto</span>}
+                {wynik.zrodlo === "baza" && <span className="znacznik znacznik-baza">baza</span>}
+                {wynik.zrodlo === "off" && <span className="znacznik znacznik-sklep">sklep</span>}
                 {wynik.alergenyNieznane && <span className="znacznik znacznik-uwaga">alergeny?</span>}
               </span>
             </button>
@@ -326,7 +331,9 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
 
       {blad && <div className="blad">{blad}</div>}
 
-      <div className="przyciski-nawigacji">
+      {/* Celowo NIE .przyciski-nawigacji: kreator żyje w modalu, a przyklejony do dołu ekranu
+          pasek nakładał się na pasek widoku pod spodem. Tu akcje jadą z treścią kreatora. */}
+      <div className="kreator-akcje">
         <button className="btn btn-wstecz" onClick={onAnuluj}>
           Anuluj
         </button>
