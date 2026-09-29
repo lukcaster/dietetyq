@@ -63,6 +63,12 @@ export default function ModalWymiany({
                 .join(", ")}
               {p.skladniki.length > 5 ? "…" : ""}
             </span>
+            {(p.czasOczekiwania || p.komponenty?.length) && (
+              <span className="posilek-makro">
+                {p.czasOczekiwania ? `⏳ wymaga: ${p.czasOczekiwania}` : ""}
+                {p.komponenty?.length ? " · trzeba zrobić ciasto" : ""}
+              </span>
+            )}
           </button>
         ))}
 

@@ -1,5 +1,19 @@
 # TODO — do zrobienia w następnej sesji
 
+## 31. Podgląd przepisu w planie — ZROBIONE
+Zgłoszenie: przy akceptacji planu i w „całym planie" widać było samą nazwę i makro, więc user nie wiedział, co właściwie akceptuje („Pierogi fit z indyka, 660 kcal" i tyle).
+
+Treść przepisu wydzielona do wspólnego komponentu `app/SzczegolyPosilku.tsx` (składniki, ciasto, dodatki, kroki) i podpięta w trzech miejscach:
+- **podgląd planu i cały plan** — jako rozwijane „Co w tym jest?", zwinięte domyślnie, żeby tydzień dało się objąć wzrokiem,
+- **„Mój plan"** — zastąpiło własną kopię tego samego kodu,
+- **modal wymiany** — doszła informacja o czasie oczekiwania i o tym, że trzeba zrobić ciasto.
+
+W wierszu posiłku doszły też: czas przygotowania, `czasOczekiwania` i znacznik „z własnym ciastem”.
+
+Co dalej:
+- **Gotowce nie mają `czasPrzygotowania`** (2 z 9 posiłków w teście), więc przy nich nie pokazuje się czas. Z definicji są szybkie, ale warto by wyświetlać choćby „kilka minut”.
+- Podgląd nie pokazuje mikroskładników ani tego, ile dana pozycja wnosi do dnia.
+
 ## 30. Produkty light weszły do bazy — i to była właściwa decyzja
 Przy frytkach z wołowiną (styl In-N-Out) po raz trzeci wyszło, że rozjazd makro siedzi wyłącznie w produktach **light**: majonez light, ser żółty light. Dodane jako osobne składniki, bo to nie są „chudsze warianty tego samego" — w sklepie to inne produkty, a różnica w jednym daniu sięgała **22 g tłuszczu**.
 

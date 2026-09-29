@@ -1083,3 +1083,29 @@ body {
   background: rgba(155, 92, 255, 0.08);
   border: 1px solid rgba(155, 92, 255, 0.28);
 }
+
+/* Rozwijany podgląd przepisu w widoku planu — zwinięty, żeby tydzień dało się objąć wzrokiem. */
+.podglad-przepisu {
+  margin-top: 10px;
+}
+
+.podglad-przepisu > summary {
+  cursor: pointer;
+  color: var(--neon-cyan);
+  font-size: 0.85rem;
+  list-style: none;
+}
+
+.podglad-przepisu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.podglad-przepisu > summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.podglad-przepisu[open] > summary::before {
+  content: "▾ ";
+}

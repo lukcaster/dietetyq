@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SzczegolyPosilku from "./SzczegolyPosilku";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
 import type { Profil } from "@/lib/magazyn";
 
@@ -127,83 +128,7 @@ export default function MojPlan({
             {pokazSklad ? "Ukryj składniki" : "Pokaż składniki"}
           </button>
 
-          {pokazSklad && (
-            <>
-              <p className="podtytul" style={{ marginTop: 10, marginBottom: 4 }}>
-                Składniki{mnoznik > 1 ? ` (na ${mnoznik} osób)` : ""}:
-              </p>
-              <ul>
-                {posilek.skladniki.map((s, i) => (
-                  <li key={i} className="posilek-makro">
-                    {s.nazwa} — {Math.round(s.ilosc * mnoznik * 10) / 10} {s.jednostka}
-                  </li>
-                ))}
-              </ul>
-              {posilek.dodatki?.map((dodatek, i) => (
-                <div key={i} style={{ marginTop: 10, paddingLeft: 12, borderLeft: "2px solid rgba(255,255,255,0.15)" }}>
-                  <div className="posilek-nazwa">+ {dodatek.nazwa}</div>
-                  <ul>
-                    {dodatek.skladniki.map((s, j) => (
-                      <li key={j} className="posilek-makro">
-                        {s.nazwa} — {Math.round(s.ilosc * mnoznik * 10) / 10} {s.jednostka}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </>
-          )}
-
-          {/* Ciasto trzeba zrobić PRZED daniem, więc idzie nad instrukcjami przepisu. */}
-          {posilek.komponenty?.map((k, i) => (
-            <div key={i} className="komponent-blok">
-              <div className="posilek-nazwa">🥣 Najpierw: {k.nazwa}</div>
-              <ul>
-                {k.skladniki.map((s, j) => (
-                  <li key={j} className="posilek-makro">
-                    {s.nazwa} — {Math.round(s.ilosc * mnoznik * 10) / 10} {s.jednostka}
-                  </li>
-                ))}
-              </ul>
-              <ol className="instrukcje">
-                {k.instrukcje.map((krok, j) => (
-                  <li key={j} className="posilek-makro">
-                    {krok}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ))}
-
-          {posilek.instrukcje.length > 0 && (
-            <>
-              <p className="podtytul" style={{ marginTop: 14, marginBottom: 4 }}>
-                Jak to zrobić:
-              </p>
-              <ol className="instrukcje">
-                {posilek.instrukcje.map((krok, i) => (
-                  <li key={i} className="posilek-makro">
-                    {krok}
-                  </li>
-                ))}
-              </ol>
-            </>
-          )}
-
-          {posilek.dodatki?.map((dodatek, i) => (
-            <div key={i}>
-              <p className="podtytul" style={{ marginTop: 10, marginBottom: 4 }}>
-                {dodatek.nazwa}:
-              </p>
-              <ol className="instrukcje">
-                {dodatek.instrukcje.map((krok, j) => (
-                  <li key={j} className="posilek-makro">
-                    {krok}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ))}
+          {pokazSklad && <SzczegolyPosilku posilek={posilek} mnoznik={mnoznik} />}
 
           <div className="posilek-akcje" style={{ marginTop: 16 }}>
             <button className="btn-maly" disabled={pracuje} onClick={() => onWymien(dzien.dzien - 1, indeks)}>

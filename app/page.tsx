@@ -6,6 +6,7 @@ import ListaZakupow from "./ListaZakupow";
 import ModalWymiany from "./ModalWymiany";
 import MojPlan, { kluczPosilku } from "./MojPlan";
 import Onboarding from "./Onboarding";
+import SzczegolyPosilku from "./SzczegolyPosilku";
 import UlozSam from "./UlozSam";
 import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
@@ -436,11 +437,27 @@ export default function Home() {
                               {Math.round(posilek.makro.kcal)} kcal · B: {Math.round(posilek.makro.bialko)}g · T:{" "}
                               {Math.round(posilek.makro.tluszcz)}g · W: {Math.round(posilek.makro.wegle)}g
                             </div>
+                            {posilek.czasPrzygotowania && (
+                              <div className="posilek-makro">
+                                ⏱ {posilek.czasPrzygotowania} min
+                                {posilek.czasOczekiwania ? ` · wymaga: ${posilek.czasOczekiwania}` : ""}
+                                {posilek.komponenty?.length ? " · z własnym ciastem" : ""}
+                              </div>
+                            )}
+                            {posilek.uwaga && <span className="uwaga">⚠ {posilek.uwaga}</span>}
                             {posilek.dosypki?.map((d, j) => (
                               <div key={j} className="dosypka">
                                 ➕ Do tego: <strong>{d.opis}</strong>
                               </div>
                             ))}
+
+                            {/* Bez tego user widział samą nazwę i makro, i nie wiedział,
+                                co właściwie akceptuje. Zwinięte, żeby tydzień dał się objąć wzrokiem. */}
+                            <details className="podglad-przepisu">
+                              <summary>Co w tym jest?</summary>
+                              <SzczegolyPosilku posilek={posilek} mnoznik={profil.liczbaOsob} />
+                            </details>
+
                             <div className="posilek-akcje nie-do-druku">
                               <button
                                 className="btn-maly"
