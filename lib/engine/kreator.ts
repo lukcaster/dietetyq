@@ -1,7 +1,8 @@
 import { getComponentById, getIngredientById } from "./data";
 import type { SkladnikBazowyWPlanie } from "./lista-zakupow";
 import { dodajMakro, pustaMakro } from "./macro";
-import type { PosilekWPlanie, SkladnikWPlanie } from "./planner";
+import type { KomponentWPlanie, PosilekWPlanie, SkladnikWPlanie } from "./planner";
+import { granicePozycji, naJednostke, type JednostkaPorcji } from "./porcje";
 import { dobierzIlosci, type Odchylenia, type PozycjaDoDobrania } from "./solver";
 import { maZakazanyAlergen, pobierzPozycjeSpizarni } from "./spizarnia";
 import { PREFIKS_KOMPONENTU, type Makro, type PozycjaSpizarni } from "./types";
@@ -35,6 +36,11 @@ export interface ZapytanieKreatora {
   restrykcje?: string[];
   /** Cel makro posiłku — zwykle target slotu z planu. */
   cel?: Makro;
+  /**
+   * Własne kroki przygotowania. Nie zgadujemy ich za usera — to on wie, co chce z tym zrobić
+   * — ale bez żadnych instrukcji posiłek własny w „Moim planie" był samą listą składników.
+   */
+  instrukcje?: string[];
   /** Gdy true i podano cel: solver dobiera gramatury pozycji nieoznaczonych jako stałe. */
   dopasuj?: boolean;
 }
@@ -50,6 +56,15 @@ export interface WynikKreatora {
 const PROG_OSTRZEZENIA_PROCENT = 10;
 
 const KROK_JEDNOSTKI: Record<JednostkaKreatora, number> = { g: 5, ml: 5, szt: 1 };
+
+/**
+ * Sufity z porcje.ts znają tylko gramy i sztuki. Mililitry traktujemy jak gramy — tak samo
+ * robi reszta silnika (mleko 250 ml liczymy z makroNa100g), a wszystkie płyny w bazie mają
+ * gęstość na tyle bliską jedynce, że rozróżnianie tego byłoby udawaną precyzją.
+ */
+function jakPorcja(jednostka: JednostkaKreatora): JednostkaPorcji {
+  return jednostka === "szt" ? "szt" : "g";
+}
 
 function nazwaWyswietlana(pozycja: PozycjaSpizarni): string {
   return pozycja.marka ? `${pozycja.nazwa} (${pozycja.marka})` : pozycja.nazwa;
@@ -103,16 +118,36 @@ export function zbudujPosilekWlasny(zapytanie: ZapytanieKreatora): WynikKreatora
   let odchylenia: Odchylenia | undefined;
 
   if (zapytanie.dopasuj && zapytanie.cel) {
-    const doDobrania: PozycjaDoDobrania[] = rozwiazane.map(({ wejscie, zeSpizarni }) => ({
-      id: wejscie.id,
-      makroNaJednostke: makroNaJednostke(zeSpizarni, wejscie.jednostka),
-      ilosc: wejscie.ilosc,
-      stala: wejscie.stala,
-      min: wejscie.min ?? 0,
-      // Bez sufitu solver potrafi dosypać 300 g oliwy, byle dobić kcal.
-      max: wejscie.max ?? (wejscie.jednostka === "szt" ? Math.max(wejscie.ilosc * 3, 4) : Math.max(wejscie.ilosc * 4, 100)),
-      krok: KROK_JEDNOSTKI[wejscie.jednostka],
-    }));
+    const cel = zapytanie.cel;
+    const doDobrania: PozycjaDoDobrania[] = rozwiazane.map(({ wejscie, zeSpizarni }) => {
+      /*
+       * Te same sufity kulinarne, co w planie i w trybie z lodówki (porcje.ts). Wcześniej
+       * kreator miał własny limit „cztery razy tyle, ile wpisałeś" i przy domyślnych 100 g
+       * pozwalał solverowi dojechać do 400 g — stąd 355 g rzodkiewki w jednym posiłku,
+       * mimo że rzodkiewka ma w bazie maksPorcja 120.
+       */
+      const granice = granicePozycji({
+        rola: zeSpizarni.rolaKulinarna,
+        jednostka: jakPorcja(wejscie.jednostka),
+        celSlotu: cel,
+        wRdzeniu: false,
+        sufitSkladnika: naJednostke(zeSpizarni.maksPorcja, jakPorcja(wejscie.jednostka), zeSpizarni.masaSztuki),
+        porcjaTypowa: naJednostke(zeSpizarni.porcjaTypowa, jakPorcja(wejscie.jednostka), zeSpizarni.masaSztuki),
+      });
+
+      return {
+        id: wejscie.id,
+        makroNaJednostke: makroNaJednostke(zeSpizarni, wejscie.jednostka),
+        ilosc: wejscie.ilosc,
+        stala: wejscie.stala,
+        min: wejscie.min ?? 0,
+        // Ilość wpisana ręcznie zawsze mieści się w granicach: sufity mają powstrzymać solvera
+        // przed absurdem, a nie kłócić się z userem, który świadomie wpisał 300 g czegoś.
+        max: wejscie.max ?? Math.max(granice.max, wejscie.ilosc),
+        krok: KROK_JEDNOSTKI[wejscie.jednostka],
+        preferowana: granice.preferowana,
+      };
+    });
 
     const wynik = dobierzIlosci(doDobrania, zapytanie.cel);
     ilosci = wynik.pozycje.map((p) => p.ilosc);
@@ -136,17 +171,18 @@ export function zbudujPosilekWlasny(zapytanie: ZapytanieKreatora): WynikKreatora
 
   const skladniki: SkladnikWPlanie[] = [];
   const skladnikiBazowe: SkladnikBazowyWPlanie[] = [];
+  const komponenty: KomponentWPlanie[] = [];
   let makro = pustaMakro();
 
   for (let i = 0; i < rozwiazane.length; i++) {
     const { wejscie, zeSpizarni } = rozwiazane[i];
     const ilosc = zaokraglijIlosc(ilosci[i], wejscie.jednostka);
-    const naJednostke = makroNaJednostke(zeSpizarni, wejscie.jednostka);
+    const makroJednostki = makroNaJednostke(zeSpizarni, wejscie.jednostka);
     makro = dodajMakro(makro, {
-      kcal: naJednostke.kcal * ilosc,
-      bialko: naJednostke.bialko * ilosc,
-      tluszcz: naJednostke.tluszcz * ilosc,
-      wegle: naJednostke.wegle * ilosc,
+      kcal: makroJednostki.kcal * ilosc,
+      bialko: makroJednostki.bialko * ilosc,
+      tluszcz: makroJednostki.tluszcz * ilosc,
+      wegle: makroJednostki.wegle * ilosc,
     });
 
     const wpis = { skladnikId: wejscie.id, nazwa: nazwaWyswietlana(zeSpizarni), ilosc, jednostka: wejscie.jednostka };
@@ -157,15 +193,27 @@ export function zbudujPosilekWlasny(zapytanie: ZapytanieKreatora): WynikKreatora
     // cały półprodukt.
     if (wejscie.id.startsWith(PREFIKS_KOMPONENTU)) {
       const komponent = getComponentById(wejscie.id.slice(PREFIKS_KOMPONENTU.length));
-      const proporcja = komponent.iloscWynikowa > 0 ? ilosc / komponent.iloscWynikowa : 0;
-      for (const surowiec of komponent.skladniki) {
-        skladnikiBazowe.push({
-          skladnikId: surowiec.skladnikId,
-          nazwa: getIngredientById(surowiec.skladnikId).nazwa,
-          ilosc: Math.round(surowiec.ilosc * proporcja * 10) / 10,
-          jednostka: surowiec.jednostka,
-        });
-      }
+      // Ciasto liczone w sztukach („3 naleśniki") trzeba najpierw przeliczyć z powrotem
+      // na gramy — proporcja składu odnosi się do wydajności komponentu, a ta jest w gramach.
+      const gramy = wejscie.jednostka === "szt" ? ilosc * (zeSpizarni.masaSztuki ?? 0) : ilosc;
+      const proporcja = komponent.iloscWynikowa > 0 ? gramy / komponent.iloscWynikowa : 0;
+
+      const skladnikiKomponentu = komponent.skladniki.map((surowiec) => ({
+        skladnikId: surowiec.skladnikId,
+        nazwa: getIngredientById(surowiec.skladnikId).nazwa,
+        ilosc: Math.round(surowiec.ilosc * proporcja * 10) / 10,
+        jednostka: surowiec.jednostka,
+      }));
+      skladnikiBazowe.push(...skladnikiKomponentu);
+
+      // Bez tego posiłek z kreatora nie miał ANI JEDNEJ instrukcji: user widział „Ciasto
+      // naleśnikowe — 220 g" i nie miał gdzie sprawdzić, jak to ciasto zrobić.
+      komponenty.push({
+        komponentId: komponent.id,
+        nazwa: komponent.nazwa,
+        skladniki: skladnikiKomponentu,
+        instrukcje: komponent.instrukcje,
+      });
     } else {
       skladnikiBazowe.push({ ...wpis });
     }
@@ -177,9 +225,10 @@ export function zbudujPosilekWlasny(zapytanie: ZapytanieKreatora): WynikKreatora
     nazwa: zapytanie.nazwa?.trim() || "Posiłek własny",
     skladniki,
     skladnikiBazowe,
-    instrukcje: [],
+    instrukcje: zapytanie.instrukcje?.map((k) => k.trim()).filter(Boolean) ?? [],
     makro,
     wlasny: true,
+    komponenty: komponenty.length > 0 ? komponenty : undefined,
   };
 
   return { posilek, cel: zapytanie.cel, odchylenia, ostrzezenia };

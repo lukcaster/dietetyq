@@ -36,6 +36,9 @@ function zeSkladnika(skladnik: Ingredient): PozycjaSpizarni {
     tagiAlergenow: skladnik.tagiAlergenow,
     alergenyNieznane: false,
     masaSztuki: skladnik.masaSztuki,
+    rolaKulinarna: skladnik.rolaKulinarna,
+    porcjaTypowa: skladnik.porcjaTypowa,
+    maksPorcja: skladnik.maksPorcja,
     zrodlo: "baza",
   };
 }
@@ -75,6 +78,13 @@ function zKomponentu(komponent: Component): PozycjaSpizarni {
     },
     tagiAlergenow: [...alergeny],
     alergenyNieznane: false,
+    masaSztuki: komponent.masaSztuki,
+    /*
+     * Bez tego komponent trafiał na SUFIT_DOMYSLNY (200 g — tyle, ile dostaje nieznany produkt
+     * z OFF) i solver ścinał ciasto naleśnikowe do 205 g, czyli poniżej trzech naleśników.
+     * Naturalny sufit półproduktu to jedna zrobiona porcja: więcej znaczy "zrób drugie ciasto".
+     */
+    maksPorcja: komponent.iloscWynikowa,
     zrodlo: "komponent",
   };
 }

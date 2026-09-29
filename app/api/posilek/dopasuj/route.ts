@@ -58,6 +58,9 @@ function walidujRequest(body: unknown): { ok: true; req: ZapytanieKreatora } | {
       restrykcje: Array.isArray(req.restrykcje) ? req.restrykcje.filter((r): r is string => typeof r === "string") : [],
       cel: req.cel as Makro | undefined,
       dopasuj: req.dopasuj === true,
+      instrukcje: Array.isArray(req.instrukcje)
+        ? req.instrukcje.filter((k): k is string => typeof k === "string")
+        : undefined,
     },
   };
 }

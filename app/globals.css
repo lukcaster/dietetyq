@@ -525,6 +525,14 @@ body {
   margin-bottom: 12px;
 }
 
+/* Ta sama klasa obsługuje pole na własne kroki przygotowania. Textarea dziedziczy krój
+   po przeglądarce, a nie po stronie — bez tego kroki wyświetlają się Courierem. */
+textarea.kreator-input {
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.5;
+}
+
 .kreator-input:focus {
   outline: none;
   border-color: var(--neon-cyan);

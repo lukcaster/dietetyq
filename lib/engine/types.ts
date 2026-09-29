@@ -159,6 +159,12 @@ export interface Component {
   jednostkaWynikowa: string;
   skladniki: SkladnikProsty[];
   instrukcje: string[];
+  /**
+   * Ile gramów półproduktu schodzi na jedną sztukę gotowej rzeczy — naleśnik, pieróg.
+   * Nikt nie myśli „220 g ciasta naleśnikowego", tylko „trzy naleśniki", więc kreator
+   * liczy takie komponenty w sztukach. Brak = półprodukt, którego nie dzieli się na sztuki.
+   */
+  masaSztuki?: number;
 }
 
 /**
@@ -187,6 +193,14 @@ export interface PozycjaSpizarni {
   tagiAlergenow: string[];
   alergenyNieznane: boolean;
   masaSztuki?: number;
+  /**
+   * Przepisane ze składnika bazowego, żeby kreator mógł trzymać te same sufity kulinarne,
+   * co planer (patrz porcje.ts). Bez tego solver kreatora znał tylko „cztery razy tyle, ile
+   * wpisałeś" i wychodziło 355 g rzodkiewki. Produkt z OFF ich nie ma — nie wiemy, czym jest.
+   */
+  rolaKulinarna?: string;
+  porcjaTypowa?: number;
+  maksPorcja?: number;
   zrodlo: "baza" | "off" | "komponent";
 }
 

@@ -71,6 +71,7 @@ function stanDopasowania(aktualne: number, cel: number): "ok" | "blisko" | "dale
 
 export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnuluj }: Props) {
   const [nazwa, setNazwa] = useState("");
+  const [instrukcje, setInstrukcje] = useState("");
   const [fraza, setFraza] = useState("");
   const [wyniki, setWyniki] = useState<PozycjaSpizarni[]>([]);
   const [szukam, setSzukam] = useState(false);
@@ -135,6 +136,10 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
           cel,
           dopasuj,
           restrykcje,
+          instrukcje: instrukcje
+            .split("\n")
+            .map((k) => k.trim())
+            .filter(Boolean),
           pozycje: pozycje.map((p) => ({
             id: p.pozycja.id,
             ilosc: p.ilosc,
@@ -321,6 +326,24 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
           ⚠ {rozjazd}. Kliknij <strong>Dopasuj gramatury</strong> — przeliczymy proporcje tak, żeby
           trafić w cel. Ilości oznaczone 🔒 zostaną nietknięte.
         </div>
+      )}
+
+      {/* Posiłek własny lądował w planie jako sama lista składników — za trzy dni user otwierał
+          „Mój plan" i nie wiedział, co miał z tym zrobić. Nie zgadujemy za niego przepisu,
+          ale dajemy miejsce, żeby zapisał swój. */}
+      {pozycje.length > 0 && (
+        <>
+          <p className="podtytul" style={{ marginTop: 16, marginBottom: 4 }}>
+            Jak to zrobić (opcjonalnie) — jeden krok na linijkę:
+          </p>
+          <textarea
+            className="kreator-input"
+            rows={3}
+            placeholder={"Podsmaż kurczaka z przyprawami.\nDodaj warzywa i duś 10 minut."}
+            value={instrukcje}
+            onChange={(e) => setInstrukcje(e.target.value)}
+          />
+        </>
       )}
 
       {ostrzezenia.map((tekst, i) => (
