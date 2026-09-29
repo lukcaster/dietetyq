@@ -31,6 +31,14 @@ const NAZWY_SLOTOW: Record<string, string> = {
 /** Powyżej tego rozjazdu od celu dnia mówimy o tym wprost — ten sam próg co w trybie z lodówki. */
 const PROG_OSTRZEZENIA = 20;
 
+/**
+ * Od takiego niedoboru białka proponujemy domknięcie dnia. Kopia PROG_NIEDOBORU_G z
+ * domykanie.ts — nie da się go zaimportować, bo tamten moduł czyta bazę składników przez `fs`
+ * i wciągnięcie go tutaj wysadziłoby build komponentu klienckiego (patrz cele.ts).
+ * Silnik i tak ma ostatnie słowo: gdy uzna, że nie ma czego dołożyć, powie to wprost.
+ */
+const PROG_DOMKNIECIA_G = 15;
+
 function pusteMakro(): Makro {
   return { kcal: 0, bialko: 0, tluszcz: 0, wegle: 0 };
 }
@@ -78,6 +86,8 @@ export default function UlozSam({
   const [wybor, setWybor] = useState<Wybor | null>(null);
   const [pracuje, setPracuje] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
+  /** Indeks dnia → co silnik odpowiedział na „domknij" (np. że nie ma czego dołożyć). */
+  const [komunikaty, setKomunikaty] = useState<Record<number, string>>({});
 
   const mnoznik = profil.liczbaOsob;
   const wypelnionych = posilki.flat().filter(Boolean).length;
@@ -120,6 +130,49 @@ export default function UlozSam({
       const wynik = await odpowiedz.json();
       if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się nic dobrać");
       ustaw(dzien, indeks, wynik.propozycje[0]);
+    } catch (e) {
+      setBlad(e instanceof Error ? e.message : "Nieznany błąd");
+    } finally {
+      setPracuje(false);
+    }
+  }
+
+  /**
+   * „Domknij białko" — to samo, co silnik robi po cichu przy generowaniu planu: dokłada do
+   * gotowych już posiłków zwykłe jedzenie. Nie rusza samych dań: user je wybrał i zmiana
+   * gramatur pod tabelkę byłaby przestawianiem mu planu za plecami.
+   */
+  async function domknij(indeksDnia: number) {
+    const dzien = posilki[indeksDnia];
+    const doWyslania = dzien.filter((p): p is PosilekWPlanie => p !== null);
+    setPracuje(true);
+    setBlad(null);
+    setKomunikaty((k) => ({ ...k, [indeksDnia]: "" }));
+    try {
+      const odpowiedz = await fetch("/api/dzien/domknij", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          posilki: doWyslania,
+          celDnia: makroDzienne,
+          restrykcje: profil.restrykcje,
+          nielubiane: profil.nielubianeSkladniki,
+        }),
+      });
+      const wynik = await odpowiedz.json();
+      if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się domknąć dnia");
+      // Komunikat przychodzi też przy domknięciu częściowym — wtedy jednocześnie wstawiamy
+      // posiłki i mówimy, dlaczego to nie wszystko.
+      if (wynik.komunikat) setKomunikaty((k) => ({ ...k, [indeksDnia]: wynik.komunikat }));
+      if (!wynik.dodaneBialko) return;
+
+      // Silnik zachowuje kolejność, ale dostał dzień bez pustych slotów — wstawiamy z powrotem
+      // po kolei, pomijając luki.
+      const zwrocone: PosilekWPlanie[] = wynik.posilki;
+      let kolejny = 0;
+      setPosilki((stan) =>
+        stan.map((d, i) => (i === indeksDnia ? d.map((p) => (p === null ? null : zwrocone[kolejny++])) : d))
+      );
     } catch (e) {
       setBlad(e instanceof Error ? e.message : "Nieznany błąd");
     } finally {
@@ -180,6 +233,7 @@ export default function UlozSam({
         const zaczety = dzien.some(Boolean);
         const kompletny = dzien.every(Boolean);
         const rozjazd = kompletny ? opiszRozjazd(makroDnia) : null;
+        const brakujeBialka = makroDzienne.bialko - makroDnia.bialko;
         return (
           <div key={indeksDnia} className="dzien-karta">
             <div className="dzien-naglowek">
@@ -205,6 +259,11 @@ export default function UlozSam({
                       {Math.round(posilek.makro.kcal)} kcal · B: {Math.round(posilek.makro.bialko)}g · T:{" "}
                       {Math.round(posilek.makro.tluszcz)}g · W: {Math.round(posilek.makro.wegle)}g
                       {cel && ` (cel ${Math.round(cel.kcal)} kcal)`}
+                      {posilek.dosypki?.map((d, i) => (
+                        <div key={i} className="dosypka">
+                          ➕ Do tego: <strong>{d.opis}</strong>
+                        </div>
+                      ))}
                     </div>
                   ) : (
                     <div className="posilek-makro">
@@ -251,8 +310,20 @@ export default function UlozSam({
               <div className="kreator-ostrzezenie">
                 ⚠ Dzień {indeksDnia + 1}: {rozjazd}. Możesz to zostawić — to Twój plan — ale sprawdź, czy
                 na pewno o to Ci chodziło.
+                {brakujeBialka >= PROG_DOMKNIECIA_G && (
+                  <div style={{ marginTop: 10 }}>
+                    <button className="btn-maly" disabled={pracuje} onClick={() => domknij(indeksDnia)}>
+                      {pracuje ? "Liczę..." : "🍳 Domknij białko"}
+                    </button>
+                    <span className="podtytul" style={{ marginLeft: 8 }}>
+                      Dołożymy do posiłków zwykłe jedzenie — plaster szynki, jajko, trochę więcej mięsa.
+                      Dania zostają takie, jakie wybrałeś.
+                    </span>
+                  </div>
+                )}
               </div>
             )}
+            {komunikaty[indeksDnia] && <div className="posilek-makro">{komunikaty[indeksDnia]}</div>}
           </div>
         );
       })}

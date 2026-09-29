@@ -144,6 +144,12 @@ export interface PosilekDoDomkniecia {
   charakter?: "slodkie" | "wytrawne";
   skladnikiId: string[];
   makro: Makro;
+  /**
+   * Ten posiłek już coś dostał we wcześniejszym domknięciu. W planie z silnika to się nie zdarza
+   * (domykamy raz), ale w ręcznym user może kliknąć „domknij" drugi raz — a wtedy „do śniadania
+   * dorzuć ser, potem szynkę" robi się drugim śniadaniem.
+   */
+  maJuzDosypke?: boolean;
 }
 
 /**
@@ -164,11 +170,21 @@ function naSlodko(posilek: PosilekDoDomkniecia): boolean {
   return slodkie && !wytrawne;
 }
 
+/**
+ * Dlaczego nie domknęliśmy (więcej). Silnikowi to obojętne — domyka po cichu i tyle — ale
+ * w ręcznym planie user klika „domknij białko" świadomie i „nie da się" bez powodu jest
+ * ślepą uliczką. „Dzień jest już pełny kalorycznie" prowadzi do zupełnie innej decyzji
+ * (podmień danie) niż „nie ma z czego" (odznacz coś na liście nielubianych).
+ */
+export type PowodNiedomkniecia = "brak-niedoboru" | "limit-kcal" | "brak-kandydatow" | "brak-miejsca";
+
 export interface WynikDomkniecia {
   /** Indeks posiłku w dniu → dosypki dołożone do tego posiłku. */
   dosypki: Map<number, Dosypka[]>;
   /** Ile białka udało się dołożyć (g) — do ewentualnego komunikatu. */
   dodaneBialko: number;
+  /** Ustawiony, gdy po domknięciu wciąż brakuje białka. */
+  powod?: PowodNiedomkniecia;
 }
 
 /**
@@ -186,7 +202,9 @@ export function domknijBialko(
   let kcalDnia = makroDnia.kcal;
   let dodaneBialko = 0;
 
-  if (brakujeBialka < PROG_NIEDOBORU_G || posilki.length === 0) return { dosypki, dodaneBialko };
+  if (brakujeBialka < PROG_NIEDOBORU_G || posilki.length === 0) {
+    return { dosypki, dodaneBialko, powod: "brak-niedoboru" };
+  }
 
   const sufitKcal = celDnia.kcal * ZAPAS_KCAL;
 
@@ -200,13 +218,16 @@ export function domknijBialko(
       return false;
     }
   });
-  if (dostepni.length === 0) return { dosypki, dodaneBialko };
+  if (dostepni.length === 0) return { dosypki, dodaneBialko, powod: "brak-kandydatow" };
 
   /** Składniki już dziś dołożone — dwa razy ten sam plaster sera to nie jest urozmaicenie. */
   const juzDolozone = new Set<string>();
+  /** Czy ostatnia próba poległa na suficie kcal, a nie na braku pasujących składników. */
+  let zablokowaneKcal = false;
 
   for (let proba = 0; proba < MAKS_DOSYPEK && brakujeBialka >= PROG_NIEDOBORU_G; proba++) {
     const mozliwe: { indeks: number; kandydat: Kandydat; makro: Makro }[] = [];
+    zablokowaneKcal = false;
 
     for (let i = 0; i < posilki.length; i++) {
       const posilek = posilki[i];
@@ -214,7 +235,7 @@ export function domknijBialko(
       const slodki = naSlodko(posilek);
       // Jeden posiłek dostaje najwyżej jedną dosypkę — „do śniadania dorzuć ser, szynkę i jajko"
       // to już nie jest dosypka, tylko drugie śniadanie.
-      if (dosypki.has(i)) continue;
+      if (dosypki.has(i) || posilek.maJuzDosypke) continue;
 
       for (const kandydat of dostepni) {
         if (!kandydat.pory.includes(pora)) continue;
@@ -227,7 +248,10 @@ export function domknijBialko(
         const skladnik = getIngredientById(kandydat.skladnikId);
         const gramy = kandydat.jednostka === "szt" ? (skladnik.masaSztuki ?? 0) * kandydat.porcja : kandydat.porcja;
         const makro = skalujMakro(skladnik.makroNa100g, gramy / 100);
-        if (kcalDnia + makro.kcal > sufitKcal) continue;
+        if (kcalDnia + makro.kcal > sufitKcal) {
+          zablokowaneKcal = true;
+          continue;
+        }
 
         mozliwe.push({ indeks: i, kandydat, makro });
       }
@@ -255,9 +279,88 @@ export function domknijBialko(
     kcalDnia += makro.kcal;
   }
 
-  return { dosypki, dodaneBialko };
+  if (brakujeBialka < PROG_NIEDOBORU_G) return { dosypki, dodaneBialko };
+  return { dosypki, dodaneBialko, powod: zablokowaneKcal ? "limit-kcal" : "brak-miejsca" };
 }
 
 export function makroDosypek(dosypki: Dosypka[]): Makro {
   return dosypki.reduce((suma, d) => dodajMakro(suma, d.makro), { kcal: 0, bialko: 0, tluszcz: 0, wegle: 0 });
+}
+
+/**
+ * Minimum, jakiego domykanie potrzebuje od posiłku. Celowo nie jest to `PosilekWPlanie`:
+ * domykanie.ts nie może zależeć od planner.ts (to planner importuje domykanie, nie odwrotnie).
+ */
+export interface PosilekDomykalny {
+  slot: string;
+  charakter?: "slodkie" | "wytrawne";
+  makro: Makro;
+  skladnikiBazowe: { skladnikId: string; nazwa: string; ilosc: number; jednostka: string }[];
+  dosypki?: Dosypka[];
+}
+
+export interface DomknietyDzien<T> {
+  posilki: T[];
+  /** Ile białka faktycznie doszło (g). Zero = nie było czego albo nie dało się sensownie. */
+  dodaneBialko: number;
+  /** Ustawiony, gdy po domknięciu wciąż brakuje białka — patrz PowodNiedomkniecia. */
+  powod?: PowodNiedomkniecia;
+}
+
+/**
+ * Domyka dzień i od razu wpisuje dosypki w posiłki: makro, listę składników (żeby trafiły
+ * na listę zakupów i do bilansu mikro) oraz pole `dosypki` dla UI.
+ *
+ * Zwraca nowe obiekty zamiast mutować — ręczny plan trzyma posiłki w stanie Reacta i cicha
+ * mutacja nie odświeżyłaby widoku.
+ */
+export function domknijDzien<T extends PosilekDomykalny>(
+  posilki: T[],
+  celDnia: Makro,
+  filtr: FiltrSkladnikow
+): DomknietyDzien<T> {
+  const makroDnia = posilki.reduce((suma, p) => dodajMakro(suma, p.makro), {
+    kcal: 0,
+    bialko: 0,
+    tluszcz: 0,
+    wegle: 0,
+  });
+
+  const { dosypki, dodaneBialko, powod } = domknijBialko(
+    posilki.map((p) => ({
+      slot: p.slot,
+      charakter: p.charakter,
+      skladnikiId: p.skladnikiBazowe.map((s) => s.skladnikId),
+      makro: p.makro,
+      maJuzDosypke: (p.dosypki?.length ?? 0) > 0,
+    })),
+    makroDnia,
+    celDnia,
+    filtr
+  );
+
+  if (dosypki.size === 0) return { posilki, dodaneBialko, powod };
+
+  return {
+    powod,
+    posilki: posilki.map((posilek, indeks) => {
+      const dolozone = dosypki.get(indeks);
+      if (!dolozone) return posilek;
+      return {
+        ...posilek,
+        dosypki: [...(posilek.dosypki ?? []), ...dolozone],
+        makro: dodajMakro(posilek.makro, makroDosypek(dolozone)),
+        skladnikiBazowe: [
+          ...posilek.skladnikiBazowe,
+          ...dolozone.map((d) => ({
+            skladnikId: d.skladnikId,
+            nazwa: d.nazwa,
+            ilosc: d.ilosc,
+            jednostka: d.jednostka,
+          })),
+        ],
+      };
+    }),
+    dodaneBialko,
+  };
 }

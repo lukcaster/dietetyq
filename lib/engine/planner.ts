@@ -1,5 +1,5 @@
 import { getComponentById, getIngredientById, getRecipes } from "./data";
-import { domknijBialko, makroDosypek, type Dosypka } from "./domykanie";
+import { domknijDzien, type Dosypka } from "./domykanie";
 import { zlozGotowiec } from "./gotowce";
 import { zbudujListeZakupow, type PozycjaListyZakupow, type SkladnikBazowyWPlanie } from "./lista-zakupow";
 import {
@@ -637,32 +637,10 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
      * to PO doborze dań, a nie przez dobór — patrz domykanie.ts: apka ma pomagać jeść zdrowiej,
      * a nie dobierać każdy posiłek pod tabelkę makro.
      */
-    const makroPrzedDomknieciem = posilki.reduce((suma, p) => dodajMakro(suma, p.makro), pustaMakro());
-    const { dosypki } = domknijBialko(
-      posilki.map((p) => ({
-        slot: p.slot,
-        charakter: p.charakter,
-        skladnikiId: p.skladnikiBazowe.map((s) => s.skladnikId),
-        makro: p.makro,
-      })),
-      makroPrzedDomknieciem,
-      makroDzienne,
-      filtr
-    );
+    const domkniete = domknijDzien(posilki, makroDzienne, filtr).posilki;
 
-    for (const [indeks, dolozone] of dosypki) {
-      const posilek = posilki[indeks];
-      posilek.dosypki = dolozone;
-      posilek.makro = dodajMakro(posilek.makro, makroDosypek(dolozone));
-      // Do listy zakupów i bilansu mikro dosypka musi wejść jak każdy inny składnik.
-      posilek.skladnikiBazowe = [
-        ...posilek.skladnikiBazowe,
-        ...dolozone.map((d) => ({ skladnikId: d.skladnikId, nazwa: d.nazwa, ilosc: d.ilosc, jednostka: d.jednostka })),
-      ];
-    }
-
-    const makroDnia = posilki.reduce((suma, p) => dodajMakro(suma, p.makro), pustaMakro());
-    dni.push({ dzien: dzien + 1, posilki, makroDnia });
+    const makroDnia = domkniete.reduce((suma, p) => dodajMakro(suma, p.makro), pustaMakro());
+    dni.push({ dzien: dzien + 1, posilki: domkniete, makroDnia });
   }
 
   // Cicho pominięty slot to najgorszy możliwy wynik — user dostałby dzień bez obiadu i nie wiedziałby dlaczego.
