@@ -71,6 +71,17 @@ export default function SzczegolyPosilku({ posilek, mnoznik, pokazInstrukcje = t
         </div>
       ))}
 
+      {/* Bez tego posiłek bez instrukcji kończył się po liście składników i nie było wiadomo,
+          czy przepis się nie wczytał, czy go po prostu nie ma. Dotyczy zwłaszcza posiłków
+          własnych: user składa je ze składników i nie musi nigdzie opisywać, co z nimi robi. */}
+      {pokazInstrukcje && posilek.instrukcje.length === 0 && !posilek.komponenty?.length && (
+        <p className="podtytul" style={{ marginTop: 14 }}>
+          {posilek.wlasny
+            ? "Ten posiłek złożyłeś sam i nie zapisałeś kroków przygotowania. Zbuduj go jeszcze raz, żeby dopisać przepis."
+            : "Ten posiłek nie ma zapisanych kroków przygotowania."}
+        </p>
+      )}
+
       {pokazInstrukcje && posilek.instrukcje.length > 0 && (
         <>
           <p className="podtytul" style={{ marginTop: 14, marginBottom: 4 }}>
