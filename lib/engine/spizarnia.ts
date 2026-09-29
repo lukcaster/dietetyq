@@ -1,5 +1,13 @@
-import { getIngredients, getProdukty } from "./data";
-import { PREFIKS_PRODUKTU, type Ingredient, type PozycjaSpizarni, type Produkt } from "./types";
+import { getComponents, getIngredients, getProdukty } from "./data";
+import { makroKomponentu } from "./macro";
+import {
+  PREFIKS_KOMPONENTU,
+  PREFIKS_PRODUKTU,
+  type Component,
+  type Ingredient,
+  type PozycjaSpizarni,
+  type Produkt,
+} from "./types";
 
 /**
  * "Spiżarnia" to wspólny widok na dwa źródła, z których user może budować własny posiłek:
@@ -44,7 +52,39 @@ function zProduktu(produkt: Produkt): PozycjaSpizarni {
   };
 }
 
+/**
+ * Komponent widziany jak zwykły składnik: makro przeliczone z jego składu na 100 g,
+ * alergeny zebrane ze wszystkich surowców.
+ */
+function zKomponentu(komponent: Component): PozycjaSpizarni {
+  const calosc = makroKomponentu(komponent.id);
+  const naSto = komponent.iloscWynikowa > 0 ? 100 / komponent.iloscWynikowa : 0;
+  const alergeny = new Set<string>();
+  for (const surowiec of komponent.skladniki) {
+    const skladnik = getIngredients().find((s) => s.id === surowiec.skladnikId);
+    for (const tag of skladnik?.tagiAlergenow ?? []) alergeny.add(tag);
+  }
+  return {
+    id: `${PREFIKS_KOMPONENTU}${komponent.id}`,
+    nazwa: komponent.nazwa,
+    makroNa100g: {
+      kcal: calosc.kcal * naSto,
+      bialko: calosc.bialko * naSto,
+      tluszcz: calosc.tluszcz * naSto,
+      wegle: calosc.wegle * naSto,
+    },
+    tagiAlergenow: [...alergeny],
+    alergenyNieznane: false,
+    zrodlo: "komponent",
+  };
+}
+
 export function znajdzPozycjeSpizarni(id: string): PozycjaSpizarni | null {
+  if (id.startsWith(PREFIKS_KOMPONENTU)) {
+    const komponentId = id.slice(PREFIKS_KOMPONENTU.length);
+    const komponent = getComponents().find((k) => k.id === komponentId);
+    return komponent ? zKomponentu(komponent) : null;
+  }
   if (id.startsWith(PREFIKS_PRODUKTU)) {
     const kod = id.slice(PREFIKS_PRODUKTU.length);
     const produkt = getProdukty().find((p) => p.kod === kod);
@@ -88,6 +128,11 @@ export function szukajWSpizarni(fraza: string, opcje: OpcjeWyszukiwania = {}): P
     pozycja: zeSkladnika(s),
     popularnosc: 0,
   }));
+
+  // Ciasta i inne półprodukty — user i tak je robi, więc powinien móc z nich budować posiłek.
+  for (const komponent of getComponents()) {
+    kandydaci.push({ pozycja: zKomponentu(komponent), popularnosc: 0 });
+  }
 
   if (!tylkoBaza) {
     for (const produkt of getProdukty()) {

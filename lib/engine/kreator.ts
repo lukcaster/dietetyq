@@ -1,9 +1,10 @@
+import { getComponentById, getIngredientById } from "./data";
 import type { SkladnikBazowyWPlanie } from "./lista-zakupow";
 import { dodajMakro, pustaMakro } from "./macro";
 import type { PosilekWPlanie, SkladnikWPlanie } from "./planner";
 import { dobierzIlosci, type Odchylenia, type PozycjaDoDobrania } from "./solver";
 import { maZakazanyAlergen, pobierzPozycjeSpizarni } from "./spizarnia";
-import type { Makro, PozycjaSpizarni } from "./types";
+import { PREFIKS_KOMPONENTU, type Makro, type PozycjaSpizarni } from "./types";
 
 /**
  * Kreator własnego posiłku — ścieżka dla kogoś, kto nie chce przepisu, tylko mówi
@@ -150,7 +151,24 @@ export function zbudujPosilekWlasny(zapytanie: ZapytanieKreatora): WynikKreatora
 
     const wpis = { skladnikId: wejscie.id, nazwa: nazwaWyswietlana(zeSpizarni), ilosc, jednostka: wejscie.jednostka };
     skladniki.push(wpis);
-    skladnikiBazowe.push({ ...wpis });
+
+    // Komponent (ciasto) rozbijamy na surowce, tak jak robi to planer: na liście zakupów
+    // kupuje się mąkę i jajka, a nie „ciasto pierogowe", a bilans mikro bez tego gubiłby
+    // cały półprodukt.
+    if (wejscie.id.startsWith(PREFIKS_KOMPONENTU)) {
+      const komponent = getComponentById(wejscie.id.slice(PREFIKS_KOMPONENTU.length));
+      const proporcja = komponent.iloscWynikowa > 0 ? ilosc / komponent.iloscWynikowa : 0;
+      for (const surowiec of komponent.skladniki) {
+        skladnikiBazowe.push({
+          skladnikId: surowiec.skladnikId,
+          nazwa: getIngredientById(surowiec.skladnikId).nazwa,
+          ilosc: Math.round(surowiec.ilosc * proporcja * 10) / 10,
+          jednostka: surowiec.jednostka,
+        });
+      }
+    } else {
+      skladnikiBazowe.push({ ...wpis });
+    }
   }
 
   const posilek: PosilekWPlanie = {

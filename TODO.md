@@ -1,5 +1,16 @@
 # TODO — do zrobienia w następnej sesji
 
+## 32. Ciasta w kreatorze i widoczny kalkulator proporcji — ZROBIONE
+Dwa zgłoszenia do kreatora własnego posiłku.
+
+**1. Ciasta jako składnik.** Komponenty (5 ciast) są teraz w wyszukiwarce spiżarni jako trzecie źródło, ze znacznikiem „🥣 ciasto". Mechanika w SPEC. Kreator rozbija je na surowce w `skladnikiBazowe`, więc lista zakupów i bilans mikro działają poprawnie.
+
+**2. Przeliczanie proporcji.** Funkcja **już istniała** (przycisk „Dopasuj gramatury" + blokady 🔒 per składnik), ale była niewidoczna: szary przycisk bez wyjaśnienia, kiedy go użyć. Teraz przy rozjeździe powyżej 15% pojawia się konkretna podpowiedź („za tłusto (+34%), brakuje białka (-22%) — kliknij Dopasuj gramatury"), a sam przycisk staje się akcją główną.
+
+Co dalej:
+- **Ułamki sztuk w rozbiciu komponentu** — 300 g ciasta z 500 g przepisu daje „jajko 0,6 szt" na liście zakupów. Przy planie tygodniowym te ułamki się sumują i to działa, ale przy pojedynczym posiłku wygląda dziwnie.
+- Komponentów nie da się dodać w trybie „z lodówki" (zawieszony) ani wybrać jako całego dania w „ułożę sam" — tam idą tylko przepisy.
+
 ## 31. Podgląd przepisu w planie — ZROBIONE
 Zgłoszenie: przy akceptacji planu i w „całym planie" widać było samą nazwę i makro, więc user nie wiedział, co właściwie akceptuje („Pierogi fit z indyka, 660 kcal" i tyle).
 

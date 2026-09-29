@@ -169,6 +169,30 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
 
   const suma = sumaMakro(pozycje);
 
+  /**
+   * „Za tłusto, brakuje białka" zamiast samego paska w kolorze. Próg 15% jest niższy niż
+   * w planie (20%), bo tutaj user ma pod ręką narzędzie, żeby to od razu poprawić.
+   */
+  const rozjazd = (() => {
+    const nazwy: [keyof Makro, string, string][] = [
+      ["kcal", "za mało kalorii", "za dużo kalorii"],
+      ["bialko", "brakuje białka", "bardzo dużo białka"],
+      ["tluszcz", "mało tłuszczu", "za tłusto"],
+      ["wegle", "mało węglowodanów", "dużo węglowodanów"],
+    ];
+    const istotne = nazwy
+      .map(([klucz, gdyMalo, gdyDuzo]) => {
+        const docelowe = cel[klucz];
+        const procent = docelowe > 0 ? ((suma[klucz] - docelowe) / docelowe) * 100 : 0;
+        return { tekst: procent < 0 ? gdyMalo : gdyDuzo, procent };
+      })
+      .filter(({ procent }) => Math.abs(procent) > 15)
+      .sort((a, b) => Math.abs(b.procent) - Math.abs(a.procent))
+      .slice(0, 2);
+    if (istotne.length === 0) return null;
+    return istotne.map(({ tekst, procent }) => `${tekst} (${procent > 0 ? "+" : ""}${Math.round(procent)}%)`).join(", ");
+  })();
+
   return (
     <div className="kreator">
       <h2>Zbuduj posiłek sam</h2>
@@ -285,6 +309,15 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
         </div>
       )}
 
+      {/* Sam pasek makro pokazuje, ŻE coś nie gra, ale nie mówi co zrobić. Solver siedzi
+          pod przyciskiem „Dopasuj gramatury" i bez tej podpowiedzi nikt go nie znajdował. */}
+      {pozycje.length > 0 && rozjazd && (
+        <div className="kreator-ostrzezenie">
+          ⚠ {rozjazd}. Kliknij <strong>Dopasuj gramatury</strong> — przeliczymy proporcje tak, żeby
+          trafić w cel. Ilości oznaczone 🔒 zostaną nietknięte.
+        </div>
+      )}
+
       {ostrzezenia.map((tekst, i) => (
         <div key={i} className="kreator-ostrzezenie">
           ⚠ {tekst}
@@ -297,8 +330,12 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
         <button className="btn btn-wstecz" onClick={onAnuluj}>
           Anuluj
         </button>
-        <button className="btn btn-wstecz" disabled={pozycje.length === 0 || pracuje} onClick={dopasujGramatury}>
-          {pracuje ? "Liczę..." : "Dopasuj gramatury"}
+        <button
+          className={`btn ${rozjazd ? "btn-dalej" : "btn-wstecz"}`}
+          disabled={pozycje.length === 0 || pracuje}
+          onClick={dopasujGramatury}
+        >
+          {pracuje ? "Liczę..." : "⚖ Dopasuj gramatury"}
         </button>
         <button className="btn btn-dalej" disabled={pozycje.length === 0 || pracuje} onClick={zapisz}>
           Zapisz posiłek

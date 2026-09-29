@@ -187,10 +187,17 @@ export interface PozycjaSpizarni {
   tagiAlergenow: string[];
   alergenyNieznane: boolean;
   masaSztuki?: number;
-  zrodlo: "baza" | "off";
+  zrodlo: "baza" | "off" | "komponent";
 }
 
 export const PREFIKS_PRODUKTU = "off:";
+
+/**
+ * Półprodukty (ciasto pierogowe, drożdżowe) da się wrzucić do własnego posiłku tak samo jak
+ * zwykły składnik — user robi je i tak, więc powinien móc z nich budować. Prefiks odróżnia je
+ * od surowców, bo ich makro liczymy z rozpisanego składu, a nie z tabeli.
+ */
+export const PREFIKS_KOMPONENTU = "komponent:";
 
 export type Charakter = "slodkie" | "wytrawne";
 export type CzasPrzygotowania = "<15" | "15-30" | "30+";

@@ -182,6 +182,11 @@ Pole `sprzet[]` w `recipes.json` i `szablony.json` zostało **wyznaczone z treś
 
 Zmierzone na 2200 kcal i 5 posiłkach: „minimum roboty" daje 10 przepisów poniżej 15 minut, zero powyżej 30 i 20 gotowców na 35 posiłków; „lubię gotować" — 33 przepisy 30+ i tylko 2 gotowce; „bez piekarnika i blendera" — zero dań z tym sprzętem, 35/35 unikalnych dań, bez ostrzeżeń.
 
+### Półprodukty w kreatorze własnego posiłku
+Ciasta z `components.json` są widoczne w wyszukiwarce spiżarni jako trzecie źródło, obok kuratorowanych składników i produktów z OFF. Prefiks id to `komponent:` (analogicznie do `off:`), a `zrodlo` ma wartość `"komponent"`. Makro liczymy z rozpisanego składu i przeliczamy na 100 g; alergeny zbieramy ze wszystkich surowców.
+
+**Kreator rozbija komponent na surowce w `skladnikiBazowe`** — user widzi w posiłku „Ciasto pierogowe 300 g", ale na liście zakupów pojawia się mąka, mleko w proszku i jajko, a bilans mikro liczy się z realnych składników. Bez tego półprodukt wypadałby z bilansu (obniżając `pokrycieMasy`), bo `komponent:...` nie jest id żadnego składnika.
+
 ### „Ułożę plan sam" (`app/UlozSam.tsx`)
 Druga droga obok generowania: user wypełnia każdy slot ręcznie. Na każdy posiłek ma trzy opcje:
 
