@@ -145,6 +145,67 @@
     ]
   },
   {
+    "id": "ciasto-nalesnikowe-klasyczne",
+    "nazwa": "Ciasto naleśnikowe klasyczne",
+    "iloscWynikowa": 560,
+    "jednostkaWynikowa": "g",
+    "skladniki": [
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 300,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      }
+    ],
+    "instrukcje": [
+      "Rozbij jajka do miski, dodaj szczyptę soli i roztrzep widelcem.",
+      "Wlej mleko i wymieszaj.",
+      "Dosypuj mąkę stopniowo, cały czas mieszając, aż ciasto będzie gładkie i bez grudek.",
+      "Sprawdź konsystencję — ciasto ma spływać z chochli wstążką. Za rzadkie: dosyp mąki po łyżce. Za gęste: dolej mleka po łyżce. To jedyny moment, który trzeba ocenić okiem.",
+      "Odstaw na 10-15 minut, żeby mąka napęczniała — naleśniki będą się mniej rwać.",
+      "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony."
+    ]
+  },
+  {
+    "id": "ciasto-nalesnikowe-pelnoziarniste",
+    "nazwa": "Ciasto naleśnikowe pełnoziarniste",
+    "iloscWynikowa": 570,
+    "jednostkaWynikowa": "g",
+    "skladniki": [
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 310,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "maka-pszenna-pelnoziarnista",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      }
+    ],
+    "instrukcje": [
+      "Rozbij jajka do miski, dodaj szczyptę soli i roztrzep widelcem.",
+      "Wlej mleko i wymieszaj.",
+      "Dosypuj mąkę stopniowo, cały czas mieszając, aż ciasto będzie gładkie.",
+      "Pełne ziarno pije więcej płynu niż biała mąka, więc ciasto z początku wydaje się dobre, a po chwili gęstnieje — odstaw je na 15-20 minut i dopiero wtedy wyrównaj mlekiem do konsystencji spływającej wstążki.",
+      "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Te naleśniki są odrobinę bardziej kruche — przewracaj je szerszą łopatką."
+    ]
+  },
+  {
     "id": "ciasto-nalesnikowe-z-soczewicy",
     "nazwa": "Ciasto naleśnikowe z soczewicy",
     "iloscWynikowa": 510,
