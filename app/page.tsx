@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import BilansMikro from "./BilansMikro";
+import KreatorPosilku from "./KreatorPosilku";
 import ListaZakupow from "./ListaZakupow";
 import ModalWymiany from "./ModalWymiany";
 import MojPlan, { kluczPosilku } from "./MojPlan";
@@ -93,6 +94,8 @@ export default function Home() {
   const [nowaWaga, setNowaWaga] = useState<number | "">("");
   /** Otwarty modal wymiany: który posiłek i co proponujemy w zamian. */
   const [wymiana, setWymiana] = useState<{ dzien: number; indeks: number; propozycje: PosilekWPlanie[] } | null>(null);
+  /** Kreator otwarty z wymiany — user nie chce żadnej propozycji, tylko złoży posiłek sam. */
+  const [kreatorDla, setKreatorDla] = useState<{ dzien: number; indeks: number } | null>(null);
   /** Na ile dni user układa plan ręcznie (tryb „ułożę sam"). */
   const [dniRecznie, setDniRecznie] = useState(1);
 
@@ -596,9 +599,36 @@ export default function Home() {
                   podmienWPlanie(wymiana.dzien, wymiana.indeks, p);
                   setWymiana(null);
                 }}
+                onZbudujSam={() => {
+                  setKreatorDla({ dzien: wymiana.dzien, indeks: wymiana.indeks });
+                  setWymiana(null);
+                }}
                 onAnuluj={() => setWymiana(null)}
               />
             )}
+
+            {kreatorDla && edytowany && (() => {
+              const slot = edytowany.dni[kreatorDla.dzien].posilki[kreatorDla.indeks].slot;
+              // Plan zapisany starszą wersją może nie mieć celeSlotow — wtedy liczymy je
+              // z profilu, zamiast wysadzać kreator na `cel.kcal` czymś, czego nie ma.
+              const cel = edytowany.celeSlotow?.[slot] ?? celeSlotowDla(daneZProfilu(profil)).celeSlotow[slot];
+              return (
+                <div className="modal-tlo" onClick={() => setKreatorDla(null)}>
+                  <div className="modal-panel" onClick={(e) => e.stopPropagation()}>
+                    <KreatorPosilku
+                      slot={slot}
+                      cel={cel}
+                      restrykcje={profil.restrykcje}
+                      onZapisz={(posilek) => {
+                        podmienWPlanie(kreatorDla.dzien, kreatorDla.indeks, posilek);
+                        setKreatorDla(null);
+                      }}
+                      onAnuluj={() => setKreatorDla(null)}
+                    />
+                  </div>
+                </div>
+              );
+            })()}
           </>
         )}
       </div>

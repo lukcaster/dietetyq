@@ -212,6 +212,38 @@
     "masaSztuki": 70
   },
   {
+    "id": "ciasto-nalesnikowe-wysokobialkowe",
+    "nazwa": "Ciasto naleśnikowe wysokobiałkowe",
+    "iloscWynikowa": 960,
+    "jednostkaWynikowa": "g",
+    "masaSztuki": 70,
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 6,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 500,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 130,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Rozbij jajka do miski, dodaj szczyptę soli i roztrzep widelcem albo mikserem — przy sześciu jajkach mikser jest wyraźnie szybszy.",
+      "Wlej mleko i wymieszaj.",
+      "Dosypuj mąkę stopniowo, cały czas mieszając, aż ciasto będzie gładkie i bez grudek.",
+      "Ciasto wychodzi rzadsze niż klasyczne, bo mąki jest tu mało w stosunku do płynów — tak ma być. Ma spływać z chochli wstążką.",
+      "Odstaw na 10-15 minut, żeby mąka napęczniała.",
+      "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Te naleśniki są delikatniejsze od klasycznych — poczekaj, aż brzegi same zaczną się odrywać, zanim je przewrócisz."
+    ]
+  },
+  {
     "id": "ciasto-nalesnikowe-z-soczewicy",
     "nazwa": "Ciasto naleśnikowe z soczewicy",
     "iloscWynikowa": 510,

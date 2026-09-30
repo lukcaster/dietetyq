@@ -18,6 +18,12 @@ interface Props {
   onAnuluj: () => void;
   pracuje?: boolean;
   onLosujPonownie: () => void;
+  /**
+   * Trzecie wyjście: żadna propozycja nie pasuje i user woli złożyć posiłek sam. Bez tego
+   * wymiana w gotowym planie była zamknięta na to, co silnik wylosuje — kreator istniał
+   * wyłącznie przy ręcznym układaniu planu od zera.
+   */
+  onZbudujSam: () => void;
 }
 
 export default function ModalWymiany({
@@ -27,6 +33,7 @@ export default function ModalWymiany({
   onAnuluj,
   pracuje,
   onLosujPonownie,
+  onZbudujSam,
 }: Props) {
   return (
     <div className="modal-tlo" onClick={onAnuluj}>
@@ -75,6 +82,9 @@ export default function ModalWymiany({
         <div className="menu-akcje">
           <button className="btn-maly" disabled={pracuje} onClick={onLosujPonownie}>
             {pracuje ? "Szukam..." : "🔄 Pokaż inne"}
+          </button>
+          <button className="btn-maly" onClick={onZbudujSam}>
+            🧩 Zbuduj sam
           </button>
           <button className="btn-maly" onClick={onAnuluj}>
             Anuluj
