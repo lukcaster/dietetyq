@@ -165,6 +165,13 @@ export interface Component {
    * liczy takie komponenty w sztukach. Brak = półprodukt, którego nie dzieli się na sztuki.
    */
   masaSztuki?: number;
+  /**
+   * Ile tego półproduktu schodzi na jedną normalną porcję, w gramach. Bez tego kreator
+   * wstawiał „1 szt" (bo tyle wstawia dla jajka) i wychodziło danie z jednego naleśnika,
+   * a solver nie miał powodu tego podnieść — dolnej granicy nie ma, a kalorie i tak
+   * dowoził łososiem.
+   */
+  porcjaTypowa?: number;
 }
 
 /**

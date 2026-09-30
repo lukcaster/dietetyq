@@ -20,7 +20,8 @@
       "Mąkę wymieszaj z jajkiem, dodawaj letnią wodę (ok. 120-150ml) aż uzyskasz gładkie, elastyczne ciasto.",
       "Przykryj i odstaw na 30 min."
     ],
-    "masaSztuki": 20
+    "masaSztuki": 20,
+    "porcjaTypowa": 160
   },
   {
     "id": "ciasto-pierogowe-jogurtowe",
@@ -43,7 +44,8 @@
       "Wymieszaj mąkę z jogurtem i szczyptą soli, aż połączą się w jednolitą kulę ciasta (bez jajka, bez wody).",
       "Przykryj i odstaw na 30 min."
     ],
-    "masaSztuki": 20
+    "masaSztuki": 20,
+    "porcjaTypowa": 160
   },
   {
     "id": "ciasto-pierogowe-twarogowe",
@@ -73,7 +75,8 @@
       "Owiń folią i odstaw na 30 minut — po odpoczynku przestaje się kleić.",
       "Wałkuj na dobrze podsypanym blacie, cieniej niż zwykłe ciasto. Gotuj 2-3 minuty od wypłynięcia; jest delikatniejsze, więc nie wrzucaj zbyt wielu pierogów naraz."
     ],
-    "masaSztuki": 20
+    "masaSztuki": 20,
+    "porcjaTypowa": 160
   },
   {
     "id": "ciasto-pierogowe-z-mlekiem-w-proszku",
@@ -108,7 +111,8 @@
       "Przykryj i odstaw na 30 minut.",
       "Wałkuj i lep jak zwykłe pierogi — to ciasto zachowuje się tak samo, tylko jest bardziej miękkie po ugotowaniu."
     ],
-    "masaSztuki": 20
+    "masaSztuki": 20,
+    "porcjaTypowa": 160
   },
   {
     "id": "ciasto-drozdzowe-z-mlekiem-w-proszku",
@@ -178,7 +182,8 @@
       "Odstaw na 10-15 minut, żeby mąka napęczniała — naleśniki będą się mniej rwać.",
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony."
     ],
-    "masaSztuki": 70
+    "masaSztuki": 70,
+    "porcjaTypowa": 210
   },
   {
     "id": "ciasto-nalesnikowe-pelnoziarniste",
@@ -209,7 +214,8 @@
       "Pełne ziarno pije więcej płynu niż biała mąka, więc ciasto z początku wydaje się dobre, a po chwili gęstnieje — odstaw je na 15-20 minut i dopiero wtedy wyrównaj mlekiem do konsystencji spływającej wstążki.",
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Te naleśniki są odrobinę bardziej kruche — przewracaj je szerszą łopatką."
     ],
-    "masaSztuki": 70
+    "masaSztuki": 70,
+    "porcjaTypowa": 210
   },
   {
     "id": "ciasto-nalesnikowe-wysokobialkowe",
@@ -241,7 +247,8 @@
       "Ciasto wychodzi rzadsze niż klasyczne, bo mąki jest tu mało w stosunku do płynów — tak ma być. Ma spływać z chochli wstążką.",
       "Odstaw na 10-15 minut, żeby mąka napęczniała.",
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Te naleśniki są delikatniejsze od klasycznych — poczekaj, aż brzegi same zaczną się odrywać, zanim je przewrócisz."
-    ]
+    ],
+    "porcjaTypowa": 210
   },
   {
     "id": "ciasto-nalesnikowe-z-soczewicy",
@@ -270,6 +277,7 @@
       "Następnego dnia zblenduj całość razem z wodą i kminkiem na jednolite, rzadkie ciasto. Dopraw solą.",
       "Ciasto ma mieć konsystencję śmietany — jeśli jest za gęste, dolej odrobinę wody."
     ],
-    "masaSztuki": 85
+    "masaSztuki": 85,
+    "porcjaTypowa": 255
   }
 ]

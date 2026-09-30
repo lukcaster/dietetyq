@@ -108,9 +108,23 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
     };
   }, [fraza, restrykcjeKlucz]);
 
+  /**
+   * Ile wstawić po dodaniu składnika. Kiedyś było na sztywno „1 szt albo 100 g" i przy cieście
+   * naleśnikowym wychodziło danie z jednego naleśnika, a przy oliwie — 100 g oliwy. Porcja
+   * typowa z bazy jest tym, co człowiek naprawdę nakłada; solver i tak może ją potem ruszyć.
+   */
+  function domyslnaIlosc(pozycja: PozycjaSpizarni, jednostka: Jednostka): number {
+    if (pozycja.porcjaTypowa === undefined) return jednostka === "szt" ? 1 : 100;
+    if (jednostka !== "szt") return pozycja.porcjaTypowa;
+    return Math.max(1, Math.round(pozycja.porcjaTypowa / (pozycja.masaSztuki || 1)));
+  }
+
   function dodaj(pozycja: PozycjaSpizarni) {
     const jednostka: Jednostka = pozycja.masaSztuki ? "szt" : "g";
-    setPozycje((aktualne) => [...aktualne, { pozycja, ilosc: jednostka === "szt" ? 1 : 100, jednostka, stala: false }]);
+    setPozycje((aktualne) => [
+      ...aktualne,
+      { pozycja, ilosc: domyslnaIlosc(pozycja, jednostka), jednostka, stala: false },
+    ]);
     setFraza("");
     setWyniki([]);
   }
@@ -259,7 +273,12 @@ export default function KreatorPosilku({ slot, cel, restrykcje, onZapisz, onAnul
               {p.pozycja.nazwa}
               {p.pozycja.marka && <span className="podtytul"> · {p.pozycja.marka}</span>}
             </span>
-            <span className="posilek-makro">{Math.round(makroPozycji(p).kcal)} kcal</span>
+            {/* Przy sztukach sama suma nic nie mówi: „420 kcal" to inna decyzja przy naleśniku
+                po 140 kcal niż przy takim po 60. */}
+            <span className="posilek-makro">
+              {Math.round(makroPozycji(p).kcal)} kcal
+              {p.jednostka === "szt" && p.ilosc > 0 && ` · ${Math.round(makroPozycji(p).kcal / p.ilosc)} kcal/szt`}
+            </span>
           </div>
 
           <div className="kreator-sterowanie">

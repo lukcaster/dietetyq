@@ -85,6 +85,7 @@ function zKomponentu(komponent: Component): PozycjaSpizarni {
      * Naturalny sufit półproduktu to jedna zrobiona porcja: więcej znaczy "zrób drugie ciasto".
      */
     maksPorcja: komponent.iloscWynikowa,
+    porcjaTypowa: komponent.porcjaTypowa,
     zrodlo: "komponent",
   };
 }
