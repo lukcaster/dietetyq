@@ -4967,5 +4967,129 @@
     "porcjaTypowa": 10,
     "maksPorcja": 30,
     "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "makaron-lasagne",
+    "nazwa": "Płaty lasagne (surowe)",
+    "makroNa100g": {
+      "kcal": 365,
+      "bialko": 12.5,
+      "tluszcz": 1.5,
+      "wegle": 74
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 80,
+    "kategoria": "skrobia-obiadowa",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "makaron",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "makaron-orzo",
+    "nazwa": "Orzo (surowe)",
+    "makroNa100g": {
+      "kcal": 360,
+      "bialko": 12.5,
+      "tluszcz": 1.5,
+      "wegle": 73
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 80,
+    "kategoria": "skrobia-obiadowa",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "makaron",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "jagniecina-gicz",
+    "nazwa": "Jagnięcina, gicz (mięso bez kości)",
+    "makroNa100g": {
+      "kcal": 175,
+      "bialko": 20,
+      "tluszcz": 10.5,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "maksPorcja": 250,
+    "grupaPreferencji": "Mięso i ryby",
+    "rolaKulinarna": "mieso",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "jalapeno",
+    "nazwa": "Papryczka jalapeño",
+    "makroNa100g": {
+      "kcal": 29,
+      "bialko": 0.9,
+      "tluszcz": 0.4,
+      "wegle": 6.5
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "ajvar",
+    "nazwa": "Ajvar (pasta z pieczonej papryki)",
+    "makroNa100g": {
+      "kcal": 110,
+      "bialko": 1.3,
+      "tluszcz": 8,
+      "wegle": 8
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "rolaKulinarna": "sos"
+  },
+  {
+    "id": "smietanka-sojowa",
+    "nazwa": "Śmietanka sojowa do gotowania",
+    "makroNa100g": {
+      "kcal": 66,
+      "bialko": 2,
+      "tluszcz": 5,
+      "wegle": 2.5
+    },
+    "tagiAlergenow": [
+      "soja"
+    ],
+    "porcjaTypowa": 50,
+    "maksPorcja": 150,
+    "rolaKulinarna": "sos"
+  },
+  {
+    "id": "kolendra-swieza",
+    "nazwa": "Kolendra świeża",
+    "makroNa100g": {
+      "kcal": 23,
+      "bialko": 2.1,
+      "tluszcz": 0.5,
+      "wegle": 3.7
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "bazylia-swieza",
+    "nazwa": "Bazylia świeża",
+    "makroNa100g": {
+      "kcal": 23,
+      "bialko": 3.2,
+      "tluszcz": 0.6,
+      "wegle": 2.6
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 5,
+    "maksPorcja": 20,
+    "rolaKulinarna": "przyprawa"
   }
 ]

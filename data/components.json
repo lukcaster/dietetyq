@@ -279,5 +279,37 @@
     ],
     "masaSztuki": 85,
     "porcjaTypowa": 255
+  },
+  {
+    "id": "ciasto-na-wrzatku",
+    "nazwa": "Ciasto na wrzątku (do podpłomyków)",
+    "iloscWynikowa": 630,
+    "jednostkaWynikowa": "g",
+    "masaSztuki": 105,
+    "porcjaTypowa": 105,
+    "skladniki": [
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 220,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mąkę wsyp do miski, dodaj łyżeczkę soli i wymieszaj.",
+      "Zalej wrzątkiem i od razu mieszaj łyżką — wrzątek, a nie ciepła woda, jest tu sednem: parzy mąkę, przez co ciasto daje się rozwałkować bardzo cienko i nie kurczy się pod wałkiem.",
+      "Gdy ciasto przestygnie na tyle, że da się go dotknąć, dodaj oliwę i wyrabiaj 5-8 minut, aż będzie gładkie i sprężyste.",
+      "Przykryj miską albo ściereczką i odstaw na 30 minut. Bez tego odpoczynku ciasto będzie się cofać przy wałkowaniu.",
+      "Podziel na części i rozwałkuj każdą bardzo cienko, na placek wielkości patelni — grubość jak u tortilli, nie jak u pieroga."
+    ]
   }
 ]

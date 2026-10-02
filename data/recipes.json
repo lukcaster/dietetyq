@@ -13348,5 +13348,680 @@
         "jednostka": "g"
       }
     ]
+  },
+  {
+    "id": "zupa-lasagne-soczewica-boczek",
+    "nazwa": "Kremowa zupa pomidorowa z lasagne, soczewicą i boczkiem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "zupy",
+    "sprzet": [
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "boczek",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 800,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidorki-koktajlowe",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 45,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziola-prowansalskie",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chili-w-proszku",
+        "ilosc": 1,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 720,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "smietanka-sojowa",
+        "ilosc": 240,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "soczewica-zielona",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-lasagne",
+        "ilosc": 225,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bazylia-swieza",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Boczek pokrój w kostkę i wytop na suchym, szerokim garnku, aż się zarumieni. Wyjmij go łyżką cedzakową i odłóż — wróci na koniec, żeby został chrupiący.",
+      "Na wytopionym tłuszczu i oliwie ułóż przepołowione pomidory przecięciem do dołu, dorzuć pomidorki koktajlowe i posiekaną cebulę. Przykryj i duś na małym ogniu 12-18 minut, aż zmiękną. Podlej odrobiną wody, jeśli zacznie przywierać.",
+      "Zdejmij poluzowane skórki z dużych pomidorów — same schodzą. Dodaj koncentrat, zioła, czosnek granulowany i chili, rozgnieć pomidory i smaż 2-3 minuty.",
+      "Wlej bulion i śmietankę sojową, wsyp przepłukaną soczewicę. Doprowadź do delikatnego wrzenia i gotuj pod przykryciem 20 minut — soczewica z torebki potrzebuje tego czasu, puszka byłaby gotowa od razu.",
+      "Połam płaty lasagne na kawałki i dodawaj je stopniowo, mieszając, żeby się nie posklejały. Gotuj pod przykryciem około 10 minut, mieszając co 2-3 minuty i dolewając bulionu, gdy zupa za bardzo zgęstnieje.",
+      "Dorzuć szpinak i gotuj jeszcze 2-3 minuty, aż makaron będzie miękki, a szpinak zwiędnie. Dopraw solą i pieprzem.",
+      "Rozlej do misek, posyp parmezanem, odłożonym boczkiem i świeżą bazylią. Jedz od razu — makaron pije bulion dalej, a odgrzewana zupa potrzebuje dolania płynu."
+    ]
+  },
+  {
+    "id": "tortilla-omlet-brokul",
+    "nazwa": "Tortilla-omlet z brokułem i serem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "brokul",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tortilla-pszenna",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Brokuł podziel na małe różyczki i wrzuć na rozgrzaną patelnię z olejem. Smaż 5-6 minut, aż zmięknie i złapie kolor — ma być ugotowany, zanim dojdą jajka.",
+      "Jajka roztrzep z solą i pieprzem, wlej na patelnię i rozprowadź równo między brokułem.",
+      "Posyp startym serem i od razu, póki jajko jest jeszcze płynne, przykryj całość tortillą — dociśnij ją lekko łopatką, żeby przykleiła się do masy.",
+      "Po 2-3 minutach, gdy spód się zetnie, przewróć wszystko tortillą do dołu.",
+      "Złóż na pół i podsmaż z obu stron po około minucie, aż tortilla się zrumieni i zrobi chrupiąca."
+    ]
+  },
+  {
+    "id": "tortilla-omlet-chorizo",
+    "nazwa": "Tortilla-omlet z chorizo i serem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "chorizo",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tortilla-pszenna",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Chorizo pokrój w plastry i wrzuć na suchą, rozgrzaną patelnię — bez oleju, bo wytopi własny tłuszcz. Smaż 3-4 minuty, aż się zarumieni i puści czerwony tłuszcz.",
+      "Jajka roztrzep z solą i pieprzem, wlej na patelnię i rozprowadź równo.",
+      "Posyp startym serem i od razu, póki jajko jest jeszcze płynne, przykryj całość tortillą — dociśnij ją lekko łopatką.",
+      "Po 2-3 minutach, gdy spód się zetnie, przewróć wszystko tortillą do dołu.",
+      "Złóż na pół i podsmaż z obu stron po około minucie, aż tortilla się zrumieni."
+    ]
+  },
+  {
+    "id": "tortilla-omlet-wolowina",
+    "nazwa": "Tortilla-omlet z wołowiną i serem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "wolowina-rostbef",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tortilla-pszenna",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Wołowinę pokrój w cienkie paski w poprzek włókien, dopraw solą i pieprzem.",
+      "Rozgrzej patelnię mocno, wlej olej i smaż mięso 3-4 minuty, mieszając — ma być ścięte, bo potem już się nie dosmaży pod jajkiem. Jeśli puściło sok, odparuj go, zanim dojdą jajka.",
+      "Jajka roztrzep z solą i pieprzem, wlej na patelnię i rozprowadź równo między mięsem.",
+      "Posyp startym serem i od razu, póki jajko jest jeszcze płynne, przykryj całość tortillą — dociśnij ją lekko łopatką.",
+      "Po 2-3 minutach, gdy spód się zetnie, przewróć wszystko tortillą do dołu.",
+      "Złóż na pół i podsmaż z obu stron po około minucie, aż tortilla się zrumieni."
+    ]
+  },
+  {
+    "id": "jagniecina-orzo-srodziemnomorska",
+    "nazwa": "Jagnięcina z orzo po śródziemnomorsku",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "3,5 h w piekarniku",
+    "rodzaj": "jednogarnkowe",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jagniecina-gicz",
+        "ilosc": 450,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-orzo",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidorki-koktajlowe",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwki-czarne",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "feta",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-krojone",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 500,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Jagnięcinę ułóż na środku żeliwnego garnka albo naczynia żaroodpornego z pokrywką. Wokół rozłóż pokrojoną w pióra cebulę, paprykę w dużych kawałkach i 400 g pomidorków koktajlowych (resztę zostaw na koniec).",
+      "Mięso natrzyj połową oregano, wędzonej papryki i kminu, posól i popieprz — wcieraj przyprawy w mięso, nie sypiej ich tylko na wierzch.",
+      "W osobnej misce wymieszaj pomidory z puszki, bulion, starty czosnek, sok z cytryny, koncentrat i resztę przypraw. Dopraw i wlej dookoła oraz na mięso.",
+      "Przykryj i piecz w 160°C z termoobiegiem przez 3,5 godziny, aż mięso będzie rozpadać się pod widelcem.",
+      "Wyjmij kości, a mięso rozdrobnij dwoma widelcami prosto w naczyniu i wymieszaj z warzywami i sosem. Jeśli sos jest zbyt gęsty, dolej odrobinę wody — orzo wypije jeszcze sporo.",
+      "Wsyp orzo i dokładnie wymieszaj, żeby nie zostało na wierzchu.",
+      "Na wierzchu rozłóż oliwki, pokruszoną fetę i pozostałe 100 g pomidorków.",
+      "Przykryj i wstaw z powrotem do piekarnika na 180°C na 25 minut, aż orzo będzie miękkie.",
+      "Posyp natką i świeżo zmielonym pieprzem, podziel na cztery porcje."
+    ]
+  },
+  {
+    "id": "brownie-airfryer",
+    "nazwa": "Brownie z airfryera",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik",
+      "blender"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "serek-wiejski",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "odzywka-bialkowa-whey",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 17,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-waniliowa",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "erytrytol",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Serek wiejski, jajka, odżywkę, kakao, wanilię i słodzik zblenduj na gładką masę — serek musi zniknąć, inaczej w cieście zostaną grudki twarogu.",
+      "Przelej do małej formy wyłożonej papierem do pieczenia i połam na wierzch kostki czekolady, lekko je wciskając.",
+      "Airfryer: 160°C przez około 16 minut. Piekarnik: 175°C góra-dół przez około 25 minut.",
+      "Sprawdź patyczkiem — ma wyjść lekko wilgotny, nie suchy. Brownie dochodzi jeszcze podczas stygnięcia, a przepieczone robi się gumowate.",
+      "Zostaw do przestudzenia w formie, dopiero potem krój."
+    ]
+  },
+  {
+    "id": "brownie-proteinowe",
+    "nazwa": "Brownie proteinowe",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "skyr-naturalny",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-owsiana",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "odzywka-bialkowa-whey",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 35,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 60,
+        "jednostka": "ml"
+      }
+    ],
+    "instrukcje": [
+      "Masło rozpuść i zostaw do przestudzenia. Połowę czekolady posiekaj — pójdzie do ciasta w kawałkach, reszta na wierzch.",
+      "Skyr, jogurt, jajko, mleko i masło wymieszaj na gładko.",
+      "Dosyp mąkę owsianą, kakao, cukier, odżywkę i proszek do pieczenia. Mieszaj tylko do połączenia — im dłużej mieszasz ciasto z odżywką, tym bardziej wychodzi gumowate.",
+      "Wmieszaj posiekaną czekoladę, przełóż masę do formy 12x25 cm albo kwadratowej, wyłożonej papierem. Resztę czekolady rozłóż na wierzchu.",
+      "Piecz w 175°C góra-dół przez około 40 minut. Patyczek ma wyjść z wilgotnymi okruchami, nie suchy.",
+      "Wystudź w formie — ciepłe brownie proteinowe rozpada się przy krojeniu."
+    ]
+  },
+  {
+    "id": "pierogi-inne-wolowina",
+    "nazwa": "Podpłomyki z wołowiną i serem (pierogi, tylko inne)",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "30 min odpoczynku ciasta",
+    "rodzaj": "kluski",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "ciasto-na-wrzatku",
+        "ilosc": 630,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kolendra-mielona",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ajvar",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kolendra-swieza",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Cebulę posiekaj w drobną kostkę i zeszklij na patelni. Dodaj przeciśnięty czosnek i smaż jeszcze pół minuty.",
+      "Dorzuć mielone mięso, rozbij je łopatką i smaż, aż straci surowy kolor. Dopraw papryką, kminem, mieloną kolendrą, suszonym czosnkiem i solą.",
+      "Podlej wodą tak, żeby ledwo zakryła mięso, i duś na małym ogniu 15-20 minut, aż woda odparuje. Farsz ma być wilgotny, ale nie mokry — mokry rozerwie ciasto.",
+      "Wmieszaj ajvar (albo koncentrat pomidorowy czy pomidory z puszki) i świeżą kolendrę. Odstaw do przestudzenia — gorącego farszu nie da się zalepić.",
+      "Na każdy cienko rozwałkowany placek połóż plaster sera, a na niego porcję farszu. Złóż na pół i dokładnie zlep brzegi, jak przy pierogu.",
+      "Smaż na suchej, dobrze rozgrzanej patelni po kilka minut z każdej strony, często obracając, aż ciasto pokryje się rumianymi plamami, a ser w środku się rozpuści."
+    ]
+  },
+  {
+    "id": "pita-faszerowana-wolowina",
+    "nazwa": "Pita faszerowana mieloną wołowiną",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "wrapy",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pita",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jalapeno",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "imbir",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chili-w-proszku",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurkuma",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kolendra-swieza",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula-dymka",
+        "ilosc": 30,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Wszystko na farsz wymieszaj w misce na surowo: mielone mięso, drobno posiekaną czerwoną cebulę, czosnek, jalapeño, starty imbir, jogurt, przyprawy, kolendrę i szczypiorek. Wyrabiaj ręką 2-3 minuty, aż masa zrobi się kleista — wtedy nie wypada z pity.",
+      "Pity przekrój z jednego boku i rozchyl jak kieszeń, nie przecinaj ich na pół.",
+      "Napełnij każdą farszem, rozprowadzając go równą, cienką warstwą aż do brzegów — gruba kula w środku zostanie surowa.",
+      "Posmaruj pity wodą z obu stron. To nie jest ozdoba: woda zatrzymuje wysychanie chleba, póki mięso w środku się piecze.",
+      "Piecz w 190°C przez 15 minut w piekarniku lub airfryerze, aż mięso będzie ścięte, a chleb chrupiący."
+    ]
   }
 ]
