@@ -31,6 +31,9 @@ export default function SzczegolyPosilku({ posilek, mnoznik, pokazInstrukcje = t
         {posilek.skladniki.map((s, i) => (
           <li key={i} className="posilek-makro">
             {s.nazwa} — {ilosc(s.ilosc)} {s.jednostka}
+            {/* Podmiana przez restrykcje musi być widoczna, inaczej user myśli, że tak jest
+                w oryginalnym przepisie, i dziwi się smakowi. */}
+            {s.zamiast && <span className="podtytul"> · zamiast: {s.zamiast}</span>}
           </li>
         ))}
       </ul>

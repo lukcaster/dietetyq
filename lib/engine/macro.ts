@@ -105,6 +105,30 @@ export interface RozwiazanaPozycja {
   jednostka: string;
   nazwaWyswietlana: string;
   makro: Makro;
+  /** Nazwa składnika, który tu pierwotnie był, gdy musieliśmy go podmienić przez filtr. */
+  zamiast?: string;
+}
+
+/**
+ * Składnik zastępczy dla odrzuconego przez filtr — z tej samej kategorii zamienników.
+ *
+ * Przedtem każdy zakazany składnik kasował cały przepis i przy „bez laktozy" znikała jedna
+ * trzecia bazy, a przy „bez glutenu" ponad połowa — tylko dlatego, że w omlecie jest ser,
+ * a do dania podano chleb pszenny. Przepis zostaje, a ser wymieniamy na bezlaktozowy.
+ *
+ * Świadomie NIE podmieniamy wszystkiego: jajko nie ma kategorii zamienników, bo omlet bez
+ * jajka to nie omlet z zamiennikiem, tylko inne danie. Granicę wyznacza pole `kategoria`
+ * w ingredients.json — jak czegoś tam nie ma, przepis nadal wypada i to jest poprawne.
+ */
+function zamiennikDla(skladnik: Ingredient, jednostka: string, filtr: FiltrSkladnikow): Ingredient | null {
+  if (!skladnik.kategoria) return null;
+  const zamiennikId = wybierzZKategorii(skladnik.kategoria, skladnik.id, filtr);
+  if (!zamiennikId || zamiennikId === skladnik.id) return null;
+  const zamiennik = getIngredientById(zamiennikId);
+  // "2 szt pity" nie przeliczy się na chleb bezglutenowy sprzedawany na wagę — masaWGramach
+  // by na tym poległ, a my wolimy w takim wypadku uczciwie odrzucić przepis.
+  if (jednostka === "szt" && !zamiennik.masaSztuki) return null;
+  return zamiennik;
 }
 
 /**
@@ -141,15 +165,24 @@ export function rozwiazPozycje(pos: SkladnikPozycja, filtr: FiltrSkladnikow): Ro
     };
   }
 
-  const skladnik = getIngredientById(pos.skladnikId);
-  if (skladnikOdrzucony(skladnik, filtr)) return null;
+  const oryginal = getIngredientById(pos.skladnikId);
+  let skladnik = oryginal;
+  let zamiast: string | undefined;
+  if (skladnikOdrzucony(oryginal, filtr)) {
+    const zamiennik = zamiennikDla(oryginal, pos.jednostka, filtr);
+    if (!zamiennik) return null;
+    skladnik = zamiennik;
+    zamiast = oryginal.nazwa;
+  }
+
   const gramy = masaWGramach(skladnik, pos.ilosc, pos.jednostka);
   return {
-    skladnikId: pos.skladnikId,
+    skladnikId: skladnik.id,
     ilosc: pos.ilosc,
     jednostka: pos.jednostka,
     nazwaWyswietlana: skladnik.nazwa,
     makro: skalujMakro(skladnik.makroNa100g, gramy / 100),
+    zamiast,
   };
 }
 
@@ -180,9 +213,14 @@ export function rozwinDoBazowychSkladnikow(pos: SkladnikPozycja, filtr: FiltrSkl
       jednostka: s.jednostka,
     }));
   }
-  const skladnik = getIngredientById(pos.skladnikId);
-  if (skladnikOdrzucony(skladnik, filtr)) return null;
-  return [{ skladnikId: pos.skladnikId, ilosc: pos.ilosc, jednostka: pos.jednostka }];
+  const oryginal = getIngredientById(pos.skladnikId);
+  if (!skladnikOdrzucony(oryginal, filtr)) {
+    return [{ skladnikId: pos.skladnikId, ilosc: pos.ilosc, jednostka: pos.jednostka }];
+  }
+  // Na liście zakupów musi wylądować to, co user naprawdę kupi — czyli zamiennik.
+  const zamiennik = zamiennikDla(oryginal, pos.jednostka, filtr);
+  if (!zamiennik) return null;
+  return [{ skladnikId: zamiennik.id, ilosc: pos.ilosc, jednostka: pos.jednostka }];
 }
 
 export interface RozwiazanyPrzepis {

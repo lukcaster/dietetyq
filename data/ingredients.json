@@ -402,7 +402,8 @@
       "cynk": 2.6,
       "witaminaC": 0,
       "sod": 2
-    }
+    },
+    "kategoria": "maka"
   },
   {
     "id": "maka-pszenna",
@@ -836,7 +837,8 @@
       "cynk": 0.6,
       "witaminaC": 0,
       "sod": 640
-    }
+    },
+    "kategoria": "tortilla"
   },
   {
     "id": "salami",
@@ -1466,7 +1468,8 @@
       "cynk": 0.7,
       "witaminaC": 0,
       "sod": 490
-    }
+    },
+    "kategoria": "pieczywo"
   },
   {
     "id": "mozzarella",
@@ -1714,7 +1717,8 @@
       "witaminaC": 0,
       "sod": 320
     },
-    "wymagaGotowania": true
+    "wymagaGotowania": true,
+    "kategoria": "skrobia-obiadowa"
   },
   {
     "id": "gochujang",
@@ -2909,7 +2913,8 @@
       "cynk": 0.67,
       "witaminaC": 2.8,
       "sod": 15
-    }
+    },
+    "kategoria": "smietana"
   },
   {
     "id": "pomidory-krojone",
@@ -3101,7 +3106,8 @@
       "cynk": 0.09,
       "witaminaC": 0,
       "sod": 11
-    }
+    },
+    "kategoria": "maslo"
   },
   {
     "id": "ementaler",
@@ -3177,7 +3183,8 @@
       "cynk": 0.3,
       "witaminaC": 0,
       "sod": 35
-    }
+    },
+    "kategoria": "smietana"
   },
   {
     "id": "makaron-ramen",
@@ -3204,7 +3211,8 @@
       "witaminaC": 0,
       "sod": 400
     },
-    "wymagaGotowania": true
+    "wymagaGotowania": true,
+    "kategoria": "skrobia-obiadowa"
   },
   {
     "id": "zurawina-suszona",
@@ -3357,7 +3365,8 @@
       "cynk": 0.84,
       "witaminaC": 0,
       "sod": 536
-    }
+    },
+    "kategoria": "pieczywo"
   },
   {
     "id": "chleb-zytni-razowy",
@@ -3373,7 +3382,8 @@
     ],
     "porcjaTypowa": 60,
     "grupaPreferencji": "Zboża i skrobia",
-    "rolaKulinarna": "pieczywo"
+    "rolaKulinarna": "pieczywo",
+    "kategoria": "pieczywo"
   },
   {
     "id": "bulka-grahamka",
@@ -3390,7 +3400,8 @@
     ],
     "porcjaTypowa": 65,
     "grupaPreferencji": "Zboża i skrobia",
-    "rolaKulinarna": "pieczywo"
+    "rolaKulinarna": "pieczywo",
+    "kategoria": "pieczywo"
   },
   {
     "id": "chleb-bezglutenowy",
@@ -3404,7 +3415,8 @@
     "tagiAlergenow": [],
     "porcjaTypowa": 60,
     "grupaPreferencji": "Zboża i skrobia",
-    "rolaKulinarna": "pieczywo"
+    "rolaKulinarna": "pieczywo",
+    "kategoria": "pieczywo"
   },
   {
     "id": "chleb-chrupki",
@@ -3421,7 +3433,8 @@
     "porcjaTypowa": 30,
     "maksPorcja": 60,
     "grupaPreferencji": "Zboża i skrobia",
-    "rolaKulinarna": "pieczywo"
+    "rolaKulinarna": "pieczywo",
+    "kategoria": "pieczywo"
   },
   {
     "id": "wafle-ryzowe",
@@ -4365,7 +4378,8 @@
     "porcjaTypowa": 20,
     "maksPorcja": 40,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "orzechy-wloskie",
@@ -4382,7 +4396,8 @@
     "porcjaTypowa": 20,
     "maksPorcja": 40,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "orzechy-nerkowca",
@@ -4399,7 +4414,8 @@
     "porcjaTypowa": 20,
     "maksPorcja": 40,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "orzechy-laskowe",
@@ -4416,7 +4432,8 @@
     "porcjaTypowa": 20,
     "maksPorcja": 40,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "mieszanka-orzechow",
@@ -4433,7 +4450,8 @@
     "porcjaTypowa": 25,
     "maksPorcja": 50,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "pestki-dyni",
@@ -4448,7 +4466,8 @@
     "porcjaTypowa": 15,
     "maksPorcja": 30,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "nasiona-slonecznika",
@@ -4463,7 +4482,8 @@
     "porcjaTypowa": 15,
     "maksPorcja": 30,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "posypka"
+    "rolaKulinarna": "posypka",
+    "kategoria": "orzechy-posypka"
   },
   {
     "id": "siemie-lniane",
@@ -4740,7 +4760,8 @@
     ],
     "porcjaTypowa": 30,
     "maksPorcja": 80,
-    "grupaPreferencji": "Nabiał i jaja"
+    "grupaPreferencji": "Nabiał i jaja",
+    "kategoria": "smietana"
   },
   {
     "id": "groszek-konserwowy",
@@ -5062,7 +5083,8 @@
     ],
     "porcjaTypowa": 50,
     "maksPorcja": 150,
-    "rolaKulinarna": "sos"
+    "rolaKulinarna": "sos",
+    "kategoria": "smietana"
   },
   {
     "id": "kolendra-swieza",
@@ -5091,5 +5113,51 @@
     "porcjaTypowa": 5,
     "maksPorcja": 20,
     "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "ser-zolty-bezlaktozowy",
+    "nazwa": "Ser żółty bez laktozy",
+    "makroNa100g": {
+      "kcal": 350,
+      "bialko": 25,
+      "tluszcz": 27,
+      "wegle": 0.5
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 30,
+    "kategoria": "ser-zolty-twardy",
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser"
+  },
+  {
+    "id": "tortilla-kukurydziana",
+    "nazwa": "Tortilla kukurydziana",
+    "makroNa100g": {
+      "kcal": 310,
+      "bialko": 7,
+      "tluszcz": 3.5,
+      "wegle": 62
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 60,
+    "masaSztuki": 50,
+    "kategoria": "tortilla",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "tortilla"
+  },
+  {
+    "id": "maslo-roslinne",
+    "nazwa": "Masło roślinne (margaryna)",
+    "makroNa100g": {
+      "kcal": 720,
+      "bialko": 0.2,
+      "tluszcz": 80,
+      "wegle": 0.5
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "kategoria": "maslo",
+    "rolaKulinarna": "tluszcz"
   }
 ]

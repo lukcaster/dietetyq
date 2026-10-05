@@ -154,6 +154,12 @@ export interface SkladnikWPlanie {
   nazwa: string;
   ilosc: number;
   jednostka: string;
+  /**
+   * Co tu stało w oryginalnym przepisie, zanim filtr usera kazał to podmienić („Ser żółty").
+   * Podmiana musi być widoczna: user zna ten przepis i ma prawo wiedzieć, że dostaje jego
+   * wariant, a nie oryginał — patrz zamiennikDla() w macro.ts.
+   */
+  zamiast?: string;
 }
 
 export interface DodatekWPlanie {
@@ -360,6 +366,7 @@ function przygotujPozycje(przepis: Recipe, targetKcal: number, filtr: FiltrSklad
         ? Math.max(1, Math.ceil(p.ilosc * wspolczynnikSkalowania))
         : Math.round(p.ilosc * wspolczynnikSkalowania * 10) / 10,
     jednostka: p.jednostka,
+    zamiast: p.zamiast,
   }));
 
   const skladnikiBazowe: SkladnikBazowyWPlanie[] = [];
