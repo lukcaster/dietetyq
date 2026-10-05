@@ -78,11 +78,50 @@ export function makroKomponentu(komponentId: string): Makro {
   return komponent.skladniki.reduce((suma, pos) => dodajMakro(suma, makroSkladnikaProstego(pos)), pustaMakro());
 }
 
-/** Czy komponent zawiera (w swoich surowych składnikach) coś odrzuconego przez filtr. */
-export function komponentMaZakazanySkladnik(komponentId: string, filtr: FiltrSkladnikow): boolean {
-  if (filtr.alergeny.length === 0 && filtr.nielubiane.length === 0) return false;
+export interface SkladnikKomponentuWFiltrze {
+  skladnikId: string;
+  nazwa: string;
+  ilosc: number;
+  jednostka: string;
+  /** Nazwa surowca, który tu pierwotnie był, gdy filtr kazał go podmienić. */
+  zamiast?: string;
+}
+
+export interface RozwiazanyKomponent {
+  skladniki: SkladnikKomponentuWFiltrze[];
+  makro: Makro;
+}
+
+/**
+ * Komponent rozpisany pod filtr usera: każdy surowiec przechodzi tę samą podmianę, co składnik
+ * przepisu (patrz zamiennikDla). Zwraca null, gdy któregoś surowca nie da się ani zostawić,
+ * ani podmienić.
+ *
+ * Wcześniej komponent był traktowany jak blok: jeden zakazany surowiec w cieście kasował każdy
+ * przepis, który tego ciasta używa. Mąka pszenna w cieście naleśnikowym wywalała w ten sposób
+ * wszystkie naleśniki komuś bez glutenu, choć mąkę da się po prostu wymienić.
+ */
+export function rozwiazKomponent(komponentId: string, filtr: FiltrSkladnikow): RozwiazanyKomponent | null {
   const komponent = getComponentById(komponentId);
-  return komponent.skladniki.some((pos) => skladnikOdrzucony(getIngredientById(pos.skladnikId), filtr));
+  const skladniki: SkladnikKomponentuWFiltrze[] = [];
+  let makro = pustaMakro();
+
+  for (const pos of komponent.skladniki) {
+    const oryginal = getIngredientById(pos.skladnikId);
+    let uzyty = oryginal;
+    let zamiast: string | undefined;
+    if (skladnikOdrzucony(oryginal, filtr)) {
+      const zamiennik = zamiennikDla(oryginal, pos.jednostka, filtr);
+      if (!zamiennik) return null;
+      uzyty = zamiennik;
+      zamiast = oryginal.nazwa;
+    }
+    const gramy = masaWGramach(uzyty, pos.ilosc, pos.jednostka);
+    makro = dodajMakro(makro, skalujMakro(uzyty.makroNa100g, gramy / 100));
+    skladniki.push({ skladnikId: uzyty.id, nazwa: uzyty.nazwa, ilosc: pos.ilosc, jednostka: pos.jednostka, zamiast });
+  }
+
+  return { skladniki, makro };
 }
 
 /**
@@ -95,8 +134,24 @@ export function wybierzZKategorii(kategoria: string, domyslnaSkladnikId: string,
     (skladnik) => skladnik.kategoria === kategoria && !skladnikOdrzucony(skladnik, filtr)
   );
   if (dopuszczalne.length === 0) return null;
+
   const domyslny = dopuszczalne.find((s) => s.id === domyslnaSkladnikId);
-  return (domyslny ?? dopuszczalne[0]).id;
+  if (domyslny) return domyslny.id;
+
+  /*
+   * Gdy domyślny odpada, najpierw szukamy zamiennika o tej samej roli kulinarnej.
+   * Kategoria „skrobia obiadowa" trzyma razem ryż, ziemniaki i makarony — bez tego warunku
+   * makaron pszenny w daniu makaronowym podmieniał się na ryż biały (pierwszy dopuszczalny
+   * w pliku), czyli na inne danie, zamiast na makaron ryżowy.
+   *
+   * Dalej decyduje kolejność w ingredients.json — w obrębie kategorii jest to świadoma
+   * kolejność preferencji, dlatego nowe zamienniki wstawiamy tuż za ich odpowiednikami.
+   */
+  const rolaDomyslnego = getIngredients().find((s) => s.id === domyslnaSkladnikId)?.rolaKulinarna;
+  const taSamaRola = rolaDomyslnego
+    ? dopuszczalne.find((s) => s.rolaKulinarna === rolaDomyslnego)
+    : undefined;
+  return (taSamaRola ?? dopuszczalne[0]).id;
 }
 
 export interface RozwiazanaPozycja {
@@ -152,16 +207,16 @@ export function rozwiazPozycje(pos: SkladnikPozycja, filtr: FiltrSkladnikow): Ro
   }
 
   if (jestKomponentem(pos)) {
-    if (komponentMaZakazanySkladnik(pos.komponentId, filtr)) return null;
+    const rozwiazany = rozwiazKomponent(pos.komponentId, filtr);
+    if (!rozwiazany) return null;
     const komponent = getComponentById(pos.komponentId);
-    const makroCalegoKomponentu = makroKomponentu(pos.komponentId);
     const proporcja = pos.ilosc / komponent.iloscWynikowa;
     return {
       skladnikId: pos.komponentId,
       ilosc: pos.ilosc,
       jednostka: pos.jednostka,
       nazwaWyswietlana: komponent.nazwa,
-      makro: skalujMakro(makroCalegoKomponentu, proporcja),
+      makro: skalujMakro(rozwiazany.makro, proporcja),
     };
   }
 
@@ -204,10 +259,11 @@ export function rozwinDoBazowychSkladnikow(pos: SkladnikPozycja, filtr: FiltrSkl
     return [{ skladnikId: wybranyId, ilosc: pos.ilosc, jednostka: pos.jednostka }];
   }
   if (jestKomponentem(pos)) {
-    if (komponentMaZakazanySkladnik(pos.komponentId, filtr)) return null;
+    const rozwiazany = rozwiazKomponent(pos.komponentId, filtr);
+    if (!rozwiazany) return null;
     const komponent = getComponentById(pos.komponentId);
     const proporcja = pos.ilosc / komponent.iloscWynikowa;
-    return komponent.skladniki.map((s) => ({
+    return rozwiazany.skladniki.map((s) => ({
       skladnikId: s.skladnikId,
       ilosc: s.ilosc * proporcja,
       jednostka: s.jednostka,

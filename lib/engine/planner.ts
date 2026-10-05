@@ -5,6 +5,7 @@ import { zbudujListeZakupow, type PozycjaListyZakupow, type SkladnikBazowyWPlani
 import {
   dodajMakro,
   pustaMakro,
+  rozwiazKomponent,
   rozwiazPrzepis,
   rozwinDoBazowychSkladnikow,
   skalujMakro,
@@ -391,19 +392,24 @@ function przygotujPozycje(przepis: Recipe, targetKcal: number, filtr: FiltrSklad
   for (const pos of przepis.skladniki) {
     if (!jestKomponentem(pos)) continue;
     const komponent = getComponentById(pos.komponentId);
+    // Surowce bierzemy z rozwiązanego komponentu, nie z pliku: inaczej user bez glutenu
+    // dostałby ciasto policzone na mące ryżowej, a w instrukcji "mąka pszenna 300 g".
+    const rozwiazanyKomponent = rozwiazKomponent(pos.komponentId, filtr);
+    if (!rozwiazanyKomponent) continue;
     const proporcja = (pos.ilosc / komponent.iloscWynikowa) * wspolczynnikSkalowania;
     komponenty.push({
       komponentId: komponent.id,
       nazwa: komponent.nazwa,
       instrukcje: komponent.instrukcje,
-      skladniki: komponent.skladniki.map((sur) => ({
+      skladniki: rozwiazanyKomponent.skladniki.map((sur) => ({
         skladnikId: sur.skladnikId,
-        nazwa: getIngredientById(sur.skladnikId).nazwa,
+        nazwa: sur.nazwa,
         ilosc:
           sur.jednostka === "szt"
             ? Math.max(1, Math.round(sur.ilosc * proporcja))
             : Math.round(sur.ilosc * proporcja * 10) / 10,
         jednostka: sur.jednostka,
+        zamiast: sur.zamiast,
       })),
     });
   }

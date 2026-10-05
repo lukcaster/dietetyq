@@ -186,6 +186,38 @@
     "porcjaTypowa": 210
   },
   {
+    "id": "ciasto-nalesnikowe-owsiane",
+    "nazwa": "Ciasto naleśnikowe owsiane",
+    "iloscWynikowa": 560,
+    "jednostkaWynikowa": "g",
+    "masaSztuki": 70,
+    "porcjaTypowa": 210,
+    "skladniki": [
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 320,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "maka-owsiana",
+        "ilosc": 130,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      }
+    ],
+    "instrukcje": [
+      "Rozbij jajka do miski, dodaj szczyptę soli i roztrzep widelcem.",
+      "Wlej mleko i wymieszaj.",
+      "Wsyp mąkę owsianą i mieszaj do gładkości.",
+      "Odstaw na 15 minut — przy owsianej to nie jest opcja, tylko konieczność: mąka pęcznieje znacznie mocniej niż pszenna i ciasto wyraźnie gęstnieje. Dopiero po tym czasie wyrównaj je mlekiem do konsystencji spływającej wstążką.",
+      "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Owsiane naleśniki są bardziej kruche od pszennych — przewracaj je szerszą łopatką i nie smaż ich zbyt cienko."
+    ]
+  },
+  {
     "id": "ciasto-nalesnikowe-pelnoziarniste",
     "nazwa": "Ciasto naleśnikowe pełnoziarniste",
     "iloscWynikowa": 570,

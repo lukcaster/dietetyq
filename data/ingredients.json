@@ -505,7 +505,8 @@
       "cynk": 2.88,
       "witaminaC": 0,
       "sod": 1116
-    }
+    },
+    "kategoria": "ser-bialy"
   },
   {
     "id": "cebula",
@@ -609,6 +610,21 @@
       "witaminaC": 0,
       "sod": 40
     }
+  },
+  {
+    "id": "twarog-bezlaktozowy",
+    "nazwa": "Twaróg bez laktozy",
+    "makroNa100g": {
+      "kcal": 100,
+      "bialko": 17,
+      "tluszcz": 4.3,
+      "wegle": 3.7
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "kategoria": "baza-bialkowa-kremowa",
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "baza-kremowa"
   },
   {
     "id": "skyr-naturalny",
@@ -1495,7 +1511,23 @@
       "cynk": 2.9,
       "witaminaC": 0,
       "sod": 486
-    }
+    },
+    "kategoria": "ser-bialy"
+  },
+  {
+    "id": "mozzarella-bezlaktozowa",
+    "nazwa": "Mozzarella bez laktozy",
+    "makroNa100g": {
+      "kcal": 280,
+      "bialko": 22,
+      "tluszcz": 21,
+      "wegle": 2
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 60,
+    "kategoria": "ser-bialy",
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser"
   },
   {
     "id": "salata",
@@ -1546,6 +1578,19 @@
       "witaminaC": 0,
       "sod": 19
     }
+  },
+  {
+    "id": "maka-owsiana-bezglutenowa",
+    "nazwa": "Mąka owsiana bezglutenowa",
+    "makroNa100g": {
+      "kcal": 370,
+      "bialko": 13,
+      "tluszcz": 7,
+      "wegle": 60
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 60,
+    "kategoria": "maka"
   },
   {
     "id": "maka-ryzowa",
@@ -1800,7 +1845,25 @@
       "cynk": 0.5,
       "witaminaC": 0,
       "sod": 5493
-    }
+    },
+    "kategoria": "sos-sojowy"
+  },
+  {
+    "id": "tamari",
+    "nazwa": "Tamari (sos sojowy bezglutenowy)",
+    "makroNa100g": {
+      "kcal": 60,
+      "bialko": 10.5,
+      "tluszcz": 0.1,
+      "wegle": 5.6
+    },
+    "tagiAlergenow": [
+      "soja"
+    ],
+    "porcjaTypowa": 15,
+    "maksPorcja": 40,
+    "kategoria": "sos-sojowy",
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "sriracha",
@@ -2174,7 +2237,8 @@
       "cynk": 0.5,
       "witaminaC": 0,
       "sod": 350
-    }
+    },
+    "kategoria": "pasta-kanapkowa"
   },
   {
     "id": "makaron-pszenny",
@@ -3160,7 +3224,8 @@
       "cynk": 2.5,
       "witaminaC": 0,
       "sod": 1200
-    }
+    },
+    "kategoria": "pasta-kanapkowa"
   },
   {
     "id": "smietanka-30",
@@ -4269,7 +4334,8 @@
     "porcjaTypowa": 60,
     "maksPorcja": 150,
     "grupaPreferencji": "Dodatki",
-    "rolaKulinarna": "baza-kremowa"
+    "rolaKulinarna": "baza-kremowa",
+    "kategoria": "pasta-kanapkowa"
   },
   {
     "id": "tahini",
