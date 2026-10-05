@@ -9,6 +9,7 @@ import MojPlan, { kluczPosilku } from "./MojPlan";
 import Onboarding from "./Onboarding";
 import SzczegolyPosilku from "./SzczegolyPosilku";
 import UlozSam from "./UlozSam";
+import WybierzPrzepis from "./WybierzPrzepis";
 import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
 import type { DaneAntropometryczne } from "@/lib/engine/cele";
@@ -96,6 +97,8 @@ export default function Home() {
   const [wymiana, setWymiana] = useState<{ dzien: number; indeks: number; propozycje: PosilekWPlanie[] } | null>(null);
   /** Kreator otwarty z wymiany — user nie chce żadnej propozycji, tylko złoży posiłek sam. */
   const [kreatorDla, setKreatorDla] = useState<{ dzien: number; indeks: number } | null>(null);
+  /** Przeglądarka przepisów otwarta z wymiany — user chce wybrać konkretne danie z całej bazy. */
+  const [listaDla, setListaDla] = useState<{ dzien: number; indeks: number } | null>(null);
   /** Na ile dni user układa plan ręcznie (tryb „ułożę sam"). */
   const [dniRecznie, setDniRecznie] = useState(1);
 
@@ -200,6 +203,29 @@ export default function Home() {
     } else {
       setPlan(zaktualizowany);
       magazyn.zapiszPlan(zaktualizowany);
+    }
+  }
+
+  /** Wstawia w plan konkretne danie wybrane z pełnej listy przepisów. */
+  async function wezZListy(indeksDnia: number, indeksPosilku: number, recipeId: string) {
+    if (!profil || !edytowany) return;
+    const slot = edytowany.dni[indeksDnia].posilki[indeksPosilku].slot;
+    setPracuje(true);
+    setBlad(null);
+    try {
+      const odpowiedz = await fetch("/api/posilek/z-przepisu", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...daneZProfilu(profil), slot, recipeId }),
+      });
+      const wynik = await odpowiedz.json();
+      if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się wstawić tego przepisu");
+      podmienWPlanie(indeksDnia, indeksPosilku, wynik);
+      setListaDla(null);
+    } catch (e) {
+      setBlad(e instanceof Error ? e.message : "Nieznany błąd");
+    } finally {
+      setPracuje(false);
     }
   }
 
@@ -603,9 +629,29 @@ export default function Home() {
                   setKreatorDla({ dzien: wymiana.dzien, indeks: wymiana.indeks });
                   setWymiana(null);
                 }}
+                onWybierzZListy={() => {
+                  setListaDla({ dzien: wymiana.dzien, indeks: wymiana.indeks });
+                  setWymiana(null);
+                }}
                 onAnuluj={() => setWymiana(null)}
               />
             )}
+
+            {listaDla && edytowany && (() => {
+              const slot = edytowany.dni[listaDla.dzien].posilki[listaDla.indeks].slot;
+              const cel = edytowany.celeSlotow?.[slot] ?? celeSlotowDla(daneZProfilu(profil)).celeSlotow[slot];
+              return (
+                <WybierzPrzepis
+                  slot={slot}
+                  cel={cel}
+                  restrykcje={profil.restrykcje}
+                  nielubiane={profil.nielubianeSkladniki}
+                  pracuje={pracuje}
+                  onWybierz={(recipeId) => wezZListy(listaDla.dzien, listaDla.indeks, recipeId)}
+                  onAnuluj={() => setListaDla(null)}
+                />
+              );
+            })()}
 
             {kreatorDla && edytowany && (() => {
               const slot = edytowany.dni[kreatorDla.dzien].posilki[kreatorDla.indeks].slot;

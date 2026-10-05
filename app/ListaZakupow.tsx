@@ -1,6 +1,6 @@
 "use client";
 
-import type { PozycjaListyZakupow } from "@/lib/engine/planner";
+import { NAZWY_SEKCJI, SEKCJE_SKLEPU, sekcjaSkladnika, type PozycjaListyZakupow } from "@/lib/engine/lista-zakupow";
 
 /**
  * Lista zakupów jako lista do odhaczania, a nie kartka do wydruku.
@@ -21,7 +21,27 @@ interface Props {
 
 export default function ListaZakupow({ pozycje, kupione, liczbaOsob, onPrzelacz, onWyczysc, onPDF, onWroc }: Props) {
   const odhaczone = new Set(kupione);
-  const zostalo = pozycje.filter((p) => !odhaczone.has(p.skladnikId)).length;
+  const doKupienia = pozycje.filter((p) => !odhaczone.has(p.skladnikId));
+  const wKoszyku = pozycje.filter((p) => odhaczone.has(p.skladnikId));
+  const zostalo = doKupienia.length;
+
+  /** Plan zapisany starszą wersją nie ma pola `sekcja` — dolicz je z id zamiast zgubić pozycję. */
+  const sekcjaPozycji = (p: PozycjaListyZakupow) => p.sekcja ?? sekcjaSkladnika(p.skladnikId);
+
+  function Pozycja({ pozycja, kupione }: { pozycja: PozycjaListyZakupow; kupione: boolean }) {
+    return (
+      <button
+        className={`zakupy-pozycja ${kupione ? "kupione" : ""}`}
+        onClick={() => onPrzelacz(pozycja.skladnikId)}
+      >
+        <span className="zakupy-ptaszek">{kupione ? "✓" : ""}</span>
+        <span className="zakupy-nazwa">{pozycja.nazwa}</span>
+        <span className="zakupy-ilosc">
+          {Math.round(pozycja.ilosc * liczbaOsob * 10) / 10} {pozycja.jednostka}
+        </span>
+      </button>
+    );
+  }
 
   return (
     <>
@@ -31,22 +51,29 @@ export default function ListaZakupow({ pozycje, kupione, liczbaOsob, onPrzelacz,
       </p>
 
       <div id="sekcja-lista-druk" className="zakupy-lista">
-        {pozycje.map((pozycja) => {
-          const kupione = odhaczone.has(pozycja.skladnikId);
+        {SEKCJE_SKLEPU.map((sekcja) => {
+          const wSekcji = doKupienia.filter((p) => sekcjaPozycji(p) === sekcja);
+          if (wSekcji.length === 0) return null;
           return (
-            <button
-              key={pozycja.skladnikId}
-              className={`zakupy-pozycja ${kupione ? "kupione" : ""}`}
-              onClick={() => onPrzelacz(pozycja.skladnikId)}
-            >
-              <span className="zakupy-ptaszek">{kupione ? "✓" : ""}</span>
-              <span className="zakupy-nazwa">{pozycja.nazwa}</span>
-              <span className="zakupy-ilosc">
-                {Math.round(pozycja.ilosc * liczbaOsob * 10) / 10} {pozycja.jednostka}
-              </span>
-            </button>
+            <div key={sekcja} className="zakupy-sekcja">
+              <h3 className="zakupy-naglowek">{NAZWY_SEKCJI[sekcja]}</h3>
+              {wSekcji.map((pozycja) => (
+                <Pozycja key={pozycja.skladnikId} pozycja={pozycja} kupione={false} />
+              ))}
+            </div>
           );
         })}
+
+        {/* Odhaczone schodzą pod kreskę zamiast zostawać w swoim dziale: w sklepie liczy się
+            to, czego jeszcze nie masz, a przekreślone pozycje tylko zaśmiecały listę. */}
+        {wKoszyku.length > 0 && (
+          <div className="zakupy-sekcja">
+            <h3 className="zakupy-naglowek">🛒 Mam już w koszyku ({wKoszyku.length})</h3>
+            {wKoszyku.map((pozycja) => (
+              <Pozycja key={pozycja.skladnikId} pozycja={pozycja} kupione />
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="menu-akcje">

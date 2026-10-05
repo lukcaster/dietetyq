@@ -24,6 +24,12 @@ interface Props {
    * wyłącznie przy ręcznym układaniu planu od zera.
    */
   onZbudujSam: () => void;
+  /**
+   * Czwarte wyjście: user wie, co chce zjeść, i nie zamierza losować. Trzy propozycje to
+   * dobry domyślny krok, ale przy 250 przepisach nie są żadnym wyborem, gdy ktoś ma konkretny
+   * pomysł — a klikanie „Pokaż inne" aż się trafi to nie jest przeglądanie listy.
+   */
+  onWybierzZListy: () => void;
 }
 
 export default function ModalWymiany({
@@ -34,6 +40,7 @@ export default function ModalWymiany({
   pracuje,
   onLosujPonownie,
   onZbudujSam,
+  onWybierzZListy,
 }: Props) {
   return (
     <div className="modal-tlo" onClick={onAnuluj}>
@@ -82,6 +89,9 @@ export default function ModalWymiany({
         <div className="menu-akcje">
           <button className="btn-maly" disabled={pracuje} onClick={onLosujPonownie}>
             {pracuje ? "Szukam..." : "🔄 Pokaż inne"}
+          </button>
+          <button className="btn-maly" onClick={onWybierzZListy}>
+            📖 Wybierz z listy
           </button>
           <button className="btn-maly" onClick={onZbudujSam}>
             🧩 Zbuduj sam
