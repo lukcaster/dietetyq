@@ -74,11 +74,24 @@ const SPRZET_OPCJE: { id: Sprzet; label: string; emoji: string }[] = [
   { id: "blender", label: "Blender", emoji: "🌀" },
 ];
 
+/**
+ * „Laktoza" i „nabiał" to celowo dwie osobne pozycje, a nie jedna.
+ *
+ * Przy nietolerancji laktozy ser żółty bez laktozy czy twaróg bez laktozy są w porządku —
+ * i silnik właśnie nimi podmienia. Ale to nadal produkty z mleka krowiego, więc komuś, kto
+ * odstawia nabiał w ogóle, podstawienie ich byłoby wpuszczeniem w maliny. „Nabiał" wycina
+ * jedno i drugie i schodzi na produkty roślinne.
+ *
+ * Soja jest tu, bo jest tagiem w bazie i połową zamienników za nabiał — bez tej opcji
+ * uczulony na soję nie miał jak tego powiedzieć, a dostawał jogurt sojowy zamiast zwykłego.
+ */
 const RESTRYKCJE_OPCJE = [
   { id: "laktoza", label: "Laktoza", emoji: "🥛" },
+  { id: "nabial", label: "Nabiał w ogóle", emoji: "🐄" },
   { id: "gluten", label: "Gluten", emoji: "🌾" },
   { id: "orzechy", label: "Orzechy", emoji: "🥜" },
   { id: "jajka", label: "Jajka", emoji: "🥚" },
+  { id: "soja", label: "Soja", emoji: "🌱" },
 ];
 
 const AKTYWNOSC_PRACA = [

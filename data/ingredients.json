@@ -85,7 +85,8 @@
       "wegle": 4.8
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 200,
     "kategoria": "mleko",
@@ -111,7 +112,8 @@
       "wegle": 4.7
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 200,
     "kategoria": "mleko",
@@ -337,7 +339,8 @@
       "wegle": 4.7
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 200,
     "kategoria": "jogurt",
@@ -380,6 +383,21 @@
       "witaminaC": 0,
       "sod": 40
     }
+  },
+  {
+    "id": "jogurt-kokosowy",
+    "nazwa": "Jogurt kokosowy",
+    "makroNa100g": {
+      "kcal": 100,
+      "bialko": 1,
+      "tluszcz": 8,
+      "wegle": 5
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "kategoria": "jogurt",
+    "grupaPreferencji": "Nabiał i zamienniki",
+    "rolaKulinarna": "jogurt"
   },
   {
     "id": "maka-pszenna-pelnoziarnista",
@@ -491,7 +509,8 @@
       "wegle": 4.1
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 50,
     "grupaPreferencji": "Nabiał i jaja",
@@ -594,7 +613,8 @@
       "wegle": 3.7
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "baza-bialkowa-kremowa",
@@ -620,7 +640,9 @@
       "tluszcz": 4.3,
       "wegle": 3.7
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "nabial"
+    ],
     "porcjaTypowa": 150,
     "kategoria": "baza-bialkowa-kremowa",
     "grupaPreferencji": "Nabiał",
@@ -636,7 +658,8 @@
       "wegle": 4
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "baza-bialkowa-kremowa",
@@ -891,7 +914,8 @@
       "wegle": 2
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "kategoria": "ser-zolty-twardy",
     "porcjaTypowa": 30,
@@ -1119,7 +1143,8 @@
       "wegle": 10.5
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "jogurt-smakowy",
@@ -1196,7 +1221,8 @@
       "wegle": 8
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 30,
     "kategoria": "odzywka-bialkowa",
@@ -1497,7 +1523,8 @@
       "wegle": 2
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 60,
     "grupaPreferencji": "Nabiał i jaja",
@@ -1523,10 +1550,30 @@
       "tluszcz": 21,
       "wegle": 2
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "nabial"
+    ],
     "porcjaTypowa": 60,
     "kategoria": "ser-bialy",
     "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser"
+  },
+  {
+    "id": "tofu-kostka",
+    "nazwa": "Tofu twarde (w kostce)",
+    "makroNa100g": {
+      "kcal": 120,
+      "bialko": 13,
+      "tluszcz": 7,
+      "wegle": 2
+    },
+    "tagiAlergenow": [
+      "soja"
+    ],
+    "porcjaTypowa": 60,
+    "maksPorcja": 150,
+    "kategoria": "ser-bialy",
+    "grupaPreferencji": "Białko roślinne",
     "rolaKulinarna": "ser"
   },
   {
@@ -1624,7 +1671,8 @@
       "wegle": 3.4
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "baza-bialkowa-kremowa",
@@ -2222,7 +2270,8 @@
       "wegle": 3.5
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 60,
     "maksPorcja": 120,
@@ -2278,7 +2327,8 @@
       "wegle": 4.7
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "jogurt-smakowy",
@@ -2329,7 +2379,8 @@
       "wegle": 5.7
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "jogurt",
@@ -2356,7 +2407,8 @@
       "wegle": 4
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 100,
     "kategoria": "baza-bialkowa-kremowa",
@@ -2491,7 +2543,8 @@
       "wegle": 3.5
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "kategoria": "baza-bialkowa-kremowa",
@@ -2815,7 +2868,8 @@
       "wegle": 7.5
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 200,
     "grupaPreferencji": "Nabiał i jaja",
@@ -2867,7 +2921,8 @@
       "wegle": 2.5
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 100,
     "grupaPreferencji": "Nabiał i jaja",
@@ -3155,7 +3210,8 @@
       "wegle": 0.7
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 10,
     "maksPorcja": 30,
@@ -3183,7 +3239,8 @@
       "wegle": 1.3
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 40,
     "kategoria": "ser-zolty-twardy",
@@ -3210,7 +3267,8 @@
       "wegle": 6
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 40,
     "grupaPreferencji": "Nabiał i jaja",
@@ -3237,7 +3295,8 @@
       "wegle": 3
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "mikroNa100g": {
       "blonnik": 0,
@@ -3856,7 +3915,8 @@
       "wegle": 0
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 20,
     "maksPorcja": 40,
@@ -4791,7 +4851,8 @@
       "wegle": 52.2
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 20,
     "maksPorcja": 50,
@@ -4822,7 +4883,8 @@
       "wegle": 3.6
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 30,
     "maksPorcja": 80,
@@ -4915,7 +4977,8 @@
       "wegle": 3.6
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 150,
     "maksPorcja": 400,
@@ -5033,7 +5096,8 @@
       "wegle": 1.5
     },
     "tagiAlergenow": [
-      "laktoza"
+      "laktoza",
+      "nabial"
     ],
     "porcjaTypowa": 40,
     "maksPorcja": 80,
@@ -5189,10 +5253,26 @@
       "tluszcz": 27,
       "wegle": 0.5
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "nabial"
+    ],
     "porcjaTypowa": 30,
     "kategoria": "ser-zolty-twardy",
     "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser"
+  },
+  {
+    "id": "ser-zolty-weganski",
+    "nazwa": "Ser wegański (plastry / starty)",
+    "makroNa100g": {
+      "kcal": 300,
+      "bialko": 1,
+      "tluszcz": 24,
+      "wegle": 20
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 30,
+    "kategoria": "ser-zolty-twardy",
     "rolaKulinarna": "ser"
   },
   {
