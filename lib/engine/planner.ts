@@ -12,6 +12,7 @@ import {
   zbudujFiltr,
   type FiltrSkladnikow,
 } from "./macro";
+import { SLOT_PRZEKASKI, zlozPrzekaske } from "./przekaski";
 import { jestKomponentem } from "./types";
 import {
   obliczKcalDzienne,
@@ -544,6 +545,8 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
   };
   const budzet = budzetTrudnych(liczbaDni);
   let trudnychUzytych = 0;
+  /** Przez cały plan, nie w obrębie dnia — tydzień siedmiu garści orzechów to nie przekąska. */
+  const uzytePrzekaski = new Set<string>();
 
   const wolnoTrudne = (indeksDnia: number): boolean => {
     if (trudnychUzytych >= budzet) return false;
@@ -559,6 +562,31 @@ export function generujPlan(req: PlanRequest): WygenerowanyPlan {
     const uzyteWDniu = new Set<string>();
 
     for (const slot of req.sloty) {
+      /*
+       * Przekąska nie przechodzi przez pulę przepisów — to zestaw dwóch rzeczy z własnej
+       * listy (patrz przekaski.ts), a nie danie, które trzeba ugotować.
+       */
+      if (slot === SLOT_PRZEKASKI) {
+        const przekaska = zlozPrzekaske({ cel: targetSloty[slot], filtr, wyklucz: uzytePrzekaski });
+        if (!przekaska) {
+          slotyBezKandydatow.add(slot);
+          continue;
+        }
+        uzytePrzekaski.add(przekaska.przekaskaId);
+        posilki.push({
+          slot,
+          recipeId: `przekaska:${przekaska.przekaskaId}`,
+          nazwa: przekaska.nazwa,
+          skladniki: przekaska.skladniki.map((s) => ({ ...s })),
+          skladnikiBazowe: przekaska.skladniki.map((s) => ({ ...s })),
+          instrukcje: przekaska.instrukcje,
+          makro: przekaska.makro,
+          gotowiec: true,
+          bezGotowania: true,
+        });
+        continue;
+      }
+
       const ocen =
         Math.random() < SZANSA_NA_ULUBIONY ? ocenDlaSlotu.get(slot)! : ocenBezUlubionych.get(slot)!;
       const preferowanyCharakter = req.charakterPerSlot?.[slot];

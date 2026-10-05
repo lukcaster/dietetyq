@@ -36,6 +36,13 @@ export interface Profil {
   /** Kiedy powstał — do pokazania „jesteś z nami od...", ale też do migracji formatu. */
   utworzony: string;
   liczbaPosilkow: 3 | 4 | 5;
+  /**
+   * Czy dorzucać do dnia przekąskę (garść orzechów, jabłko z orzechami, serek wiejski).
+   * Osobno od `liczbaPosilkow`, bo to nie jest kolejny posiłek do ugotowania — przekąska
+   * dochodzi też przy trzech posiłkach i bierze swój kawałek dziennych kalorii, zamiast
+   * doklejać się do nich ponad limit. Brak w zapisanym profilu = włączona.
+   */
+  przekaska?: boolean;
   liczbaOsob: number;
   /** Puste albo oba smaki = bez preferencji; jeden = premia dla dań tego smaku. */
   smakPerSlot: Record<string, Charakter[]>;
@@ -130,6 +137,7 @@ export const magazyn = {
 
 export const PUSTY_PROFIL: Omit<Profil, "nick" | "utworzony"> = {
   liczbaPosilkow: 3,
+  przekaska: true,
   liczbaOsob: 1,
   smakPerSlot: {},
   makro: { bialko: 30, tluszcz: 35, wegle: 35 },
@@ -147,3 +155,30 @@ export const SLOTY_DLA_LICZBY: Record<number, string[]> = {
   4: ["sniadanie", "drugie-sniadanie", "obiad", "kolacja"],
   5: ["sniadanie", "drugie-sniadanie", "obiad", "podwieczorek", "kolacja"],
 };
+
+/**
+ * Etykiety slotów. Trzymane tu, bo trzy widoki planu renderują te same sloty i do tej pory
+ * każdy miał własną kopię tej mapy — dodanie przekąski znaczyło poprawienie jej w trzech
+ * miejscach albo pokazanie userowi gołego „przekaska".
+ *
+ * Onboarding ma własną, krótszą listę i tak zostaje: pyta o smak KAŻDEGO posiłku, a przy
+ * przekąsce nie ma czego pytać.
+ */
+export const NAZWY_SLOTOW: Record<string, string> = {
+  sniadanie: "🌅 Śniadanie",
+  "drugie-sniadanie": "🥪 II śniadanie",
+  obiad: "🍽️ Obiad",
+  podwieczorek: "🍓 Podwieczorek",
+  kolacja: "🌙 Kolacja",
+  przekaska: "🍏 Przekąska",
+};
+
+/**
+ * Sloty dla profilu — posiłki plus ewentualna przekąska na końcu dnia.
+ * Przekąska celowo idzie ostatnia: to ma być coś między posiłkami, a nie szósty posiłek
+ * wciśnięty w środek planu.
+ */
+export function slotyProfilu(profil: Pick<Profil, "liczbaPosilkow" | "przekaska">): string[] {
+  const sloty = SLOTY_DLA_LICZBY[profil.liczbaPosilkow];
+  return profil.przekaska === false ? sloty : [...sloty, "przekaska"];
+}

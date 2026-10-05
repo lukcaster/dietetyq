@@ -6,7 +6,7 @@ import WybierzPrzepis from "./WybierzPrzepis";
 import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
 import type { Makro } from "@/lib/engine/types";
-import { SLOTY_DLA_LICZBY, type Profil } from "@/lib/magazyn";
+import { NAZWY_SLOTOW, slotyProfilu, type Profil } from "@/lib/magazyn";
 
 /**
  * „Ułożę plan sam" — user wypełnia każdy slot ręcznie, zamiast dostać gotowy plan z silnika.
@@ -19,14 +19,6 @@ import { SLOTY_DLA_LICZBY, type Profil } from "@/lib/magazyn";
  * Makro liczymy na bieżąco i mówimy wprost, gdy dzień się rozjeżdża — ale **nie blokujemy
  * zapisu**. To user układa ten plan i on decyduje; apka ma ostrzegać, nie zabraniać.
  */
-
-const NAZWY_SLOTOW: Record<string, string> = {
-  sniadanie: "🌅 Śniadanie",
-  "drugie-sniadanie": "🥪 II śniadanie",
-  obiad: "🍽️ Obiad",
-  podwieczorek: "🍓 Podwieczorek",
-  kolacja: "🌙 Kolacja",
-};
 
 /** Powyżej tego rozjazdu od celu dnia mówimy o tym wprost — ten sam próg co w trybie z lodówki. */
 const PROG_OSTRZEZENIA = 20;
@@ -79,7 +71,7 @@ export default function UlozSam({
   onZapisz,
   onAnuluj,
 }: Props) {
-  const sloty = SLOTY_DLA_LICZBY[profil.liczbaPosilkow];
+  const sloty = slotyProfilu(profil);
   const [posilki, setPosilki] = useState<(PosilekWPlanie | null)[][]>(
     Array.from({ length: liczbaDni }, () => sloty.map(() => null))
   );

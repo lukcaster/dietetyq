@@ -3,7 +3,7 @@
 import { useState } from "react";
 import SzczegolyPosilku from "./SzczegolyPosilku";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
-import type { Profil } from "@/lib/magazyn";
+import { NAZWY_SLOTOW, type Profil } from "@/lib/magazyn";
 
 /**
  * „Mój plan" — widok dnia codziennego, nie kreatora.
@@ -12,14 +12,6 @@ import type { Profil } from "@/lib/magazyn";
  * poprzedniej wersji, która wyrzucała userowi siedem dni naraz i kazała szukać, co ma teraz
  * zjeść. Reszta (cały plan, lista zakupów) jest o jedno kliknięcie dalej.
  */
-
-const NAZWY_SLOTOW: Record<string, string> = {
-  sniadanie: "🌅 Śniadanie",
-  "drugie-sniadanie": "🥪 II śniadanie",
-  obiad: "🍽️ Obiad",
-  podwieczorek: "🍓 Podwieczorek",
-  kolacja: "🌙 Kolacja",
-};
 
 export function kluczPosilku(dzien: number, indeks: number): string {
   return `${dzien}:${indeks}`;

@@ -14,7 +14,7 @@ import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
 import type { DaneAntropometryczne } from "@/lib/engine/cele";
 import { celeSlotowDla } from "@/lib/engine/cele";
-import { magazyn, SLOTY_DLA_LICZBY, type Profil } from "@/lib/magazyn";
+import { NAZWY_SLOTOW, magazyn, slotyProfilu, type Profil } from "@/lib/magazyn";
 
 /**
  * Szkielet aplikacji.
@@ -26,14 +26,6 @@ import { magazyn, SLOTY_DLA_LICZBY, type Profil } from "@/lib/magazyn";
  */
 
 type Widok = "menu" | "podglad" | "plan" | "calyPlan" | "zakupy" | "profil" | "ulozSam";
-
-const NAZWY_SLOTOW: Record<string, string> = {
-  sniadanie: "🌅 Śniadanie",
-  "drugie-sniadanie": "🥪 II śniadanie",
-  obiad: "🍽️ Obiad",
-  podwieczorek: "🍓 Podwieczorek",
-  kolacja: "🌙 Kolacja",
-};
 
 /** Etykiety rodzajów potraw — te same, co w ankiecie (app/Onboarding.tsx). */
 const ETYKIETY_RODZAJOW: Record<string, string> = {
@@ -137,7 +129,7 @@ export default function Home() {
       // sprawdzamy wyżej, więc tutaj zawężamy typ jawnie.
       dane: !p.kcalDzienne && daneKompletne ? (p.dane as DaneAntropometryczne) : undefined,
       makro: p.makro,
-      sloty: SLOTY_DLA_LICZBY[p.liczbaPosilkow],
+      sloty: slotyProfilu(p),
       smakPerSlot: p.smakPerSlot,
       restrykcje: p.restrykcje,
       lubianeSkladniki: p.lubianeSkladniki,

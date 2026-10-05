@@ -61,6 +61,13 @@ const WAGI_SLOTOW: Record<string, number> = {
   obiad: 0.3,
   podwieczorek: 0.1,
   kolacja: 0.25,
+  /**
+   * Przekąska nie jest szóstym posiłkiem, tylko tym, co człowiek i tak zje między nimi.
+   * Wagi są normalizowane przez sumę, więc dopisanie jej tutaj samo zabiera pozostałym
+   * posiłkom po kawałku budżetu — przy trzech posiłkach obiad schodzi z 30% na 27,5%.
+   * Bez tego przekąska byłaby doliczana ponad dzienne kcal i cicho rozwalała cel.
+   */
+  przekaska: 0.09,
 };
 
 const INDEKS_AKTYWNOSCI_POZA_PRACA: Record<AktywnoscPozaPraca, number> = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6 };

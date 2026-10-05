@@ -111,6 +111,7 @@ const AKTYWNOSC_POZA = [
 export default function Onboarding({ onGotowe }: { onGotowe: (profil: Profil) => void }) {
   const [nick, setNick] = useState("");
   const [liczbaPosilkow, setLiczbaPosilkow] = useState<3 | 4 | 5>(3);
+  const [przekaska, setPrzekaska] = useState(true);
   const [smakPerSlot, setSmakPerSlot] = useState<Record<string, Charakter[]>>({});
   const [trybKcal, setTrybKcal] = useState<"wprost" | "wyliczone">("wprost");
   const [kcal, setKcal] = useState<number | "">(2000);
@@ -141,6 +142,7 @@ export default function Onboarding({ onGotowe }: { onGotowe: (profil: Profil) =>
       nick: nick.trim(),
       utworzony: new Date().toISOString(),
       liczbaPosilkow,
+      przekaska,
       liczbaOsob,
       smakPerSlot,
       kcalDzienne: trybKcal === "wprost" && typeof kcal === "number" ? kcal : undefined,
@@ -183,6 +185,31 @@ export default function Onboarding({ onGotowe }: { onGotowe: (profil: Profil) =>
           </button>
         ))}
       </div>
+
+      {/* Osobno od liczby posiłków, bo to nie jest kolejny posiłek do ugotowania — i dlatego
+          ma sens także przy trzech. Przekąska bierze swój kawałek dziennych kalorii, więc
+          pozostałe posiłki robią się o tyle mniejsze; nic nie dochodzi ponad limit. */}
+      <div className="charakter-wiersz" style={{ marginTop: 16 }}>
+        <span className="charakter-nazwa">🍏 Przekąska między posiłkami</span>
+        <div className="charakter-opcje">
+          <button
+            className={`preset-btn ${przekaska ? "wybrany" : ""}`}
+            onClick={() => setPrzekaska(true)}
+          >
+            Tak
+          </button>
+          <button
+            className={`preset-btn ${!przekaska ? "wybrany" : ""}`}
+            onClick={() => setPrzekaska(false)}
+          >
+            Nie, dziękuję
+          </button>
+        </div>
+      </div>
+      <p className="podtytul" style={{ marginTop: 6 }}>
+        Garść orzechów, jabłko z orzechami, serek wiejski. Mieści się w dziennych kaloriach —
+        pozostałe posiłki będą o tyle mniejsze.
+      </p>
 
       <h2 style={{ marginTop: 28 }}>Co lubisz na te posiłki?</h2>
       <p className="podtytul" style={{ marginBottom: 12 }}>
