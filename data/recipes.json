@@ -7416,9 +7416,9 @@
     "porcje": 1,
     "czasPrzygotowania": "15-30",
     "instrukcje": [
-      "Wymieszaj mąkę, płatki, mleko i erytrytol na gęste ciasto, odstaw na 10 minut.",
-      "Jabłko zetrzyj na grubych oczkach i wmieszaj do ciasta.",
-      "Smaż racuszki na rozgrzanym oleju, po 2-3 minuty z każdej strony.",
+      "Mąkę, płatki, mleko i erytrytol wymieszaj na gęste ciasto, wbij jajko i połącz do gładkości. Odstaw na 10 minut, żeby płatki napęczniały.",
+      "Jabłko zetrzyj na grubych oczkach i wmieszaj do ciasta. Jeśli puściło dużo soku, odciśnij je lekko — inaczej racuszki rozlezą się na patelni.",
+      "Smaż na rozgrzanym oleju po 2-3 minuty z każdej strony, aż się zarumienią.",
       "Podawaj z jogurtem."
     ],
     "skladniki": [
@@ -7436,6 +7436,11 @@
         "skladnikId": "platki-owsiane",
         "ilosc": 20,
         "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
       },
       {
         "skladnikId": "mleko-owsiane",

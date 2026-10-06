@@ -180,5 +180,15 @@ export const NAZWY_SLOTOW: Record<string, string> = {
  */
 export function slotyProfilu(profil: Pick<Profil, "liczbaPosilkow" | "przekaska">): string[] {
   const sloty = SLOTY_DLA_LICZBY[profil.liczbaPosilkow];
-  return profil.przekaska === false ? sloty : [...sloty, "przekaska"];
+  if (profil.przekaska === false) return sloty;
+
+  /*
+   * Przekąska wchodzi PO obiedzie, a nie na koniec dnia. Doklejona na szarym końcu wyglądała
+   * jak coś do zjedzenia po kolacji, a to ma być ta rzecz, po którą sięga się po południu —
+   * i tak ją czyta kolejność w planie dnia. Gdy obiadu nie ma w układzie, ląduje przed
+   * ostatnim posiłkiem, czyli nadal nie na końcu.
+   */
+  const poObiedzie = sloty.indexOf("obiad");
+  const miejsce = poObiedzie >= 0 ? poObiedzie + 1 : Math.max(0, sloty.length - 1);
+  return [...sloty.slice(0, miejsce), "przekaska", ...sloty.slice(miejsce)];
 }
