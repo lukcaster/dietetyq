@@ -89,6 +89,8 @@ export default function Home() {
   const [wymiana, setWymiana] = useState<{ dzien: number; indeks: number; propozycje: PosilekWPlanie[] } | null>(null);
   /** Kreator otwarty z wymiany — user nie chce żadnej propozycji, tylko złoży posiłek sam. */
   const [kreatorDla, setKreatorDla] = useState<{ dzien: number; indeks: number } | null>(null);
+  /** Co silnik odpowiedział na „domknij białko" — np. że dzień jest już pełny kalorycznie. */
+  const [komunikatDomkniecia, setKomunikatDomkniecia] = useState<string | null>(null);
   /** Przeglądarka przepisów otwarta z wymiany — user chce wybrać konkretne danie z całej bazy. */
   const [listaDla, setListaDla] = useState<{ dzien: number; indeks: number } | null>(null);
   /** Na ile dni user układa plan ręcznie (tryb „ułożę sam"). */
@@ -195,6 +197,48 @@ export default function Home() {
     } else {
       setPlan(zaktualizowany);
       magazyn.zapiszPlan(zaktualizowany);
+    }
+  }
+
+  /**
+   * „Domknij białko" dla dnia z gotowego planu — ta sama droga co w ręcznym układaniu:
+   * silnik dokłada do istniejących posiłków zwykłe jedzenie, dania zostają nietknięte.
+   */
+  async function domknijDzien(indeksDnia: number) {
+    if (!profil || !edytowany) return;
+    setPracuje(true);
+    setBlad(null);
+    setKomunikatDomkniecia(null);
+    try {
+      const odpowiedz = await fetch("/api/dzien/domknij", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          posilki: edytowany.dni[indeksDnia].posilki,
+          celDnia: edytowany.makroDzienne,
+          restrykcje: profil.restrykcje,
+          nielubiane: profil.nielubianeSkladniki,
+        }),
+      });
+      const wynik = await odpowiedz.json();
+      if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się domknąć dnia");
+      if (wynik.komunikat) setKomunikatDomkniecia(wynik.komunikat);
+      if (!wynik.dodaneBialko) return;
+
+      const dni: DzienWPlanie[] = edytowany.dni.map((dzien, i) =>
+        i === indeksDnia ? { ...dzien, posilki: wynik.posilki, makroDnia: zsumujMakroDnia(wynik.posilki) } : dzien
+      );
+      const zaktualizowany = { ...edytowany, dni, listaZakupow: zbudujListeZakupow(dni) };
+      if (podglad) {
+        setPodglad(zaktualizowany);
+      } else {
+        setPlan(zaktualizowany);
+        magazyn.zapiszPlan(zaktualizowany);
+      }
+    } catch (e) {
+      setBlad(e instanceof Error ? e.message : "Nieznany błąd");
+    } finally {
+      setPracuje(false);
     }
   }
 
@@ -397,6 +441,8 @@ export default function Home() {
                 onZjedzone={odhacz}
                 onCofnij={cofnij}
                 onWymien={pokazPropozycje}
+                onDomknij={domknijDzien}
+                komunikatDomkniecia={komunikatDomkniecia}
                 onPokazCalyPlan={() => setWidok("calyPlan")}
                 onListaZakupow={() => setWidok("zakupy")}
                 onMenu={() => setWidok("menu")}

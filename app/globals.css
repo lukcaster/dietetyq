@@ -744,6 +744,141 @@ textarea.kreator-input {
   display: flex;
   gap: 8px;
   margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* --- „Mój plan": cały dzień jako lista wierszy, rozwinięty jeden --- */
+
+.dzien-podsumowanie {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.dzien-liczby {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dzien-liczby b {
+  font-size: 1.05rem;
+}
+
+.dzien-tor {
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+}
+
+.dzien-tor i {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+}
+
+.lista-dnia {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.posilek-wiersz {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.posilek-wiersz.otwarty {
+  border-color: rgba(43, 240, 255, 0.5);
+  background: rgba(43, 240, 255, 0.05);
+}
+
+/* Zjedzone zostaje widoczne i klikalne — ma być do cofnięcia, nie do ukrycia. */
+.posilek-wiersz.zjedzony .wiersz-nazwa {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+}
+
+.posilek-wiersz.zjedzony:not(.otwarty) {
+  opacity: 0.6;
+}
+
+.wiersz-glowa {
+  appearance: none;
+  font: inherit;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: none;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.wiersz-glowa:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wiersz-glowa:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: -2px;
+}
+
+.wiersz-opis {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.wiersz-slot {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  font-weight: 600;
+}
+
+.wiersz-nazwa {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.wiersz-kcal {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.wiersz-ptaszek {
+  color: var(--neon-green);
+  font-weight: 700;
+  width: 1ch;
+}
+
+.wiersz-tresc {
+  padding: 0 16px 16px;
+}
+
+.btn-zjedz {
+  border-color: rgba(77, 255, 176, 0.55);
+  background: linear-gradient(90deg, rgba(77, 255, 176, 0.2), rgba(43, 240, 255, 0.2));
+  color: #eafff6;
 }
 
 .btn-maly {

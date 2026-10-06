@@ -3,14 +3,19 @@
 import { useState } from "react";
 import SzczegolyPosilku from "./SzczegolyPosilku";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
+import type { Makro } from "@/lib/engine/types";
 import { NAZWY_SLOTOW, type Profil } from "@/lib/magazyn";
 
 /**
- * „Mój plan" — widok dnia codziennego, nie kreatora.
+ * „Mój plan" — cały dzień na jednym ekranie, rozwinięty ten posiłek, który jest teraz.
  *
- * Domyślnie pokazuje **jeden posiłek: pierwszy niezjedzony**. To jest cała różnica względem
- * poprzedniej wersji, która wyrzucała userowi siedem dni naraz i kazała szukać, co ma teraz
- * zjeść. Reszta (cały plan, lista zakupów) jest o jedno kliknięcie dalej.
+ * Poprzednia wersja pokazywała dokładnie jeden posiłek i żeby zobaczyć następny, trzeba było
+ * kliknąć „Zjadłem". Jedzenie stawało się bramką do reszty planu: user, który chciał tylko
+ * sprawdzić, co jest na kolację, musiał skłamać aplikacji. Teraz wszystkie posiłki dnia są
+ * wierszami, każdy da się otworzyć, a „Zjadłem" robi wyłącznie to, co mówi.
+ *
+ * Wybrany został układ „lista dnia" z trzech zaproponowanych makiet — bo jako jedyny skaluje
+ * się wprost na plan siedmiodniowy i działa na telefonie bez osobnego wariantu.
  */
 
 export function kluczPosilku(dzien: number, indeks: number): string {
@@ -33,6 +38,21 @@ export function znajdzBiezacy(
   return null;
 }
 
+/** Od takiego niedoboru białka proponujemy domknięcie — ten sam próg co w UlozSam. */
+const PROG_DOMKNIECIA_G = 15;
+
+function sumujMakro(posilki: PosilekWPlanie[]): Makro {
+  return posilki.reduce(
+    (suma, p) => ({
+      kcal: suma.kcal + p.makro.kcal,
+      bialko: suma.bialko + p.makro.bialko,
+      tluszcz: suma.tluszcz + p.makro.tluszcz,
+      wegle: suma.wegle + p.makro.wegle,
+    }),
+    { kcal: 0, bialko: 0, tluszcz: 0, wegle: 0 }
+  );
+}
+
 interface Props {
   plan: WygenerowanyPlan;
   profil: Profil;
@@ -40,10 +60,13 @@ interface Props {
   onZjedzone: (klucz: string) => void;
   onCofnij: (klucz: string) => void;
   onWymien: (dzien: number, indeks: number) => void;
+  onDomknij: (indeksDnia: number) => void;
   onPokazCalyPlan: () => void;
   onListaZakupow: () => void;
   onMenu: () => void;
   pracuje?: boolean;
+  /** Co silnik odpowiedział na „domknij białko" — np. że nie ma czego dołożyć. */
+  komunikatDomkniecia?: string | null;
 }
 
 export default function MojPlan({
@@ -53,14 +76,17 @@ export default function MojPlan({
   onZjedzone,
   onCofnij,
   onWymien,
+  onDomknij,
   onPokazCalyPlan,
   onListaZakupow,
   onMenu,
   pracuje,
+  komunikatDomkniecia,
 }: Props) {
   const biezacy = znajdzBiezacy(plan, zjedzone);
   const wszystkich = plan.dni.reduce((s, d) => s + d.posilki.length, 0);
-  const [pokazSklad, setPokazSklad] = useState(true);
+  /** null = podążaj za bieżącym posiłkiem; liczba = user sam wybrał wiersz. */
+  const [recznieOtwarty, setRecznieOtwarty] = useState<number | null>(null);
 
   if (!biezacy) {
     return (
@@ -82,58 +108,128 @@ export default function MojPlan({
     );
   }
 
-  const { dzien, posilek, indeks } = biezacy;
-  const klucz = kluczPosilku(dzien.dzien, indeks);
+  const { dzien, indeks: indeksBiezacego } = biezacy;
+  const odhaczone = new Set(zjedzone);
   const mnoznik = profil.liczbaOsob;
+  const otwarty = recznieOtwarty ?? indeksBiezacego;
+
+  const makroDnia = sumujMakro(dzien.posilki);
+  const celDnia = plan.makroDzienne;
+  const procentKcal = celDnia.kcal > 0 ? Math.min(100, Math.round((makroDnia.kcal / celDnia.kcal) * 100)) : 0;
+  const brakujeBialka = celDnia.bialko - makroDnia.bialko;
+
+  const indeksDnia = plan.dni.findIndex((d) => d.dzien === dzien.dzien);
 
   return (
     <>
       <h2>
-        {NAZWY_SLOTOW[posilek.slot] ?? posilek.slot}
-        {plan.dni.length > 1 && <span className="podtytul"> · dzień {dzien.dzien}</span>}
+        {plan.dni.length > 1 ? `Dzień ${dzien.dzien}` : "Twój dzień"}
+        <span className="podtytul"> · zjedzone {zjedzone.length} z {wszystkich}</span>
       </h2>
-      <p className="podtytul" style={{ marginBottom: 12 }}>
-        Zjedzone {zjedzone.length} z {wszystkich} posiłków planu
-      </p>
 
-      <div className="dzien-karta">
-        <div className="posilek">
-          <div className="posilek-nazwa">
-            {posilek.nazwa}
-            {posilek.gotowiec && (
-              <span className="znacznik znacznik-baza">{posilek.bezGotowania ? "bez gotowania" : "składane"}</span>
-            )}
-            {posilek.czasPrzygotowania && <span className="podtytul"> · {posilek.czasPrzygotowania} min</span>}
-          </div>
-          <div className="posilek-makro">
-            {Math.round(posilek.makro.kcal)} kcal · B: {Math.round(posilek.makro.bialko)}g · T:{" "}
-            {Math.round(posilek.makro.tluszcz)}g · W: {Math.round(posilek.makro.wegle)}g
-          </div>
-          {posilek.uwaga && <span className="uwaga">⚠ {posilek.uwaga}</span>}
-          {posilek.dosypki?.map((d, i) => (
-            <div key={i} className="dosypka">
-              ➕ Do tego: <strong>{d.opis}</strong>
-            </div>
-          ))}
-
-          <button className="btn-maly" style={{ marginTop: 12 }} onClick={() => setPokazSklad((p) => !p)}>
-            {pokazSklad ? "Ukryj składniki" : "Pokaż składniki"}
-          </button>
-
-          {pokazSklad && <SzczegolyPosilku posilek={posilek} mnoznik={mnoznik} />}
-
-          <div className="posilek-akcje" style={{ marginTop: 16 }}>
-            <button className="btn-maly" disabled={pracuje} onClick={() => onWymien(dzien.dzien - 1, indeks)}>
-              🔄 Wymień
-            </button>
-            {zjedzone.length > 0 && (
-              <button className="btn-maly" onClick={() => onCofnij(zjedzone[zjedzone.length - 1])}>
-                ↩ Cofnij poprzedni
-              </button>
-            )}
-          </div>
+      <div className="dzien-podsumowanie">
+        <div className="dzien-liczby">
+          <span>
+            <b>{Math.round(makroDnia.kcal)}</b> / {Math.round(celDnia.kcal)} kcal
+          </span>
+          <span className="podtytul">
+            B {Math.round(makroDnia.bialko)}/{Math.round(celDnia.bialko)}g · T {Math.round(makroDnia.tluszcz)}/
+            {Math.round(celDnia.tluszcz)}g · W {Math.round(makroDnia.wegle)}/{Math.round(celDnia.wegle)}g
+          </span>
+        </div>
+        <div className="dzien-tor">
+          <i style={{ width: `${procentKcal}%` }} />
         </div>
       </div>
+
+      <div className="lista-dnia">
+        {dzien.posilki.map((posilek, i) => {
+          const klucz = kluczPosilku(dzien.dzien, i);
+          const zjedzony = odhaczone.has(klucz);
+          const rozwiniety = otwarty === i;
+          return (
+            <div key={klucz} className={`posilek-wiersz ${rozwiniety ? "otwarty" : ""} ${zjedzony ? "zjedzony" : ""}`}>
+              <button
+                className="wiersz-glowa"
+                aria-expanded={rozwiniety}
+                onClick={() => setRecznieOtwarty(rozwiniety ? -1 : i)}
+              >
+                <span className="wiersz-opis">
+                  <span className="wiersz-slot">
+                    {NAZWY_SLOTOW[posilek.slot] ?? posilek.slot}
+                    {i === indeksBiezacego && !zjedzony && " · teraz"}
+                  </span>
+                  <span className="wiersz-nazwa">{posilek.nazwa}</span>
+                </span>
+                <span className="wiersz-kcal">{Math.round(posilek.makro.kcal)} kcal</span>
+                <span className="wiersz-ptaszek">{zjedzony ? "✓" : ""}</span>
+              </button>
+
+              {rozwiniety && (
+                <div className="wiersz-tresc">
+                  <div className="posilek-makro">
+                    B: {Math.round(posilek.makro.bialko)}g · T: {Math.round(posilek.makro.tluszcz)}g · W:{" "}
+                    {Math.round(posilek.makro.wegle)}g
+                    {posilek.czasPrzygotowania ? ` · ${posilek.czasPrzygotowania} min` : ""}
+                    {posilek.gotowiec && (
+                      <span className="znacznik znacznik-baza">
+                        {posilek.bezGotowania ? "bez gotowania" : "składane"}
+                      </span>
+                    )}
+                  </div>
+
+                  {posilek.uwaga && <span className="uwaga">⚠ {posilek.uwaga}</span>}
+                  {posilek.dosypki?.map((d, j) => (
+                    <div key={j} className="dosypka">
+                      ➕ Do tego: <strong>{d.opis}</strong>
+                    </div>
+                  ))}
+
+                  <SzczegolyPosilku posilek={posilek} mnoznik={mnoznik} />
+
+                  <div className="posilek-akcje" style={{ marginTop: 16 }}>
+                    {zjedzony ? (
+                      <button className="btn-maly" onClick={() => onCofnij(klucz)}>
+                        ↩ Cofnij zjedzone
+                      </button>
+                    ) : (
+                      <button
+                        className="btn-maly btn-zjedz"
+                        onClick={() => {
+                          onZjedzone(klucz);
+                          // Wracamy do podążania za bieżącym, żeby otworzył się następny posiłek.
+                          setRecznieOtwarty(null);
+                        }}
+                      >
+                        ✓ Zjadłem
+                      </button>
+                    )}
+                    <button className="btn-maly" disabled={pracuje} onClick={() => onWymien(indeksDnia, i)}>
+                      🔄 Wymień
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {brakujeBialka >= PROG_DOMKNIECIA_G && (
+        <div className="kreator-ostrzezenie" style={{ marginTop: 16 }}>
+          ⚠ Dziś brakuje {Math.round(brakujeBialka)} g białka.
+          <div style={{ marginTop: 10 }}>
+            <button className="btn-maly" disabled={pracuje} onClick={() => onDomknij(indeksDnia)}>
+              {pracuje ? "Liczę..." : "🍳 Domknij białko"}
+            </button>
+            <span className="podtytul" style={{ marginLeft: 8 }}>
+              Dołożymy do posiłków zwykłe jedzenie — dania zostają te same.
+            </span>
+          </div>
+        </div>
+      )}
+
+      {komunikatDomkniecia && <div className="posilek-makro">{komunikatDomkniecia}</div>}
 
       <div className="menu-akcje">
         <button className="btn-maly" onClick={onPokazCalyPlan}>
@@ -144,12 +240,6 @@ export default function MojPlan({
         </button>
         <button className="btn-maly" onClick={onMenu}>
           ← Menu
-        </button>
-      </div>
-
-      <div className="przyciski-nawigacji">
-        <button className="btn btn-dalej" onClick={() => onZjedzone(klucz)}>
-          ✓ Zjadłem
         </button>
       </div>
     </>
