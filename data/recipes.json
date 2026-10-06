@@ -14023,5 +14023,738 @@
       "Posmaruj pity wodą z obu stron. To nie jest ozdoba: woda zatrzymuje wysychanie chleba, póki mięso w środku się piecze.",
       "Piecz w 190°C przez 15 minut w piekarniku lub airfryerze, aż mięso będzie ścięte, a chleb chrupiący."
     ]
+  },
+  {
+    "id": "ciasto-owsiane-z-owocami",
+    "nazwa": "Ciasto owsiane z borówkami i malinami",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 12,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik",
+      "blender"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 6,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "platki-owsiane",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo-orzechowe",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jablko",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "napoj-migdalowy",
+        "ilosc": 480,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "borowki",
+        "ilosc": 215,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "migdaly",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 40,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Daktyle zalej wrzątkiem i odstaw pod przykryciem na kilka minut — namoczone zmiksują się na gładko, suche zostawią w cieście włókna.",
+      "Odcedzone daktyle wrzuć do blendera razem z jajkami i obranym jabłkiem, zmiksuj na jednolitą masę.",
+      "Dolej napój migdałowy i masło orzechowe, zmiksuj jeszcze raz.",
+      "Masę wymieszaj z płatkami owsianymi i proszkiem do pieczenia, przelej do tortownicy o średnicy 22 cm.",
+      "Na wierzchu rozłóż maliny i borówki, posyp płatkami migdałów.",
+      "Piecz w 180°C przez 50 minut. Ciasto jest wilgotne od jabłka i napoju, więc patyczek wychodzi lekko wilgotny — to w porządku, nie dopiekaj go na sucho.",
+      "Po wystudzeniu polej rozpuszczoną gorzką czekoladą."
+    ]
+  },
+  {
+    "id": "murzynek-chmurka",
+    "nazwa": "Murzynek chmurka (na pianie z białek)",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "bialko-jaja",
+        "ilosc": 250,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "budyn-waniliowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 3,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Białka ubij z cukrem na sztywną pianę — miska i mącitki muszą być suche i bez śladu tłuszczu, inaczej piana się nie ubije.",
+      "Czekoladę rozpuść i zostaw na chwilę, żeby przestygła. Gorąca ścięłaby pianę.",
+      "Wlej czekoladę do piany i wymieszaj delikatnie, ruchem z dołu do góry — tu nie miesza się energicznie, bo cała lekkość tego ciasta siedzi w pianie.",
+      "Wsyp proszek budyniowy i kakao, znów wymieszaj delikatnie do połączenia.",
+      "Przelej do formy i piecz w 170°C przez 30-35 minut góra-dół, do suchego patyczka.",
+      "Studź w piekarniku z uchylonymi drzwiczkami — przy gwałtownej zmianie temperatury ciasto na pianie opada."
+    ]
+  },
+  {
+    "id": "ciasto-marchewkowe-bananowe",
+    "nazwa": "Ciasto marchewkowe z bananem",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 8,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "banan",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "skyr-naturalny",
+        "ilosc": 125,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-owsiana",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cynamon",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Marchew zetrzyj na drobnych oczkach, daktyle posiekaj, czekoladę połam na kawałki.",
+      "Banany rozgnieć widelcem na papkę, wymieszaj z jajkami, skyrem i miodem.",
+      "Dodaj mąkę owsianą, proszek do pieczenia i cynamon, wymieszaj do połączenia.",
+      "Wmieszaj marchew, daktyle i czekoladę.",
+      "Przelej do formy wyłożonej papierem i piecz 40 minut w 180°C.",
+      "Wystudź w formie — ciepłe rozpada się przy krojeniu, bo trzyma się na bananie, a nie na maśle."
+    ]
+  },
+  {
+    "id": "philly-cheesesteak-wolowina",
+    "nazwa": "Philly cheesesteak z długo duszoną wołowiną",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "3 h duszenia",
+    "rodzaj": "kanapki",
+    "sprzet": [
+      "garnek",
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "wolowina-lopatka",
+        "ilosc": 700,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulka-pszenna",
+        "ilosc": 4,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pieczarki",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-cheddar",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 400,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 4,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Wołowinę pokrój na duże kawałki, osusz papierem i mocno posól. Obsmaż na rozgrzanym oleju z każdej strony na ciemnobrązowo — to nie jest krok do pominięcia, cały smak sosu bierze się z tego przypieczenia.",
+      "Zalej bulionem tak, żeby mięso było zanurzone do połowy, dopraw suszonym czosnkiem i wędzoną papryką. Przykryj i duś na najmniejszym ogniu albo w piekarniku w 150°C przez około 3 godziny, aż mięso rozpada się pod widelcem.",
+      "Mięso wyjmij i rozdrobnij dwoma widelcami. Sos z garnka odparuj, aż zgęstnieje, i wymieszaj z mięsem — ma być wilgotne, ale nie mokre, inaczej rozmoczy bułkę.",
+      "Cebulę pokrój w pióra, paprykę w paski, pieczarki w plastry. Smaż na mocnym ogniu, aż cebula się zeszkli, a z pieczarek odparuje woda.",
+      "Bułki przekrój wzdłuż, nie do końca. Nałóż mięso, na nie warzywa, przykryj plastrami cheddara.",
+      "Zapiekaj 5-7 minut w 200°C, aż ser się rozpuści, a brzegi bułki zrobią się chrupiące.",
+      "Oryginał robi się z cienko krojonego rostbefu smażonego w 3 minuty. Ta wersja jest dłuższa, ale wybacza więcej: łopatka po trzech godzinach jest miękka nawet wtedy, gdy rostbef wyszedłby łykowaty."
+    ]
+  },
+  {
+    "id": "nachos-z-wolowina-i-queso",
+    "nazwa": "Nachos z wołowiną, fasolą i sosem serowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "przekaski",
+    "sprzet": [
+      "patelnia",
+      "garnek",
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "przyprawa-taco",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "chipsy-tortilla",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 350,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "ser-cheddar",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jalapeno",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "awokado",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kolendra-swieza",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mięso mielone wrzuć na mocno rozgrzaną patelnię i smaż, rozbijając łopatką, aż straci surowy kolor i zacznie się rumienić. Dosyp przyprawę taco i smaż jeszcze minutę.",
+      "Fasolę odsącz, przepłucz i rozgnieć widelcem na gęstą pastę (w oryginale są gotowe refried beans, u nas robi to fasola z puszki). Wmieszaj do mięsa, podlej odrobiną wody, jeśli jest zbyt sucha.",
+      "Na sos serowy: w rondlu rozpuść masło, wsyp mąkę i mieszaj przez minutę. Stopniowo dolewaj mleko, cały czas mieszając trzepaczką, aż sos zgęstnieje.",
+      "Zdejmij sos z ognia i dopiero wtedy wsyp starty cheddar, mieszając do rozpuszczenia. Ser dodany na ogniu się zważy i sos zrobi się ziarnisty.",
+      "Na blachę wysyp chipsy, polej mięsem z fasolą i sosem serowym, rozłóż plastry jalapeño. Zapiekaj 8-10 minut w 190°C.",
+      "Na gorące nachos rozłóż pokrojoną cebulę, pomidory i awokado, dodaj kleks śmietany i posyp kolendrą. Zimne dodatki idą dopiero po pieczeniu, inaczej się rozgotują.",
+      "Bez sera: pomiń sos serowy i posyp całość płatkami drożdżowymi (2-3 łyżki) wymieszanymi z łyżką oliwy. Dają ten sam słony, serowy posmak i trzymają się chipsów — to działa tu lepiej niż jakikolwiek zamiennik sera w kostce."
+    ]
+  },
+  {
+    "id": "ramen-z-chrupiacym-kurczakiem",
+    "nazwa": "Ramen z chrupiącym kurczakiem i wywarem miso-gochujang",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "zupy",
+    "sprzet": [
+      "garnek",
+      "patelnia",
+      "piekarnik",
+      "blender"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 1200,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "mleko-owsiane",
+        "ilosc": 600,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "mleko-kokosowe-light",
+        "ilosc": 400,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-miso",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "gochujang",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo-orzechowe",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-trawa-cytrynowa",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "imbir",
+        "ilosc": 6,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-chili",
+        "ilosc": 6,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-kukurydziane",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 5,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-udon",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pak-choi",
+        "ilosc": 200,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Jajka ugotuj na półtwardo (6-7 minut), ostudź w zimnej wodzie i obierz. Jedno idzie do panierki, cztery na wierzch.",
+      "Cebulę i imbir pokrój w kostkę, czosnek w plasterki. Cebulę zeszklij na oliwie przez kilka minut.",
+      "Dodaj czosnek, imbir, miód, pastę miso, gochujang, pastę z trawy cytrynowej, masło orzechowe i płatki chili. Smaż 2-3 minuty, cały czas mieszając — miso i miód szybko się przypalają.",
+      "Przełóż wszystko do garnka, wlej bulion, mleczko kokosowe i napój owsiany. Gotuj na małym ogniu około 15 minut.",
+      "Kurczaka pokrój na cienkie płaty, dopraw solą, pieprzem, papryką i suszonym czosnkiem. Obtocz kolejno w mące, rozbełtanym jajku i pokruszonych płatkach kukurydzianych.",
+      "Ułóż na blasze, spryskaj oliwą i piecz w 200°C przez 15-18 minut. Panierka z płatków robi się chrupiąca bez smażenia w głębokim tłuszczu — ale nie przykrywaj jej niczym, bo odparuje i zmięknie.",
+      "Ugotuj makaron udon według opakowania. Pak choi zblanszuj przez minutę we wrzątku.",
+      "Wywar zmiksuj blenderem na gładko. Do miski nałóż makaron, pak choi, chrupiącego kurczaka i przepołowione jajko, zalej wywarem i posyp płatkami chili.",
+      "Kurczaka kładź na wierzch dopiero przy podawaniu — zanurzony w wywarze traci chrupkość w kilkadziesiąt sekund."
+    ]
+  },
+  {
+    "id": "burger-z-kurczakiem-w-platkach",
+    "nazwa": "Burger z kurczakiem w panierce z płatków kukurydzianych",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "kanapki",
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulka-burgerowa",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "platki-kukurydziane",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "keczup",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "musztarda",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "salata",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 6,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Pierś pokrój wzdłuż na cieńsze płaty i dopraw solą, pieprzem oraz wędzoną papryką.",
+      "Płatki kukurydziane pokrusz albo krótko zmiksuj — mają być grubym okruchem, nie mąką, bo cała chrupkość siedzi w nierównych kawałkach.",
+      "Mięso obtocz w rozbełtanym jajku, potem w płatkach. Ułóż na blasze, spryskaj oliwą.",
+      "Piecz 15 minut w 200°C góra-dół albo w airfryerze w 200°C przez 15 minut.",
+      "Sos: wymieszaj jogurt grecki, keczup, musztardę i miód (zamiast gotowej musztardy miodowej).",
+      "Pomidora i ogórki kiszone pokrój w plastry. Pozostałe jajka usmaż jako sadzone.",
+      "Bułki podpiecz na suchej patelni przecięciem do dołu — to nie jest ozdoba, podpieczona bułka nie rozmięka od sosu.",
+      "Składaj: sos, sałata, kurczak w panierce, pomidor, ogórek, jajko sadzone. Górę bułki posmaruj sosem i przykryj."
+    ]
+  },
+  {
+    "id": "shawarma-z-kurczaka-wrap",
+    "nazwa": "Shawarma z kurczaka w wrapie z surówką i sosem tahini",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "50 min pieczenia",
+    "rodzaj": "wrapy",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurczak-udziec",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki-0",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 6,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tortilla-pszenna",
+        "ilosc": 360,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kapusta-czerwona",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kapusta",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez-light",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "musztarda",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ocet-jablkowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tahini",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mięso pokrój w kostkę i wymieszaj w dużej misce ze 100 g jogurtu, oliwą, sokiem z połowy cytryny, koncentratem, papryką, kminem, suszonym czosnkiem, solą i pieprzem. Udziec i pierś razem to nie przypadek — sama pierś po 50 minutach pieczenia wysycha, tłuszcz z udźca trzyma całość soczystą.",
+      "Cebulę przekrój w poprzek (nie wzdłuż korzenia). Wbij w dolną połówkę dwie szpadki albo pałeczki, nadziewaj na nie mięso warstwami, a na górze zamknij drugą połówką cebuli.",
+      "Piecz w 180°C przez 45-50 minut, aż wierzch się zarumieni. Po upieczeniu ścinaj mięso z boków nożem, jak z prawdziwego rożna.",
+      "Surówka: marchew i obie kapusty zetrzyj na grubych oczkach, wymieszaj z majonezem light, musztardą i octem jabłkowym. Dopraw solą.",
+      "Sos: pozostałe 200 g jogurtu wymieszaj z tahini, sokiem z połowy cytryny i przeciśniętym czosnkiem na gładko.",
+      "Tortille podgrzej na suchej patelni. Nakładaj mięso, surówkę i sos, zawijaj."
+    ]
   }
 ]

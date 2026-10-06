@@ -51,6 +51,19 @@
     }
   },
   {
+    "id": "platki-kukurydziane",
+    "nazwa": "Płatki kukurydziane (niesłodzone)",
+    "makroNa100g": {
+      "kcal": 378,
+      "bialko": 7.5,
+      "tluszcz": 0.9,
+      "wegle": 84
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 40,
+    "grupaPreferencji": "Zboża i skrobia"
+  },
+  {
     "id": "mleko-owsiane",
     "nazwa": "Mleko owsiane",
     "makroNa100g": {
@@ -154,6 +167,23 @@
       "witaminaC": 0,
       "sod": 30
     }
+  },
+  {
+    "id": "napoj-migdalowy",
+    "nazwa": "Napój migdałowy niesłodzony",
+    "makroNa100g": {
+      "kcal": 15,
+      "bialko": 0.5,
+      "tluszcz": 1.2,
+      "wegle": 0.2
+    },
+    "tagiAlergenow": [
+      "orzechy"
+    ],
+    "porcjaTypowa": 200,
+    "kategoria": "mleko",
+    "grupaPreferencji": "Nabiał i zamienniki",
+    "rolaKulinarna": "mleko"
   },
   {
     "id": "wiorki-kokosowe",
@@ -498,6 +528,22 @@
       "sod": 79
     },
     "kategoria": "warzywo-cieple"
+  },
+  {
+    "id": "pak-choi",
+    "nazwa": "Pak choi",
+    "makroNa100g": {
+      "kcal": 13,
+      "bialko": 1.5,
+      "tluszcz": 0.2,
+      "wegle": 2.2
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 100,
+    "maksPorcja": 250,
+    "kategoria": "warzywo-cieple",
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo"
   },
   {
     "id": "feta",
@@ -849,6 +895,24 @@
       "witaminaC": 0,
       "sod": 66
     },
+    "wymagaGotowania": true,
+    "kategoria": "mieso-biale"
+  },
+  {
+    "id": "kurczak-udziec",
+    "nazwa": "Udziec z kurczaka bez skóry",
+    "makroNa100g": {
+      "kcal": 120,
+      "bialko": 19,
+      "tluszcz": 4.5,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "maksPorcja": 250,
+    "kategoria": "mieso-biale",
+    "grupaPreferencji": "Mięso i ryby",
+    "rolaKulinarna": "mieso",
     "wymagaGotowania": true
   },
   {
@@ -931,6 +995,24 @@
       "witaminaC": 0,
       "sod": 620
     }
+  },
+  {
+    "id": "ser-cheddar",
+    "nazwa": "Cheddar",
+    "makroNa100g": {
+      "kcal": 402,
+      "bialko": 25,
+      "tluszcz": 33,
+      "wegle": 1.3
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 30,
+    "kategoria": "ser-zolty-twardy",
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser"
   },
   {
     "id": "sos-pomidorowy",
@@ -1107,6 +1189,22 @@
       "witaminaC": 36.6,
       "sod": 18
     }
+  },
+  {
+    "id": "kapusta-czerwona",
+    "nazwa": "Kapusta czerwona",
+    "makroNa100g": {
+      "kcal": 31,
+      "bialko": 1.4,
+      "tluszcz": 0.2,
+      "wegle": 7.4
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 100,
+    "maksPorcja": 250,
+    "kategoria": "warzywo-cieple",
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo"
   },
   {
     "id": "pomidor",
@@ -1868,6 +1966,20 @@
     }
   },
   {
+    "id": "pasta-trawa-cytrynowa",
+    "nazwa": "Pasta z trawy cytrynowej",
+    "makroNa100g": {
+      "kcal": 60,
+      "bialko": 1,
+      "tluszcz": 1,
+      "wegle": 12
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 25,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "sos-sojowy",
     "nazwa": "Sos sojowy",
     "makroNa100g": {
@@ -1962,6 +2074,20 @@
       "witaminaC": 0,
       "sod": 5
     }
+  },
+  {
+    "id": "ocet-jablkowy",
+    "nazwa": "Ocet jabłkowy",
+    "makroNa100g": {
+      "kcal": 21,
+      "bialko": 0,
+      "tluszcz": 0,
+      "wegle": 0.9
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "gochugaru",
@@ -2368,6 +2494,21 @@
       "witaminaC": 0,
       "sod": 48
     }
+  },
+  {
+    "id": "bialko-jaja",
+    "nazwa": "Białko jaja",
+    "makroNa100g": {
+      "kcal": 52,
+      "bialko": 11,
+      "tluszcz": 0.2,
+      "wegle": 0.7
+    },
+    "tagiAlergenow": [
+      "jajka"
+    ],
+    "porcjaTypowa": 100,
+    "maksPorcja": 300
   },
   {
     "id": "jogurt-grecki",
@@ -3036,6 +3177,18 @@
     "kategoria": "smietana"
   },
   {
+    "id": "mleko-kokosowe-light",
+    "nazwa": "Mleczko kokosowe light (z puszki)",
+    "makroNa100g": {
+      "kcal": 73,
+      "bialko": 0.7,
+      "tluszcz": 7,
+      "wegle": 1.6
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 100
+  },
+  {
     "id": "pomidory-krojone",
     "nazwa": "Pomidory krojone z puszki",
     "makroNa100g": {
@@ -3526,6 +3679,42 @@
     "grupaPreferencji": "Zboża i skrobia",
     "rolaKulinarna": "pieczywo",
     "kategoria": "pieczywo"
+  },
+  {
+    "id": "bulka-pszenna",
+    "nazwa": "Bułka pszenna (długa, do zapiekania)",
+    "makroNa100g": {
+      "kcal": 280,
+      "bialko": 9,
+      "tluszcz": 3,
+      "wegle": 54
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 90,
+    "masaSztuki": 90,
+    "kategoria": "pieczywo",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo"
+  },
+  {
+    "id": "bulka-burgerowa",
+    "nazwa": "Bułka do burgera",
+    "makroNa100g": {
+      "kcal": 280,
+      "bialko": 9,
+      "tluszcz": 5,
+      "wegle": 50
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 55,
+    "masaSztuki": 55,
+    "kategoria": "pieczywo",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo"
   },
   {
     "id": "chleb-bezglutenowy",
@@ -4508,6 +4697,20 @@
     "kategoria": "orzechy-posypka"
   },
   {
+    "id": "platki-drozdzowe",
+    "nazwa": "Płatki drożdżowe (nieaktywne)",
+    "makroNa100g": {
+      "kcal": 350,
+      "bialko": 45,
+      "tluszcz": 5,
+      "wegle": 35
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "orzechy-wloskie",
     "nazwa": "Orzechy włoskie",
     "makroNa100g": {
@@ -5014,6 +5217,20 @@
     "rolaKulinarna": "przyprawa"
   },
   {
+    "id": "przyprawa-taco",
+    "nazwa": "Przyprawa taco",
+    "makroNa100g": {
+      "kcal": 280,
+      "bialko": 9,
+      "tluszcz": 5,
+      "wegle": 48
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "cebula-w-proszku",
     "nazwa": "Cebula w proszku",
     "makroNa100g": {
@@ -5039,6 +5256,20 @@
     "tagiAlergenow": [],
     "porcjaTypowa": 5,
     "maksPorcja": 20,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "platki-chili",
+    "nazwa": "Płatki chili",
+    "makroNa100g": {
+      "kcal": 280,
+      "bialko": 12,
+      "tluszcz": 14,
+      "wegle": 30
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 2,
+    "maksPorcja": 8,
     "rolaKulinarna": "przyprawa"
   },
   {
@@ -5290,6 +5521,20 @@
     "kategoria": "tortilla",
     "grupaPreferencji": "Zboża i skrobia",
     "rolaKulinarna": "tortilla"
+  },
+  {
+    "id": "chipsy-tortilla",
+    "nazwa": "Chipsy tortilla (nachos)",
+    "makroNa100g": {
+      "kcal": 490,
+      "bialko": 7,
+      "tluszcz": 24,
+      "wegle": 60
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 50,
+    "maksPorcja": 120,
+    "grupaPreferencji": "Zboża i skrobia"
   },
   {
     "id": "maslo-roslinne",
