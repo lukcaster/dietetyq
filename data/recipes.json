@@ -14756,5 +14756,1571 @@
       "Sos: pozostałe 200 g jogurtu wymieszaj z tahini, sokiem z połowy cytryny i przeciśniętym czosnkiem na gładko.",
       "Tortille podgrzej na suchej patelni. Nakładaj mięso, surówkę i sos, zawijaj."
     ]
+  },
+  {
+    "id": "owsianka-nocna-ze-skyrem-i-owocami",
+    "nazwa": "Owsianka nocna ze skyrem, truskawkami i borówkami",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "czasOczekiwania": "noc w lodówce",
+    "rodzaj": "owsianki",
+    "skladniki": [
+      {
+        "skladnikId": "skyr-waniliowy",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 70,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "truskawki",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-owsiane",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "borowki",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-laskowe",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "erytrytol",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Płatki wsyp do słoika albo pojemnika i zalej mlekiem.",
+      "Dodaj skyr i słodzik, wymieszaj dokładnie — płatki mają być całe w masie, bo to one napęcznieją przez noc.",
+      "Na wierzch wyłóż truskawki, borówki i posiekane orzechy laskowe. Owoce idą na górę, nie do środka: wymieszane przez noc puszczają sok i owsianka robi się wodnista.",
+      "Przykryj i wstaw do lodówki na noc. Rano wystarczy zamieszać.",
+      "Bez nabiału: pomiń skyr i zalej płatki napojem roślinnym — łącznie około 220 g płynu."
+    ]
+  },
+  {
+    "id": "pad-thai-z-kurczakiem",
+    "nazwa": "Pad thai z kurczakiem i makaronem ryżowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "makarony",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-kokosowe-light",
+        "ilosc": 100,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-ryzowy",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-sojowy",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-arachidowe",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Nastaw garnek z wodą na makaron.",
+      "Kurczaka i warzywa pokrój w kostkę, czosnek posiekaj.",
+      "Na mocno rozgrzaną patelnię wlej oliwę i smaż kurczaka 3 minuty, cały czas mieszając.",
+      "Dorzuć marchew, cebulę i czosnek, smaż jeszcze 2 minuty.",
+      "W tym czasie ugotuj makaron ryżowy według opakowania — zwykle wystarczy zalać go wrzątkiem na kilka minut.",
+      "Na patelnię wlej mleczko kokosowe i sos sojowy, dopraw pieprzem. Soli raczej nie dodawaj, sos sojowy jest już słony.",
+      "Dodaj odcedzony makaron i duś 2 minuty, aż sos go oblepi.",
+      "Przełóż na talerz, posyp orzeszkami i grubo posiekanym szczypiorkiem."
+    ]
+  },
+  {
+    "id": "risotto-z-ciecierzyca-i-parmezanem",
+    "nazwa": "Risotto z ciecierzycą i parmezanem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "jednogarnkowe",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ciecierzyca-konserwowa",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ryz-basmati",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Wodę podgrzej — ryż zalewany zimną wodą przestaje się smażyć i robi się kleisty zamiast kremowy.",
+      "Na patelni rozgrzej oliwę i zeszklij drobno posiekaną cebulę z czosnkiem przez 2 minuty.",
+      "Wsyp ryż i smaż minutę, mieszając, aż ziarna pokryją się tłuszczem i zrobią się szkliste.",
+      "Dolewaj ciepłą wodę po trochu, cały czas mieszając, i gotuj około 10 minut, aż ryż ją wchłonie.",
+      "Dopraw solą i pieprzem, wsyp odsączoną ciecierzycę i śmietanę, wymieszaj dokładnie.",
+      "Przełóż na talerz i posyp startym parmezanem.",
+      "Późną wiosną zamiast ciecierzycy sprawdzą się tu zielone albo białe szparagi."
+    ]
+  },
+  {
+    "id": "tost-z-jajkiem-sadzonym-i-feta",
+    "nazwa": "Tost z jajkiem sadzonym, fetą i szpinakiem",
+    "slot": [
+      "sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "kanapki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "chleb-pszenno-zytni-domowy",
+        "ilosc": 110,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "feta",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 1,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Dwie kromki chleba zgrilluj na patelni z oliwą, po dwie minuty z każdej strony, i przełóż na talerz.",
+      "Na tę samą patelnię pokrusz fetę i smaż 2 minuty, aż zacznie się przyklejać i brązowić.",
+      "Na podsmażoną fetę wbij jajka, posyp słodką papryką i smaż do ścięcia białek. Żółtka zostaw płynne — będą sosem do chleba.",
+      "Na kromkę wyłóż szpinak, na niego jajka z fetą, przykryj drugą kromką."
+    ]
+  },
+  {
+    "id": "spaghetti-z-indykiem-w-sosie-jajecznym",
+    "nazwa": "Spaghetti z indykiem w sosie jajeczno-serowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "makarony",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "indyk-piers",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-pszenny",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "feta",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Nastaw osoloną wodę na makaron.",
+      "Indyka pokrój w paski i smaż na oliwie 3 minuty, dodaj posiekany czosnek i smaż jeszcze minutę. Odstaw z ognia.",
+      "Pietruszkę grubo posiekaj. Do miski wbij jajko, dodaj pokruszoną fetę i połowę pietruszki, dopraw i rozmieszaj widelcem.",
+      "Ugotuj makaron według opakowania, odlewając przed odcedzeniem dwie łyżki wody.",
+      "Gorący makaron i indyka przełóż do miski z jajkiem, dolej tę odlaną wodę i energicznie mieszaj. To jest cały trik: sos ścina się od ciepła makaronu, nie na patelni — na ogniu jajko zrobiłoby się jajecznicą.",
+      "Przełóż na talerz i posyp resztą pietruszki."
+    ]
+  },
+  {
+    "id": "kurczak-z-papryka-i-pomidorami",
+    "nazwa": "Kurczak z papryką i pomidorami z ziemniakami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 12.5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 4,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Ziemniaki umyj i ugotuj w osolonej wodzie do miękkości.",
+      "Kurczaka pokrój w małe kawałki i podsmaż na połowie oliwy przez 2-3 minuty. Odłóż na bok — dosmaży się później w sosie.",
+      "Na tę samą patelnię wlej resztę oliwy i smaż paprykę pokrojoną w paski przez 2 minuty.",
+      "Dorzuć pomidory pokrojone w duże kawałki, dopraw kminem, słodką papryką, solą i pieprzem. Duś 3-4 minuty, aż pomidory się rozpadną i puszczą sok.",
+      "Wrzuć z powrotem kurczaka, dodaj szpinak i ugotowane ziemniaki — część możesz rozgnieść widelcem, żeby związały sos.",
+      "Wymieszaj i przełóż na talerz."
+    ]
+  },
+  {
+    "id": "bajgiel-z-pasta-fasolowa-i-jajkiem",
+    "nazwa": "Bajgiel z pastą z czerwonej fasoli i jajkiem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "kanapki",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "bajgiel",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 18,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-wloskie",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Do wrzącej, osolonej wody włóż jajka i gotuj 6 minut — białko będzie ścięte, a żółtko jeszcze kremowe.",
+      "Fasolę odsącz i przełóż do miski. Dodaj drobno posiekane orzechy i czosnek, dopraw solą i pieprzem. Zamiast fasoli równie dobrze zadziała ta sama ilość ciecierzycy.",
+      "Wlej śmietanę i oliwę, po czym energicznie rozgnieć wszystko widelcem na gęstą pastę.",
+      "Bajgla przekrój na pół i podpiecz na suchej patelni przecięciem do dołu (można pominąć).",
+      "Na dolną połówkę nałóż pastę i rukolę.",
+      "Jajka przelej zimną wodą, obierz, przekrój na pół i ułóż na rukoli. Przykryj górną połówką bajgla."
+    ]
+  },
+  {
+    "id": "kurczak-sezamowy-w-wrapie",
+    "nazwa": "Kurczak sezamowy w wrapie z sosem tahini",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "wrapy",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "wrap-orkiszowy-domowy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "skyr-naturalny",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 45,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tahini",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-arachidowe",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sezam",
+        "ilosc": 3,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kurczaka pokrój w paski i usmaż na oliwie. Pod koniec posyp sezamem i przesmaż jeszcze pół minuty, żeby się zarumienił. Odłóż na bok.",
+      "W miseczce wymieszaj skyr z sokiem z cytryny, tahini, solą i pieprzem.",
+      "Dosyp posiekane orzeszki i wymieszaj.",
+      "Marchew obierz i pokrój w cienkie słupki.",
+      "Na placek wyłóż połowę sosu, potem rukolę, kurczaka i marchew. Resztą sosu posmaruj wolny brzeg i zwiń ciasno.",
+      "Zwinięty wrap podgrzej na patelni po 2 minuty z każdej strony — zgrzany szew sam się skleja i nie rozwija się w ręce."
+    ]
+  },
+  {
+    "id": "salatka-z-kalafiora-i-baklazana",
+    "nazwa": "Sałatka z kalafiora, bakłażana i fety",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "15-30 min odsalania bakłażana",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "chleb-pszenno-zytni-domowy",
+        "ilosc": 110,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kalafior",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "baklazan",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 170,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "feta",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-wloskie",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kalafior podziel na różyczki i ugotuj w osolonej wodzie przez około 8 minut — ma być miękki, ale nie rozpadać się.",
+      "Bakłażana pokrój w krążki, posól i odstaw na 15-30 minut. Potem osusz papierem. Sól wyciąga z niego gorycz i wodę, więc po tym kroku grilluje się, a nie dusi we własnym soku.",
+      "Osuszone krążki zgrilluj na suchej patelni z obu stron.",
+      "W misce połącz oliwę, drobno posiekaną pietruszkę, orzechy i czosnek, dopraw solą i pieprzem.",
+      "Chleb pokrój w kostkę i podsusz na patelni na grzanki.",
+      "Do sosu dodaj kalafior, bakłażana, pokrojonego pomidora i grzanki, wymieszaj.",
+      "Przełóż na talerz i pokrusz fetę po wierzchu."
+    ]
+  },
+  {
+    "id": "croissant-z-omletem-i-twarozkiem",
+    "nazwa": "Croissant z omletem i twarożkiem rzodkiewkowym",
+    "slot": [
+      "sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "twarog-chudy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidorki-koktajlowe",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "croissant",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "rzodkiewka",
+        "ilosc": 45,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Rozgrzej patelnię z oliwą. Jajka roztrzep w misce i dopraw.",
+      "W osobnej miseczce rozgnieć twaróg ze startą rzodkiewką i przeciśniętym czosnkiem, dopraw solą i pieprzem.",
+      "Na patelnię wrzuć szpinak i przepołowione pomidorki, smaż 2 minuty, po czym zalej masą jajeczną i smaż po 2 minuty z każdej strony.",
+      "Croissanta przekrój wzdłuż, posmaruj twarożkiem i włóż do środka złożonego omleta.",
+      "Posyp szczypiorkiem."
+    ]
+  },
+  {
+    "id": "kopytka-z-indykiem-w-sosie-serowym",
+    "nazwa": "Kopytka z indykiem w sosie z sera pleśniowego",
+    "slot": [
+      "obiad"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "kluski",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kopytka",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "indyk-piers",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek-kiszony",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-plesniowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koperek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kopytka ugotuj według opakowania. Odlej szklankę wody z gotowania — przyda się do sosu.",
+      "Indyka pokrój w kostkę i smaż na oliwie 2 minuty.",
+      "Dodaj cebulę i czosnek w kostce, smaż kolejne 2 minuty.",
+      "Wlej śmietanę i wkrusz ser pleśniowy, dopraw solą i pieprzem. Gotuj, aż ser się rozpuści i sos zgęstnieje.",
+      "Dorzuć ugotowane kopytka i posiekany koperek, wymieszaj. Jeśli sos jest za gęsty, rozrzedź go wodą od kopytek — sama woda rozwodni smak, ta ze skrobią zwiąże sos.",
+      "Podawaj z ogórkami kiszonymi."
+    ]
+  },
+  {
+    "id": "pulpeciki-wolowe-w-sosie-z-ryzem",
+    "nazwa": "Pulpeciki wołowe w sosie pomidorowym z ryżem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "passata-pomidorowa",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ryz-basmati",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kolendra-swieza",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mięso dopraw solą i pieprzem, podziel na sześć części i uformuj pulpeciki.",
+      "Ugotuj je w osolonej wodzie przez 5 minut. Gotowane, a nie smażone, zostają miękkie i nie rozpadają się potem w sosie.",
+      "Równolegle ugotuj ryż według opakowania.",
+      "Na patelni zeszklij na oliwie posiekaną czerwoną cebulę z czosnkiem, wlej passatę i dodaj odsączoną fasolę.",
+      "Gotuj 3-4 minuty, po czym przełóż do sosu pulpeciki i delikatnie wymieszaj.",
+      "Ryż nałóż na talerz, na niego pulpeciki z sosem, posyp posiekaną kolendrą."
+    ]
+  },
+  {
+    "id": "jajka-na-jogurcie-z-kminem",
+    "nazwa": "Jajka na jogurcie czosnkowym z kminem i rzodkiewką",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "wrap-orkiszowy-domowy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "skyr-naturalny",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rzodkiewka",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kolendra-swieza",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-wloskie",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Jajka gotuj w osolonej wodzie 6 minut, potem od razu przelej zimną wodą.",
+      "W misce wymieszaj skyr z solą, pieprzem, kminem, sokiem z cytryny, oliwą i przeciśniętym czosnkiem.",
+      "Rozsmaruj sos na talerzu, robiąc z niego płytkie gniazdo.",
+      "Obierz jajka, przekrój na pół i ułóż w środku.",
+      "Posyp posiekaną kolendrą, orzechami i startą rzodkiewką.",
+      "Placek połóż obok — służy za sztućce."
+    ]
+  },
+  {
+    "id": "kotleciki-rybne-z-kalafiorem-curry",
+    "nazwa": "Kotleciki z mintaja z kalafiorem curry",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kalafior",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mintaj",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maka-zytnia",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koperek",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "curry-w-proszku",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Rybę zmiel albo drobno posiekaj. Mrożoną najpierw dobrze odsącz — nadmiar wody sprawi, że kotleciki rozpadną się na patelni.",
+      "Dopraw solą, pieprzem i sokiem z cytryny.",
+      "Wymieszaj z mąką, jajkiem i posiekanym koperkiem na masę, którą da się formować.",
+      "Kalafior podziel na różyczki i ugotuj 4-5 minut — ma zostać jędrny.",
+      "W misce połącz oliwę, curry i posiekany szczypiorek na sos.",
+      "Ugotowany kalafior wymieszaj z sosem, aż każdy kawałek się pokryje.",
+      "Kotleciki formuj mokrymi dłońmi i smaż na małym ogniu z odrobiną oliwy po 3-4 minuty z każdej strony."
+    ]
+  },
+  {
+    "id": "placuszki-owsiane-z-twarozkiem",
+    "nazwa": "Placuszki owsiane z twarożkiem malinowym",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "czasOczekiwania": "15 min pęcznienia płatków",
+    "rodzaj": "nalesniki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "serek-wiejski",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "truskawki",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-owsiane",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-waniliowa",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Płatki zalej wrzątkiem tak, żeby je przykrył (około 130 ml) i zostaw na co najmniej 15 minut.",
+      "Do napęczniałych płatków dodaj jajko i drobno pokrojone truskawki.",
+      "Połącz w jednolitą masę — widelcem albo krótko blenderem.",
+      "Nabieraj po łyżce i smaż na oliwie, aż na wierzchu pojawią się bąbelki, wtedy delikatnie przewróć.",
+      "W miseczce wymieszaj serek wiejski z rozgniecionymi widelcem malinami, miodem i wanilią.",
+      "Placuszki ułóż na talerzu i nałóż na nie twarożek."
+    ]
+  },
+  {
+    "id": "omlet-z-fasolka-i-twarozkiem",
+    "nazwa": "Omlet z fasolką, papryką i twarożkiem pomidorowym",
+    "slot": [
+      "sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "chleb-pszenno-zytni-domowy",
+        "ilosc": 55,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-szparagowa",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "twarog-chudy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rzodkiewka",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koperek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Fasolkę, paprykę i połowę pomidora pokrój w kostkę i przesmaż na oliwie przez 3 minuty.",
+      "W misce roztrzep jajka ze startą na drobnych oczkach rzodkiewką. Rzodkiewka traci w cieple ostrość, a zostawia chrupkość — omlet wychodzi inny niż zwykły.",
+      "Wlej masę na patelnię z warzywami i smaż po 2 minuty z każdej strony.",
+      "Twaróg rozgnieć z resztą pomidora pokrojonego drobno i koperkiem, dopraw solą i pieprzem.",
+      "Omlet przełóż na talerz i nałóż twarożek na wierzch. Podawaj z kromką chleba."
+    ]
+  },
+  {
+    "id": "pizza-na-patelni-z-kurczakiem",
+    "nazwa": "Pizza na patelni z kurczakiem i serem pleśniowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "wypieki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "passata-pomidorowa",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "spody-do-pizzy",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-plesniowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bazylia-swieza",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-wloskie",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kurczaka pokrój w cienkie paski, dopraw solą i pieprzem i obsmaż na patelni z odrobiną oliwy. Odłóż na bok.",
+      "W misce wymieszaj passatę z drobno posiekanymi orzechami, bazylią, startym czosnkiem i oliwą. Dopraw.",
+      "Spód połóż na suchej patelni i rozsmaruj na nim sos.",
+      "Rozłóż pokruszony ser i kurczaka.",
+      "Przykryj pokrywką i piecz na małym ogniu 5-8 minut. Pokrywka zatrzymuje parę, która topi ser — bez niej wierzch zostanie zimny, zanim spód się przypali."
+    ]
+  },
+  {
+    "id": "miska-z-cukinia-i-mozzarella",
+    "nazwa": "Miska z grillowaną cukinią, pomidorem i mozzarellą",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "salata",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukinia",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rzodkiewka",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 36,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koperek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "musztarda",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Cukinię pokrój w plastry i grilluj na suchej patelni na małym ogniu po 3 minuty z każdej strony.",
+      "Na dnie miski wymieszaj musztardę, sok z cytryny, miód, oliwę, sól i pieprz na gładki sos.",
+      "Wmieszaj posiekany koperek.",
+      "Dorzuć porwaną sałatę, pokrojonego pomidora, mozzarellę, rzodkiewkę i przestudzoną cukinię.",
+      "Wymieszaj dopiero przy podawaniu — sos z miodem szybko wyciąga wodę z sałaty."
+    ]
+  },
+  {
+    "id": "grzanki-z-hummusem-i-halloumi",
+    "nazwa": "Grzanki z hummusem, halloumi i jajkiem",
+    "slot": [
+      "sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "kanapki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "komponentId": "chleb-pszenno-zytni-domowy",
+        "ilosc": 110,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ciecierzyca-konserwowa",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "ser-smazeniowy",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tahini",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 1,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kromki chleba obsmaż na oliwie z obu stron.",
+      "Halloumi pokrój w kostkę i smaż na patelni 3 minuty, aż się zarumieni.",
+      "Na podsmażony ser wbij jajko, przykryj i duś 2-3 minuty, aż białko się zetnie.",
+      "Hummus: ciecierzycę przełóż do miski razem z odrobiną zalewy z puszki, dodaj posiekany czosnek, oliwę, sok z cytryny, sól, pieprz, kmin, tahini i paprykę.",
+      "Rozgnieć widelcem albo zblenduj na gładko. Zalewa z puszki jest tu po coś: to ona robi hummus kremowym zamiast suchym.",
+      "Posmaruj grzanki hummusem, na wierzch wyłóż jajko z halloumi i posyp szczypiorkiem."
+    ]
+  },
+  {
+    "id": "kaszotto-buraczane-z-kurczakiem",
+    "nazwa": "Kaszotto buraczane z kurczakiem i porem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "jednogarnkowe",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "burak",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kasza-jeczmienna",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "por",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kaszę ugotuj według opakowania. Nie wylewaj wody — 50 ml przyda się na koniec.",
+      "Kurczaka pokrój w kostkę i smaż na oliwie 3-4 minuty.",
+      "Dodaj cebulę w kostce, czosnek w plastrach i pora w półkrążkach, smaż kolejne 3 minuty.",
+      "Dorzuć ugotowanego buraka pokrojonego w kostkę i śmietanę, dopraw solą i pieprzem.",
+      "Wsyp kaszę i wlej odlaną wodę, wymieszaj. Skrobia z tej wody wiąże całość w kremowe kaszotto zamiast luźnej kaszy z dodatkami.",
+      "Przełóż na talerz."
+    ]
+  },
+  {
+    "id": "gulasz-z-indykiem-i-fasola",
+    "nazwa": "Gulasz z indykiem, porem i czerwoną fasolą",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "jednogarnkowe",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "indyk-piers",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "por",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "curry-w-proszku",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rozmaryn",
+        "ilosc": 1,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Indyka pokrój w kawałki i obsmaż w garnku na oliwie po 3 minuty z każdej strony.",
+      "Dorzuć pora w paskach, pokrojonego pomidora i odsączoną fasolę.",
+      "Dopraw curry, solą i pieprzem, wlej wodę i gotuj pod przykryciem 5 minut.",
+      "W tym czasie ugotowane albo podgotowane ziemniaki podsmaż na patelni z rozmarynem przez 3-4 minuty, aż złapią rumiane brzegi.",
+      "Gulasz nałóż na talerz, ziemniaki ułóż na wierzchu — rozmieszane w sosie od razu zmiękną i stracą sens."
+    ]
+  },
+  {
+    "id": "placuszki-z-tofu-i-burakiem",
+    "nazwa": "Placuszki z tofu wędzonym i burakiem, z sosem koperkowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "nalesniki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "burak",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-orkiszowa",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tofu-wedzone",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 80,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 20,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "koperek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Do miski wsyp mąkę, wlej mleko i wbij jajko, dopraw solą i pieprzem. Wymieszaj na gładką masę.",
+      "Zetrzyj na grubych oczkach tofu i ugotowanego buraka, wmieszaj do ciasta.",
+      "Rozgrzej patelnię z oliwą i smaż placuszki na małym ogniu po 2 minuty z każdej strony. Mały ogień jest tu istotny: burak szybko się przypala, a środek potrzebuje chwili.",
+      "Sos: wymieszaj jogurt z wodą, posiekanym koperkiem i przeciśniętym czosnkiem, dopraw.",
+      "Placuszki przełóż na talerz i polej sosem.",
+      "Buraki możesz kupić już ugotowane. Mąka może być też żytnia albo jaglana."
+    ]
+  },
+  {
+    "id": "pancakes-pelnoziarniste-z-jogurtem",
+    "nazwa": "Pancakes pełnoziarniste z jogurtem cytrynowym i kiwi",
+    "slot": [
+      "sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "nalesniki",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-pszenna-pelnoziarnista",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kiwi",
+        "ilosc": 75,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "W misce połącz mąkę, 200 g jogurtu, połowę miodu, proszek do pieczenia, jajko i szczyptę soli.",
+      "Wymieszaj energicznie na jednolitą masę i zostaw na chwilę — pełne ziarno musi napęcznieć, inaczej placki wyjdą piaskowe.",
+      "W osobnej miseczce wymieszaj resztę jogurtu z resztą miodu, startą skórką z cytryny i sokiem z jej połowy.",
+      "Smaż placki na suchej patelni po 2 minuty z każdej strony.",
+      "Przełóż na talerz, polej jogurtem cytrynowym i ułóż pokrojone kiwi."
+    ]
   }
 ]

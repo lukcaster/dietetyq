@@ -1039,6 +1039,21 @@
     }
   },
   {
+    "id": "passata-pomidorowa",
+    "nazwa": "Passata pomidorowa (przecier)",
+    "makroNa100g": {
+      "kcal": 35,
+      "bialko": 1.6,
+      "tluszcz": 0.2,
+      "wegle": 6.5
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 100,
+    "maksPorcja": 250,
+    "kategoria": "sos-tortilla",
+    "rolaKulinarna": "sos"
+  },
+  {
     "id": "keczup",
     "nazwa": "Keczup",
     "makroNa100g": {
@@ -1113,6 +1128,25 @@
       "sod": 6
     },
     "kategoria": "skrobia-obiadowa",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "kopytka",
+    "nazwa": "Kopytka ziemniaczane (gotowe)",
+    "makroNa100g": {
+      "kcal": 160,
+      "bialko": 3.5,
+      "tluszcz": 1.5,
+      "wegle": 33
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 200,
+    "maksPorcja": 350,
+    "kategoria": "skrobia-obiadowa",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "kluski",
     "wymagaGotowania": true
   },
   {
@@ -1675,6 +1709,23 @@
     "rolaKulinarna": "ser"
   },
   {
+    "id": "tofu-wedzone",
+    "nazwa": "Tofu wędzone",
+    "makroNa100g": {
+      "kcal": 140,
+      "bialko": 16,
+      "tluszcz": 8,
+      "wegle": 1.5
+    },
+    "tagiAlergenow": [
+      "soja"
+    ],
+    "porcjaTypowa": 100,
+    "maksPorcja": 200,
+    "grupaPreferencji": "Białko roślinne",
+    "rolaKulinarna": "ser"
+  },
+  {
     "id": "salata",
     "nazwa": "Sałata",
     "makroNa100g": {
@@ -1758,6 +1809,38 @@
       "witaminaC": 0,
       "sod": 0
     }
+  },
+  {
+    "id": "maka-zytnia",
+    "nazwa": "Mąka żytnia (typ 1850)",
+    "makroNa100g": {
+      "kcal": 329,
+      "bialko": 10,
+      "tluszcz": 1.7,
+      "wegle": 68
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 60,
+    "kategoria": "maka",
+    "grupaPreferencji": "Zboża i skrobia"
+  },
+  {
+    "id": "maka-orkiszowa",
+    "nazwa": "Mąka orkiszowa",
+    "makroNa100g": {
+      "kcal": 338,
+      "bialko": 14.6,
+      "tluszcz": 2.4,
+      "wegle": 70
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 60,
+    "kategoria": "maka",
+    "grupaPreferencji": "Zboża i skrobia"
   },
   {
     "id": "serek-wiejski",
@@ -3105,6 +3188,20 @@
     }
   },
   {
+    "id": "rozmaryn",
+    "nazwa": "Rozmaryn suszony",
+    "makroNa100g": {
+      "kcal": 331,
+      "bialko": 4.9,
+      "tluszcz": 15.2,
+      "wegle": 64
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 2,
+    "maksPorcja": 8,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "czosnek-granulowany",
     "nazwa": "Czosnek granulowany",
     "makroNa100g": {
@@ -3411,6 +3508,25 @@
     }
   },
   {
+    "id": "ser-plesniowy",
+    "nazwa": "Ser pleśniowy błękitny",
+    "makroNa100g": {
+      "kcal": 353,
+      "bialko": 21,
+      "tluszcz": 29,
+      "wegle": 2.3
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "kategoria": "ser-zolty-twardy",
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser"
+  },
+  {
     "id": "serek-topiony",
     "nazwa": "Serek topiony",
     "makroNa100g": {
@@ -3618,6 +3734,20 @@
     }
   },
   {
+    "id": "koperek",
+    "nazwa": "Koperek świeży",
+    "makroNa100g": {
+      "kcal": 43,
+      "bialko": 3.5,
+      "tluszcz": 1.1,
+      "wegle": 7
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "pita",
     "nazwa": "Pita / chlebek turecki",
     "makroNa100g": {
@@ -3679,6 +3809,44 @@
     "grupaPreferencji": "Zboża i skrobia",
     "rolaKulinarna": "pieczywo",
     "kategoria": "pieczywo"
+  },
+  {
+    "id": "bajgiel",
+    "nazwa": "Bajgiel",
+    "makroNa100g": {
+      "kcal": 275,
+      "bialko": 10.5,
+      "tluszcz": 1.7,
+      "wegle": 53
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 80,
+    "masaSztuki": 80,
+    "kategoria": "pieczywo",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo"
+  },
+  {
+    "id": "croissant",
+    "nazwa": "Croissant maślany",
+    "makroNa100g": {
+      "kcal": 406,
+      "bialko": 8.2,
+      "tluszcz": 21,
+      "wegle": 45.8
+    },
+    "tagiAlergenow": [
+      "gluten",
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 50,
+    "masaSztuki": 50,
+    "kategoria": "pieczywo",
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo"
   },
   {
     "id": "bulka-pszenna",
@@ -4697,6 +4865,24 @@
     "kategoria": "orzechy-posypka"
   },
   {
+    "id": "orzechy-arachidowe",
+    "nazwa": "Orzeszki ziemne (arachidowe)",
+    "makroNa100g": {
+      "kcal": 567,
+      "bialko": 25.8,
+      "tluszcz": 49.2,
+      "wegle": 16.1
+    },
+    "tagiAlergenow": [
+      "orzechy"
+    ],
+    "porcjaTypowa": 20,
+    "maksPorcja": 50,
+    "kategoria": "orzechy-posypka",
+    "grupaPreferencji": "Orzechy i nasiona",
+    "rolaKulinarna": "posypka"
+  },
+  {
     "id": "platki-drozdzowe",
     "nazwa": "Płatki drożdżowe (nieaktywne)",
     "makroNa100g": {
@@ -5521,6 +5707,21 @@
     "kategoria": "tortilla",
     "grupaPreferencji": "Zboża i skrobia",
     "rolaKulinarna": "tortilla"
+  },
+  {
+    "id": "spody-do-pizzy",
+    "nazwa": "Spody do pizzy (gotowe)",
+    "makroNa100g": {
+      "kcal": 280,
+      "bialko": 8.5,
+      "tluszcz": 3,
+      "wegle": 54
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 140,
+    "grupaPreferencji": "Zboża i skrobia"
   },
   {
     "id": "chipsy-tortilla",

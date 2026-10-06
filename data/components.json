@@ -343,5 +343,86 @@
       "Przykryj miską albo ściereczką i odstaw na 30 minut. Bez tego odpoczynku ciasto będzie się cofać przy wałkowaniu.",
       "Podziel na części i rozwałkuj każdą bardzo cienko, na placek wielkości patelni — grubość jak u tortilli, nie jak u pieroga."
     ]
+  },
+  {
+    "id": "chleb-pszenno-zytni-domowy",
+    "nazwa": "Domowy chleb pszenno-żytni",
+    "iloscWynikowa": 553,
+    "jednostkaWynikowa": "g",
+    "masaSztuki": 55,
+    "porcjaTypowa": 110,
+    "skladniki": [
+      {
+        "skladnikId": "woda",
+        "ilosc": 225,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "maka-pszenna-pelnoziarnista",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-zytnia",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 18,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "drozdze-piekarskie",
+        "ilosc": 7.5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 2.5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Woda musi być letnia — gorąca zabije drożdże, zimna ich nie obudzi.",
+      "W misce wymieszaj wodę, oliwę, drożdże, cukier i łyżeczkę soli. Odstaw na chwilę, aż drożdże zaczną pracować.",
+      "Dosyp obie mąki i mieszaj, aż powstanie jednolite, dość luźne ciasto. Tego chleba się nie wyrabia — ma zostać kleiste.",
+      "Przełóż do keksówki wysmarowanej oliwą, przykryj ściereczką i zostaw w cieple na 10 minut.",
+      "Wstaw do piekarnika nagrzanego do 40°C na 5 minut (termoobieg lepszy niż góra-dół) — to krótkie, ciepłe wyrastanie zastępuje godzinę na blacie.",
+      "Podnieś temperaturę do 220°C i piecz 15 minut. Potem wyjmij chleb z formy, włóż go z powrotem na blachę i trzymaj jeszcze 5 minut — skórka po bokach dzięki temu też się zarumieni.",
+      "Wystudź na kratce przed krojeniem. Bochenek dzieli się na 10 porcji."
+    ]
+  },
+  {
+    "id": "wrap-orkiszowy-domowy",
+    "nazwa": "Domowy wrap orkiszowy",
+    "iloscWynikowa": 405,
+    "jednostkaWynikowa": "g",
+    "masaSztuki": 100,
+    "porcjaTypowa": 100,
+    "skladniki": [
+      {
+        "skladnikId": "maka-orkiszowa",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "woda",
+        "ilosc": 110,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 45,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Wymieszaj mąkę z łyżeczką soli, stopniowo dolewaj ciepłą wodę.",
+      "Gdy masa się zlepi, dodaj oliwę i wyrabiaj 5-7 minut, aż ciasto będzie gładkie i sprężyste.",
+      "Podziel na cztery kulki i rozwałkuj placki o średnicy 15-20 cm.",
+      "Smaż na suchej, rozgrzanej patelni po około 2 minuty z każdej strony, aż pojawią się rumiane bąble.",
+      "Gotowe placki trzymaj pod ściereczką — para je zmiękcza i nie pękają przy zwijaniu."
+    ]
   }
 ]
