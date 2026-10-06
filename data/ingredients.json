@@ -5260,6 +5260,59 @@
     "porcjaTypowa": 80,
     "maksPorcja": 150,
     "grupaPreferencji": "Mięso i ryby",
+    "rolaKulinarna": "wedlina",
+    "kategoria": "kielbasa-sniadaniowa"
+  },
+  {
+    "id": "parowki",
+    "nazwa": "Parówki",
+    "makroNa100g": {
+      "kcal": 240,
+      "bialko": 11,
+      "tluszcz": 21,
+      "wegle": 2
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 100,
+    "maksPorcja": 200,
+    "masaSztuki": 50,
+    "kategoria": "kielbasa-sniadaniowa",
+    "grupaPreferencji": "Mięso i wędliny",
+    "rolaKulinarna": "wedlina",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "kielbaski-sniadaniowe",
+    "nazwa": "Kiełbaski śniadaniowe",
+    "makroNa100g": {
+      "kcal": 265,
+      "bialko": 14,
+      "tluszcz": 23,
+      "wegle": 1
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 120,
+    "maksPorcja": 220,
+    "masaSztuki": 30,
+    "kategoria": "kielbasa-sniadaniowa",
+    "grupaPreferencji": "Mięso i wędliny",
+    "rolaKulinarna": "wedlina",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "kabanosy",
+    "nazwa": "Kabanosy",
+    "makroNa100g": {
+      "kcal": 400,
+      "bialko": 30,
+      "tluszcz": 31,
+      "wegle": 1
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 40,
+    "maksPorcja": 80,
+    "kategoria": "kielbasa-sniadaniowa",
+    "grupaPreferencji": "Mięso i wędliny",
     "rolaKulinarna": "wedlina"
   },
   {

@@ -1,5 +1,46 @@
 # TODO — do zrobienia w następnej sesji
 
+## 35. Dzielenie diety z drugą osobą — DO DECYZJI, nic nie zrobione
+Zgłoszenie: „jak ktoś chce dla 2 robić dietę, to może jakoś podzielić się? wyślemy link z tą dietą?".
+
+**Dziś to niemożliwe i nie chodzi o trudność, tylko o brak serwera z danymi.** Cały stan siedzi
+w `localStorage` przeglądarki (profil, plan, odhaczone posiłki, waga) — nie ma kont, haseł ani
+bazy. Link nie ma czego wskazać. `liczbaOsob` w profilu mnoży tylko gramatury na liście zakupów;
+to jest „gotuję dla dwojga", a nie „dwie osoby mają wspólny plan".
+
+Trzy drogi, bardzo różne kosztem:
+
+1. **Plan w adresie URL.** Serializujemy plan, kompresujemy i pakujemy do fragmentu linku.
+   Bez serwera i bez konta. Minusy: link na kilka kB, to kopia jednorazowa, druga osoba odhacza
+   u siebie i nic się nie synchronizuje. Pół dnia roboty, zero kosztów stałych.
+2. **Krótki link przez magazyn planów.** Minimalna baza (Postgres na Renderze albo Supabase),
+   plan dostaje id, link wygląda jak `/plan/a3f9`. Nadal kopia, ale normalny link i da się go
+   wysłać SMS-em. 1-2 dni roboty plus hosting bazy.
+3. **Wspólny plan na żywo.** Dwie osoby widzą ten sam plan, każda odhacza swoje posiłki.
+   Wymaga kont i logowania — czyli dokładnie tego, czego ta apka świadomie nie miała mieć
+   („bez konta i bez hasła" jest napisane w ankiecie powitalnej). Kilka dni i zmiana charakteru
+   produktu.
+
+Fundament pod 2 i 3 jest: dostęp do danych przechodzi przez jedną warstwę (`lib/magazyn.ts`)
+właśnie po to, żeby dało się podmienić localStorage na serwer. Ale to decyzja produktowa,
+nie refaktor — przy wariancie 3 trzeba najpierw rozstrzygnąć, czy apka ma mieć konta.
+
+## 34. Śniadania na parówkach i kiełbaskach — ZROBIONE
+Trzy proste śniadania: parówki z jajkiem sadzonym i pomidorem, kiełbaski śniadaniowe z papryką
+i ogórkiem, talerz z kabanosami i serem (ten bez gotowania). Nowe składniki: `parowki`,
+`kielbaski-sniadaniowe`, `kabanosy` — razem z istniejącą `kielbasa` tworzą kategorię zamienników
+`kielbasa-sniadaniowa`.
+
+Pieczywo we wszystkich trzech jest `GrupaWyboru` na kategorii `pieczywo`, nie sztywnym chlebem:
+w tych daniach chleb jest dodatkiem, więc niech się zmienia razem z tym, co user ma i lubi.
+Sprawdzone, że przy „bez glutenu" schodzi na chleb bezglutenowy.
+
+Czego to NIE robi: user prosił, żeby warzywo „się losowało". GrupaWyboru tego nie daje —
+podmienia dopiero wtedy, gdy domyślny składnik odpada przez restrykcję albo listę nielubianych.
+Różnorodność bierze się stąd, że to trzy osobne przepisy z trzema różnymi warzywami. Gdyby
+miało naprawdę losować, trzeba by albo gniazda jak w szablonach gotowców, albo losowania
+w `GrupaWyboru` — to drugie zmieniłoby zachowanie wszystkich przepisów w bazie.
+
 ## 32. Ciasta w kreatorze i widoczny kalkulator proporcji — ZROBIONE
 Dwa zgłoszenia do kreatora własnego posiłku.
 

@@ -16327,5 +16327,175 @@
       "Smaż placki na suchej patelni po 2 minuty z każdej strony.",
       "Przełóż na talerz, polej jogurtem cytrynowym i ułóż pokrojone kiwi."
     ]
+  },
+  {
+    "id": "parowki-z-jajkiem-i-pomidorem",
+    "nazwa": "Parówki z jajkiem sadzonym, pomidorem i pieczywem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "jajka",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "parowki",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "nazwaGrupy": "pieczywo",
+        "ilosc": 60,
+        "jednostka": "g",
+        "kategoria": "pieczywo",
+        "domyslnaSkladnikId": "chleb-zytni-razowy"
+      },
+      {
+        "skladnikId": "keczup",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Parówki natnij wzdłuż na krzyż z obu końców i wrzuć na rozgrzaną patelnię z odrobiną oleju. Nacięcia rozchylają się przy smażeniu, więc złapią kolor na większej powierzchni — gotowane w wodzie zostają blade i gumowate.",
+      "Smaż 3-4 minuty, obracając, aż się zarumienią. Przesuń na brzeg patelni.",
+      "Na wolne miejsce wbij jajka i smaż do ścięcia białek. Żółtka zostaw płynne.",
+      "Pomidora pokrój w plastry i dopraw solą.",
+      "Wyłóż wszystko na talerz, posyp szczypiorkiem, dodaj keczup i pieczywo."
+    ]
+  },
+  {
+    "id": "kielbaski-sniadaniowe-z-papryka",
+    "nazwa": "Kiełbaski śniadaniowe z papryką i ogórkiem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kielbaski-sniadaniowe",
+        "ilosc": 4,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "nazwaGrupy": "pieczywo",
+        "ilosc": 60,
+        "jednostka": "g",
+        "kategoria": "pieczywo",
+        "domyslnaSkladnikId": "chleb-zytni-razowy"
+      },
+      {
+        "skladnikId": "keczup",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kiełbaski wrzuć na rozgrzaną patelnię z odrobiną oleju i smaż na średnim ogniu 5-6 minut, obracając co chwilę.",
+      "Gdy zaczną się rumienić, dorzuć paprykę pokrojoną w szerokie paski i smaż jeszcze 2-3 minuty — ma zmięknąć, ale zostać chrupiąca.",
+      "Ogórka pokrój w plastry na zimno, do chrupania obok.",
+      "Podawaj z pieczywem i keczupem."
+    ]
+  },
+  {
+    "id": "talerz-sniadaniowy-z-kabanosami",
+    "nazwa": "Talerz śniadaniowy z kabanosami, serem i warzywami",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "kanapki",
+    "skladniki": [
+      {
+        "skladnikId": "kabanosy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidorki-koktajlowe",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "nazwaGrupy": "pieczywo",
+        "ilosc": 80,
+        "jednostka": "g",
+        "kategoria": "pieczywo",
+        "domyslnaSkladnikId": "chleb-zytni-razowy"
+      },
+      {
+        "skladnikId": "keczup",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kabanosy pokrój ukośnie w grube plastry, ser w słupki.",
+      "Pomidorki przekrój na pół, ogórka pokrój w plastry.",
+      "Rozłóż wszystko na desce albo talerzu, keczup daj w miseczce obok.",
+      "Nic się tu nie smaży — to jest talerz na te poranki, w które nie ma czasu na patelnię."
+    ]
   }
 ]
