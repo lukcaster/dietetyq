@@ -695,6 +695,23 @@
     "rolaKulinarna": "baza-kremowa"
   },
   {
+    "id": "jogurt-sojowy-gesty",
+    "nazwa": "Jogurt sojowy gęsty (typu skyr)",
+    "makroNa100g": {
+      "kcal": 70,
+      "bialko": 10,
+      "tluszcz": 2.8,
+      "wegle": 2
+    },
+    "tagiAlergenow": [
+      "soja"
+    ],
+    "porcjaTypowa": 150,
+    "kategoria": "baza-bialkowa-kremowa",
+    "grupaPreferencji": "Nabiał i zamienniki",
+    "rolaKulinarna": "baza-kremowa"
+  },
+  {
     "id": "skyr-naturalny",
     "nazwa": "Skyr naturalny",
     "makroNa100g": {
