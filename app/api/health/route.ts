@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 
 /**
- * Najtańszy możliwy endpoint — nie dotyka `data/*.json` ani silnika. Służy do budzenia
- * darmowej instancji na Renderze (patrz .github/workflows/keep-alive.yml): serwis usypia
- * po ~15 min bez ruchu, a zimny start trwa do minuty.
+ * Najtańszy możliwy endpoint — nie dotyka `data/*.json` ani silnika. Mówi tylko tyle, że
+ * instancja odpowiada.
  *
- * `force-dynamic`, bo odpowiedź zbudowana w czasie buildu nie byłaby żadnym pingiem —
- * Render mógłby oddać ją z cache'u, nie budząc aplikacji.
+ * Nic go cyklicznie nie wywołuje i to jest celowe: keep-alive, który trzymał darmowy serwis
+ * non stop, zjadał ~730 z 750 godzin miesięcznego limitu Rendera (patrz README). Serwis usypia
+ * po ~15 min bez ruchu i tak zostaje — pierwsze wejście po przerwie trwa do minuty.
+ *
+ * `force-dynamic`, bo odpowiedź zbudowana w czasie buildu nie powiedziałaby nic o tym,
+ * czy aplikacja faktycznie wstała.
  */
 export const dynamic = "force-dynamic";
 

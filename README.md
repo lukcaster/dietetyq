@@ -20,15 +20,31 @@ Konfiguracja jest w [render.yaml](render.yaml): build `npm ci && npm run build`,
 
 Każdy push na `main` robi nowy deploy. Darmowy serwis usypia się po ~15 min bez ruchu — pierwsze wejście po przerwie ładuje się do minuty.
 
-### Utrzymywanie serwisu przy życiu (keep-alive)
+### Dlaczego nie ma keep-alive
 
-Darmowa instancja usypia po ~15 min bez ruchu, więc aplikacja **pinguje samą siebie**: [`instrumentation.ts`](instrumentation.ts) co 10 minut strzela do `/api/health`. Zmienną `RENDER_EXTERNAL_URL` wstrzykuje sam Render — lokalnie jej nie ma, więc na Twojej maszynie nic nie pinguje. W logach Rendera zobaczysz `[KeepAlive] aktywny → ...` przy starcie i `[KeepAlive] ping OK (200)` co dziesięć minut.
+Instancja usypia i **tak zostaje**. Przez jakiś czas apka pingowała samą siebie co 10 minut
+(`instrumentation.ts`), a awaryjnie budził ją workflow GitHuba co 30 minut. Oba zostały usunięte,
+bo lek był gorszy od choroby.
 
-[`.github/workflows/keep-alive.yml`](.github/workflows/keep-alive.yml) został w roli **awaryjnej**: budzi instancję, która już zasnęła (śpiący proces nie wykona własnego `setInterval`).
+Render daje **750 godzin instancji na miesiąc na cały workspace**, nie na usługę — a miesiąc ma
+720-744 godziny. Rachunek wychodzi tak:
 
-Czego nauczyło nas pierwsze podejście:
+| Co pinguje              | Ile instancja czuwa | Przy dwóch apkach |
+| ----------------------- | ------------------- | ----------------- |
+| nic (usypia po 15 min)  | tyle, ile ktoś używa | spokojnie w limicie |
+| workflow co 30 min      | ~50% miesiąca, ~360 h | ~720 h, na styk     |
+| ping z apki co 10 min   | non stop, ~730 h      | ~1460 h, 2x limit   |
 
-- **GitHub Actions nie nadaje się na keep-alive co 10 minut.** Przy cronie ustawionym na `*/10` zmierzone odstępy między uruchomieniami wyniosły **140, 167, 179 i 308 minut** — GitHub dławi częste harmonogramy i pomija uruchomienia. Dlatego główny ping siedzi w aplikacji, a workflow chodzi rzadko i tylko jako ratunek.
-- **Ciągłe budzenie zjada darmowe godziny instancji.** Render daje 750 h/miesiąc na konto, a serwis działający non stop bierze ~720. Na tę jedną aplikację wystarczy, na drugą darmową już nie.
-- GitHub wyłącza zaplanowane workflow w repo bez aktywności przez 60 dni.
-- `KEEPALIVE_MS` skraca interwał — wyłącznie po to, żeby dało się sprawdzić działanie bez czekania 10 minut.
+Po wyczerpaniu puli Render **zawiesza wszystkie darmowe usługi do końca miesiąca**. Czyli ping
+kupował brak minutowego zimnego startu za cenę tygodnia niedziałającej apki — zła wymiana.
+
+Dwie rzeczy warte zapamiętania, gdyby temat wrócił:
+
+- **Limit godzin jest na workspace, nie na usługę.** Druga darmowa apka dzieli tę samą pulę.
+- **GitHub Actions nie nadaje się na keep-alive co 10 minut** i nigdy się nie nadawał. Przy cronie
+  `*/10` zmierzone odstępy między uruchomieniami wyniosły **140, 167, 179 i 308 minut** — GitHub
+  dławi częste harmonogramy. Dodatkowo wyłącza zaplanowane workflow w repo bez aktywności przez
+  60 dni.
+
+[`/api/health`](app/api/health/route.ts) zostaje — jest tani i przydaje się do sprawdzenia, czy
+instancja żyje.
