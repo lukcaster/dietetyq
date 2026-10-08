@@ -20,6 +20,13 @@ body {
   color: var(--text);
   font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
+  /*
+   * `dvh` po `vh` celowo — to nie duplikat. Na iOS `100vh` to wysokość okna z SCHOWANYM dolnym
+   * paskiem Safari, więc strona jest zawsze wyższa niż widać i dół ucieka pod pasek przeglądarki.
+   * `dvh` liczy to, co faktycznie widać. Przeglądarki bez `dvh` zignorują tę linię i zostaną
+   * przy `vh`.
+   */
+  min-height: 100dvh;
 }
 
 body {
@@ -29,11 +36,15 @@ body {
   background-attachment: fixed;
 }
 
-/* Dolny padding musi zmieścić pasek nawigacji — na wąskim ekranie łamie się na dwa rzędy. */
+/*
+ * Dolny padding musi zmieścić pasek nawigacji — na wąskim ekranie łamie się na dwa rzędy.
+ * Na iPhonie dochodzi do tego pasek domowy: bez `safe-area-inset-bottom` ostatni element
+ * widoku zostaje pod nim i nie da się go dotknąć.
+ */
 .wrapper {
   max-width: 720px;
   margin: 0 auto;
-  padding: 32px 20px 150px;
+  padding: 32px 20px calc(150px + env(safe-area-inset-bottom, 0px));
 }
 
 .tytul {
@@ -190,7 +201,13 @@ body {
   max-width: 720px;
   margin: 0 auto;
   gap: 12px;
-  padding: 16px 20px;
+  /*
+   * Dolny padding doliczany, nie stały: na iPhonie z paskiem domowym (`viewport-fit=cover`
+   * w app/layout.tsx wpuszcza treść pod niego) `bottom: 0` to fizyczna krawędź ekranu, więc
+   * bez tego „✓ Biorę ten plan" leżał częściowo pod paskiem domowym i nie łapał dotknięcia.
+   * Na desktopie `env()` daje 0 i nic się nie zmienia.
+   */
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
   background: rgba(8, 8, 16, 0.88);
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -1028,6 +1045,21 @@ textarea.kreator-input {
   margin-top: 16px;
 }
 
+/* Żółte, nie czerwone: apka DZIAŁA, tylko nic nie zapamięta. To ostrzeżenie, nie awaria. */
+.ostrzezenie-zapisu {
+  color: #ffd98a;
+  background: rgba(255, 217, 138, 0.1);
+  border: 1px solid rgba(255, 217, 138, 0.35);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.ostrzezenie-zapisu strong {
+  color: var(--text);
+}
+
 @media print {
   .nie-do-druku,
   .krok-licznik,
@@ -1220,7 +1252,9 @@ textarea.kreator-input {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 24px 16px;
+  /* Jak w .wrapper: dół modala musi zmieścić pasek domowy iPhone'a, inaczej ostatni przycisk
+     listy przepisów zostaje pod nim. */
+  padding: 24px 16px calc(24px + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
 }
 

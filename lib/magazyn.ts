@@ -80,12 +80,66 @@ function czytaj<T>(klucz: string): T | null {
   }
 }
 
-function zapisz(klucz: string, wartosc: unknown): void {
-  if (typeof window === "undefined") return;
+/**
+ * Dlaczego zapis nie przeszedł. Istnieje, bo „trudno, apka działa dalej" było złą odpowiedzią:
+ * na iPhonie zapis potrafi nie przejść, a user widział plan na ekranie i dowiadywał się o tym
+ * dopiero po odświeżeniu, gdy plan znikał bez słowa.
+ */
+export type BladZapisu = "zablokowany" | "brak-miejsca";
+
+export const KOMUNIKAT_ZAPISU: Record<BladZapisu, string> = {
+  zablokowany:
+    "Przeglądarka nie pozwala nic zapisać, więc plan zniknie po odświeżeniu. Na iPhonie robi to " +
+    "najczęściej tryb prywatny albo Ustawienia → Safari → „Blokuj wszystkie ciasteczka”.",
+  "brak-miejsca":
+    "W pamięci przeglądarki nie ma miejsca na plan. Usuń stary plan albo wyczyść dane tej strony.",
+};
+
+/** Czy przeglądarka przyjmie i oddaje z powrotem jeden bajt. */
+function zapisDziala(): boolean {
+  const probny = "dietetyq:proba-zapisu";
   try {
-    window.localStorage.setItem(klucz, JSON.stringify(wartosc));
+    window.localStorage.setItem(probny, "1");
+    const przeszlo = window.localStorage.getItem(probny) === "1";
+    window.localStorage.removeItem(probny);
+    return przeszlo;
   } catch {
-    // Brak miejsca albo zablokowane dane stron — trudno, apka ma działać dalej.
+    return false;
+  }
+}
+
+/**
+ * Czy to brak miejsca, czy zapis zablokowany w ogóle. Rozstrzyga próba zapisania jednego bajtu:
+ * jeśli przechodzi, to pisać wolno i realnie zabrakło miejsca; jeśli nie — przeglądarka nie
+ * pozwala pisać niczego. Rozróżnienie ma znaczenie, bo iOS Safari w obu przypadkach rzuca
+ * `QuotaExceededError`, a rady dla usera są zupełnie inne.
+ */
+function rozpoznajBlad(): BladZapisu {
+  return zapisDziala() ? "brak-miejsca" : "zablokowany";
+}
+
+/** Powód ostatniego nieudanego zapisu — widoki czytają to przez `magazyn.bladZapisu()`. */
+let ostatniBlad: BladZapisu | null = null;
+
+function zapisz(klucz: string, wartosc: unknown): boolean {
+  if (typeof window === "undefined") return false;
+  const surowe = JSON.stringify(wartosc);
+  try {
+    window.localStorage.setItem(klucz, surowe);
+    /*
+     * Odczyt kontrolny, nie paranoja: iOS Safari przy zablokowanych danych stron potrafi
+     * przyjąć `setItem` bez rzucenia wyjątku i nie zapisać nic. Sam brak wyjątku nie jest
+     * więc dowodem, że dane leżą w pamięci — dowodem jest dopiero to, że dają się odczytać.
+     */
+    if (window.localStorage.getItem(klucz) !== surowe) {
+      ostatniBlad = "zablokowany";
+      return false;
+    }
+    ostatniBlad = null;
+    return true;
+  } catch {
+    ostatniBlad = rozpoznajBlad();
+    return false;
   }
 }
 
@@ -103,7 +157,20 @@ export const magazyn = {
   zapiszProfil: (profil: Profil) => zapisz(KLUCZ.profil, profil),
 
   wczytajPlan: () => czytaj<WygenerowanyPlan>(KLUCZ.plan),
+  /** `false` = plan został TYLKO w pamięci karty i zniknie po odświeżeniu. Patrz `bladZapisu()`. */
   zapiszPlan: (plan: WygenerowanyPlan) => zapisz(KLUCZ.plan, plan),
+
+  /** Powód ostatniego nieudanego zapisu albo `null`, gdy ostatni zapis się udał. */
+  bladZapisu: () => ostatniBlad,
+
+  /**
+   * Czy przeglądarka w ogóle pozwala pisać. Wołane raz przy starcie, żeby ostrzec usera
+   * ZAWCZASU, a nie dopiero wtedy, gdy stracił dwie minuty na układanie planu.
+   */
+  czyMoznaZapisywac: (): boolean => {
+    if (typeof window === "undefined") return true;
+    return zapisDziala();
+  },
   usunPlan: () => {
     usun(KLUCZ.plan);
     usun(KLUCZ.postep);

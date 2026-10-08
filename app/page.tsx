@@ -14,7 +14,7 @@ import { zbudujListeZakupow } from "@/lib/engine/lista-zakupow";
 import type { DzienWPlanie, PosilekWPlanie, WygenerowanyPlan } from "@/lib/engine/planner";
 import type { DaneAntropometryczne } from "@/lib/engine/cele";
 import { celeSlotowDla } from "@/lib/engine/cele";
-import { NAZWY_SLOTOW, magazyn, slotyProfilu, type Profil } from "@/lib/magazyn";
+import { KOMUNIKAT_ZAPISU, NAZWY_SLOTOW, magazyn, slotyProfilu, type Profil } from "@/lib/magazyn";
 
 /**
  * Szkielet aplikacji.
@@ -95,6 +95,11 @@ export default function Home() {
   const [listaDla, setListaDla] = useState<{ dzien: number; indeks: number } | null>(null);
   /** Na ile dni user układa plan ręcznie (tryb „ułożę sam"). */
   const [dniRecznie, setDniRecznie] = useState(1);
+  /**
+   * Przeglądarka nie pozwala nic zapisać (tryb prywatny, zablokowane dane stron). Sprawdzane raz
+   * przy starcie, żeby powiedzieć to PRZED układaniem planu, a nie po.
+   */
+  const [zapisZablokowany, setZapisZablokowany] = useState(false);
 
   // Dane usera leżą w przeglądarce, więc czytamy je dopiero po stronie klienta.
   useEffect(() => {
@@ -107,6 +112,7 @@ export default function Home() {
     }
     setHistoriaWagi(magazyn.wczytajWage());
     setPytajOWage(magazyn.czyPytacOWage());
+    setZapisZablokowany(!magazyn.czyMoznaZapisywac());
     setWczytano(true);
   }, []);
 
@@ -169,9 +175,27 @@ export default function Home() {
     }
   }
 
+  /**
+   * Zapis planu plus pokazanie prawdy, gdy nie przeszedł.
+   *
+   * Dotąd `zapiszPlan` zjadał wyjątek po cichu, więc apka pokazywała plan jak zapisany, a user
+   * tracił go przy odświeżeniu bez żadnego komunikatu — tak wyglądał błąd „na iPhonie nie da się
+   * zapisać planu". Plan zostaje w stanie Reacta także po nieudanym zapisie: w tej jednej karcie
+   * jest w pełni używalny i nie ma powodu odbierać go userowi.
+   */
+  function zapiszPlanZOstrzezeniem(nowy: WygenerowanyPlan) {
+    if (magazyn.zapiszPlan(nowy)) {
+      setZapisZablokowany(false);
+      return;
+    }
+    const powod = magazyn.bladZapisu();
+    setZapisZablokowany(true);
+    setBlad(powod ? KOMUNIKAT_ZAPISU[powod] : "Nie udało się zapisać planu w pamięci przeglądarki.");
+  }
+
   function akceptujPlan() {
     if (!podglad) return;
-    magazyn.zapiszPlan(podglad);
+    zapiszPlanZOstrzezeniem(podglad);
     magazyn.zapiszPostep({ zjedzone: [] });
     magazyn.zapiszZakupy([]);
     setPlan(podglad);
@@ -196,7 +220,7 @@ export default function Home() {
       setPodglad(zaktualizowany);
     } else {
       setPlan(zaktualizowany);
-      magazyn.zapiszPlan(zaktualizowany);
+      zapiszPlanZOstrzezeniem(zaktualizowany);
     }
   }
 
@@ -233,7 +257,7 @@ export default function Home() {
         setPodglad(zaktualizowany);
       } else {
         setPlan(zaktualizowany);
-        magazyn.zapiszPlan(zaktualizowany);
+        zapiszPlanZOstrzezeniem(zaktualizowany);
       }
     } catch (e) {
       setBlad(e instanceof Error ? e.message : "Nieznany błąd");
@@ -354,6 +378,14 @@ export default function Home() {
                 <button className="btn-maly" onClick={() => setPytajOWage(false)}>
                   Nie dziś
                 </button>
+              </div>
+            )}
+
+            {zapisZablokowany && (
+              <div className="ostrzezenie-zapisu nie-do-druku">
+                <strong>Ta przeglądarka nie zapisuje danych.</strong> Plan będzie działać w tej karcie,
+                ale zniknie po jej zamknięciu. Na iPhonie powoduje to tryb prywatny albo Ustawienia →
+                Safari → „Blokuj wszystkie ciasteczka”. Zanim wyjdziesz, pobierz plan jako PDF.
               </div>
             )}
 
