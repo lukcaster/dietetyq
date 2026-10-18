@@ -16112,5 +16112,640 @@
       "Rozłóż wszystko na desce albo talerzu, keczup daj w miseczce obok.",
       "Nic się tu nie smaży — to jest talerz na te poranki, w które nie ma czasu na patelnię."
     ]
+  },
+  {
+    "id": "pita-wolowina-fasola-kukurydza",
+    "nazwa": "Zapiekane pity z wołowiną, czarną fasolą i kukurydzą",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Nagrzej piekarnik do 180°C z termoobiegiem.",
+      "Na patelni rozgrzej oliwę, wrzuć mięso mielone i od razu wszystkie przyprawy. Smaż 5-6 minut, rozbijając mięso łyżką, aż się zrumieni i nie będzie już różowe.",
+      "Dorzuć odsączoną fasolę, kukurydzę i sriracha. Mieszaj i podgrzewaj jeszcze 3-4 minuty — fasola ma się ogrzać, nie rozpaść.",
+      "Pity (trzy sztuki, po około 60 g) zawiń w zwilżony ręcznik papierowy i wstaw do mikrofali na 15-20 sekund. To nie kaprys: zimna pita pęka przy rozcinaniu, a ciepła się rozchyla.",
+      "Każdą pitę przekrój na pół i delikatnie rozchyl, żeby zrobić kieszeń. Z trzech pit wyjdzie sześć kieszeni.",
+      "Ustaw połówki pionowo w keksówce, otworami do góry — tak nic z nich nie wypadnie. Nałóż mięso równo do wszystkich sześciu.",
+      "Posyp startym cheddarem i zapiekaj 12-15 minut, aż ser się rozpuści, a brzegi pit się zrumienią.",
+      "Podawaj od razu. Jeśli lubisz ostre, dorzuć na wierzch jalapeño."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "pita",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-czarna",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kukurydza-konserwowa",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-cheddar",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sriracha",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
+    ],
+    "rodzaj": "kanapki"
+  },
+  {
+    "id": "cheesesteak-provolone-karmelizowana-cebula",
+    "nazwa": "Cheesesteak z provolone i karmelizowaną cebulą",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Cebulę pokrój w piórka. Wrzuć na patelnię z odrobiną tłuszczu, dodaj cukier i szczyptę sody.",
+      "Smaż na średnim ogniu, mieszając co chwilę, aż cebula zbrązowieje i zrobi się miękka — 20-25 minut. Soda przyspiesza brązowienie, ale jej nadmiar daje mydlany posmak, więc naprawdę szczypta. Zdejmij cebulę z patelni.",
+      "Wołowinę pokrój w jak najcieńsze paski. Łatwiej to zrobić, gdy mięso jest mocno wychłodzone — włóż je na 20 minut do zamrażalnika przed krojeniem.",
+      "Rozgrzej patelnię do maksimum. Wrzucaj mięso partiami, tak by leżało jedną warstwą — wrzucone naraz puści sok i zacznie się dusić, zamiast smażyć. Dopraw solą i pieprzem i zrumień z obu stron, po minucie na stronę.",
+      "Wróć cebulę na patelnię, zmieszaj z mięsem i przykryj wszystko plastrami provolone. Zdejmij z ognia i poczekaj, aż ser całkowicie się rozpuści.",
+      "Bagietkę przekrój wzdłuż i wyjmij część miękkiego środka, żeby zrobić miejsce na wsad. Posmaruj majonezem.",
+      "Przełóż całą zawartość patelni do bagietki i jedz od razu, póki ser się ciągnie. Ta kanapka nie znosi odstawiania."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "wolowina-antrykot",
+        "ilosc": 450,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-provolone",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "soda-oczyszczona",
+        "ilosc": 1,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bagietka",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "patelnia"
+    ],
+    "rodzaj": "kanapki"
+  },
+  {
+    "id": "kremowa-zupa-kurczak-gnocchi",
+    "nazwa": "Kremowa zupa z kurczakiem i gnocchi",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Piersi z kurczaka natrzyj solą, pieprzem, wędzoną papryką, granulowanym czosnkiem i (jeśli lubisz ostre) chili.",
+      "W szerokim garnku rozgrzej olej i obsmaż piersi z obu stron na złoto — 3-4 minuty na stronę. Nie dosmażaj ich do końca, wrócą do zupy później. Wyjmij i odłóż.",
+      "Na tym samym tłuszczu podsmaż posiekaną cebulę, po 3 minutach dodaj czosnek i smaż jeszcze minutę, do zapachu.",
+      "Dodaj koncentrat pomidorowy i posiekane suszone pomidory. Smaż 2 minuty, mieszając — koncentrat ma stracić surowy, kwaśny posmak i pociemnieć.",
+      "Wlej bulion, dodaj tymianek i oregano. Zagotuj.",
+      "Wrzuć gnocchi i gotuj tyle, ile mówi opakowanie (zwykle 2-3 minuty od wypłynięcia). Pilnuj czasu: rozgotowane gnocchi rozpadają się i zamieniają zupę w klajster.",
+      "Zmniejsz ogień. Wlej śmietankę i wmieszaj parmezan oraz masło. Nie gotuj już mocno, bo śmietanka może się zwarzyć.",
+      "Pokrój obsmażonego kurczaka w kostkę i wróć go do garnka razem ze szpinakiem. Szpinak zwiędnie w pół minuty.",
+      "Dopraw do smaku i posyp natką pietruszki."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "gnocchi",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 1200,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "smietanka-30",
+        "ilosc": 180,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-suszone",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tymianek",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek"
+    ],
+    "rodzaj": "zupy"
+  },
+  {
+    "id": "zupa-krem-ziemniak-por",
+    "nazwa": "Zupa krem z ziemniaków i pora",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "W garnku rozgrzej olej. Wrzuć pokrojonego w półkrążki pora i posiekaną cebulę, smaż 3-4 minuty — por ma zmięknąć, ale nie przyrumienić się, bo gorzknieje.",
+      "Dodaj marchewkę, korzeń pietruszki i seler naciowy, pokrojone w kostkę. Smaż jeszcze 5 minut.",
+      "Wrzuć obrane i pokrojone ziemniaki, dopraw solą i pieprzem i smaż, aż warzywa zaczną się lekko rumienić. Ten krok daje zupie głębię, której nie da samo gotowanie.",
+      "Zalej wodą i gotuj pod przykryciem około 30 minut, aż wszystko będzie całkiem miękkie.",
+      "Zblenduj zupę na gładki krem.",
+      "Do śmietany wmieszaj kilka łyżek gorącej zupy i dopiero taką rozrobioną wlej do garnka, mieszając. Wlana wprost ścięłaby się w kłaczki.",
+      "Boczek pokrój i wysmaż na patelni na chrupko albo upiecz w piekarniku.",
+      "Rozlej do misek, posyp startą mozzarellą, boczkiem i szczypiorkiem. Jeśli zupa wydaje się płaska, dodaj sól i kilka kropel soku z cytryny — kwas wyciąga z niej smak."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 700,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "por",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pietruszka-korzen",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "seler-naciowy",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "boczek",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "garnek",
+      "blender",
+      "patelnia"
+    ],
+    "rodzaj": "zupy"
+  },
+  {
+    "id": "krem-z-pieczonej-papryki-i-pomidorow",
+    "nazwa": "Krem z pieczonej papryki i pomidorów",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Nagrzej piekarnik do 200°C. Paprykę, pomidory i cebulę przekrój na pół, marchewkę pokrój na grube kawałki. Czosnek zostaw w łupinach — upieczony w nich nie przypali się i zrobi słodki.",
+      "Rozłóż wszystko na blasze z papierem, skórkami do góry. Polej oliwą i piecz 30-35 minut, aż skórki papryki miejscami zwęglą się na czarno. To nie przypalenie, tylko cały sens tego przepisu — stąd bierze się dymny smak.",
+      "Wyjmij i odstaw do przestudzenia. Czosnek wyciśnij z łupin.",
+      "Przełóż warzywa do blendera razem z wodą, bazylią, mozzarellą, parmezanem i przyprawami. Zmiksuj na gładki krem.",
+      "Przelej do garnka i podgrzej, nie doprowadzając do wrzenia.",
+      "Podawaj z dodatkową mozzarellą, listkami bazylii, oliwą i pieczywem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "papryka",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidorki-koktajlowe",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 160,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bazylia-swieza",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 125,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 6,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender",
+      "garnek"
+    ],
+    "rodzaj": "zupy"
+  },
+  {
+    "id": "placki-ziemniaczane-z-miesem-i-tahini",
+    "nazwa": "Placki ziemniaczane z mięsem, salsą i sosem tahini",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 5,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ziemniaki obierz, pokrój na kawałki i ugotuj w osolonej wodzie 15-20 minut, aż widelec wchodzi bez oporu. Odcedź dokładnie i odstaw na chwilę, żeby odparowały — mokre puree wciągnie dwa razy więcej mąki.",
+      "Ugniecione ziemniaki ostudź do letnich. Wmieszaj mąkę, starty ser, posiekany szczypiorek, sól i pieprz. Mąkę dodawaj stopniowo i tylko tyle, żeby masa dała się formować. Im mniej jej wejdzie i im mniej ciasto wyrabiasz, tym placki będą lżejsze.",
+      "Nagrzej piekarnik do 200°C z termoobiegiem i wyłóż blachę papierem.",
+      "Podziel masę na 5 części i uformuj placki o średnicy około 14 cm i grubości centymetra, z lekko wyższym brzegiem i wgłębieniem w środku — na wsad.",
+      "Piecz 25-30 minut, aż brzegi się zrumienią, a spód będzie twardy. To nie mają być chrupiące placki z patelni, tylko miękkie spody z przypieczonym brzegiem.",
+      "W tym czasie na patelni rozgrzej oliwę i wrzuć mięso mielone. Smaż 8-10 minut na średnio dużym ogniu, mieszając rzadko — mięso musi mieć czas się przyrumienić, a nie tylko zbieleć.",
+      "Wymieszaj sos sojowy, koncentrat pomidorowy, cukier, wędzoną paprykę, kminek, granulowany czosnek i wodę. Wlej do mięsa i smaż 3-5 minut, aż glazura zgęstnieje i oblepi każdy kawałek. Glazurę dodaj dopiero teraz — wlana na początku spaliłaby się, zanim mięso się zrumieni.",
+      "Na salsę: pomidory pokrój w kostkę, cebulę w cienkie piórka. Wymieszaj z sokiem z cytryny, natką i solą.",
+      "Na sos: wymieszaj jogurt z tahini i sokiem z cytryny, rozcieńcz wodą do konsystencji gęstej śmietany.",
+      "Na ciepłe placki nałóż mięso, potem salsę (bez nadmiaru soku, żeby nie rozmoczyć spodu), polej sosem i posyp natką. Składaj na talerzu, nie wcześniej."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-pszenna",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-sojowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kmin-rzymski",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek-granulowany",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidor",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tahini",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek",
+      "patelnia"
+    ],
+    "rodzaj": "miesoZDodatkiem"
+  },
+  {
+    "id": "kurczak-w-sosie-czosnkowo-szpinakowym",
+    "nazwa": "Kurczak w sosie czosnkowo-szpinakowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Piersi przekrój wzdłuż na płatki o grubości około 1,5 cm. Cieńsze kawałki smażą się szybciej i nie wysychają w środku, zanim zrumienią się na zewnątrz.",
+      "Osusz mięso ręcznikiem papierowym i dopraw solą, pieprzem oraz wędzoną papryką. Mokre mięso nie zrumieni się, tylko zacznie się dusić.",
+      "Na patelni rozgrzej oliwę i smaż kurczaka 3-4 minuty z każdej strony, aż będzie złoty. Wyjmij na talerz i przykryj.",
+      "Na tej samej patelni rozpuść masło, wrzuć posiekany czosnek i smaż 30-40 sekund — tylko do zapachu. Czosnek przypala się w kilka sekund i wtedy zgorzknieje cały sos.",
+      "Dodaj suszone pomidory i koncentrat, smaż minutę. Wlej bulion i zbierz łopatką to, co przywarło do dna — tam jest cały smak z mięsa.",
+      "Wlej śmietankę, dodaj tymianek i gotuj na małym ogniu 3-4 minuty, aż sos trochę zgęstnieje.",
+      "Wmieszaj parmezan i szpinak. Szpinak zwiędnie od razu.",
+      "Wróć kurczaka na patelnię razem z sokiem, który z niego wyciekł, i pogrzej minutę pod przykryciem.",
+      "Dopraw do smaku. Podawaj z kaszą, ryżem albo pieczywem do wybierania sosu."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietanka-30",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-suszone",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-wedzona",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tymianek",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "patelnia"
+    ],
+    "rodzaj": "miesoZDodatkiem",
+    "wymaganeDodatki": [
+      "dodatek-skrobiowy"
+    ]
   }
 ]

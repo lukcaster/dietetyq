@@ -1032,6 +1032,34 @@
     "rolaKulinarna": "ser"
   },
   {
+    "id": "ser-provolone",
+    "nazwa": "Provolone",
+    "makroNa100g": {
+      "kcal": 351,
+      "bialko": 25.6,
+      "tluszcz": 26.6,
+      "wegle": 2.1
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 40,
+    "kategoria": "ser-zolty-twardy",
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser",
+    "mikroNa100g": {
+      "blonnik": 0,
+      "zelazo": 0.5,
+      "wapn": 756,
+      "magnez": 28,
+      "potas": 138,
+      "cynk": 3.2,
+      "witaminaC": 0,
+      "sod": 876
+    }
+  },
+  {
     "id": "sos-pomidorowy",
     "nazwa": "Sos pomidorowy (przecier)",
     "makroNa100g": {
@@ -1146,6 +1174,35 @@
     },
     "kategoria": "skrobia-obiadowa",
     "wymagaGotowania": true
+  },
+  {
+    "id": "gnocchi",
+    "nazwa": "Gnocchi ziemniaczane (gotowe)",
+    "makroNa100g": {
+      "kcal": 162,
+      "bialko": 4,
+      "tluszcz": 0.6,
+      "wegle": 34
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 150,
+    "maksPorcja": 250,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "skrobia",
+    "kategoria": "skrobia-obiadowa",
+    "wymagaGotowania": true,
+    "mikroNa100g": {
+      "blonnik": 2,
+      "zelazo": 0.9,
+      "wapn": 16,
+      "magnez": 18,
+      "potas": 220,
+      "cynk": 0.4,
+      "witaminaC": 4,
+      "sod": 420
+    }
   },
   {
     "id": "kopytka",
@@ -3205,6 +3262,30 @@
     }
   },
   {
+    "id": "tymianek",
+    "nazwa": "Tymianek suszony",
+    "makroNa100g": {
+      "kcal": 276,
+      "bialko": 9.1,
+      "tluszcz": 7.4,
+      "wegle": 64
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 2,
+    "maksPorcja": 5,
+    "rolaKulinarna": "przyprawa",
+    "mikroNa100g": {
+      "blonnik": 37,
+      "zelazo": 124,
+      "wapn": 1890,
+      "magnez": 220,
+      "potas": 814,
+      "cynk": 6.2,
+      "witaminaC": 50,
+      "sod": 55
+    }
+  },
+  {
     "id": "rozmaryn",
     "nazwa": "Rozmaryn suszony",
     "makroNa100g": {
@@ -3321,6 +3402,31 @@
       "cynk": 0.24,
       "witaminaC": 9.2,
       "sod": 186
+    }
+  },
+  {
+    "id": "pomidory-suszone",
+    "nazwa": "Pomidory suszone z oleju (odsączone)",
+    "makroNa100g": {
+      "kcal": 213,
+      "bialko": 5.1,
+      "tluszcz": 14.1,
+      "wegle": 23.3
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "mikroNa100g": {
+      "blonnik": 5.8,
+      "zelazo": 2.7,
+      "wapn": 47,
+      "magnez": 81,
+      "potas": 1565,
+      "cynk": 0.8,
+      "witaminaC": 39,
+      "sod": 266
     }
   },
   {
@@ -3793,6 +3899,33 @@
     "kategoria": "pieczywo"
   },
   {
+    "id": "bagietka",
+    "nazwa": "Bagietka",
+    "makroNa100g": {
+      "kcal": 270,
+      "bialko": 9,
+      "tluszcz": 2,
+      "wegle": 52
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 100,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo",
+    "kategoria": "pieczywo",
+    "mikroNa100g": {
+      "blonnik": 2.4,
+      "zelazo": 2.5,
+      "wapn": 40,
+      "magnez": 24,
+      "potas": 110,
+      "cynk": 0.8,
+      "witaminaC": 0,
+      "sod": 540
+    }
+  },
+  {
     "id": "chleb-zytni-razowy",
     "nazwa": "Chleb żytni razowy",
     "makroNa100g": {
@@ -4247,6 +4380,32 @@
     "grupaPreferencji": "Mięso i ryby",
     "rolaKulinarna": "mieso",
     "wymagaGotowania": true
+  },
+  {
+    "id": "wolowina-antrykot",
+    "nazwa": "Wołowina, antrykot",
+    "makroNa100g": {
+      "kcal": 230,
+      "bialko": 20,
+      "tluszcz": 16.5,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "grupaPreferencji": "Mięso i wędliny",
+    "rolaKulinarna": "mieso",
+    "kategoria": "mieso-czerwone",
+    "wymagaGotowania": true,
+    "mikroNa100g": {
+      "blonnik": 0,
+      "zelazo": 2.1,
+      "wapn": 11,
+      "magnez": 20,
+      "potas": 318,
+      "cynk": 4.5,
+      "witaminaC": 0,
+      "sod": 56
+    }
   },
   {
     "id": "poledwica-wieprzowa",
@@ -4754,6 +4913,32 @@
     "grupaPreferencji": "Zboża i skrobia",
     "rolaKulinarna": "straczne",
     "kategoria": "soczewica"
+  },
+  {
+    "id": "fasola-czarna",
+    "nazwa": "Fasola czarna konserwowa",
+    "makroNa100g": {
+      "kcal": 91,
+      "bialko": 6,
+      "tluszcz": 0.3,
+      "wegle": 16.6
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 120,
+    "maksPorcja": 250,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "straczne",
+    "kategoria": "soczewica",
+    "mikroNa100g": {
+      "blonnik": 6.9,
+      "zelazo": 1.8,
+      "wapn": 27,
+      "magnez": 43,
+      "potas": 300,
+      "cynk": 0.6,
+      "witaminaC": 0,
+      "sod": 265
+    }
   },
   {
     "id": "hummus",
