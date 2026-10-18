@@ -142,7 +142,33 @@ export interface GrupaWyboru {
   domyslnaSkladnikId: string;
 }
 
-export type SkladnikPozycja = SkladnikProsty | SkladnikKomponent | GrupaWyboru;
+/**
+ * Gniazdo na półprodukt, które user wypełnia sam: „ciasto naleśnikowe — ale które?".
+ *
+ * Istnieje, bo naleśniki nie są jednym daniem, tylko iloczynem ciasta i nadzienia. Przedtem
+ * każda kombinacja była osobnym przepisem i widać było, do czego to prowadzi: pięć ciast
+ * naleśnikowych, pięć osobnych przepisów na ciasto z soczewicy z różnym nadzieniem, trzy
+ * przepisy z ciastem rozpisanym inline (mleko+mąka+jajko zamiast komponentu) i jeden przepis
+ * „Naleśniki wysokobiałkowe", który był samym ciastem — bez nadzienia, więc nie był daniem.
+ * Pełny iloczyn to 5 ciast x 6 nadzień = 30 przepisów do ręcznego utrzymania.
+ *
+ * Różnica wobec `GrupaWyboru`: tam silnik wybiera sam (żeby obejść alergen), tu wybiera
+ * CZŁOWIEK, a silnik tylko podstawia sensowny domyślny i pilnuje restrykcji.
+ */
+export interface GrupaKomponentow {
+  nazwaGrupy: string;
+  ilosc: number;
+  /** "szt" liczy przez `masaSztuki` komponentu — „3 naleśniki" to inna masa dla każdego ciasta. */
+  jednostka: string;
+  /** Kategoria komponentów z components.json (pole "kategoria"). */
+  kategoriaKomponentu: string;
+  /** Domyślny wybór TEGO przepisu (gdy nie wypada przez restrykcje). */
+  domyslnyKomponentId: string;
+  /** Etykieta dla usera przy wyborze — „Ciasto", „Nadzienie". Brak = `nazwaGrupy`. */
+  etykieta?: string;
+}
+
+export type SkladnikPozycja = SkladnikProsty | SkladnikKomponent | GrupaWyboru | GrupaKomponentow;
 
 export function jestKomponentem(pos: SkladnikPozycja): pos is SkladnikKomponent {
   return "komponentId" in pos;
@@ -152,6 +178,10 @@ export function jestGrupaWyboru(pos: SkladnikPozycja): pos is GrupaWyboru {
   return "kategoria" in pos;
 }
 
+export function jestGrupaKomponentow(pos: SkladnikPozycja): pos is GrupaKomponentow {
+  return "kategoriaKomponentu" in pos;
+}
+
 export interface Component {
   id: string;
   nazwa: string;
@@ -159,6 +189,12 @@ export interface Component {
   jednostkaWynikowa: string;
   skladniki: SkladnikProsty[];
   instrukcje: string[];
+  /**
+   * Kategoria wymienności półproduktów — patrz GrupaKomponentow. Trzyma razem rzeczy, które
+   * w daniu robią to samo: wszystkie ciasta naleśnikowe, wszystkie nadzienia na słodko.
+   * Brak = półprodukt nie wchodzi do żadnego wyboru i używa się go wprost przez `komponentId`.
+   */
+  kategoria?: string;
   /**
    * Ile gramów półproduktu schodzi na jedną sztukę gotowej rzeczy — naleśnik, pieróg.
    * Nikt nie myśli „220 g ciasta naleśnikowego", tylko „trzy naleśniki", więc kreator

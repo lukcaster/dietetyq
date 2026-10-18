@@ -1495,233 +1495,88 @@
     "rodzaj": "miesoZDodatkiem"
   },
   {
-    "id": "nalesniki-czekolada-daktylowa",
-    "nazwa": "Naleśniki z pastą czekoladowo-daktylową",
-    "slot": [
-      "sniadanie",
-      "podwieczorek"
-    ],
-    "charakter": "slodkie",
-    "porcje": 4,
-    "czasPrzygotowania": "15-30",
-    "instrukcje": [
-      "Wymieszaj mleko z jajkami, dodaj mąkę i wymieszaj do gładkości bez grudek.",
-      "Smaż tonkie naleśniki na rozgrzanej oliwie, ok. 1-2 min z każdej strony.",
-      "Daktyle, kakao i mleko zblenduj na gładką pastę. Uwaga: tak mała ilość składników może się słabo blendować w zwykłym blenderze — lepiej użyć małego rozdrabniacza albo zrobić od razu większą porcję na zapas.",
-      "Naleśniki przekładaj pastą czekoladowo-daktylową i zwijaj."
-    ],
-    "skladniki": [
-      {
-        "nazwaGrupy": "mleko",
-        "ilosc": 300,
-        "jednostka": "ml",
-        "kategoria": "mleko",
-        "domyslnaSkladnikId": "mleko-owsiane"
-      },
-      {
-        "nazwaGrupy": "maka",
-        "ilosc": 150,
-        "jednostka": "g",
-        "kategoria": "maka",
-        "domyslnaSkladnikId": "maka-pszenna"
-      },
-      {
-        "skladnikId": "jajko",
-        "ilosc": 2,
-        "jednostka": "szt"
-      },
-      {
-        "skladnikId": "oliwa-z-oliwek",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "daktyle",
-        "ilosc": 100,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "kakao",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "nazwaGrupy": "mleko-do-pasty",
-        "ilosc": 20,
-        "jednostka": "ml",
-        "kategoria": "mleko",
-        "domyslnaSkladnikId": "mleko-owsiane"
-      }
-    ],
-    "sprzet": [
-      "blender",
-      "patelnia"
-    ],
-    "rodzaj": "nalesniki"
-  },
-  {
-    "id": "nalesniki-twarog-skyr",
-    "nazwa": "Naleśniki z twarogiem i skyrem smakowym",
-    "slot": [
-      "sniadanie",
-      "podwieczorek"
-    ],
-    "charakter": "slodkie",
-    "porcje": 4,
-    "czasPrzygotowania": "15-30",
-    "instrukcje": [
-      "Wymieszaj mleko z jajkami, dodaj mąkę i wymieszaj do gładkości bez grudek.",
-      "Smaż tonkie naleśniki na rozgrzanej oliwie, ok. 1-2 min z każdej strony.",
-      "Twaróg wymieszaj ze skyrem smakowym na gładką masę.",
-      "Naleśniki przekładaj nadzieniem i zwijaj."
-    ],
-    "skladniki": [
-      {
-        "nazwaGrupy": "mleko",
-        "ilosc": 300,
-        "jednostka": "ml",
-        "kategoria": "mleko",
-        "domyslnaSkladnikId": "mleko-owsiane"
-      },
-      {
-        "nazwaGrupy": "maka",
-        "ilosc": 150,
-        "jednostka": "g",
-        "kategoria": "maka",
-        "domyslnaSkladnikId": "maka-pszenna"
-      },
-      {
-        "skladnikId": "jajko",
-        "ilosc": 2,
-        "jednostka": "szt"
-      },
-      {
-        "skladnikId": "oliwa-z-oliwek",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "nazwaGrupy": "baza-bialkowa",
-        "ilosc": 150,
-        "jednostka": "g",
-        "kategoria": "baza-bialkowa-kremowa",
-        "domyslnaSkladnikId": "twarog-polnotlusty"
-      },
-      {
-        "nazwaGrupy": "baza-jogurtowa",
-        "ilosc": 80,
-        "jednostka": "g",
-        "kategoria": "jogurt-smakowy",
-        "domyslnaSkladnikId": "skyr-smakowy"
-      }
-    ],
-    "sprzet": [
-      "patelnia"
-    ],
-    "rodzaj": "nalesniki"
-  },
-  {
-    "id": "nalesniki-proteinowe-dzem",
-    "nazwa": "Naleśniki proteinowe z dżemem",
-    "slot": [
-      "sniadanie",
-      "podwieczorek"
-    ],
-    "charakter": "slodkie",
-    "porcje": 4,
-    "czasPrzygotowania": "15-30",
-    "instrukcje": [
-      "Wymieszaj mleko z jajkami, dodaj mąkę i odżywkę białkową, wymieszaj do gładkości (ciasto będzie nieco gęstsze niż klasyczne — ewentualnie dolej odrobinę mleka).",
-      "Smaż tonkie naleśniki na rozgrzanej oliwie, ok. 1-2 min z każdej strony.",
-      "Naleśniki przekładaj dżemem i zwijaj.",
-      "Użyto ciasta proteinowego specjalnie, żeby zbalansować niskobiałkowy dżem."
-    ],
-    "skladniki": [
-      {
-        "nazwaGrupy": "mleko",
-        "ilosc": 250,
-        "jednostka": "ml",
-        "kategoria": "mleko",
-        "domyslnaSkladnikId": "mleko-owsiane"
-      },
-      {
-        "nazwaGrupy": "maka",
-        "ilosc": 100,
-        "jednostka": "g",
-        "kategoria": "maka",
-        "domyslnaSkladnikId": "maka-pszenna"
-      },
-      {
-        "nazwaGrupy": "odzywka",
-        "ilosc": 40,
-        "jednostka": "g",
-        "kategoria": "odzywka-bialkowa",
-        "domyslnaSkladnikId": "odzywka-bialkowa-whey"
-      },
-      {
-        "skladnikId": "jajko",
-        "ilosc": 2,
-        "jednostka": "szt"
-      },
-      {
-        "skladnikId": "oliwa-z-oliwek",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "dzem-owocowy",
-        "ilosc": 80,
-        "jednostka": "g"
-      }
-    ],
-    "sprzet": [
-      "patelnia"
-    ],
-    "rodzaj": "nalesniki"
-  },
-  {
-    "id": "nalesniki-wysokobialkowe",
-    "nazwa": "Naleśniki wysokobiałkowe",
+    "id": "nalesniki-na-slodko",
+    "nazwa": "Naleśniki na słodko",
     "slot": [
       "sniadanie",
       "drugie-sniadanie",
-      "podwieczorek",
-      "kolacja"
+      "podwieczorek"
     ],
     "charakter": "slodkie",
-    "porcje": 3,
+    "porcje": 1,
     "czasPrzygotowania": "15-30",
     "instrukcje": [
-      "Rozbij jajka do miski, dodaj szczyptę soli i roztrzep widelcem albo mikserem.",
-      "Wlej mleko i wymieszaj.",
-      "Dosypuj mąkę stopniowo, cały czas mieszając, aż ciasto będzie gładkie i bez grudek.",
-      "Sprawdź konsystencję — ciasto ma spływać z chochli wstążką. Zbyt wodniste: dosyp mąki po łyżce. Zbyt gęste: dolej mleka po łyżce. To jedyny moment, który trzeba ocenić okiem.",
-      "Odstaw na 10-15 minut, żeby mąka napęczniała — naleśniki będą się mniej rwać.",
-      "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą oleju, po 1-2 minuty z każdej strony."
+      "Rozgrzej patelnię i natłuść ją cienką warstwą oleju — nadmiar tłuszczu sprawia, że naleśnik się smaży zamiast zapiekać.",
+      "Wlej chochlę ciasta i rozprowadź ruchem okrężnym. Smaż 1-2 minuty, aż brzegi zaczną się odrywać od patelni, i przewróć.",
+      "Przygotuj nadzienie według jego własnego opisu powyżej.",
+      "Przełóż naleśniki nadzieniem i zwiń albo złóż na cztery."
     ],
     "skladniki": [
       {
-        "skladnikId": "jajko",
-        "ilosc": 6,
+        "nazwaGrupy": "ciasto",
+        "etykieta": "Ciasto",
+        "kategoriaKomponentu": "ciasto-nalesnikowe",
+        "domyslnyKomponentId": "ciasto-nalesnikowe-klasyczne",
+        "ilosc": 3,
         "jednostka": "szt"
       },
       {
-        "nazwaGrupy": "mleko",
-        "ilosc": 500,
-        "jednostka": "ml",
-        "kategoria": "mleko",
-        "domyslnaSkladnikId": "mleko-krowie"
-      },
-      {
-        "nazwaGrupy": "maka",
-        "ilosc": 130,
-        "jednostka": "g",
-        "kategoria": "maka",
-        "domyslnaSkladnikId": "maka-pszenna"
+        "nazwaGrupy": "nadzienie",
+        "etykieta": "Nadzienie",
+        "kategoriaKomponentu": "nadzienie-nalesnikowe-slodkie",
+        "domyslnyKomponentId": "nadzienie-twarogowo-skyrowe",
+        "ilosc": 115,
+        "jednostka": "g"
       },
       {
         "skladnikId": "olej-rzepakowy",
-        "ilosc": 10,
+        "ilosc": 5,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "patelnia"
+    ],
+    "rodzaj": "nalesniki"
+  },
+  {
+    "id": "nalesniki-na-wytrawnie",
+    "nazwa": "Naleśniki na wytrawnie",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Rozgrzej patelnię i natłuść ją cienką warstwą oleju — nadmiar tłuszczu sprawia, że naleśnik się smaży zamiast zapiekać.",
+      "Wlej chochlę ciasta i rozprowadź ruchem okrężnym. Smaż 1-2 minuty, aż brzegi zaczną się odrywać od patelni, i przewróć.",
+      "Przygotuj nadzienie według jego własnego opisu powyżej.",
+      "Nałóż nadzienie na przestudzone naleśniki — na gorących serek się rozpuści i wycieknie.",
+      "Zwiń w rulon albo złóż na cztery."
+    ],
+    "skladniki": [
+      {
+        "nazwaGrupy": "ciasto",
+        "etykieta": "Ciasto",
+        "kategoriaKomponentu": "ciasto-nalesnikowe",
+        "domyslnyKomponentId": "ciasto-nalesnikowe-klasyczne",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "nazwaGrupy": "nadzienie",
+        "etykieta": "Nadzienie",
+        "kategoriaKomponentu": "nadzienie-nalesnikowe-wytrawne",
+        "domyslnyKomponentId": "nadzienie-szynkowo-warzywne",
+        "ilosc": 260,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 5,
         "jednostka": "g"
       }
     ],
@@ -12927,251 +12782,6 @@
       {
         "skladnikId": "pasta-waniliowa",
         "ilosc": 5,
-        "jednostka": "g"
-      }
-    ]
-  },
-  {
-    "id": "nalesniki-soczewicowe-z-lososiem",
-    "nazwa": "Naleśniki z soczewicy z łososiem i serkiem",
-    "slot": [
-      "sniadanie",
-      "drugie-sniadanie",
-      "kolacja"
-    ],
-    "charakter": "wytrawne",
-    "porcje": 1,
-    "czasPrzygotowania": "15-30",
-    "czasOczekiwania": "noc (moczenie soczewicy)",
-    "sprzet": [
-      "patelnia",
-      "blender"
-    ],
-    "rodzaj": "nalesniki",
-    "instrukcje": [
-      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
-      "Gotowe naleśniki posmaruj serkiem śmietankowym.",
-      "Ułóż plastry wędzonego łososia i rukolę, dopraw pieprzem.",
-      "Złóż na cztery albo zwiń w rulon."
-    ],
-    "skladniki": [
-      {
-        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
-        "ilosc": 510,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "olej-rzepakowy",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "serek-kanapkowy",
-        "ilosc": 40,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "losos-wedzony",
-        "ilosc": 100,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "rukola",
-        "ilosc": 20,
-        "jednostka": "g"
-      }
-    ]
-  },
-  {
-    "id": "nalesniki-soczewicowe-z-szynka",
-    "nazwa": "Naleśniki z soczewicy z szynką i warzywami",
-    "slot": [
-      "sniadanie",
-      "drugie-sniadanie",
-      "kolacja"
-    ],
-    "charakter": "wytrawne",
-    "porcje": 1,
-    "czasPrzygotowania": "15-30",
-    "czasOczekiwania": "noc (moczenie soczewicy)",
-    "sprzet": [
-      "patelnia",
-      "blender"
-    ],
-    "rodzaj": "nalesniki",
-    "instrukcje": [
-      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
-      "Naleśniki posmaruj serkiem śmietankowym.",
-      "Ułóż szynkę oraz paprykę i ogórka pokrojone w cienkie paski.",
-      "Zwiń w rulon i przekrój na pół."
-    ],
-    "skladniki": [
-      {
-        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
-        "ilosc": 510,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "olej-rzepakowy",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "serek-kanapkowy",
-        "ilosc": 40,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "szynka",
-        "ilosc": 80,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "papryka",
-        "ilosc": 80,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "ogorek",
-        "ilosc": 60,
-        "jednostka": "g"
-      }
-    ]
-  },
-  {
-    "id": "nalesniki-soczewicowe-z-czekolada-daktylowa",
-    "nazwa": "Naleśniki z soczewicy z pastą czekoladowo-daktylową",
-    "slot": [
-      "sniadanie",
-      "podwieczorek"
-    ],
-    "charakter": "slodkie",
-    "porcje": 1,
-    "czasPrzygotowania": "15-30",
-    "czasOczekiwania": "noc (moczenie soczewicy)",
-    "sprzet": [
-      "patelnia",
-      "blender"
-    ],
-    "rodzaj": "nalesniki",
-    "instrukcje": [
-      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
-      "Daktyle zalej wrzątkiem na 10 minut, odsącz i zmiksuj z kakao oraz mlekiem na gładką pastę.",
-      "Posmaruj nią naleśniki i zwiń."
-    ],
-    "skladniki": [
-      {
-        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
-        "ilosc": 510,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "olej-rzepakowy",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "daktyle",
-        "ilosc": 80,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "kakao",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "mleko-krowie",
-        "ilosc": 30,
-        "jednostka": "ml"
-      }
-    ]
-  },
-  {
-    "id": "nalesniki-soczewicowe-z-dzemem",
-    "nazwa": "Naleśniki z soczewicy z dżemem",
-    "slot": [
-      "sniadanie",
-      "podwieczorek"
-    ],
-    "charakter": "slodkie",
-    "porcje": 1,
-    "czasPrzygotowania": "15-30",
-    "czasOczekiwania": "noc (moczenie soczewicy)",
-    "sprzet": [
-      "patelnia",
-      "blender"
-    ],
-    "rodzaj": "nalesniki",
-    "instrukcje": [
-      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
-      "Naleśniki posmaruj dżemem i złóż na cztery.",
-      "Najprostsza wersja — dobra, gdy nie ma czasu na nic więcej."
-    ],
-    "skladniki": [
-      {
-        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
-        "ilosc": 510,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "olej-rzepakowy",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "dzem-owocowy",
-        "ilosc": 60,
-        "jednostka": "g"
-      }
-    ]
-  },
-  {
-    "id": "nalesniki-soczewicowe-z-serkiem-i-owocami",
-    "nazwa": "Naleśniki z soczewicy z serkiem i owocami",
-    "slot": [
-      "sniadanie",
-      "podwieczorek"
-    ],
-    "charakter": "slodkie",
-    "porcje": 1,
-    "czasPrzygotowania": "15-30",
-    "czasOczekiwania": "noc (moczenie soczewicy)",
-    "sprzet": [
-      "patelnia",
-      "blender"
-    ],
-    "rodzaj": "nalesniki",
-    "instrukcje": [
-      "Rozgrzej patelnię, natłuść odrobiną oleju i smaż cienkie naleśniki z obu stron, aż brzegi zaczną się odrywać.",
-      "Serek śmietankowy rozmieszaj, żeby dał się rozsmarować.",
-      "Posmaruj naleśniki, na wierzch wyłóż maliny i borówki.",
-      "Zwiń albo złóż na cztery."
-    ],
-    "skladniki": [
-      {
-        "komponentId": "ciasto-nalesnikowe-z-soczewicy",
-        "ilosc": 510,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "olej-rzepakowy",
-        "ilosc": 10,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "serek-kanapkowy",
-        "ilosc": 80,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "maliny",
-        "ilosc": 80,
-        "jednostka": "g"
-      },
-      {
-        "skladnikId": "borowki",
-        "ilosc": 80,
         "jednostka": "g"
       }
     ]

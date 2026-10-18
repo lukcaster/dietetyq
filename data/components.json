@@ -183,7 +183,8 @@
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony."
     ],
     "masaSztuki": 70,
-    "porcjaTypowa": 210
+    "porcjaTypowa": 210,
+    "kategoria": "ciasto-nalesnikowe"
   },
   {
     "id": "ciasto-nalesnikowe-owsiane",
@@ -215,7 +216,8 @@
       "Wsyp mąkę owsianą i mieszaj do gładkości.",
       "Odstaw na 15 minut — przy owsianej to nie jest opcja, tylko konieczność: mąka pęcznieje znacznie mocniej niż pszenna i ciasto wyraźnie gęstnieje. Dopiero po tym czasie wyrównaj je mlekiem do konsystencji spływającej wstążką.",
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Owsiane naleśniki są bardziej kruche od pszennych — przewracaj je szerszą łopatką i nie smaż ich zbyt cienko."
-    ]
+    ],
+    "kategoria": "ciasto-nalesnikowe"
   },
   {
     "id": "ciasto-nalesnikowe-pelnoziarniste",
@@ -247,7 +249,8 @@
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Te naleśniki są odrobinę bardziej kruche — przewracaj je szerszą łopatką."
     ],
     "masaSztuki": 70,
-    "porcjaTypowa": 210
+    "porcjaTypowa": 210,
+    "kategoria": "ciasto-nalesnikowe"
   },
   {
     "id": "ciasto-nalesnikowe-wysokobialkowe",
@@ -280,7 +283,8 @@
       "Odstaw na 10-15 minut, żeby mąka napęczniała.",
       "Smaż na dobrze rozgrzanej patelni natłuszczonej cienką warstwą tłuszczu, po 1-2 minuty z każdej strony. Te naleśniki są delikatniejsze od klasycznych — poczekaj, aż brzegi same zaczną się odrywać, zanim je przewrócisz."
     ],
-    "porcjaTypowa": 210
+    "porcjaTypowa": 210,
+    "kategoria": "ciasto-nalesnikowe"
   },
   {
     "id": "ciasto-nalesnikowe-z-soczewicy",
@@ -310,7 +314,8 @@
       "Ciasto ma mieć konsystencję śmietany — jeśli jest za gęste, dolej odrobinę wody."
     ],
     "masaSztuki": 85,
-    "porcjaTypowa": 255
+    "porcjaTypowa": 255,
+    "kategoria": "ciasto-nalesnikowe"
   },
   {
     "id": "ciasto-na-wrzatku",
@@ -423,6 +428,227 @@
       "Podziel na cztery kulki i rozwałkuj placki o średnicy 15-20 cm.",
       "Smaż na suchej, rozgrzanej patelni po około 2 minuty z każdej strony, aż pojawią się rumiane bąble.",
       "Gotowe placki trzymaj pod ściereczką — para je zmiękcza i nie pękają przy zwijaniu."
+    ]
+  },
+  {
+    "id": "nadzienie-twarogowo-skyrowe",
+    "nazwa": "Nadzienie twarogowe ze skyrem",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 230,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 115,
+    "skladniki": [
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "skyr-smakowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Twaróg rozetrzyj widelcem, żeby pozbyć się grudek.",
+      "Wmieszaj skyr smakowy i ucieraj, aż masa będzie gładka i da się rozsmarować."
+    ]
+  },
+  {
+    "id": "nadzienie-czekoladowo-daktylowe",
+    "nazwa": "Pasta czekoladowo-daktylowa",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 130,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 65,
+    "skladniki": [
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 20,
+        "jednostka": "ml"
+      }
+    ],
+    "instrukcje": [
+      "Daktyle zalej wrzątkiem i odstaw na 10 minut, żeby zmiękły. Odsącz.",
+      "Zmiksuj daktyle z kakao i mlekiem na gładką pastę.",
+      "Tak mała porcja słabo chwyta się noży w dużym blenderze — lepiej użyć małego rozdrabniacza albo zrobić od razu podwójną ilość na zapas."
+    ]
+  },
+  {
+    "id": "nadzienie-serkowo-owocowe",
+    "nazwa": "Nadzienie serkowe z owocami",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 240,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 120,
+    "skladniki": [
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "borowki",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Serek rozmieszaj łyżką, żeby zmiękł i dał się rozsmarować.",
+      "Owoce przebierz; maliny możesz lekko rozgnieść widelcem, borówki zostaw całe.",
+      "Serek rozsmaruj na naleśniku, owoce wyłóż na wierzch — nie mieszaj ich w masę, bo puści sok."
+    ]
+  },
+  {
+    "id": "nadzienie-dzemowe",
+    "nazwa": "Nadzienie z dżemu",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 80,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 40,
+    "skladniki": [
+      {
+        "skladnikId": "dzem-owocowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Rozsmaruj dżem po naleśniku i złóż go na cztery. Najprostsza wersja, gdy nie ma czasu na nic więcej."
+    ]
+  },
+  {
+    "id": "nadzienie-bananowo-orzechowe",
+    "nazwa": "Nadzienie bananowo-orzechowe",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 150,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 75,
+    "skladniki": [
+      {
+        "skladnikId": "banan",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "maslo-orzechowe",
+        "ilosc": 30,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Masło orzechowe rozsmaruj po naleśniku — jeśli jest twarde, wstaw je na pół minuty do mikrofali.",
+      "Banana pokrój na plasterki i wyłóż na wierzch. Zwiń naleśnik ciasno, żeby plasterki nie wypadły."
+    ]
+  },
+  {
+    "id": "nadzienie-lososiowe",
+    "nazwa": "Nadzienie z łososiem i serkiem",
+    "kategoria": "nadzienie-nalesnikowe-wytrawne",
+    "iloscWynikowa": 160,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 160,
+    "skladniki": [
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "losos-wedzony",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Naleśnik posmaruj serkiem, zostawiając centymetr wolnego brzegu — inaczej wszystko wyjdzie bokiem przy zwijaniu.",
+      "Ułóż plastry łososia i rukolę, dopraw świeżo zmielonym pieprzem.",
+      "Złóż na cztery albo zwiń w rulon i przekrój na pół."
+    ]
+  },
+  {
+    "id": "nadzienie-szynkowo-warzywne",
+    "nazwa": "Nadzienie z szynką i warzywami",
+    "kategoria": "nadzienie-nalesnikowe-wytrawne",
+    "iloscWynikowa": 260,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 260,
+    "skladniki": [
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szynka",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 60,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Paprykę i ogórka pokrój w cienkie, długie paski — grube kawałki rozrywają naleśnik przy zwijaniu.",
+      "Naleśnik posmaruj serkiem, ułóż szynkę, na nią warzywa.",
+      "Zwiń w rulon i przekrój na pół pod kątem."
+    ]
+  },
+  {
+    "id": "nadzienie-jajeczno-szczypiorkowe",
+    "nazwa": "Nadzienie jajeczne ze szczypiorkiem",
+    "kategoria": "nadzienie-nalesnikowe-wytrawne",
+    "iloscWynikowa": 185,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 185,
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szczypiorek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Jajka ugotuj na twardo (9-10 minut), ostudź pod zimną wodą i obierz.",
+      "Rozgnieć je widelcem, wmieszaj jogurt i posiekany szczypiorek, dopraw solą i pieprzem.",
+      "Rozsmaruj po naleśniku i zwiń."
     ]
   }
 ]

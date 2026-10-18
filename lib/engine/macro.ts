@@ -1,7 +1,10 @@
-import { getIngredientById, getIngredients, getComponentById } from "./data";
+import { getIngredientById, getIngredients, getComponentById, getComponents } from "./data";
 import {
   jestKomponentem,
   jestGrupaWyboru,
+  jestGrupaKomponentow,
+  type Component,
+  type GrupaKomponentow,
   type Makro,
   type Ingredient,
   type SkladnikPozycja,
@@ -20,10 +23,24 @@ import {
 export interface FiltrSkladnikow {
   alergeny: string[];
   nielubiane: string[];
+  /**
+   * Co user wybrał ręcznie w gniazdach przepisu: `nazwaGrupy` -> id komponentu.
+   *
+   * Siedzi w filtrze, a nie w osobnym parametrze, celowo: filtr jest już jedyną rzeczą, która
+   * decyduje, na co rozwiąże się pozycja przepisu, i przepływa przez wszystkie funkcje aż do
+   * listy zakupów. Osobny argument trzeba by przewlec przez dziesięć sygnatur, żeby powiedzieć
+   * dokładnie to samo. Wybór usera ma pierwszeństwo nad domyślnym, ale NIE nad restrykcjami —
+   * nadzienie z twarogiem przy „bez nabiału" dalej podmienia surowce.
+   */
+  wybory?: Record<string, string>;
 }
 
-export function zbudujFiltr(alergeny: string[] = [], nielubiane: string[] = []): FiltrSkladnikow {
-  return { alergeny, nielubiane };
+export function zbudujFiltr(
+  alergeny: string[] = [],
+  nielubiane: string[] = [],
+  wybory?: Record<string, string>
+): FiltrSkladnikow {
+  return { alergeny, nielubiane, wybory };
 }
 
 /** Pusty filtr — nic nie jest odrzucane. */
@@ -71,6 +88,55 @@ export function makroSkladnikaProstego(pos: SkladnikProsty): Makro {
   const skladnik = getIngredientById(pos.skladnikId);
   const gramy = masaWGramach(skladnik, pos.ilosc, pos.jednostka);
   return skalujMakro(skladnik.makroNa100g, gramy / 100);
+}
+
+/**
+ * Ile gramów półproduktu znaczy podana ilość. Lustro `masaWGramach`, tylko dla komponentów.
+ *
+ * Potrzebne, bo przepis mówi „3 naleśniki", a nie „210 g ciasta" — i dobrze, bo to NIE jest
+ * ta sama masa dla każdego ciasta: pszenne waży 70 g na sztukę, soczewicowe 85 g. Przy stałej
+ * gramaturze w przepisie wybór ciasta z soczewicy dawałby cicho 2,5 naleśnika zamiast trzech.
+ */
+export function masaKomponentuWGramach(komponent: Component, ilosc: number, jednostka: string): number {
+  if (jednostka === "szt") {
+    if (!komponent.masaSztuki) {
+      throw new Error(`Komponent ${komponent.id} nie ma masaSztuki, a użyto jednostki "szt"`);
+    }
+    return ilosc * komponent.masaSztuki;
+  }
+  return ilosc;
+}
+
+/**
+ * Wybiera półprodukt dla gniazda: wybór usera, potem domyślny przepisu, potem kolejność w pliku.
+ * Z puli wypadają te, których nie da się rozwiązać przy restrykcjach (ciasto na mące pszennej
+ * bez dopuszczalnego zamiennika).
+ */
+export function wybierzKomponentZKategorii(pos: GrupaKomponentow, filtr: FiltrSkladnikow): string | null {
+  const wykonalny = (k: Component) =>
+    k.kategoria === pos.kategoriaKomponentu &&
+    rozwiazKomponent(k.id, filtr) !== null &&
+    (pos.jednostka !== "szt" || Boolean(k.masaSztuki));
+
+  const dopuszczalne = getComponents().filter(wykonalny);
+  if (dopuszczalne.length === 0) return null;
+
+  const zyczenie = filtr.wybory?.[pos.nazwaGrupy];
+  const wybranyPrzezUsera = zyczenie && dopuszczalne.find((k) => k.id === zyczenie);
+  if (wybranyPrzezUsera) return wybranyPrzezUsera.id;
+
+  const domyslny = dopuszczalne.find((k) => k.id === pos.domyslnyKomponentId);
+  return (domyslny ?? dopuszczalne[0]).id;
+}
+
+/** Wszystkie półprodukty, które mogą wejść w to gniazdo — do pokazania userowi jako wybór. */
+export function opcjeKomponentow(pos: GrupaKomponentow, filtr: FiltrSkladnikow): Component[] {
+  return getComponents().filter(
+    (k) =>
+      k.kategoria === pos.kategoriaKomponentu &&
+      rozwiazKomponent(k.id, filtr) !== null &&
+      (pos.jednostka !== "szt" || Boolean(k.masaSztuki))
+  );
 }
 
 export function makroKomponentu(komponentId: string): Makro {
@@ -206,6 +272,22 @@ export function rozwiazPozycje(pos: SkladnikPozycja, filtr: FiltrSkladnikow): Ro
     };
   }
 
+  if (jestGrupaKomponentow(pos)) {
+    const wybranyId = wybierzKomponentZKategorii(pos, filtr);
+    if (!wybranyId) return null;
+    const komponent = getComponentById(wybranyId);
+    const rozwiazany = rozwiazKomponent(wybranyId, filtr);
+    if (!rozwiazany) return null;
+    const gramy = masaKomponentuWGramach(komponent, pos.ilosc, pos.jednostka);
+    return {
+      skladnikId: wybranyId,
+      ilosc: pos.ilosc,
+      jednostka: pos.jednostka,
+      nazwaWyswietlana: komponent.nazwa,
+      makro: skalujMakro(rozwiazany.makro, gramy / komponent.iloscWynikowa),
+    };
+  }
+
   if (jestKomponentem(pos)) {
     const rozwiazany = rozwiazKomponent(pos.komponentId, filtr);
     if (!rozwiazany) return null;
@@ -258,6 +340,21 @@ export function rozwinDoBazowychSkladnikow(pos: SkladnikPozycja, filtr: FiltrSkl
     if (!wybranyId) return null;
     return [{ skladnikId: wybranyId, ilosc: pos.ilosc, jednostka: pos.jednostka }];
   }
+  if (jestGrupaKomponentow(pos)) {
+    const wybranyId = wybierzKomponentZKategorii(pos, filtr);
+    if (!wybranyId) return null;
+    const rozwiazany = rozwiazKomponent(wybranyId, filtr);
+    if (!rozwiazany) return null;
+    const komponent = getComponentById(wybranyId);
+    const gramy = masaKomponentuWGramach(komponent, pos.ilosc, pos.jednostka);
+    const proporcja = gramy / komponent.iloscWynikowa;
+    return rozwiazany.skladniki.map((s) => ({
+      skladnikId: s.skladnikId,
+      ilosc: s.ilosc * proporcja,
+      jednostka: s.jednostka,
+    }));
+  }
+
   if (jestKomponentem(pos)) {
     const rozwiazany = rozwiazKomponent(pos.komponentId, filtr);
     if (!rozwiazany) return null;

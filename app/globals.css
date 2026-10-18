@@ -1239,6 +1239,62 @@ textarea.kreator-input {
   white-space: nowrap;
 }
 
+/* --- wybór ciasta i nadzienia w posiłku --- */
+
+.wybory-posilku {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 4px;
+}
+
+/* Gniazdo zajmuje całą szerokość, gdy się nie mieści — „Nadzienie serkowe z owocami"
+   w połowie wąskiego ekranu zostaje przyciętą nazwą i nie da się go odróżnić od sąsiada. */
+.wybor-gniazdo {
+  display: flex;
+  flex: 1 1 220px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wybor-etykieta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.wybor-select {
+  appearance: none;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wybor-select:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+.wybor-select:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* Lista rozwinięta rysuje się natywnie, więc opcje muszą mieć własne kolory —
+   na ciemnym tle aplikacji domyślne są białe na białym. */
+.wybor-select option {
+  background: #141424;
+  color: var(--text);
+}
+
 /* --- modal wymiany posiłku --- */
 
 .modal-tlo {

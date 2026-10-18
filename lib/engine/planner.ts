@@ -5,15 +5,18 @@ import { zbudujListeZakupow, type PozycjaListyZakupow, type SkladnikBazowyWPlani
 import {
   dodajMakro,
   pustaMakro,
+  masaKomponentuWGramach,
+  opcjeKomponentow,
   rozwiazKomponent,
   rozwiazPrzepis,
   rozwinDoBazowychSkladnikow,
   skalujMakro,
+  wybierzKomponentZKategorii,
   zbudujFiltr,
   type FiltrSkladnikow,
 } from "./macro";
 import { SLOT_PRZEKASKI, zlozPrzekaske } from "./przekaski";
-import { jestKomponentem } from "./types";
+import { jestGrupaKomponentow, jestKomponentem } from "./types";
 import {
   obliczKcalDzienne,
   obliczMakroDzienne,
@@ -188,6 +191,19 @@ export interface KomponentWPlanie {
   instrukcje: string[];
 }
 
+/**
+ * Gniazdo, które user może przestawić („inne ciasto", „inne nadzienie") — razem z listą
+ * dopuszczalnych opcji. Leci w posiłku, bo posiłek w planie jest zamrożonym snapshotem:
+ * widok nie ma dostępu do przepisu ani do bazy komponentów, więc gdyby nie to pole, nie
+ * wiedziałby nawet, że jest co przestawiać. Lista jest już przefiltrowana restrykcjami.
+ */
+export interface WyborWPosilku {
+  nazwaGrupy: string;
+  etykieta: string;
+  wybranyKomponentId: string;
+  opcje: { komponentId: string; nazwa: string }[];
+}
+
 export interface PosilekWPlanie {
   slot: string;
   recipeId: string;
@@ -219,6 +235,8 @@ export interface PosilekWPlanie {
   dosypki?: Dosypka[];
   /** Półprodukty do przygotowania przed daniem (ciasto) — patrz KomponentWPlanie. */
   komponenty?: KomponentWPlanie[];
+  /** Gniazda do przestawienia przez usera (ciasto/nadzienie) — patrz WyborWPosilku. */
+  wybory?: WyborWPosilku[];
 }
 
 export interface DzienWPlanie {
@@ -391,13 +409,25 @@ function przygotujPozycje(przepis: Recipe, targetKcal: number, filtr: FiltrSklad
    */
   const komponenty: KomponentWPlanie[] = [];
   for (const pos of przepis.skladniki) {
-    if (!jestKomponentem(pos)) continue;
-    const komponent = getComponentById(pos.komponentId);
+    /*
+     * Gniazdo wyboru (ciasto, nadzienie) też jest komponentem do przygotowania — i musi tu
+     * wejść, inaczej user dostaje w składnikach „Ciasto naleśnikowe owsiane 210 g" i ani słowa
+     * o tym, z czego je zrobić.
+     */
+    const komponentId = jestGrupaKomponentow(pos)
+      ? wybierzKomponentZKategorii(pos, filtr)
+      : jestKomponentem(pos)
+        ? pos.komponentId
+        : null;
+    if (!komponentId) continue;
+
+    const komponent = getComponentById(komponentId);
     // Surowce bierzemy z rozwiązanego komponentu, nie z pliku: inaczej user bez glutenu
     // dostałby ciasto policzone na mące ryżowej, a w instrukcji "mąka pszenna 300 g".
-    const rozwiazanyKomponent = rozwiazKomponent(pos.komponentId, filtr);
+    const rozwiazanyKomponent = rozwiazKomponent(komponentId, filtr);
     if (!rozwiazanyKomponent) continue;
-    const proporcja = (pos.ilosc / komponent.iloscWynikowa) * wspolczynnikSkalowania;
+    const gramy = masaKomponentuWGramach(komponent, pos.ilosc, pos.jednostka);
+    const proporcja = (gramy / komponent.iloscWynikowa) * wspolczynnikSkalowania;
     komponenty.push({
       komponentId: komponent.id,
       nazwa: komponent.nazwa,
@@ -464,6 +494,23 @@ function zbudujPosilekZPrzepisu(opcje: {
   }
 
   const przygotowanyGlowny = przygotujPozycje(przepis, targetKcalSlotu * (1 - udzialDodatkow), filtr);
+
+  /* Co user może tu przestawić. Gniazdo z jedną opcją pomijamy — wybór z jednego to nie wybór. */
+  const wybory: WyborWPosilku[] = [];
+  for (const pos of przepis.skladniki) {
+    if (!jestGrupaKomponentow(pos)) continue;
+    const wybranyKomponentId = wybierzKomponentZKategorii(pos, filtr);
+    if (!wybranyKomponentId) continue;
+    const opcje = opcjeKomponentow(pos, filtr);
+    if (opcje.length < 2) continue;
+    wybory.push({
+      nazwaGrupy: pos.nazwaGrupy,
+      etykieta: pos.etykieta ?? pos.nazwaGrupy,
+      wybranyKomponentId,
+      opcje: opcje.map((k) => ({ komponentId: k.id, nazwa: k.nazwa })),
+    });
+  }
+
   return {
     slot,
     recipeId: przepis.id,
@@ -478,6 +525,7 @@ function zbudujPosilekZPrzepisu(opcje: {
     makro: dodatki.reduce((suma, d) => dodajMakro(suma, d.makro), przygotowanyGlowny.makro),
     dodatki: dodatki.length > 0 ? dodatki : undefined,
     komponenty: przygotowanyGlowny.komponenty.length > 0 ? przygotowanyGlowny.komponenty : undefined,
+    wybory: wybory.length > 0 ? wybory : undefined,
   };
 }
 
@@ -821,6 +869,12 @@ export interface ZapytanieOPosilekZPrzepisu extends Omit<PlanRequest, "sloty"> {
   sloty: string[];
   slot: string;
   recipeId: string;
+  /**
+   * Czym user wypełnił gniazda przepisu: nazwa grupy -> id komponentu. Pusto = silnik bierze
+   * domyślne z przepisu. Tą drogą idzie zmiana ciasta albo nadzienia w gotowym posiłku:
+   * przepis zostaje ten sam, zmienia się tylko wybór, a posiłek przelicza się od nowa.
+   */
+  wybory?: Record<string, string>;
 }
 
 /**
@@ -839,7 +893,7 @@ export function zbudujPosilekZWybranegoPrzepisu(req: ZapytanieOPosilekZPrzepisu)
   const przepis = getRecipes().find((r) => r.id === req.recipeId);
   if (!przepis) return null;
 
-  const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? []);
+  const filtr = zbudujFiltr(req.restrykcje, req.nielubianeSkladniki ?? [], req.wybory);
   if (rozwiazPrzepis(przepis, filtr) === null) return null;
 
   const bezSprzetu = new Set(req.bezSprzetu ?? []);

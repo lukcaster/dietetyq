@@ -60,6 +60,8 @@ interface Props {
   onZjedzone: (klucz: string) => void;
   onCofnij: (klucz: string) => void;
   onWymien: (dzien: number, indeks: number) => void;
+  /** Przestawienie gniazda przepisu (inne ciasto, inne nadzienie) — patrz WyborWPosilku. */
+  onZmienWybor: (dzien: number, indeks: number, nazwaGrupy: string, komponentId: string) => void;
   onDomknij: (indeksDnia: number) => void;
   onPokazCalyPlan: () => void;
   onListaZakupow: () => void;
@@ -76,6 +78,7 @@ export default function MojPlan({
   onZjedzone,
   onCofnij,
   onWymien,
+  onZmienWybor,
   onDomknij,
   onPokazCalyPlan,
   onListaZakupow,
@@ -185,7 +188,12 @@ export default function MojPlan({
                     </div>
                   ))}
 
-                  <SzczegolyPosilku posilek={posilek} mnoznik={mnoznik} />
+                  <SzczegolyPosilku
+                    posilek={posilek}
+                    mnoznik={mnoznik}
+                    pracuje={pracuje}
+                    onZmienWybor={(grupa, komponentId) => onZmienWybor(indeksDnia, i, grupa, komponentId)}
+                  />
 
                   <div className="posilek-akcje" style={{ marginTop: 16 }}>
                     {zjedzony ? (

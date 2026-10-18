@@ -1,5 +1,7 @@
 import { getComponentById, getIngredients, getRecipes } from "./data";
+import { masaKomponentuWGramach } from "./macro";
 import {
+  jestGrupaKomponentow,
   jestGrupaWyboru,
   jestKomponentem,
   type Charakter,
@@ -112,9 +114,15 @@ function wymaganiaPrzepisu(przepis: Recipe, skladniki: Map<string, Ingredient>, 
       const preferowany = skladniki.get(pos.domyslnaSkladnikId) ?? kandydaci[0];
       if (!preferowany) continue;
       dodaj({ klucz: `kategoria:${pos.kategoria}`, ilosc: pos.ilosc, jednostka: pos.jednostka, kandydaci, preferowany });
-    } else if (jestKomponentem(pos)) {
-      const komponent = getComponentById(pos.komponentId);
-      const proporcja = pos.ilosc / komponent.iloscWynikowa;
+    } else if (jestKomponentem(pos) || jestGrupaKomponentow(pos)) {
+      /*
+       * Gniazdo wyboru liczymy po domyślnym półprodukcie. To lista zakupów, nie kreator:
+       * bez wskazania usera nie ma sensu zgadywać, które z pięciu ciast naleśnikowych
+       * zamierza zrobić, a domyślne jest tym, które dostanie, jeśli niczego nie ruszy.
+       */
+      const komponent = getComponentById(jestKomponentem(pos) ? pos.komponentId : pos.domyslnyKomponentId);
+      const gramy = masaKomponentuWGramach(komponent, pos.ilosc, pos.jednostka);
+      const proporcja = gramy / komponent.iloscWynikowa;
       for (const surowiec of komponent.skladniki) {
         prosty(surowiec.skladnikId, surowiec.ilosc * proporcja, surowiec.jednostka);
       }

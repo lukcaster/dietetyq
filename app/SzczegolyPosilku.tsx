@@ -17,13 +17,51 @@ interface Props {
   mnoznik: number;
   /** Kroki przygotowania bywają niepotrzebne w gęstym podglądzie całego tygodnia. */
   pokazInstrukcje?: boolean;
+  /**
+   * Zmiana zawartości gniazda przepisu (inne ciasto, inne nadzienie). Brak = gniazda
+   * pokazują się jako sam opis, bez możliwości przestawienia — tak jest w gęstym podglądzie
+   * całego tygodnia, gdzie i tak nie ma gdzie kliknąć.
+   */
+  onZmienWybor?: (nazwaGrupy: string, komponentId: string) => void;
+  /** Blokuje selecty, gdy przeliczenie posiłku jest w drodze. */
+  pracuje?: boolean;
 }
 
-export default function SzczegolyPosilku({ posilek, mnoznik, pokazInstrukcje = true }: Props) {
+export default function SzczegolyPosilku({
+  posilek,
+  mnoznik,
+  pokazInstrukcje = true,
+  onZmienWybor,
+  pracuje = false,
+}: Props) {
   const ilosc = (x: number) => Math.round(x * mnoznik * 10) / 10;
 
   return (
     <>
+      {/* Gniazda do przestawienia idą NA GÓRĘ, nad składniki: wybór ciasta i nadzienia zmienia
+          całą listę poniżej, więc pokazywanie go pod nią czytałoby się od końca. */}
+      {onZmienWybor && posilek.wybory && posilek.wybory.length > 0 && (
+        <div className="wybory-posilku">
+          {posilek.wybory.map((w) => (
+            <label key={w.nazwaGrupy} className="wybor-gniazdo">
+              <span className="wybor-etykieta">{w.etykieta}</span>
+              <select
+                className="wybor-select"
+                value={w.wybranyKomponentId}
+                disabled={pracuje}
+                onChange={(e) => onZmienWybor(w.nazwaGrupy, e.target.value)}
+              >
+                {w.opcje.map((o) => (
+                  <option key={o.komponentId} value={o.komponentId}>
+                    {o.nazwa}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+        </div>
+      )}
+
       <p className="podtytul" style={{ marginTop: 10, marginBottom: 4 }}>
         Składniki{mnoznik > 1 ? ` (na ${mnoznik} osób)` : ""}:
       </p>

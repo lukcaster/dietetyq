@@ -82,6 +82,30 @@ function dodaj(suma, skladnik, g) {
 
 const jestGrupa = (pozycja) => "kategoria" in pozycja;
 const jestKomponent = (pozycja) => "komponentId" in pozycja;
+const jestGrupaKomponentow = (pozycja) => "kategoriaKomponentu" in pozycja;
+
+/** "szt" dla półproduktu liczymy przez jego masaSztuki — tak samo jak silnik. */
+function gramyKomponentu(komponent, ilosc, jednostka, gdzie) {
+  if (jednostka !== "szt") return ilosc;
+  if (!komponent.masaSztuki) {
+    blad(gdzie, `komponent "${komponent.id}" użyty w sztukach, ale nie ma masaSztuki`);
+    return 0;
+  }
+  return ilosc * komponent.masaSztuki;
+}
+
+/** Surowce półproduktu w gramach, przeskalowane do ilości użytej w przepisie. */
+function rozlozKomponent(komponent, ilosc, jednostka, gdzie) {
+  const proporcja = gramyKomponentu(komponent, ilosc, jednostka, gdzie) / komponent.iloscWynikowa;
+  return komponent.skladniki.flatMap((s) => {
+    const skladnik = poId.get(s.skladnikId);
+    if (!skladnik) {
+      blad(`komponent ${komponent.id}`, `nieznany składnik "${s.skladnikId}"`);
+      return [];
+    }
+    return [{ skladnik, gramy: gramy(skladnik, s.ilosc, s.jednostka, gdzie) * proporcja, token: s.skladnikId }];
+  });
+}
 
 /**
  * Rozkłada pozycję przepisu na realne składniki bazowe.
@@ -113,27 +137,44 @@ function rozloz(pozycja, gdzie) {
     ];
   }
 
+  /*
+   * Gniazdo wyboru półproduktu liczymy po domyślnym — tak samo jak grupę wyboru składników.
+   * Walidator sprawdza przy tym to, czego silnik już nie sprawdzi w runtime: że kategoria
+   * istnieje, że domyślny do niej należy i że przy jednostce "szt" każda opcja ma masaSztuki
+   * (inaczej wybór tej opcji wywalałby przepis dopiero u usera).
+   */
+  if (jestGrupaKomponentow(pozycja)) {
+    const pula = komponenty.filter((k) => k.kategoria === pozycja.kategoriaKomponentu);
+    if (pula.length === 0) {
+      blad(gdzie, `kategoria komponentów "${pozycja.kategoriaKomponentu}" jest pusta`);
+      return [];
+    }
+    const domyslny = komponentPoId.get(pozycja.domyslnyKomponentId);
+    if (!domyslny) {
+      blad(gdzie, `nieznany domyslnyKomponentId "${pozycja.domyslnyKomponentId}"`);
+      return [];
+    }
+    if (domyslny.kategoria !== pozycja.kategoriaKomponentu) {
+      blad(gdzie, `domyślny komponent "${domyslny.id}" nie należy do "${pozycja.kategoriaKomponentu}"`);
+    }
+    if (pozycja.jednostka === "szt") {
+      for (const k of pula) {
+        if (!k.masaSztuki) blad(gdzie, `opcja "${k.id}" nie ma masaSztuki, a gniazdo liczy w sztukach`);
+      }
+    }
+    return rozlozKomponent(domyslny, pozycja.ilosc, pozycja.jednostka, gdzie).map((p) => ({
+      ...p,
+      token: `grupa-komponentow:${pozycja.kategoriaKomponentu}`,
+    }));
+  }
+
   if (jestKomponent(pozycja)) {
     const komponent = komponentPoId.get(pozycja.komponentId);
     if (!komponent) {
       blad(gdzie, `nieznany komponent "${pozycja.komponentId}"`);
       return [];
     }
-    const proporcja = pozycja.ilosc / komponent.iloscWynikowa;
-    return komponent.skladniki.flatMap((s) => {
-      const skladnik = poId.get(s.skladnikId);
-      if (!skladnik) {
-        blad(`komponent ${komponent.id}`, `nieznany składnik "${s.skladnikId}"`);
-        return [];
-      }
-      return [
-        {
-          skladnik,
-          gramy: gramy(skladnik, s.ilosc, s.jednostka, gdzie) * proporcja,
-          token: s.skladnikId,
-        },
-      ];
-    });
+    return rozlozKomponent(komponent, pozycja.ilosc, pozycja.jednostka, gdzie);
   }
 
   const skladnik = poId.get(pozycja.skladnikId);
@@ -274,7 +315,13 @@ const uzywane = new Set();
 for (const { przepis: p } of rozlozone.values()) {
   for (const pozycja of p.skladniki ?? []) {
     if (jestGrupa(pozycja)) for (const s of skladniki) { if (s.kategoria === pozycja.kategoria) uzywane.add(s.id); }
-    else if (jestKomponent(pozycja)) {
+    else if (jestGrupaKomponentow(pozycja)) {
+      // Każda opcja gniazda jest realnie używana — user może wybrać dowolną.
+      for (const k of komponenty) {
+        if (k.kategoria !== pozycja.kategoriaKomponentu) continue;
+        for (const s of k.skladniki) uzywane.add(s.skladnikId);
+      }
+    } else if (jestKomponent(pozycja)) {
       for (const s of komponentPoId.get(pozycja.komponentId)?.skladniki ?? []) uzywane.add(s.skladnikId);
     } else uzywane.add(pozycja.skladnikId);
   }

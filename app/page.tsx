@@ -289,6 +289,38 @@ export default function Home() {
     }
   }
 
+  /**
+   * Przestawia jedno gniazdo posiłku (inne ciasto, inne nadzienie) i przelicza go od nowa.
+   *
+   * Idzie tą samą drogą co wybór przepisu z listy, bo to jest ta sama operacja: przepis zostaje,
+   * zmienia się tylko czym wypełniamy jego gniazda. Pozostałe wybory trzeba przepisać z posiłku —
+   * silnik rozwiązuje przepis od zera, więc bez tego zmiana nadzienia cofałaby ciasto do domyślnego.
+   */
+  async function zmienWybor(indeksDnia: number, indeksPosilku: number, nazwaGrupy: string, komponentId: string) {
+    if (!profil || !edytowany) return;
+    const posilek = edytowany.dni[indeksDnia].posilki[indeksPosilku];
+    const wybory: Record<string, string> = {};
+    for (const w of posilek.wybory ?? []) wybory[w.nazwaGrupy] = w.wybranyKomponentId;
+    wybory[nazwaGrupy] = komponentId;
+
+    setPracuje(true);
+    setBlad(null);
+    try {
+      const odpowiedz = await fetch("/api/posilek/z-przepisu", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...daneZProfilu(profil), slot: posilek.slot, recipeId: posilek.recipeId, wybory }),
+      });
+      const wynik = await odpowiedz.json();
+      if (!odpowiedz.ok) throw new Error(wynik.blad ?? "Nie udało się zmienić tego składnika");
+      podmienWPlanie(indeksDnia, indeksPosilku, wynik);
+    } catch (e) {
+      setBlad(e instanceof Error ? e.message : "Nieznany błąd");
+    } finally {
+      setPracuje(false);
+    }
+  }
+
   async function pokazPropozycje(indeksDnia: number, indeksPosilku: number) {
     if (!profil || !edytowany) return;
     const posilek = edytowany.dni[indeksDnia].posilki[indeksPosilku];
@@ -473,6 +505,7 @@ export default function Home() {
                 onZjedzone={odhacz}
                 onCofnij={cofnij}
                 onWymien={pokazPropozycje}
+                onZmienWybor={zmienWybor}
                 onDomknij={domknijDzien}
                 komunikatDomkniecia={komunikatDomkniecia}
                 onPokazCalyPlan={() => setWidok("calyPlan")}
@@ -554,7 +587,12 @@ export default function Home() {
                                 co właściwie akceptuje. Zwinięte, żeby tydzień dał się objąć wzrokiem. */}
                             <details className="podglad-przepisu">
                               <summary>Co w tym jest?</summary>
-                              <SzczegolyPosilku posilek={posilek} mnoznik={profil.liczbaOsob} />
+                              <SzczegolyPosilku
+                                posilek={posilek}
+                                mnoznik={profil.liczbaOsob}
+                                pracuje={pracuje}
+                                onZmienWybor={(grupa, komponentId) => zmienWybor(indeksDnia, i, grupa, komponentId)}
+                              />
                             </details>
 
                             <div className="posilek-akcje nie-do-druku">

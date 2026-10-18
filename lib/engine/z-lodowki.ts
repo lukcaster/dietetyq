@@ -1,7 +1,14 @@
-import { getComponentById, getIngredients, getRecipes, getSzablony } from "./data";
+import { getComponentById, getComponents, getIngredients, getRecipes, getSzablony } from "./data";
 import { makroNaJednostke, type JednostkaKreatora } from "./kreator";
 import type { SkladnikBazowyWPlanie } from "./lista-zakupow";
-import { dodajMakro, makroSkladnikaProstego, masaWGramach, pustaMakro, skalujMakro } from "./macro";
+import {
+  dodajMakro,
+  makroSkladnikaProstego,
+  masaKomponentuWGramach,
+  masaWGramach,
+  pustaMakro,
+  skalujMakro,
+} from "./macro";
 import { granicePozycji, naJednostke, MIN_SENSOWNA_PORCJA_G } from "./porcje";
 import {
   obliczKcalDzienne,
@@ -16,6 +23,7 @@ import { zaproponujDokupienie, type PropozycjeDokupienia } from "./propozycje-do
 import { dobierzIlosci, type PozycjaDoDobrania } from "./solver";
 import { maZakazanyAlergen, pobierzPozycjeSpizarni } from "./spizarnia";
 import {
+  jestGrupaKomponentow,
   jestGrupaWyboru,
   jestKomponentem,
   type Ingredient,
@@ -308,17 +316,28 @@ function dopasujPrzepisDoKoszyka(przepis: Recipe, wKoszyku: Map<string, number>)
       continue;
     }
 
-    if (jestKomponentem(pos)) {
-      const komponent = getComponentById(pos.komponentId);
-      const proporcja = pos.ilosc / komponent.iloscWynikowa;
-      for (const surowiec of komponent.skladniki) {
-        const indeks = wKoszyku.get(surowiec.skladnikId);
-        if (indeks === undefined) return null;
+    if (jestKomponentem(pos) || jestGrupaKomponentow(pos)) {
+      /*
+       * Przy gnieździe wyboru próbujemy KAŻDEGO półproduktu z kategorii i bierzemy pierwszy,
+       * na który user ma wszystkie surowce. Tu, w odróżnieniu od listy zakupów, jest to jedyna
+       * sensowna odpowiedź: pytanie brzmi „co mogę zrobić z tego, co mam", więc mając mąkę
+       * owsianą i nie mając pszennej user ma dostać naleśniki owsiane, a nie usłyszeć „nie da się".
+       */
+      const kandydaci = jestKomponentem(pos)
+        ? [getComponentById(pos.komponentId)]
+        : getComponents().filter((k) => k.kategoria === pos.kategoriaKomponentu);
+
+      const wykonalny = kandydaci.find((k) => k.skladniki.every((s) => wKoszyku.has(s.skladnikId)));
+      if (!wykonalny) return null;
+
+      const gramy = masaKomponentuWGramach(wykonalny, pos.ilosc, pos.jednostka);
+      const proporcja = gramy / wykonalny.iloscWynikowa;
+      for (const surowiec of wykonalny.skladniki) {
         pozycje.push({
           skladnikId: surowiec.skladnikId,
           ilosc: surowiec.ilosc * proporcja,
           jednostka: surowiec.jednostka,
-          indeks,
+          indeks: wKoszyku.get(surowiec.skladnikId)!,
         });
       }
       continue;
