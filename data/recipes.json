@@ -16747,5 +16747,681 @@
     "wymaganeDodatki": [
       "dodatek-skrobiowy"
     ]
+  },
+  {
+    "id": "makaron-losos-feta-dynia",
+    "nazwa": "Makaron z łososiem, fetą i dynią z piekarnika",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Nagrzej piekarnik do 180°C.",
+      "W dużym naczyniu żaroodpornym ułóż kostkę fety, łososia, dynię pokrojoną w kostkę i szalotkę w piórka. Główkę czosnku przekrój w poprzek i włóż całą, w łupinach — upieczony tak czosnek robi się słodki i daje się wyciskać jak pasta.",
+      "Dopraw solą, pieprzem i tymiankiem, skrop oliwą i delikatnie przemieszaj.",
+      "Przykryj folią aluminiową i piecz 45-60 minut, aż dynia będzie całkiem miękka, a łosoś da się rozdzielić widelcem.",
+      "W tym czasie ugotuj makaron al dente. Przed odcedzeniem odlej szklankę wody z gotowania — nie wylewaj jej, skrobia z niej zwiąże sos.",
+      "Z upieczonego czosnku wyciśnij ząbki z łupin do naczynia i rozgnieć wszystko widelcem. Feta i dynia zrobią się kremowe same, bez śmietany.",
+      "Wmieszaj szpinak — zwiędnie od samego ciepła. Dodaj makaron i chlust wody z gotowania, mieszaj do połączenia. Dolewaj wodę po trochu, aż sos będzie się kleił do makaronu, a nie spływał.",
+      "Rozłóż na cztery porcje."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "losos-swiezy",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "feta",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-pszenny",
+        "ilosc": 160,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "dynia",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szalotka",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tymianek",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek"
+    ],
+    "rodzaj": "makarony"
+  },
+  {
+    "id": "makaron-z-duszona-wolowina-na-zapas",
+    "nazwa": "Makaron z duszoną wołowiną i warzywami (na zapas)",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "4 h w piekarniku",
+    "instrukcje": [
+      "Nagrzej piekarnik do 150°C.",
+      "W dużym naczyniu żaroodpornym (albo w wolnowarze) połącz wołowinę, marchewkę, seler naciowy i cebulę pokrojone w kostkę, pomidory z puszki, koncentrat, czosnek, bulion i ocet balsamiczny. Dopraw solą, pieprzem, oregano i słodką papryką. Wymieszaj.",
+      "Przykryj i duś około 4 godzin. W połowie czasu warto odwrócić mięso. Niska temperatura przez długi czas to tutaj cały mechanizm: kolagen z goleni rozpuszcza się w żelatynę i sos gęstnieje sam, bez mąki i bez śmietany. Na szybszym ogniu mięso zrobi się tylko twarde.",
+      "Wyjmij mięso, rozdrobnij dwoma widelcami albo pokrój i wróć do sosu.",
+      "Ugotuj makaron pełnoziarnisty al dente i wmieszaj go do sosu.",
+      "Posyp parmezanem i cheddarem, wstaw do piekarnika jeszcze na 10 minut, aż ser się rozpuści.",
+      "Porcja wychodzi duża i dobrze znosi odgrzewanie — to danie robi się właśnie na kilka dni naprzód."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "wolowina-golen",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "seler-naciowy",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-krojone",
+        "ilosc": 800,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koncentrat-pomidorowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "makaron-pelnoziarnisty",
+        "ilosc": 160,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 650,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "ocet-balsamiczny",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-cheddar",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 3,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "garnek"
+    ],
+    "rodzaj": "makarony"
+  },
+  {
+    "id": "nalesniki-zapiekane-z-kurczakiem",
+    "nazwa": "Naleśniki zapiekane z kurczakiem i papryką",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Usmaż naleśniki według opisu wybranego ciasta i układaj je jeden na drugim, póki gorące — same się nie wysuszą i nie posklejają.",
+      "Udka pokrój w kostkę. Rozgrzej oliwę na patelni i smaż mięso na dużym ogniu, aż się zrumieni, 6-8 minut. Nie mieszaj za często, bo zacznie się dusić.",
+      "Dodaj cebulę i paprykę w kostce, czosnek w plasterkach i smaż jeszcze 5 minut.",
+      "Dopraw curry, tymiankiem, płatkami chili, solą i pieprzem. Wlej śmietankę i duś 2-3 minuty, aż farsz przestanie być mokry — zbyt wilgotny rozmoczy naleśniki od środka.",
+      "Na sos: w rondelku zagotuj passatę z oregano i szczyptą soli, gotuj 3-4 minuty. Zdejmij z ognia, odczekaj minutę i dopiero wtedy wmieszaj jogurt. Wrzucony na gorące ścięłby się w kłaczki.",
+      "Nagrzej piekarnik do 180°C z termoobiegiem.",
+      "Na każdy naleśnik nałóż farsz i zwiń w rulon. Ułóż rulony w naczyniu obok siebie, szwem do dołu.",
+      "Polej sosem i posyp startym serem.",
+      "Piecz 15-20 minut, aż ser się zrumieni."
+    ],
+    "skladniki": [
+      {
+        "nazwaGrupy": "ciasto",
+        "etykieta": "Ciasto",
+        "kategoriaKomponentu": "ciasto-nalesnikowe",
+        "domyslnyKomponentId": "ciasto-nalesnikowe-klasyczne",
+        "ilosc": 8,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "kurczak-udziec",
+        "ilosc": 800,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietanka-30",
+        "ilosc": 80,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "passata-pomidorowa",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "curry-w-proszku",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tymianek",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-chili",
+        "ilosc": 1,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
+    ],
+    "rodzaj": "nalesniki"
+  },
+  {
+    "id": "biszkopt-pomaranczowy-z-galaretka",
+    "nazwa": "Biszkopt pomarańczowy z galaretką i czekoladą",
+    "slot": [
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "3 h chłodzenia",
+    "instrukcje": [
+      "Oddziel białka od żółtek. Białka ubij na sztywną pianę, dosyp cukier i miksuj dalej, aż masa zrobi się gęsta i błyszcząca.",
+      "Dodaj żółtka, mąkę ryżową i proszek do pieczenia. Mieszaj szpatułką, ruchem od dołu do góry i tylko do połączenia — mikser na tym etapie wybije z piany powietrze i biszkopt opadnie.",
+      "Przełóż do formy 18 cm i piecz w 170°C około 15 minut, do suchego patyczka.",
+      "Ostudź biszkopt całkowicie. Ciepły rozmięknie pod galaretką.",
+      "Galaretkę rozpuść w 600 ml gorącej wody i odstaw, aż zacznie lekko tężeć — wtedy wylej ją na biszkopt. Wylana zupełnie płynna wsiąknie w ciasto zamiast zrobić warstwę.",
+      "Wstaw do lodówki na 2-3 godziny do stężenia.",
+      "Czekoladę rozpuść w kąpieli wodnej z aromatem pomarańczowym, polej wierzch i wstaw z powrotem do lodówki, aż zastygnie."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jajko",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maka-ryzowa",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "galaretka-bez-cukru",
+        "ilosc": 28,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "aromat-pomaranczowy",
+        "ilosc": 4,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
+    ],
+    "rodzaj": "wypieki"
+  },
+  {
+    "id": "ciastka-migdalowe-dwuskladnikowe",
+    "nazwa": "Ciastka migdałowe z dwóch składników",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "instrukcje": [
+      "Nagrzej piekarnik do 170°C i wyłóż blachę papierem.",
+      "W misce wymieszaj płatki migdałowe z jajkiem, aż wszystkie płatki będą oblepione. Masa ma być luźna, nie zwarta — to nie ciasto.",
+      "Nakładaj łyżką porcje na blachę i lekko je spłaszcz. Wyjdzie 8-10 ciastek.",
+      "Piecz 10-12 minut, aż brzegi się zrumienią.",
+      "Zostaw do całkowitego ostudzenia na blasze. To nie jest rada o cierpliwości: świeżo upieczone są miękkie i chrupną dopiero, gdy wystygną.",
+      "Można jeść tak albo polać miodem. Bez miodu wychodzi wersja wytrawna, dobra do serów."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "platki-migdalowe",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      }
+    ],
+    "sprzet": [
+      "piekarnik"
+    ],
+    "rodzaj": "przekaski"
+  },
+  {
+    "id": "brownie-z-czerwonej-fasoli",
+    "nazwa": "Brownie z czerwonej fasoli (bez nabiału i jajek)",
+    "slot": [
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 9,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Nagrzej piekarnik do 180°C. Formę około 16x16 cm wyłóż papierem.",
+      "Fasolę odcedź i dokładnie przepłucz na sitku, aż przestanie się pienić. Zalewa z puszki ma wyraźny posmak i to jedyna rzecz, która może zepsuć ten przepis.",
+      "Zblenduj fasolę, banany, olej, kakao, cukier, proszek, sodę i szczyptę soli na całkiem gładką masę. Miksuj dłużej, niż się wydaje potrzebne — wyczuwalne kawałki fasoli zdradzają, z czego to jest.",
+      "Banany muszą być bardzo dojrzałe, z brązowymi plamami. Twarde nie dosłodzą ciasta i nie dadzą wilgotności.",
+      "Wylej masę do formy i wyrównaj. Piecz 30-35 minut.",
+      "Wyjmij i zostaw do całkowitego ostudzenia w formie. Na ciepło będzie się rozpadać, po ostudzeniu zbije się w zwartą, wilgotną strukturę.",
+      "Pokrój na 9 kwadratów. Opcjonalnie podaj z truskawkami."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "banan",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "soda-oczyszczona",
+        "ilosc": 3,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
+    ],
+    "rodzaj": "wypieki"
+  },
+  {
+    "id": "pizza-slimaczki",
+    "nazwa": "Pizzowe ślimaczki z szynką i oliwkami",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Ciasto wyjmij z lodówki kilka minut wcześniej — zimne pęka przy zwijaniu.",
+      "Rozwiń ciasto i posmaruj sosem, zostawiając wolne 2 cm wzdłuż jednego dłuższego boku. Ten wolny pasek sklei roladę; posmarowany sosem rozejdzie się w piekarniku.",
+      "Posyp startą mozzarellą, ułóż cienkie plastry szynki, pokrojone oliwki i, jeśli chcesz, drobno posiekaną cebulę.",
+      "Zwiń ciasno roladę wzdłuż dłuższego boku, kończąc na pustym brzegu. Dociśnij szew.",
+      "Pokrój ostrym nożem na krążki grubości około 2 cm. Wyjdzie ich około 18. Tnij jednym pociągnięciem, piłowanie wyciska farsz.",
+      "Ułóż ślimaczki na blasze z papierem, płasko, z odstępami. Posyp resztą mozzarelli.",
+      "Piecz w 200°C z termoobiegiem około 20 minut, ale sprawdź już po 15 — każdy piekarnik piecze inaczej, a tu granica między rumianym a przypalonym jest cienka.",
+      "Odstaw na kilka minut przed podaniem, żeby ser przestał parzyć."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "spody-do-pizzy",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-pomidorowy",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "keczup",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 170,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "szynka",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwki-czarne",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 50,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik"
+    ],
+    "rodzaj": "wypieki"
+  },
+  {
+    "id": "wrapy-zapiekane-z-mielonka-i-papryka",
+    "nazwa": "Zapiekane wrapy z mielonym i trzema paprykami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 6,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Cebulę i papryki pokrój w kostkę, czosnek w plasterki.",
+      "Rozgrzej oliwę na dużej patelni i podsmaż cebulę 4-5 minut, aż się zeszkli.",
+      "Dodaj mięso mielone i smaż, rozbijając je łyżką, aż się zrumieni. Dopiero potem dorzuć paprykę — wrzucona razem z mięsem puści wodę i mięso zacznie się dusić.",
+      "Wlej passatę, dodaj fasolę, kukurydzę, słodką paprykę, kurkumę, sól i pieprz. Duś 10-12 minut, aż sos wyraźnie zgęstnieje. Zbyt płynny farsz rozmoczy tortillę od środka.",
+      "Zdejmij z ognia, wmieszaj posiekaną bazylię i pietruszkę.",
+      "Na każdą tortillę nałóż szóstą część farszu i część sera, zawiń boki do środka i zwiń jak burrito.",
+      "Ułóż wrapy szwem do dołu na blasze, posyp resztą mozzarelli i zapiekaj w piekarniku albo airfryerze 5-6 minut, aż ser się rozpuści, a tortilla zrumieni.",
+      "Wrapy na wynos spakuj po ostudzeniu, a odgrzewaj w piekarniku albo mikrofali przed jedzeniem."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "tortilla-pszenna",
+        "ilosc": 6,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "mieso-mielone-z-szynki",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mozzarella",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "passata-pomidorowa",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 450,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 130,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kukurydza-konserwowa",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bazylia-swieza",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 6,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurkuma",
+        "ilosc": 1,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
+    ],
+    "rodzaj": "wrapy"
+  },
+  {
+    "id": "ciasto-owsiane-z-daktylami-i-owocami",
+    "nazwa": "Ciasto owsiane z daktylami, borówkami i malinami",
+    "slot": [
+      "drugie-sniadanie",
+      "podwieczorek"
+    ],
+    "charakter": "slodkie",
+    "porcje": 12,
+    "czasPrzygotowania": "30+",
+    "instrukcje": [
+      "Daktyle zalej wrzątkiem, przykryj i odstaw na 10 minut, żeby zmiękły. Odcedź.",
+      "Zblenduj daktyle z jajkami i obranym jabłkiem na gładką masę.",
+      "Dodaj napój migdałowy i masło orzechowe, zblenduj jeszcze raz.",
+      "Przełóż masę do miski i wmieszaj płatki owsiane oraz proszek do pieczenia. Odstaw na 5 minut — płatki napęcznieją i masa przestanie być wodnista.",
+      "Przelej do tortownicy 22 cm wyłożonej papierem.",
+      "Na wierzch wyłóż maliny i borówki, posyp płatkami migdałowymi. Owoce zostaw na powierzchni, nie mieszaj ich w masę — zatopione puszczą sok i ciasto zostanie w środku surowe.",
+      "Piecz w 180°C przez 50 minut. Sprawdź patyczkiem w środku; ciasto jest wilgotne z natury, ale nie może być mokre.",
+      "Ostudź, polej rozpuszczoną gorzką czekoladą i pokrój na 12 porcji. Nadaje się do lunchboxa."
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 6,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "platki-owsiane",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "proszek-do-pieczenia",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo-orzechowe",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jablko",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "napoj-migdalowy",
+        "ilosc": 480,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "borowki",
+        "ilosc": 215,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-migdalowe",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czekolada-gorzka",
+        "ilosc": 40,
+        "jednostka": "g"
+      }
+    ],
+    "sprzet": [
+      "piekarnik",
+      "blender"
+    ],
+    "rodzaj": "wypieki"
   }
 ]

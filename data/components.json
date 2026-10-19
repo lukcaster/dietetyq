@@ -289,7 +289,7 @@
   {
     "id": "ciasto-nalesnikowe-z-soczewicy",
     "nazwa": "Ciasto naleśnikowe z soczewicy",
-    "iloscWynikowa": 510,
+    "iloscWynikowa": 507,
     "jednostkaWynikowa": "g",
     "skladniki": [
       {
@@ -301,17 +301,13 @@
         "skladnikId": "woda",
         "ilosc": 360,
         "jednostka": "ml"
-      },
-      {
-        "skladnikId": "kminek",
-        "ilosc": 3,
-        "jednostka": "g"
       }
     ],
     "instrukcje": [
-      "Soczewicę zalej wodą i zostaw na noc — bez namoczenia nie zmiksuje się na gładko.",
-      "Następnego dnia zblenduj całość razem z wodą i kminkiem na jednolite, rzadkie ciasto. Dopraw solą.",
-      "Ciasto ma mieć konsystencję śmietany — jeśli jest za gęste, dolej odrobinę wody."
+      "Soczewicę zalej zimną wodą tak, żeby ją przykryła z zapasem, i odstaw na minimum 4 godziny, najlepiej na noc. Bez namoczenia nie zmiksuje się na gładko.",
+      "Odcedź soczewicę i dokładnie przepłucz pod bieżącą wodą. Wody po moczeniu nie używaj — zostają w niej związki, od których ciasto gorzknieje, a brzuch się wzdyma.",
+      "Przepłukaną soczewicę przełóż do blendera, zalej odmierzoną świeżą wodą (360 ml na 150 g soczewicy) i zmiksuj na jednolite, rzadkie ciasto. Dodaj szczyptę soli.",
+      "Ciasto ma mieć konsystencję śmietany. Za gęste — dolej wody po łyżce. Za rzadkie — odstaw na 10 minut, samo trochę zgęstnieje."
     ],
     "masaSztuki": 85,
     "porcjaTypowa": 255,

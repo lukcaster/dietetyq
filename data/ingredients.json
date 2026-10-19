@@ -2370,6 +2370,32 @@
     }
   },
   {
+    "id": "szalotka",
+    "nazwa": "Szalotka",
+    "makroNa100g": {
+      "kcal": 72,
+      "bialko": 2.5,
+      "tluszcz": 0.1,
+      "wegle": 16.8
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 60,
+    "maksPorcja": 200,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "kategoria": "warzywo-cieple",
+    "mikroNa100g": {
+      "blonnik": 3.2,
+      "zelazo": 1.2,
+      "wapn": 37,
+      "magnez": 21,
+      "potas": 334,
+      "cynk": 0.4,
+      "witaminaC": 8,
+      "sod": 12
+    }
+  },
+  {
     "id": "ogorek-kiszony",
     "nazwa": "Ogórek kiszony",
     "makroNa100g": {
@@ -2764,6 +2790,34 @@
       "witaminaC": 0,
       "sod": 25
     }
+  },
+  {
+    "id": "galaretka-bez-cukru",
+    "nazwa": "Galaretka bez cukru (proszek)",
+    "makroNa100g": {
+      "kcal": 180,
+      "bialko": 42,
+      "tluszcz": 0,
+      "wegle": 3
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 28,
+    "maksPorcja": 60,
+    "rolaKulinarna": "dodatek-slodki"
+  },
+  {
+    "id": "aromat-pomaranczowy",
+    "nazwa": "Aromat pomarańczowy",
+    "makroNa100g": {
+      "kcal": 0,
+      "bialko": 0,
+      "tluszcz": 0,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 4,
+    "maksPorcja": 10,
+    "rolaKulinarna": "dodatek-slodki"
   },
   {
     "id": "proszek-do-pieczenia",
@@ -5067,6 +5121,33 @@
     "kategoria": "orzechy-posypka"
   },
   {
+    "id": "platki-migdalowe",
+    "nazwa": "Płatki migdałowe",
+    "makroNa100g": {
+      "kcal": 589,
+      "bialko": 21,
+      "tluszcz": 51,
+      "wegle": 20
+    },
+    "tagiAlergenow": [
+      "orzechy"
+    ],
+    "porcjaTypowa": 25,
+    "maksPorcja": 60,
+    "grupaPreferencji": "Orzechy i nasiona",
+    "rolaKulinarna": "posypka",
+    "mikroNa100g": {
+      "blonnik": 11,
+      "zelazo": 3.7,
+      "wapn": 264,
+      "magnez": 268,
+      "potas": 705,
+      "cynk": 3.1,
+      "witaminaC": 0,
+      "sod": 1
+    }
+  },
+  {
     "id": "orzechy-arachidowe",
     "nazwa": "Orzeszki ziemne (arachidowe)",
     "makroNa100g": {
@@ -5610,6 +5691,32 @@
     "grupaPreferencji": "Mięso i ryby",
     "rolaKulinarna": "mieso",
     "wymagaGotowania": true
+  },
+  {
+    "id": "wolowina-golen",
+    "nazwa": "Wołowina, goleń",
+    "makroNa100g": {
+      "kcal": 140,
+      "bialko": 21,
+      "tluszcz": 5.5,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "grupaPreferencji": "Mięso i wędliny",
+    "rolaKulinarna": "mieso",
+    "kategoria": "mieso-czerwone",
+    "wymagaGotowania": true,
+    "mikroNa100g": {
+      "blonnik": 0,
+      "zelazo": 2.6,
+      "wapn": 14,
+      "magnez": 21,
+      "potas": 330,
+      "cynk": 5.1,
+      "witaminaC": 0,
+      "sod": 60
+    }
   },
   {
     "id": "jogurt-grecki-0",
