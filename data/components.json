@@ -583,6 +583,89 @@
     ]
   },
   {
+    "id": "nadzienie-szarlotkowe",
+    "nazwa": "Nadzienie szarlotkowe z prażonym jabłkiem",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 380,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 190,
+    "skladniki": [
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "budyn-waniliowy",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 80,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "jablko",
+        "ilosc": 180,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cynamon",
+        "ilosc": 2,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-migdalowe",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Ugotuj budyń na mleku według opakowania, ale na połowie podanej ilości płynu — ma wyjść gęsty jak krem, nie jak deser.",
+      "Ostudzony budyń utrzyj z twarogiem.",
+      "Jabłka pokrój w kostkę i praż na suchej patelni z cynamonem 5-6 minut, aż zmiękną i odparują. Wilgotne jabłka rozmoczą naleśnik.",
+      "Płatki migdałowe uprażyj na suchej patelni do zapachu — pilnuj, bo przypalają się w kilkanaście sekund.",
+      "Posmaruj naleśnik masą twarogowo-budyniową, wyłóż jabłka, zwiń i posyp migdałami."
+    ]
+  },
+  {
+    "id": "nadzienie-ukrainskie",
+    "nazwa": "Nadzienie twarogowe z rodzynkami",
+    "kategoria": "nadzienie-nalesnikowe-slodkie",
+    "iloscWynikowa": 275,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 138,
+    "skladniki": [
+      {
+        "skladnikId": "twarog-polnotlusty",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rodzynki",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Rodzynki zalej wrzątkiem na 5 minut i odsącz. Suche wyciągną wilgoć z masy i zostaną twarde.",
+      "Twaróg rozetrzyj z żółtkiem i cukrem na gładką masę.",
+      "Białko ubij na sztywno i wmieszaj delikatnie, ruchem od dołu do góry — to ono robi nadzienie puszystym zamiast zbitym.",
+      "Dodaj rodzynki. Nałóż na naleśniki, zwiń w kopertki i podsmaż je na maśle z obu stron, aż się zarumienią."
+    ]
+  },
+  {
     "id": "nadzienie-lososiowe",
     "nazwa": "Nadzienie z łososiem i serkiem",
     "kategoria": "nadzienie-nalesnikowe-wytrawne",
@@ -675,6 +758,105 @@
       "Jajka ugotuj na twardo (9-10 minut), ostudź pod zimną wodą i obierz.",
       "Rozgnieć je widelcem, wmieszaj jogurt i posiekany szczypiorek, dopraw solą i pieprzem.",
       "Rozsmaruj po naleśniku i zwiń."
+    ]
+  },
+  {
+    "id": "nadzienie-bolognese",
+    "nazwa": "Nadzienie bolońskie z serem",
+    "kategoria": "nadzienie-nalesnikowe-wytrawne",
+    "iloscWynikowa": 330,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 330,
+    "skladniki": [
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "passata-pomidorowa",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oregano",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Cebulę zeszklij na oliwie, dodaj czosnek i smaż jeszcze pół minuty.",
+      "Wrzuć mięso i smaż, rozbijając je łyżką, aż straci różowy kolor i zacznie się rumienić.",
+      "Wlej passatę, dodaj oregano, sól i pieprz. Duś na małym ogniu 12-15 minut, aż sos wyraźnie zgęstnieje i przestanie być wodnisty.",
+      "Nałóż farsz na naleśniki, zwiń w rulony i ułóż w naczyniu żaroodpornym szwem do dołu.",
+      "Posyp startym serem i zapiecz 10 minut w 200°C, aż ser się rozpuści."
+    ]
+  },
+  {
+    "id": "nadzienie-szpinakowo-pieczarkowe",
+    "nazwa": "Nadzienie szpinakowo-pieczarkowe",
+    "kategoria": "nadzienie-nalesnikowe-wytrawne",
+    "iloscWynikowa": 285,
+    "jednostkaWynikowa": "g",
+    "porcjaTypowa": 285,
+    "skladniki": [
+      {
+        "skladnikId": "szpinak",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pieczarki",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-suszone",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Pieczarki pokrój w plasterki i smaż na rozgrzanej oliwie BEZ soli, aż odparują wodę i się zrumienią — 7-8 minut. Posolone od razu puszczą sok i będą się dusić.",
+      "Dodaj czosnek i posiekane suszone pomidory, smaż jeszcze minutę.",
+      "Wrzuć szpinak i mieszaj, aż zwiędnie. Odlej płyn, który się zebrał, albo odparuj go — mokre nadzienie rozmiękczy naleśnik.",
+      "Zdejmij z ognia, przestudź i dopiero wtedy wmieszaj jogurt. Na gorącym zwarzy się.",
+      "Dopraw solą i pieprzem, nałóż na naleśniki i zwiń."
     ]
   }
 ]

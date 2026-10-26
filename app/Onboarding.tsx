@@ -85,6 +85,11 @@ const SPRZET_OPCJE: { id: Sprzet; label: string; emoji: string }[] = [
  * Soja jest tu, bo jest tagiem w bazie i połową zamienników za nabiał — bez tej opcji
  * uczulony na soję nie miał jak tego powiedzieć, a dostawał jogurt sojowy zamiast zwykłego.
  */
+/*
+ * Lista musi pokrywać wszystkie tagi używane w ingredients.json. Ryby, skorupiaki i sezam
+ * doszły razem z daniami rybnymi i azjatyckimi: bez nich alergik na ryby nie miał czego
+ * zaznaczyć, a 30 przepisów z bazy przechodziło mu przez filtr bez słowa.
+ */
 const RESTRYKCJE_OPCJE = [
   { id: "laktoza", label: "Laktoza", emoji: "🥛" },
   { id: "nabial", label: "Nabiał w ogóle", emoji: "🐄" },
@@ -92,6 +97,9 @@ const RESTRYKCJE_OPCJE = [
   { id: "orzechy", label: "Orzechy", emoji: "🥜" },
   { id: "jajka", label: "Jajka", emoji: "🥚" },
   { id: "soja", label: "Soja", emoji: "🌱" },
+  { id: "ryby", label: "Ryby", emoji: "🐟" },
+  { id: "skorupiaki", label: "Skorupiaki", emoji: "🦐" },
+  { id: "sezam", label: "Sezam", emoji: "🫘" },
 ];
 
 const AKTYWNOSC_PRACA = [

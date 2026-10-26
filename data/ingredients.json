@@ -64,6 +64,20 @@
     "grupaPreferencji": "Zboża i skrobia"
   },
   {
+    "id": "kukurydza-do-popcornu",
+    "nazwa": "Kukurydza do popcornu (sucha)",
+    "makroNa100g": {
+      "kcal": 387,
+      "bialko": 13,
+      "tluszcz": 5,
+      "wegle": 78
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "grupaPreferencji": "Zboża i skrobia"
+  },
+  {
     "id": "mleko-owsiane",
     "nazwa": "Mleko owsiane",
     "makroNa100g": {
@@ -142,6 +156,24 @@
       "witaminaC": 0,
       "sod": 44
     }
+  },
+  {
+    "id": "maslanka",
+    "nazwa": "Maślanka",
+    "makroNa100g": {
+      "kcal": 40,
+      "bialko": 3.4,
+      "tluszcz": 0.9,
+      "wegle": 4.7
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 200,
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "mleko",
+    "kategoria": "mleko"
   },
   {
     "id": "mleko-kokosowe",
@@ -261,6 +293,23 @@
     "kategoria": "syrop"
   },
   {
+    "id": "masa-krowkowa",
+    "nazwa": "Masa krówkowa (kajmak)",
+    "makroNa100g": {
+      "kcal": 320,
+      "bialko": 6,
+      "tluszcz": 8,
+      "wegle": 56
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "rolaKulinarna": "dodatek-slodki"
+  },
+  {
     "id": "borowki",
     "nazwa": "Borówki",
     "makroNa100g": {
@@ -309,6 +358,22 @@
       "witaminaC": 26,
       "sod": 1
     }
+  },
+  {
+    "id": "jezyny",
+    "nazwa": "Jeżyny",
+    "makroNa100g": {
+      "kcal": 43,
+      "bialko": 1.4,
+      "tluszcz": 0.5,
+      "wegle": 9.6
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 100,
+    "maksPorcja": 250,
+    "grupaPreferencji": "Owoce",
+    "rolaKulinarna": "owoc",
+    "kategoria": "owoc-jagodowy"
   },
   {
     "id": "truskawki",
@@ -386,6 +451,42 @@
       "witaminaC": 0.5,
       "sod": 46
     }
+  },
+  {
+    "id": "kefir",
+    "nazwa": "Kefir",
+    "makroNa100g": {
+      "kcal": 51,
+      "bialko": 3.3,
+      "tluszcz": 2,
+      "wegle": 4.5
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 200,
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "jogurt",
+    "kategoria": "jogurt"
+  },
+  {
+    "id": "labneh",
+    "nazwa": "Labneh (odciskany jogurt)",
+    "makroNa100g": {
+      "kcal": 150,
+      "bialko": 9,
+      "tluszcz": 11,
+      "wegle": 3.5
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 80,
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "baza-kremowa",
+    "kategoria": "baza-bialkowa-kremowa"
   },
   {
     "id": "jogurt-sojowy",
@@ -530,6 +631,22 @@
     "kategoria": "warzywo-cieple"
   },
   {
+    "id": "szczaw",
+    "nazwa": "Szczaw",
+    "makroNa100g": {
+      "kcal": 22,
+      "bialko": 2,
+      "tluszcz": 0.7,
+      "wegle": 3.2
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "maksPorcja": 300,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "kategoria": "warzywo-cieple"
+  },
+  {
     "id": "pak-choi",
     "nazwa": "Pak choi",
     "makroNa100g": {
@@ -571,6 +688,42 @@
       "witaminaC": 0,
       "sod": 1116
     },
+    "kategoria": "ser-bialy"
+  },
+  {
+    "id": "ser-kozi",
+    "nazwa": "Ser kozi",
+    "makroNa100g": {
+      "kcal": 364,
+      "bialko": 22,
+      "tluszcz": 30,
+      "wegle": 2.5
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 40,
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser",
+    "kategoria": "ser-bialy"
+  },
+  {
+    "id": "camembert",
+    "nazwa": "Camembert",
+    "makroNa100g": {
+      "kcal": 300,
+      "bialko": 20,
+      "tluszcz": 24,
+      "wegle": 0.5
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 40,
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "ser",
     "kategoria": "ser-bialy"
   },
   {
@@ -933,6 +1086,22 @@
     "wymagaGotowania": true
   },
   {
+    "id": "skrzydelka-kurczaka",
+    "nazwa": "Skrzydełka z kurczaka",
+    "makroNa100g": {
+      "kcal": 186,
+      "bialko": 19,
+      "tluszcz": 12,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 200,
+    "grupaPreferencji": "Mięso i wędliny",
+    "rolaKulinarna": "mieso",
+    "kategoria": "mieso-biale",
+    "wymagaGotowania": true
+  },
+  {
     "id": "tortilla-pszenna",
     "nazwa": "Tortilla pszenna",
     "makroNa100g": {
@@ -1146,6 +1315,40 @@
       "witaminaC": 0,
       "sod": 5
     },
+    "kategoria": "skrobia-obiadowa",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "ryz-arborio",
+    "nazwa": "Ryż arborio (do risotto)",
+    "makroNa100g": {
+      "kcal": 349,
+      "bialko": 7,
+      "tluszcz": 0.6,
+      "wegle": 78
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 80,
+    "maksPorcja": 120,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "skrobia",
+    "kategoria": "skrobia-obiadowa",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "ryz-kleisty",
+    "nazwa": "Ryż kleisty (do deserów)",
+    "makroNa100g": {
+      "kcal": 355,
+      "bialko": 6.8,
+      "tluszcz": 0.6,
+      "wegle": 80
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 80,
+    "maksPorcja": 120,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "skrobia",
     "kategoria": "skrobia-obiadowa",
     "wymagaGotowania": true
   },
@@ -1617,6 +1820,54 @@
     "tylkoNaZimno": true
   },
   {
+    "id": "wakame",
+    "nazwa": "Sałatka z wodorostów wakame",
+    "makroNa100g": {
+      "kcal": 87,
+      "bialko": 1.5,
+      "tluszcz": 5,
+      "wegle": 9
+    },
+    "tagiAlergenow": [
+      "soja",
+      "sezam"
+    ],
+    "porcjaTypowa": 50,
+    "maksPorcja": 120,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo"
+  },
+  {
+    "id": "platki-bonito",
+    "nazwa": "Płatki bonito (katsuobushi)",
+    "makroNa100g": {
+      "kcal": 357,
+      "bialko": 77,
+      "tluszcz": 3,
+      "wegle": 0.5
+    },
+    "tagiAlergenow": [
+      "ryby"
+    ],
+    "porcjaTypowa": 5,
+    "maksPorcja": 15,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
+    "id": "nori",
+    "nazwa": "Nori (płaty wodorostów)",
+    "makroNa100g": {
+      "kcal": 35,
+      "bialko": 5.8,
+      "tluszcz": 0.3,
+      "wegle": 5.1
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 5,
+    "maksPorcja": 15,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "chorizo",
     "nazwa": "Chorizo",
     "makroNa100g": {
@@ -1885,6 +2136,18 @@
     }
   },
   {
+    "id": "maka-ziemniaczana",
+    "nazwa": "Mąka ziemniaczana (skrobia)",
+    "makroNa100g": {
+      "kcal": 330,
+      "bialko": 0.6,
+      "tluszcz": 0.1,
+      "wegle": 80
+    },
+    "tagiAlergenow": [],
+    "rolaKulinarna": "maka"
+  },
+  {
     "id": "maka-zytnia",
     "nazwa": "Mąka żytnia (typ 1850)",
     "makroNa100g": {
@@ -1943,6 +2206,24 @@
       "witaminaC": 0,
       "sod": 364
     }
+  },
+  {
+    "id": "serek-homogenizowany",
+    "nazwa": "Serek homogenizowany",
+    "makroNa100g": {
+      "kcal": 142,
+      "bialko": 8.5,
+      "tluszcz": 8,
+      "wegle": 9
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 150,
+    "grupaPreferencji": "Nabiał",
+    "rolaKulinarna": "baza-kremowa",
+    "kategoria": "baza-bialkowa-kremowa"
   },
   {
     "id": "daktyle",
@@ -2041,6 +2322,22 @@
     "wymagaGotowania": true
   },
   {
+    "id": "lopatka-wieprzowa",
+    "nazwa": "Wieprzowina, łopatka",
+    "makroNa100g": {
+      "kcal": 204,
+      "bialko": 19,
+      "tluszcz": 14,
+      "wegle": 0
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 150,
+    "grupaPreferencji": "Mięso i wędliny",
+    "rolaKulinarna": "mieso",
+    "kategoria": "mieso-czerwone",
+    "wymagaGotowania": true
+  },
+  {
     "id": "makaron-udon",
     "nazwa": "Makaron udon",
     "makroNa100g": {
@@ -2094,6 +2391,23 @@
       "witaminaC": 2,
       "sod": 2000
     }
+  },
+  {
+    "id": "doubanjiang",
+    "nazwa": "Doubanjiang (pasta z fermentowanej fasoli)",
+    "makroNa100g": {
+      "kcal": 160,
+      "bialko": 10,
+      "tluszcz": 5,
+      "wegle": 18
+    },
+    "tagiAlergenow": [
+      "soja",
+      "gluten"
+    ],
+    "porcjaTypowa": 20,
+    "maksPorcja": 50,
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "pasta-miso",
@@ -2164,6 +2478,24 @@
       "sod": 5493
     },
     "kategoria": "sos-sojowy"
+  },
+  {
+    "id": "sos-hoisin",
+    "nazwa": "Sos hoisin",
+    "makroNa100g": {
+      "kcal": 220,
+      "bialko": 3.3,
+      "tluszcz": 3.4,
+      "wegle": 44
+    },
+    "tagiAlergenow": [
+      "soja",
+      "gluten",
+      "sezam"
+    ],
+    "porcjaTypowa": 20,
+    "maksPorcja": 50,
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "tamari",
@@ -2279,7 +2611,9 @@
       "tluszcz": 100,
       "wegle": 0
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "sezam"
+    ],
     "porcjaTypowa": 5,
     "maksPorcja": 15,
     "grupaPreferencji": "Roślinne i dodatki",
@@ -2303,7 +2637,9 @@
       "tluszcz": 49.7,
       "wegle": 23.4
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "sezam"
+    ],
     "porcjaTypowa": 5,
     "maksPorcja": 15,
     "grupaPreferencji": "Roślinne i dodatki",
@@ -2419,6 +2755,23 @@
       "witaminaC": 1,
       "sod": 800
     },
+    "tylkoNaZimno": true
+  },
+  {
+    "id": "ogorki-konserwowe",
+    "nazwa": "Ogórki konserwowe",
+    "makroNa100g": {
+      "kcal": 20,
+      "bialko": 0.6,
+      "tluszcz": 0.2,
+      "wegle": 4
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 60,
+    "maksPorcja": 150,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "kategoria": "kiszonka",
     "tylkoNaZimno": true
   },
   {
@@ -2544,6 +2897,22 @@
       "witaminaC": 0,
       "sod": 20
     }
+  },
+  {
+    "id": "czekolada-mleczna",
+    "nazwa": "Czekolada mleczna",
+    "makroNa100g": {
+      "kcal": 535,
+      "bialko": 7.7,
+      "tluszcz": 30,
+      "wegle": 59
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 25,
+    "rolaKulinarna": "dodatek-slodki"
   },
   {
     "id": "bulion-drobiowy",
@@ -2748,6 +3117,23 @@
       "witaminaC": 0,
       "sod": 85
     }
+  },
+  {
+    "id": "mascarpone",
+    "nazwa": "Mascarpone",
+    "makroNa100g": {
+      "kcal": 429,
+      "bialko": 4.6,
+      "tluszcz": 44,
+      "wegle": 4.1
+    },
+    "tagiAlergenow": [
+      "laktoza",
+      "nabial"
+    ],
+    "porcjaTypowa": 50,
+    "grupaPreferencji": "Nabiał",
+    "kategoria": "smietana"
   },
   {
     "id": "pasta-waniliowa",
@@ -3508,6 +3894,20 @@
     }
   },
   {
+    "id": "imbir-marynowany",
+    "nazwa": "Imbir marynowany (gari)",
+    "makroNa100g": {
+      "kcal": 51,
+      "bialko": 0.2,
+      "tluszcz": 0.2,
+      "wegle": 12
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 15,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "curry-w-proszku",
     "nazwa": "Curry w proszku",
     "makroNa100g": {
@@ -3530,6 +3930,23 @@
       "witaminaC": 0.7,
       "sod": 52
     }
+  },
+  {
+    "id": "pasta-curry-zielona",
+    "nazwa": "Pasta curry zielona",
+    "makroNa100g": {
+      "kcal": 120,
+      "bialko": 3,
+      "tluszcz": 4,
+      "wegle": 17
+    },
+    "tagiAlergenow": [
+      "ryby",
+      "skorupiaki"
+    ],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "kolendra-mielona",
@@ -4089,6 +4506,24 @@
     "rolaKulinarna": "pieczywo"
   },
   {
+    "id": "muffin-angielski",
+    "nazwa": "Muffin angielski",
+    "makroNa100g": {
+      "kcal": 235,
+      "bialko": 8,
+      "tluszcz": 1.8,
+      "wegle": 46
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "masaSztuki": 60,
+    "porcjaTypowa": 60,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo",
+    "kategoria": "pieczywo"
+  },
+  {
     "id": "chleb-bezglutenowy",
     "nazwa": "Chleb bezglutenowy",
     "makroNa100g": {
@@ -4210,6 +4645,25 @@
     "wymagaGotowania": true
   },
   {
+    "id": "bulgur",
+    "nazwa": "Kasza bulgur (sucha)",
+    "makroNa100g": {
+      "kcal": 342,
+      "bialko": 12,
+      "tluszcz": 1.3,
+      "wegle": 76
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 80,
+    "maksPorcja": 120,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "skrobia",
+    "kategoria": "skrobia-obiadowa",
+    "wymagaGotowania": true
+  },
+  {
     "id": "komosa-ryzowa",
     "nazwa": "Komosa ryżowa / quinoa (surowa)",
     "makroNa100g": {
@@ -4263,6 +4717,23 @@
     "wymagaGotowania": true
   },
   {
+    "id": "makaron-sojowy",
+    "nazwa": "Makaron sojowy (szklany)",
+    "makroNa100g": {
+      "kcal": 351,
+      "bialko": 0.1,
+      "tluszcz": 0.1,
+      "wegle": 86
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 70,
+    "maksPorcja": 120,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "makaron",
+    "kategoria": "makaron",
+    "wymagaGotowania": true
+  },
+  {
     "id": "batat",
     "nazwa": "Batat",
     "makroNa100g": {
@@ -4288,7 +4759,9 @@
       "tluszcz": 1,
       "wegle": 0
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "ryby"
+    ],
     "porcjaTypowa": 120,
     "maksPorcja": 200,
     "grupaPreferencji": "Mięso i ryby",
@@ -4319,12 +4792,49 @@
       "tluszcz": 13,
       "wegle": 0
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "ryby"
+    ],
     "porcjaTypowa": 125,
     "maksPorcja": 220,
     "grupaPreferencji": "Mięso i ryby",
     "rolaKulinarna": "mieso",
     "wymagaGotowania": true
+  },
+  {
+    "id": "krewetki",
+    "nazwa": "Krewetki (obrane, surowe)",
+    "makroNa100g": {
+      "kcal": 85,
+      "bialko": 18,
+      "tluszcz": 1.1,
+      "wegle": 0.9
+    },
+    "tagiAlergenow": [
+      "skorupiaki"
+    ],
+    "porcjaTypowa": 150,
+    "grupaPreferencji": "Ryby i owoce morza",
+    "rolaKulinarna": "mieso",
+    "kategoria": "ryba",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "surimi",
+    "nazwa": "Paluszki surimi",
+    "makroNa100g": {
+      "kcal": 99,
+      "bialko": 7.6,
+      "tluszcz": 1,
+      "wegle": 15
+    },
+    "tagiAlergenow": [
+      "ryby",
+      "gluten"
+    ],
+    "porcjaTypowa": 100,
+    "grupaPreferencji": "Ryby i owoce morza",
+    "rolaKulinarna": "mieso"
   },
   {
     "id": "losos-wedzony",
@@ -4335,7 +4845,9 @@
       "tluszcz": 9,
       "wegle": 0
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "ryby"
+    ],
     "porcjaTypowa": 80,
     "maksPorcja": 150,
     "grupaPreferencji": "Mięso i ryby",
@@ -4350,7 +4862,9 @@
       "tluszcz": 0.7,
       "wegle": 0
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "ryby"
+    ],
     "porcjaTypowa": 150,
     "maksPorcja": 250,
     "grupaPreferencji": "Mięso i ryby",
@@ -4366,7 +4880,9 @@
       "tluszcz": 0.9,
       "wegle": 0
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "ryby"
+    ],
     "porcjaTypowa": 150,
     "maksPorcja": 250,
     "grupaPreferencji": "Mięso i ryby",
@@ -4510,6 +5026,24 @@
     "grupaPreferencji": "Nabiał i jaja",
     "rolaKulinarna": "ser",
     "kategoria": "ser-zolty-twardy"
+  },
+  {
+    "id": "pesto",
+    "nazwa": "Pesto bazyliowe",
+    "makroNa100g": {
+      "kcal": 460,
+      "bialko": 5,
+      "tluszcz": 45,
+      "wegle": 6
+    },
+    "tagiAlergenow": [
+      "nabial",
+      "laktoza",
+      "orzechy"
+    ],
+    "porcjaTypowa": 30,
+    "maksPorcja": 60,
+    "rolaKulinarna": "przyprawa"
   },
   {
     "id": "napoj-sojowy",
@@ -5019,7 +5553,9 @@
       "tluszcz": 54,
       "wegle": 21
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "sezam"
+    ],
     "porcjaTypowa": 15,
     "maksPorcja": 30,
     "grupaPreferencji": "Dodatki",
@@ -5080,7 +5616,9 @@
       "tluszcz": 0,
       "wegle": 3.6
     },
-    "tagiAlergenow": [],
+    "tagiAlergenow": [
+      "ryby"
+    ],
     "porcjaTypowa": 10,
     "maksPorcja": 25,
     "grupaPreferencji": "Dodatki",
@@ -5632,6 +6170,23 @@
     "rolaKulinarna": "warzywo"
   },
   {
+    "id": "edamame",
+    "nazwa": "Edamame (ziarna, mrożone)",
+    "makroNa100g": {
+      "kcal": 121,
+      "bialko": 12,
+      "tluszcz": 5,
+      "wegle": 9
+    },
+    "tagiAlergenow": [
+      "soja"
+    ],
+    "porcjaTypowa": 80,
+    "maksPorcja": 200,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "straczne"
+  },
+  {
     "id": "grzyby-suszone",
     "nazwa": "Grzyby suszone",
     "makroNa100g": {
@@ -5645,6 +6200,23 @@
     "maksPorcja": 20,
     "grupaPreferencji": "Warzywa",
     "rolaKulinarna": "warzywo",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "shiitake",
+    "nazwa": "Grzyby shiitake",
+    "makroNa100g": {
+      "kcal": 34,
+      "bialko": 2.2,
+      "tluszcz": 0.5,
+      "wegle": 7
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 80,
+    "maksPorcja": 200,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "kategoria": "warzywo-cieple",
     "wymagaGotowania": true
   },
   {
@@ -6024,6 +6596,20 @@
     "rolaKulinarna": "przyprawa"
   },
   {
+    "id": "bazylia-tajska",
+    "nazwa": "Bazylia tajska",
+    "makroNa100g": {
+      "kcal": 23,
+      "bialko": 3.2,
+      "tluszcz": 0.6,
+      "wegle": 2.7
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 10,
+    "maksPorcja": 30,
+    "rolaKulinarna": "przyprawa"
+  },
+  {
     "id": "ser-zolty-bezlaktozowy",
     "nazwa": "Ser żółty bez laktozy",
     "makroNa100g": {
@@ -6086,6 +6672,22 @@
     "grupaPreferencji": "Zboża i skrobia"
   },
   {
+    "id": "ciasto-francuskie",
+    "nazwa": "Ciasto francuskie (gotowe)",
+    "makroNa100g": {
+      "kcal": 380,
+      "bialko": 5.5,
+      "tluszcz": 25,
+      "wegle": 33
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 80,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo"
+  },
+  {
     "id": "chipsy-tortilla",
     "nazwa": "Chipsy tortilla (nachos)",
     "makroNa100g": {
@@ -6113,5 +6715,35 @@
     "maksPorcja": 30,
     "kategoria": "maslo",
     "rolaKulinarna": "tluszcz"
+  },
+  {
+    "id": "tapioka",
+    "nazwa": "Tapioka (perły, suche)",
+    "makroNa100g": {
+      "kcal": 358,
+      "bialko": 0.2,
+      "tluszcz": 0,
+      "wegle": 89
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 40,
+    "maksPorcja": 80,
+    "rolaKulinarna": "skrobia",
+    "wymagaGotowania": true
+  },
+  {
+    "id": "herbatniki",
+    "nazwa": "Herbatniki",
+    "makroNa100g": {
+      "kcal": 450,
+      "bialko": 7,
+      "tluszcz": 13,
+      "wegle": 75
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 40,
+    "rolaKulinarna": "dodatek-slodki"
   }
 ]
