@@ -5159,6 +5159,22 @@
     "tylkoNaZimno": true
   },
   {
+    "id": "kielki-fasoli",
+    "nazwa": "Kiełki fasoli mung",
+    "makroNa100g": {
+      "kcal": 30,
+      "bialko": 3,
+      "tluszcz": 0.2,
+      "wegle": 6
+    },
+    "tagiAlergenow": [],
+    "porcjaTypowa": 60,
+    "maksPorcja": 150,
+    "grupaPreferencji": "Warzywa",
+    "rolaKulinarna": "warzywo",
+    "kategoria": "warzywo-cieple"
+  },
+  {
     "id": "awokado",
     "nazwa": "Awokado",
     "makroNa100g": {
@@ -6686,6 +6702,23 @@
     "porcjaTypowa": 80,
     "grupaPreferencji": "Zboża i skrobia",
     "rolaKulinarna": "pieczywo"
+  },
+  {
+    "id": "ciasto-gyoza",
+    "nazwa": "Krążki do gyoza (gotowe)",
+    "makroNa100g": {
+      "kcal": 290,
+      "bialko": 9,
+      "tluszcz": 1.5,
+      "wegle": 59
+    },
+    "tagiAlergenow": [
+      "gluten"
+    ],
+    "porcjaTypowa": 80,
+    "grupaPreferencji": "Zboża i skrobia",
+    "rolaKulinarna": "pieczywo",
+    "wymagaGotowania": true
   },
   {
     "id": "chipsy-tortilla",

@@ -17423,5 +17423,1335 @@
       "blender"
     ],
     "rodzaj": "wypieki"
+  },
+  {
+    "id": "bowl-kurczak-gruszka-bulgur",
+    "nazwa": "Bowl z kurczakiem, gruszką i kaszą bulgur",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulgur",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "gruszka",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "feta",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 6,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Bulgur zalej wrzątkiem w proporcji 1:2, przykryj i odstaw na 15 minut. Nie gotuj go — sam napęcznieje i zostanie sypki.",
+      "Pierś pokrój w paski, dopraw solą i pieprzem i usmaż na rozgrzanej oliwie, 3-4 minuty z każdej strony.",
+      "Na sos zetrzyj czosnek, wymieszaj z sokiem z cytryny, resztą oliwy i szczyptą soli.",
+      "Gruszkę pokrój w cienkie plasterki tuż przed podaniem — pokrojona wcześniej ściemnieje.",
+      "Wyłóż bulgur, na niego rukolę, kurczaka, gruszkę i pokruszoną fetę. Polej sosem.",
+      "Na zimno smakuje tak samo dobrze, więc nadaje się do pudełka — sos spakuj osobno."
+    ]
+  },
+  {
+    "id": "bowl-kozi-ser-kuskus",
+    "nazwa": "Bowl z serem kozim, marchewką i kuskusem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kasza-kuskus",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-kozi",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-wloskie",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ocet-balsamiczny",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Marchewkę pokrój w grube słupki, wymieszaj z połową oliwy i piecz 25 minut w 200°C, aż brzegi się przypieką.",
+      "Kuskus zalej wrzątkiem 1:1, przykryj i odstaw na 5 minut. Rozdziel widelcem.",
+      "Wymieszaj miód z octem balsamicznym i resztą oliwy.",
+      "Orzechy uprażyj na suchej patelni do zapachu.",
+      "Wyłóż kuskus, marchewkę, rukolę, pokruszony ser kozi i orzechy. Polej sosem."
+    ]
+  },
+  {
+    "id": "miska-fit-kurczak-mango",
+    "nazwa": "Miska fit z kurczakiem, mango i nerkowcami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "piekarnik",
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulgur",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "komosa-ryzowa",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kalafior",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukinia",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mango",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-nerkowca",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "limonka",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "natka-pietruszki",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kalafior rozbierz na różyczki, cukinię pokrój w półplastry. Wymieszaj z oliwą i piecz 25 minut w 200°C.",
+      "Bulgur i komosę ugotuj razem — mają podobny czas, 12-15 minut. Odcedź i przestudź.",
+      "Pierś zgrilluj na patelni grillowej albo zwykłej, 4 minuty z każdej strony, i odstaw na 5 minut przed krojeniem. Krojona od razu puści cały sok na deskę.",
+      "Na sos wymieszaj jogurt z sokiem z limonki, posiekaną natką, solą i pieprzem.",
+      "Mango pokrój w kostkę, nerkowce uprażyj na sucho.",
+      "Złóż wszystko w misce: kasza na spód, na nią pieczone warzywa, kurczak, mango, rukola i nerkowce. Polej sosem."
+    ]
+  },
+  {
+    "id": "salatka-kuskus-kurczak-pesto",
+    "nazwa": "Sałatka z kuskusem, kurczakiem i pesto",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "salatki",
+    "skladniki": [
+      {
+        "skladnikId": "kasza-kuskus",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 280,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pesto",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidorki-koktajlowe",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "parmezan",
+        "ilosc": 25,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kuskus zalej wrzątkiem 1:1, przykryj i odstaw na 5 minut. Rozdziel widelcem i przestudź.",
+      "Kurczaka użyj gotowego z wcześniejszego gotowania albo usmaż i przestudź. Pokrój w kostkę.",
+      "Pomidorki przekrój na pół.",
+      "Wymieszaj kuskus z pesto, dodaj kurczaka, pomidorki i rukolę.",
+      "Posyp startym parmezanem. Całość składa się bez włączania kuchenki, jeśli kurczak jest już ugotowany — dobre do pudełka."
+    ]
+  },
+  {
+    "id": "salatka-indyk-batat-granat",
+    "nazwa": "Sałatka z indykiem, pieczonym batatem i granatem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "piekarnik",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "indyk-piers",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "batat",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "granat",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-grecki",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Bataty pokrój w kostkę, wymieszaj z oliwą, solą i pieprzem i piecz 30 minut w 200°C, przewracając raz.",
+      "Pierś z indyka pokrój w paski i usmaż na patelni, 3-4 minuty z każdej strony.",
+      "Na sos wymieszaj jogurt z majonezem i sokiem z cytryny — sam majonez byłby tu za ciężki przy słodkim bataciе.",
+      "Pestki granatu wyłuskaj nad miską z wodą: biała błonka wypływa, pestki opadają i nic nie pryska.",
+      "Wyłóż rukolę, bataty i indyka, posyp granatem i polej sosem."
+    ]
+  },
+  {
+    "id": "poke-bowl-losos-pak-choi",
+    "nazwa": "Poke bowl z grillowanym łososiem i pak choi",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "salatki",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ryz-bialy-surowy",
+        "ilosc": 140,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "losos-swiezy",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pak-choi",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "awokado",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ocet-ryzowy",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-sojowy",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-sezamowy",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sezam",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula-dymka",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Ryż ugotuj i jeszcze ciepły wymieszaj z octem ryżowym i szczyptą cukru. Odstaw do przestudzenia.",
+      "Łososia dopraw solą i zgrilluj skórą do dołu, 4 minuty, potem 2 minuty z drugiej strony. Środek ma zostać lekko różowy.",
+      "Pak choi przekrój wzdłuż i podsmaż na mocnym ogniu minutę z każdej strony — ma zostać chrupiący.",
+      "Ogórka i awokado pokrój w kostkę.",
+      "Wyłóż ryż do miski, na niego łososia rozdzielonego na kawałki, pak choi, ogórka i awokado.",
+      "Polej sosem sojowym z olejem sezamowym, posyp sezamem i dymką."
+    ]
+  },
+  {
+    "id": "bajgiel-losos-serek",
+    "nazwa": "Bajgiel z łososiem wędzonym i serkiem",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "kanapki",
+    "skladniki": [
+      {
+        "skladnikId": "bajgiel",
+        "ilosc": 90,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "losos-wedzony",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "serek-kanapkowy",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ogorek",
+        "ilosc": 50,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "rukola",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cytryna",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Bajgla przekrój i podpiecz w tosterze albo na suchej patelni — ciepły lepiej trzyma nadzienie i nie rozmięka od serka.",
+      "Posmaruj obie połówki serkiem.",
+      "Ułóż łososia, plasterki ogórka i rukolę. Skrop sokiem z cytryny i dopraw pieprzem."
+    ]
+  },
+  {
+    "id": "kurczak-w-kremowym-sosie-cebulowym",
+    "nazwa": "Kurczak w kremowym sosie cebulowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 450,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 350,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietanka-30",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "tymianek",
+        "ilosc": 2,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Cebulę pokrój w pióra i smaż na maśle z olejem na małym ogniu 20 minut, mieszając co jakiś czas. To nie jest krok do przyspieszenia: cała słodycz tego sosu bierze się z powolnego karmelizowania.",
+      "Ziemniaki ugotuj w osolonej wodzie i utłucz, zostawiając grudki.",
+      "Kurczaka pokrój na płaty, dopraw i obsmaż na osobnej patelni po 3-4 minuty z każdej strony. Wyjmij.",
+      "Do cebuli wlej bulion i zbierz łopatką to, co przywarło do dna. Dodaj śmietankę i tymianek, gotuj 3 minuty.",
+      "Wróć kurczaka do sosu na minutę. Podawaj z tłuczonymi ziemniakami."
+    ]
+  },
+  {
+    "id": "kurczak-w-sosie-ostrygowym-z-nerkowcami",
+    "nazwa": "Kurczak w sosie ostrygowym z nerkowcami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ryz-basmati",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-ostrygowy",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-sojowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-nerkowca",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula-dymka",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "imbir",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Ryż wstaw do gotowania — reszta zajmie tyle samo czasu.",
+      "Kurczaka pokrój w kostkę. Rozgrzej patelnię do maksimum i smaż mięso 4 minuty, nie mieszając za często.",
+      "Dodaj czosnek, imbir i paprykę, smaż jeszcze 2 minuty.",
+      "Wlej sos ostrygowy z sojowym i chlust wody, zagotuj — sos ma oblepić mięso, a nie w nim pływać.",
+      "Wmieszaj uprażone nerkowce i dymkę. Podawaj na ryżu."
+    ]
+  },
+  {
+    "id": "butter-chicken",
+    "nazwa": "Butter chicken z ryżem basmati",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "1 h marynowania",
+    "rodzaj": "jednogarnkowe",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "kurczak-piers",
+        "ilosc": 600,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jogurt-naturalny",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pomidory-krojone",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "smietanka-30",
+        "ilosc": 120,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "imbir",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "garam-masala",
+        "ilosc": 8,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kurkuma",
+        "ilosc": 3,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka-slodka-mielona",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ryz-basmati",
+        "ilosc": 200,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kurczaka pokrój w kostkę i zamarynuj w jogurcie z połową przypraw, czosnkiem i imbirem. Odstaw na godzinę — jogurt zmiękcza mięso, a bez tego kroku wyjdzie zwyczajne.",
+      "Rozgrzej masło, wrzuć posiekaną cebulę i smaż do zeszklenia.",
+      "Dodaj resztę przypraw i smaż 30 sekund, aż zapachną. Przyprawy wrzucone do płynu zostaną surowe w smaku.",
+      "Wlej pomidory i duś 15 minut. Zblenduj sos na gładko, jeśli chcesz wersję jak z restauracji.",
+      "Na osobnej patelni obsmaż kurczaka z marynaty na mocnym ogniu, aż się zarumieni, i przełóż do sosu.",
+      "Wlej śmietankę, duś jeszcze 10 minut na małym ogniu. Podawaj z ryżem basmati."
+    ]
+  },
+  {
+    "id": "pad-thai-z-wolowina",
+    "nazwa": "Pad thai z wołowiną",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 2,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "makarony",
+    "sprzet": [
+      "patelnia",
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "makaron-ryzowy",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "wolowina-rostbef",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 2,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "kielki-fasoli",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula-dymka",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "orzechy-arachidowe",
+        "ilosc": 30,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-sojowy",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-rybny",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "limonka",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Makaron ryżowy zalej gorącą wodą i odstaw, aż zmięknie, ale zostanie sprężysty. Rozgotowany rozpadnie się na patelni.",
+      "Wymieszaj sos sojowy, rybny, sok z limonki i cukier.",
+      "Wołowinę pokrój w cienkie paski i obsmaż na mocno rozgrzanej patelni, 2 minuty. Wyjmij.",
+      "Na tej samej patelni usmaż czosnek, wbij jajka i rozbełtaj je, aż się zetną.",
+      "Dodaj odsączony makaron i sos, mieszaj energicznie 2 minuty.",
+      "Wróć mięso, wmieszaj kiełki i dymkę. Zdejmij z ognia od razu — kiełki mają zostać chrupiące.",
+      "Posyp posiekanymi orzeszkami i podaj z ćwiartką limonki."
+    ]
+  },
+  {
+    "id": "krem-z-dyni-na-mleku-kokosowym",
+    "nazwa": "Krem z dyni na mleku kokosowym",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "zupy",
+    "sprzet": [
+      "garnek",
+      "blender"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "dynia",
+        "ilosc": 900,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-kokosowe-z-puszki",
+        "ilosc": 200,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "imbir",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-warzywny",
+        "ilosc": 700,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "curry-w-proszku",
+        "ilosc": 5,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pestki-dyni",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Cebulę zeszklij na oliwie, dodaj czosnek, imbir i curry, smaż 30 sekund do zapachu.",
+      "Wrzuć dynię pokrojoną w kostkę, zalej bulionem i gotuj 20-25 minut, aż będzie całkiem miękka.",
+      "Zblenduj na gładki krem.",
+      "Wlej mleko kokosowe i podgrzej, nie gotując — zagotowane może się rozwarstwić.",
+      "Dopraw solą i pieprzem. Podawaj z uprażonymi pestkami dyni."
+    ]
+  },
+  {
+    "id": "zupa-szczawiowa",
+    "nazwa": "Zupa szczawiowa z jajkiem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 4,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "zupy",
+    "sprzet": [
+      "garnek",
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "szczaw",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ziemniaki",
+        "ilosc": 500,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "bulion-drobiowy",
+        "ilosc": 1200,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "smietana-18",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 4,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "koperek",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Jajka ugotuj na twardo, ostudź i obierz.",
+      "Ziemniaki pokrój w kostkę i gotuj w bulionie 15 minut.",
+      "Cebulę zeszklij na maśle, dodaj posiekany szczaw i duś 3-4 minuty. Szczaw zbrązowieje i straci zielony kolor — tak ma być, to normalne.",
+      "Przełóż szczaw do garnka i gotuj jeszcze 5 minut.",
+      "Śmietanę rozrób kilkoma łyżkami gorącej zupy i dopiero wtedy wlej do garnka, mieszając. Wlana wprost zwarzy się.",
+      "Dopraw solą i pieprzem. Podawaj z połówką jajka i koperkiem. Szczaw jest wyraźnie kwaśny, więc cukier bywa tu potrzebny — spróbuj przed podaniem."
+    ]
+  },
+  {
+    "id": "placki-serowe-z-indykiem-i-brokulem",
+    "nazwa": "Placki serowe z indykiem i brokułem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "miesoZDodatkiem",
+    "sprzet": [
+      "patelnia",
+      "piekarnik"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "indyk-piers",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "jajko",
+        "ilosc": 4,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "brokul",
+        "ilosc": 300,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 200,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "majonez",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Brokuł podziel na różyczki i wrzuć na 3 minuty do wrzątku, potem od razu do zimnej wody — zostanie jędrny i zielony.",
+      "Paprykę przekrój i upiecz w 200°C przez 20 minut.",
+      "Indyka pokrój drobno w kostkę i podsmaż na oleju do zrumienienia.",
+      "Na placki: zetrzyj ser, wymieszaj z jajkami i doprawj. Smaż na patelni małe placki, po 2 minuty z każdej strony. Masa jest luźna, więc nakładaj łyżką i nie ruszaj, póki spód się nie zetnie.",
+      "Na sos zetrzyj czosnek do majonezu.",
+      "Podawaj placki z indykiem, brokułem i pieczoną papryką, polane sosem."
+    ]
+  },
+  {
+    "id": "gyoza-z-warzywami",
+    "nazwa": "Pierożki gyoza z warzywami",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "30+",
+    "rodzaj": "kluski",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "ciasto-gyoza",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kapusta",
+        "ilosc": 250,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "marchew",
+        "ilosc": 120,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pieczarki",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula-dymka",
+        "ilosc": 40,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "czosnek",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "imbir",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "sos-sojowy",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-sezamowy",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "olej-rzepakowy",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Kapustę poszatkuj drobno, posól i odstaw na 10 minut, potem mocno odciśnij. To najważniejszy krok: nieodciśnięta kapusta zamieni farsz w wodę i pierożki rozlecą się na patelni.",
+      "Marchewkę zetrzyj, pieczarki posiekaj drobno i podsmaż, aż odparują.",
+      "Wymieszaj warzywa z czosnkiem, imbirem, dymką, sosem sojowym i olejem sezamowym.",
+      "Na środek każdego krążka nałóż łyżeczkę farszu, brzeg zwilż wodą i sklej, marszcząc jedną stronę.",
+      "Smaż pierożki na rozgrzanym oleju, aż spody się zarumienią. Wlej pół szklanki wody, natychmiast przykryj i gotuj 5 minut na parze.",
+      "Zdejmij pokrywkę i odparuj resztę wody, żeby spody znów zrobiły się chrupiące."
+    ]
+  },
+  {
+    "id": "burrito-z-wolowina-fasola-i-ananasem",
+    "nazwa": "Burrito z wołowiną, fasolą i ananasem",
+    "slot": [
+      "obiad",
+      "kolacja"
+    ],
+    "charakter": "wytrawne",
+    "porcje": 3,
+    "czasPrzygotowania": "15-30",
+    "rodzaj": "wrapy",
+    "sprzet": [
+      "patelnia"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "tortilla-pszenna",
+        "ilosc": 3,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "mieso-mielone-wolowe",
+        "ilosc": 400,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "fasola-czerwona-konserwowa",
+        "ilosc": 240,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ananas",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "cebula",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "papryka",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "ser-zolty",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "przyprawa-taco",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "oliwa-z-oliwek",
+        "ilosc": 15,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Cebulę i paprykę pokrój w kostkę, podsmaż na oliwie 4 minuty.",
+      "Dodaj mięso i smaż, rozbijając je łyżką, aż się zarumieni.",
+      "Wsyp przyprawę taco, wlej pół szklanki wody i duś 5 minut, aż sos zgęstnieje.",
+      "Wmieszaj odsączoną fasolę i ananasa pokrojonego w kostkę. Ananas wchodzi na końcu, bo dłużej duszony rozpadnie się na włókna.",
+      "Tortille ogrzej na suchej patelni, nałóż farsz i ser, zawiń boki do środka i zwiń.",
+      "Podsmaż burrito szwem do dołu, aż tortilla się zrumieni, a ser rozpuści."
+    ]
+  },
+  {
+    "id": "owsianka-z-mango-i-musem-malinowym",
+    "nazwa": "Owsianka z mango i musem malinowym",
+    "slot": [
+      "sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "owsianki",
+    "sprzet": [
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "platki-owsiane",
+        "ilosc": 60,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 250,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "mango",
+        "ilosc": 100,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maliny",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "brzoskwinia",
+        "ilosc": 80,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-migdalowe",
+        "ilosc": 15,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 10,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Płatki zalej mlekiem i gotuj na małym ogniu 5-7 minut, mieszając.",
+      "Maliny rozgnieć widelcem z miodem na szybki mus — nie trzeba ich gotować.",
+      "Mango i brzoskwinię pokrój w kostkę.",
+      "Przełóż owsiankę do miski, na wierzch wyłóż mus malinowy i owoce, posyp płatkami migdałowymi."
+    ]
+  },
+  {
+    "id": "tapioka-waniliowa-z-truskawkami",
+    "nazwa": "Tapioka waniliowa z truskawkami",
+    "slot": [
+      "podwieczorek",
+      "drugie-sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 2,
+    "czasPrzygotowania": "30+",
+    "czasOczekiwania": "2 h chłodzenia",
+    "rodzaj": "przekaski",
+    "sprzet": [
+      "garnek"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "tapioka",
+        "ilosc": 70,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-kokosowe-z-puszki",
+        "ilosc": 200,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 150,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "cukier",
+        "ilosc": 25,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "pasta-waniliowa",
+        "ilosc": 4,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "truskawki",
+        "ilosc": 200,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Tapiokę zalej wodą i gotuj 10-12 minut, mieszając często, aż perły zrobią się przezroczyste z małą białą kropką w środku.",
+      "Odcedź i przepłucz zimną wodą, żeby pozbyć się nadmiaru skrobi. Bez tego deser skleja się w jedną bryłę.",
+      "Wróć tapiokę do garnka, wlej oba mleka, dodaj cukier i wanilię. Gotuj 5 minut na małym ogniu, aż zgęstnieje.",
+      "Przełóż do pucharków i wstaw do lodówki na 2 godziny. Po schłodzeniu zgęstnieje jeszcze bardziej.",
+      "Truskawki pokrój i wyłóż na wierzch przed podaniem."
+    ]
+  },
+  {
+    "id": "mango-lassi",
+    "nazwa": "Mango lassi",
+    "slot": [
+      "podwieczorek",
+      "drugie-sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "koktajle",
+    "sprzet": [
+      "blender"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "jogurt-grecki",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mango",
+        "ilosc": 150,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "mleko-krowie",
+        "ilosc": 80,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "miod",
+        "ilosc": 10,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "kardamon",
+        "ilosc": 1,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Mango pokrój w kostkę. Jeśli używasz świeżego, musi być dojrzałe — twarde nie da ani słodyczy, ani gładkości.",
+      "Zblenduj wszystko na gładko.",
+      "Jeśli wyjdzie za gęste, dolej mleka po łyżce. Podawaj od razu, dobrze schłodzone."
+    ]
+  },
+  {
+    "id": "koktajl-kakaowo-migdalowy",
+    "nazwa": "Koktajl kakaowo-migdałowy",
+    "slot": [
+      "sniadanie",
+      "drugie-sniadanie"
+    ],
+    "charakter": "slodkie",
+    "porcje": 1,
+    "czasPrzygotowania": "<15",
+    "rodzaj": "koktajle",
+    "sprzet": [
+      "blender"
+    ],
+    "skladniki": [
+      {
+        "skladnikId": "napoj-migdalowy",
+        "ilosc": 250,
+        "jednostka": "ml"
+      },
+      {
+        "skladnikId": "banan",
+        "ilosc": 1,
+        "jednostka": "szt"
+      },
+      {
+        "skladnikId": "kakao",
+        "ilosc": 12,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "maslo-orzechowe",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "daktyle",
+        "ilosc": 20,
+        "jednostka": "g"
+      },
+      {
+        "skladnikId": "platki-owsiane",
+        "ilosc": 20,
+        "jednostka": "g"
+      }
+    ],
+    "instrukcje": [
+      "Daktyle zalej wrzątkiem na 5 minut i odsącz — inaczej zostaną w koktajlu kawałkami.",
+      "Zblenduj wszystko na gładko, najlepiej z bananem prosto z zamrażarki.",
+      "Płatki owsiane są tu po to, żeby to było śniadanie, a nie napój — bez nich wypijesz to i za godzinę będziesz głodny."
+    ]
   }
 ]
